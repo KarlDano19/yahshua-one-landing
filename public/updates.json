@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-03",
+    "badge": "Progress Update",
+    "title": "Opening Balances Get Proper Structure",
+    "description": "We moved YAHSHUA One further into serious backoffice territory by building the foundation for proper beginning balances, so businesses can start their books cleanly instead of patching history together by hand.",
+    "body": [
+      "For many Filipino business owners, one of the messiest parts of moving into a new backoffice system is not today's payroll or today's HR work. It is carrying the past forward correctly. If your previous balances are incomplete, miscategorized, or trapped in spreadsheets, every report after that starts from shaky ground. That becomes a real problem when you want accounting, payroll, and operational records to finally live in one place and tell the same story. This update matters because YAHSHUA One is getting better at helping businesses begin from a clean, structured financial starting point instead of a manual guessing game.",
+      "Yesterday we pushed forward the backend foundation for managing beginning balances inside the system. In plain language, this means YAHSHUA One is learning how to properly store, organize, and manage the opening financial figures a business already has before new transactions start flowing in. Instead of treating those numbers like a side note or a one-time import mess, the platform is gaining a more disciplined way to handle them as part of the product itself. That matters because good accounting is not only about what happens next, but also about where you begin. It is quiet infrastructure work, yes, but it is the kind of infrastructure that makes everything built on top of it more trustworthy.",
+      "What this means for you is a step closer to a backoffice that can reflect your real business more honestly from day one. A cleaner beginning balance workflow helps ensure future reports, payroll-linked accounting records, and finance views are not built on incomplete history. It reduces the need for workaround spreadsheets, memory-based corrections, and awkward handoffs between systems that should already be connected. Just as importantly, it moves YAHSHUA One closer to being a complete payroll and HR backoffice with accounting depth, not just surface-level admin tools. We are continuing to build toward a system Filipino businesses can rely on not only for daily operations, but for the integrity of the financial story underneath them."
+    ]
+  },
+  {
     "date": "2026-04-29",
     "badge": "Progress Update",
     "title": "Reporting Gets Much More Real",
