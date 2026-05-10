@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-10",
+    "badge": "Progress Update",
+    "title": "Self-Service and Controls Surge Ahead",
+    "description": "We pushed YAHSHUA One closer to a true backoffice by expanding employee self-service, tightening payroll authority and approvals, and adding stronger controls for reporting and accounting work.",
+    "body": [
+      "For many Filipino business owners, the daily stress of payroll and HR does not come from one dramatic failure. It comes from the constant pile of little interruptions that steal time from the real work of running the business. Employees need records, managers need approvals to move cleanly, and operators need confidence that sensitive payroll and accounting actions are happening under the right controls. When those gaps are still handled through side chats, manual follow-up, or memory, the backoffice becomes heavier than it should be. This update matters because YAHSHUA One is getting better at turning those repeated interruptions into smoother, more dependable workflows that actually support a growing company.",
+      "Yesterday's progress pushed several important parts of the product forward at once. In plain language, employees are getting a much stronger self-service experience, with better support for clocking in and out, viewing HR and inventory records, checking schedule history, managing profile details, protecting payslip exports, and filing more of their own requests without depending on HR for every small action. On the admin side, we also strengthened how payroll permissions, per-cutoff authority, request exemptions, kiosk account restrictions, company communication tracking, and approval views behave so the system better reflects how real organizations actually work. Reporting and finance foundations moved forward too, including saved payroll report presets, clearer de minimis configuration, stronger journal entry controls, audit visibility, and safer handling around accounting periods. Put simply, YAHSHUA One is becoming more useful for employees on the front line while also becoming more disciplined for the people managing payroll, HR, and finance behind the scenes.",
+      "What this means for you is a backoffice that keeps moving closer to full operational maturity. Your team can rely less on one-off follow-ups, spreadsheet patchwork, and manual gatekeeping just to answer employee questions or move routine approvals forward. Employees get a clearer and more capable self-service experience, while managers and admins gain tighter authority, cleaner review paths, and better control over the records that matter most. That saves time, reduces avoidable confusion, and makes it easier to run a growing Philippine business with confidence. Every step like this moves YAHSHUA One closer to being a complete payroll and HR backoffice, where employee access, payroll controls, approvals, reporting, and accounting discipline all work together in one place."
+    ]
+  },
+  {
     "date": "2026-05-09",
     "badge": "Progress Update",
     "title": "Employee Self-Service Gets Serious",
