@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-05-10",
+    "badge": "Improvement",
+    "title": "Theo Replies Get More Reliable",
+    "description": "We moved Theo's heavier AI work into the background so replies can stream more smoothly and the product is better prepared for longer, more complex requests.",
+    "body": [
+      "Yesterday's work focused on making Theo, YAHSHUA One's built-in AI assistant, feel more dependable in real use. Some AI requests naturally take longer because they need to think through more context or do more work behind the scenes. Instead of making that work compete directly with the part of the product serving the page itself, YAHSHUA One now handles Theo's heavier turns in the background and keeps the live response flow moving more cleanly.",
+      "In plain language, this means Theo is being set up to stay smoother and more reliable as usage grows and requests get more demanding. It is the kind of infrastructure upgrade users may not see as a flashy new button, but they should feel it in a better experience: fewer fragile moments, a stronger foundation for longer AI interactions, and a product that is better prepared to support serious day-to-day use."
+    ]
+  },
+  {
+    "date": "2026-05-10",
     "badge": "Progress Update",
     "title": "Self-Service and Controls Surge Ahead",
     "description": "We pushed YAHSHUA One closer to a true backoffice by expanding employee self-service, tightening payroll authority and approvals, and adding stronger controls for reporting and accounting work.",
