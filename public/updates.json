@@ -2,6 +2,17 @@
   {
     "date": "2026-05-11",
     "badge": "Progress Update",
+    "title": "Approvals, Privacy, and Memos Get Stronger",
+    "description": "We tightened payroll approval guardrails, improved access to sensitive records, and made company memo distribution and response tracking more dependable.",
+    "body": [
+      "Yesterday's work focused on the kind of product strength that businesses may not show off in a screenshot but absolutely feel in daily operations. YAHSHUA One is getting stricter about when payroll work can move forward, more careful about who can access sensitive payroll information, and more dependable when teams need to send company memos and track who has responded. These are the guardrails that help a backoffice system feel trustworthy instead of fragile.",
+      "In plain language, this means payroll runs now have better approval checks before they can proceed, confidential payroll records are being protected more carefully, and company-wide memos are becoming easier to distribute and follow up on without losing the thread. We also cleaned up some rough edges around payroll benefit settings and report presets so teams are less likely to run into messy or half-finished states while working.",
+      "What this means for you is a product that keeps getting more disciplined behind the scenes. Your team gets clearer approval flow, better privacy around sensitive information, and more reliable communication tools inside the platform. That reduces avoidable mistakes, cuts down on manual follow-up, and moves YAHSHUA One closer to being the kind of backoffice Filipino businesses can rely on every day."
+    ]
+  },
+  {
+    "date": "2026-05-11",
+    "badge": "Progress Update",
     "title": "Controls and Confidence Step Up",
     "description": "We strengthened approvals, privacy, reporting, and accounting controls so YAHSHUA One keeps feeling more like a serious backoffice Filipino businesses can trust.",
     "body": [
