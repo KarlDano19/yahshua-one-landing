@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-11",
+    "badge": "Progress Update",
+    "title": "Controls and Confidence Step Up",
+    "description": "We strengthened approvals, privacy, reporting, and accounting controls so YAHSHUA One keeps feeling more like a serious backoffice Filipino businesses can trust.",
+    "body": [
+      "For many Filipino business owners, backoffice stress shows up when authority is unclear, sensitive payroll data is too easy to reach, and finance records are hard to trust once changes start happening. A growing team needs more than just features on paper. It needs clear guardrails around who can review, who can approve, who can see private records, and what happens after important decisions are made. Without those guardrails, even a promising system still leaves operators relying on memory, side chats, and last-minute checking. This update matters because YAHSHUA One is getting stronger in the exact places that turn software into something a real business can confidently run on.",
+      "Yesterday's work pushed several important controls forward at once. In plain language, teams can now set and save payroll report views more easily, configure de minimis exemptions with more clarity, and assign review and approval authority for each pay period in a way that better matches how real organizations operate. We also strengthened who can access specific parts of the system and how confidential payroll information is protected, so the right people get the right visibility without everything being open by default. On the accounting side, we moved forward audit history for journal activity, support for reversals and adjusting entries, and stronger lock rules for closed periods so records stay cleaner once books should no longer be casually changed. We also improved how company memos and attachments can be distributed and tracked, which helps internal communication feel more structured instead of disappearing into scattered follow-up.",
+      "What this means for you is a backoffice that keeps becoming safer, clearer, and more practical to rely on every day. Your team gets better control over who can act, better visibility into what changed, and stronger protection around the payroll and accounting records that matter most. That reduces avoidable mistakes, cuts down on manual checking, and makes it easier to keep operations disciplined as the business grows. It also helps employees and managers interact with company communications and payroll processes in a more organized way instead of depending on ad hoc reminders. Every step like this moves YAHSHUA One closer to being a complete payroll and HR backoffice, where approvals, privacy, reporting, communication, and accounting discipline all work together in one place."
+    ]
+  },
+  {
     "date": "2026-05-10",
     "badge": "Improvement",
     "title": "Theo Replies Get More Reliable",
