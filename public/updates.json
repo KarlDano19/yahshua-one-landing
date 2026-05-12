@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-12",
+    "badge": "Improvement",
+    "title": "Payroll Rule Building Gets Safer and Easier",
+    "description": "We made it easier to shape payroll rules, preview changes before they go live, and understand why payroll results come out the way they do.",
+    "body": [
+      "Yesterday's work focused on making YAHSHUA One's payroll setup feel more practical and more trustworthy for the teams who will actually use it. The product is getting a more guided way to build payroll logic, clearer controls before changes are published, and better guardrails so teams are less likely to push risky setup changes by accident.",
+      "In plain language, this means YAHSHUA One is getting better at helping admins design payroll rules, test how those rules behave, and see the reasoning behind payroll results before rolling anything out more broadly. It also means different payroll setups can be managed more clearly for different groups, without everything feeling like one fragile tangle behind the scenes.",
+      "What this means for you is a payroll system that keeps getting easier to trust as complexity grows. Teams get a clearer path for shaping payroll behavior, a safer way to review changes before they affect real runs, and better visibility into how results are produced. That reduces guesswork, lowers the risk of messy payroll configuration mistakes, and moves YAHSHUA One closer to being a serious backoffice Filipino businesses can rely on every day."
+    ]
+  },
+  {
     "date": "2026-05-11",
     "badge": "Progress Update",
     "title": "Approvals, Privacy, and Memos Get Stronger",
