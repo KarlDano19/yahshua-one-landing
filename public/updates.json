@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-13",
+    "badge": "Progress Update",
+    "title": "Payroll Logic Gets More Explainable",
+    "description": "We made payroll setup easier to shape, safer to publish, and far clearer to understand before changes affect real employees.",
+    "body": [
+      "For many Filipino business owners, payroll stops being stressful only when the rules behind it are easy to trust. It is not enough for a system to produce a result if the team cannot clearly see why that result happened or what a change might break before payday. As companies grow, different groups often need slightly different payroll behavior, and that complexity can quickly turn into confusion if everything is buried behind technical screens or hidden logic. That is where many backoffice tools start to feel fragile instead of dependable. This update matters because YAHSHUA One is getting better at making payroll logic visible, guided, and safer for real teams to work with.",
+      "Yesterday's work focused on making payroll rule-building feel much more practical in plain language. YAHSHUA One is getting a clearer way to create and adjust payroll flows, including guided templates, visible layers for company-wide and pay-group-specific rules, and better controls for customizing approved components without losing the thread of where they came from. We also improved the simulation and review experience so teams can test scenarios, inspect the facts behind a result, and understand why a certain step was skipped or applied. On top of that, the product is getting stronger checks before payroll logic is published, which helps catch unsafe combinations before they affect live operations. Put simply, teams can now shape payroll behavior with more confidence and less guesswork.",
+      "What this means for you is a backoffice that keeps moving closer to handling real payroll complexity without becoming intimidating to use. Your team gets a clearer path for setting up different payroll behaviors, reviewing how those rules interact, and validating changes before they go live for actual employees. That reduces the risk of messy configuration mistakes, cuts down on back-and-forth when something needs to be explained, and makes payroll feel more like a controlled system than a black box. It also helps YAHSHUA One grow into a complete payroll and HR backoffice, where setup, simulation, validation, and everyday execution all work together in one place. We are building toward a product Filipino businesses can rely on not only to compute payroll correctly, but to make that computation understandable and trustworthy."
+    ]
+  },
+  {
     "date": "2026-05-12",
     "badge": "Improvement",
     "title": "Payroll Rule Building Gets Safer and Easier",
