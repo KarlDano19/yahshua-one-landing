@@ -2,6 +2,17 @@
   {
     "date": "2026-05-14",
     "badge": "Progress Update",
+    "title": "Onboarding and Team Structure Get Clearer",
+    "description": "We made it easier to connect people to the right employee records, guide each role through setup, and organize growing teams with a more flexible org chart.",
+    "body": [
+      "One of the fastest ways a backoffice system becomes frustrating is when people are connected to the wrong records, setup feels confusing, or team structure stops matching how the business actually works. That usually creates follow-up questions, manual fixes, and admin cleanup that should not be necessary in the first place. Yesterday's work focused on tightening those foundations so YAHSHUA One feels clearer from the first setup steps onward.",
+      "In plain language, YAHSHUA One is getting better at linking the right user account to the right employee record, including on mobile where these mismatches can be especially annoying. We also improved the guided setup experience so onboarding can better reflect each person's role instead of showing the same path to everyone. On top of that, the company org chart is becoming more flexible, which helps teams place employees more accurately as the business grows and reporting lines become more complex.",
+      "What this means for you is a smoother setup experience, fewer identity mix-ups, and a clearer picture of how your team fits together inside the platform. It makes everyday admin work less messy, helps employees land in the right place faster, and moves YAHSHUA One closer to being a backoffice system companies can actually grow with instead of constantly working around."
+    ]
+  },
+  {
+    "date": "2026-05-14",
+    "badge": "Progress Update",
     "title": "Core HR Work Hits Stride",
     "description": "We pushed YAHSHUA One closer to a real daily-use backoffice with stronger employee access, approvals, requests, time tracking, and supplier records.",
     "body": [
