@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-14",
+    "badge": "Progress Update",
+    "title": "Core HR Work Hits Stride",
+    "description": "We pushed YAHSHUA One closer to a real daily-use backoffice with stronger employee access, approvals, requests, time tracking, and supplier records.",
+    "body": [
+      "For many Filipino business owners, backoffice work becomes painful when employee information, approvals, attendance, and admin tasks all live in separate places that do not talk to each other well. That usually means more follow-ups, more manual checking, and more time spent cleaning up simple mistakes that should have been prevented in the first place. A growing team needs systems that feel connected, not stitched together. It also needs tools that ordinary staff and managers can use without needing technical translation every five minutes. This update matters because YAHSHUA One is steadily becoming the kind of operational home base that makes daily work simpler, clearer, and easier to trust.",
+      "Yesterday's progress covered several important parts of that foundation in plain, practical ways. We moved forward on letting people connect their user access to the right employee record from mobile, which helps the system understand who is actually using it and what belongs to them. We also pushed core day-to-day workflows like time logging, requests, approvals, and self-service password recovery so the experience feels more complete for real teams instead of just looking good in a demo. On the business admin side, supplier records, supplier contacts, payment terms, and tax information also advanced, which strengthens the accounting and operational backbone behind the scenes. Altogether, this is the kind of work that makes the product feel more usable across HR, payroll, and administrative operations at the same time.",
+      "What this means for you is that YAHSHUA One keeps moving away from being a promising concept and closer to being a dependable system a company can actually run on. Teams are getting nearer to a setup where employees can access the right information, managers can review and approve work faster, and business records can stay organized without extra chaos. That reduces friction in the small daily moments that usually eat up hours across a week. It also brings payroll and HR operations closer together with the supporting admin structure those workflows depend on to stay accurate and sustainable. We are building toward a backoffice that does not just store information, but helps Filipino businesses move through real work with more confidence every day."
+    ]
+  },
+  {
     "date": "2026-05-13",
     "badge": "Progress Update",
     "title": "Payroll Logic Gets More Explainable",
