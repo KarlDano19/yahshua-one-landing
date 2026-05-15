@@ -2,6 +2,17 @@
   {
     "date": "2026-05-14",
     "badge": "Progress Update",
+    "title": "Backoffice Depth Jumps Forward",
+    "description": "We shipped a big wave of progress across user access, supplier management, approvals, employee requests, and self-service recovery so YAHSHUA One feels more ready for real daily operations.",
+    "body": [
+      "For many Filipino business owners, backoffice work starts breaking down when everyday tasks depend on too many separate tools, too much memory, and too much follow-up. One person cannot log in properly, another request gets stuck, and supplier details end up living in scattered spreadsheets or chat messages. Those small gaps may look minor on their own, but together they slow payroll, HR, and accounting work across the whole business. A serious platform has to reduce those interruptions instead of creating new ones. This update matters because YAHSHUA One keeps getting better at turning messy day-to-day admin work into something cleaner, more connected, and easier to trust.",
+      "Yesterday we pushed forward a broad set of practical product work. In plain language, YAHSHUA One is getting better at letting the right people access the right company records, even when accounts need to work across multiple companies or employees need a smoother way to recover access on their own. We also expanded the supplier side of the system so businesses can manage supplier records, contacts, payment terms, tax details, attachments, and related controls in a more complete way instead of patching those workflows together elsewhere. On top of that, request and approval flows became more capable across schedule changes, activity changes, additional pay items, deductions, attendance corrections, and payroll-adjacent actions that real teams need to process every week. We also cleaned up frustrating edge cases in leave setup, employee profile updates, schedule visibility, payroll profile editing, transfer approvals, and user creation so the product feels less brittle in real use.",
+      "What this means for you is a backoffice that keeps moving closer to handling the actual rhythm of a growing business, not just isolated demo scenarios. Your team gets a clearer path for managing people, suppliers, requests, and approvals without relying so heavily on side conversations or manual cleanup after the fact. That saves time, reduces avoidable confusion, and makes it easier to trust the system when multiple departments are touching the same operational flow. It also brings YAHSHUA One closer to becoming a complete payroll and HR backoffice with the accounting and administrative depth a real company needs behind the scenes. We are building toward a platform Filipino businesses can use not only to record work, but to keep work moving with more confidence every single day."
+    ]
+  },
+  {
+    "date": "2026-05-14",
+    "badge": "Progress Update",
     "title": "Onboarding and Team Structure Get Clearer",
     "description": "We made it easier to connect people to the right employee records, guide each role through setup, and organize growing teams with a more flexible org chart.",
     "body": [
