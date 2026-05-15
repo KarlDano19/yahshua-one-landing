@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-15",
+    "badge": "Progress Update",
+    "title": "Leave and Time Requests Get Much Smoother",
+    "description": "We made leave requests, daily logs, and overtime-style filings easier to submit, easier to review, and much harder to mess up by accident.",
+    "body": [
+      "Yesterday's work focused on a part of backoffice life that teams feel constantly: filing leave, logging time-related changes, and making sure those requests move through the right checks without turning into admin chaos. YAHSHUA One is getting better at handling those everyday requests in a way that feels cleaner for employees and safer for the people approving them.",
+      "In plain language, teams can now file and manage leave requests with a stronger core flow, submit certain time-related requests in bulk instead of one by one, and work through daily log requests with better detail, validation, and duplicate protection. We also improved approval controls, added support for shared user accounts, and made org chart links easier to reach, which helps the platform fit more naturally into how real companies are structured.",
+      "What this means for you is less friction around the requests that usually create the most back-and-forth. Employees get a smoother way to file common requests, approvers get better guardrails before something incorrect slips through, and growing teams get a system that is better at reflecting real workflows without so much manual cleanup afterward. It is another step toward a backoffice that helps work move, not stall."
+    ]
+  },
+  {
     "date": "2026-05-14",
     "badge": "Progress Update",
     "title": "Backoffice Depth Jumps Forward",
