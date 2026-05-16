@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-16",
+    "badge": "Progress Update",
+    "title": "Requests and Records Get More Trustworthy",
+    "description": "We made employee requests, approvals, schedules, attendance, and record updates far more dependable so daily backoffice work feels smoother and safer for growing Filipino teams.",
+    "body": [
+      "For many Filipino business owners, the pain in payroll and HR rarely comes from one dramatic failure. It usually comes from the small daily breakdowns that waste time: a request that will not file, a record that looks saved but is not, a schedule that disappears, or an approval that behaves strangely halfway through. Those moments force HR and operations teams back into chat threads, manual follow-up, and last-minute checking when the system should be doing the heavy lifting. That matters even more for growing companies, because each tiny point of friction multiplies across more employees, more approvers, and more moving parts. This update is about removing that friction and making everyday operational work feel much more dependable.",
+      "Yesterday's work pushed a wide set of practical improvements across the product. In plain language, YAHSHUA One now does a better job handling leave and time-related requests, showing leave balances more clearly, and respecting the real approval logic businesses need when some requests should skip or bypass certain steps. We also strengthened schedule visibility, transfer approvals, attendance adjustments, payroll profile editing, and employee record updates so teams are less likely to hit confusing dead ends or false saves. On top of that, facial recognition setup and several employee request flows were cleaned up so the system behaves more clearly when teams are configuring access or filing everyday actions. Put simply, the product became less brittle and more trustworthy in the exact workflows that real businesses use every week.",
+      "What this means for you is less operational drag and more confidence that the system will hold up in normal daily use. Employees can file common requests more smoothly, managers and approvers can review them with better guardrails, and admins can trust that important profile, attendance, and payroll-related changes are actually sticking the way they should. That reduces manual cleanup, cuts down on avoidable follow-up, and makes the platform feel more like a real operating system than a collection of half-connected screens. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where requests, records, approvals, and employee workflows all support each other cleanly. We are continuing to build toward a backoffice Filipino businesses can rely on not only when things are simple, but when real day-to-day complexity starts showing up."
+    ]
+  },
+  {
     "date": "2026-05-15",
     "badge": "Progress Update",
     "title": "Leave and Time Requests Get Much Smoother",
