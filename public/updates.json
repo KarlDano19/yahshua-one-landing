@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-05-16",
+    "badge": "Fix",
+    "title": "Payroll Runs Get Safer, Screens Get Less Annoying",
+    "description": "We made payroll generation more accurate for daily-rate employees, cleaned up how payroll details are shown, fixed a frustrating leave setup scroll issue, and added a movable feedback button that stays out of the way.",
+    "body": [
+      "Yesterday's work focused on making YAHSHUA One feel more dependable in the small moments teams notice immediately. We fixed a frustrating leave setup screen issue, cleaned up part of the payroll review experience, and added a movable feedback button on payroll forms so it does not sit in the way while people are working.",
+      "We also improved payroll generation for daily-rate employees, which helps pay runs behave more accurately when companies use that setup. On top of that, the system is getting better at handling users connected to more than one employment record, which matters for companies with more complex staff arrangements.",
+      "What this means for you is less friction during payroll work and fewer little interface annoyances that slow people down. It is not the flashiest kind of progress, but it is exactly the kind that makes a backoffice product feel steadier, clearer, and easier to trust in real daily use."
+    ]
+  },
+  {
+    "date": "2026-05-16",
     "badge": "Progress Update",
     "title": "Requests and Records Get More Trustworthy",
     "description": "We made employee requests, approvals, schedules, attendance, and record updates far more dependable so daily backoffice work feels smoother and safer for growing Filipino teams.",
