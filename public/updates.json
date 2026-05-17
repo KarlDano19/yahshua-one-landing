@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-05-16",
+    "badge": "Progress Update",
+    "title": "Trust, Access, and Imports Grow Up",
+    "description": "We made YAHSHUA One safer, easier to navigate, and more dependable by improving reporting guardrails, employee updates, bulk imports, onboarding choices, and everyday accessibility across the product.",
+    "body": [
+      "For many Filipino business owners, backoffice software earns trust in the ordinary moments, not just during a flashy demo. It has to save the right changes, protect the right information, and stay understandable even when different people are using it in different ways. When navigation feels inconsistent, reports leak too much detail, or imports behave unpredictably, the result is not just annoyance. It creates hesitation, extra checking, and more manual follow-up for teams that are already busy running payroll, HR, and operations. This latest round of progress matters because it strengthens the parts of YAHSHUA One that help the system feel steady, safe, and ready for daily use.",
+      "Yesterday's work improved several practical parts of the product at once. In plain language, we tightened the safety and privacy of the newer reports experience, made employee assignment changes stick more reliably, and strengthened the import flow so teams get clearer validation, better previews, and more confidence before saving data. We also cleaned up the free-trial and pay-now onboarding choice so new customers can understand their next step more easily instead of second-guessing the setup path. On top of that, sidebar behavior, button labels, keyboard access, and error handling were improved so the product is easier to move through for more kinds of users. Even facial-recognition setup messaging became clearer, which helps teams understand permissions and configuration without feeling lost.",
+      "What this means for you is a backoffice experience that keeps getting more trustworthy from the first click to the more complex admin work behind the scenes. Your team can move through setup with less confusion, import records with better guardrails, manage employee updates more confidently, and rely on reports that are safer and more polished in everyday use. That reduces the small breakdowns that usually force businesses back into side chats, spreadsheet cleanup, or manual checking. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where onboarding, employee data, reporting, and operational controls all work together cleanly. We are continuing to build toward a product Filipino businesses can rely on not just when things go right, but when real daily complexity shows up."
+    ]
+  },
+  {
+    "date": "2026-05-16",
     "badge": "Fix",
     "title": "Payroll Runs Get Safer, Screens Get Less Annoying",
     "description": "We made payroll generation more accurate for daily-rate employees, cleaned up how payroll details are shown, fixed a frustrating leave setup scroll issue, and added a movable feedback button that stays out of the way.",
