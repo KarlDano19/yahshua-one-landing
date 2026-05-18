@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-17",
+    "badge": "Progress Update",
+    "title": "Reports Get Safer and Easier",
+    "description": "We strengthened report safety, cleaned up accessibility across the new reports experience, and pushed journal entry imports forward so YAHSHUA One feels more trustworthy and practical in real daily use.",
+    "body": [
+      "For many Filipino business owners, the hardest part of running a backoffice is not only getting data into the system. It is trusting that the right people see the right information, that important screens are easy to use, and that a mistake in one workflow does not quietly create a bigger problem later. Reporting especially has to feel safe and clear, because teams depend on it when reviewing payroll, HR, and accounting activity under real pressure. If reports are confusing, inaccessible, or too loose with tenant boundaries, confidence drops fast. This update matters because it strengthens the parts of YAHSHUA One that help the product feel dependable when real businesses are using it every day.",
+      "Yesterday's work focused on making the new reports experience stronger from multiple angles at once. In plain language, we tightened report safety so data handling is more disciplined, error states are clearer, and the system is better protected against unsafe behavior behind the scenes. We also improved accessibility by making important controls easier to understand with labels, making selector cards more keyboard-friendly, and helping the interface behave more cleanly for different kinds of users. On top of that, journal entry bulk import work kept moving forward, which brings accounting teams closer to a simpler way to bring records in without extra manual encoding. Altogether, this is the kind of progress that makes the product feel less fragile and much more ready for serious day-to-day operations.",
+      "What this means for you is a backoffice that keeps getting safer, easier to navigate, and more practical as your workflows grow more complex. Your team can move toward a reporting experience that is clearer to use, more respectful of boundaries, and less likely to create confusion when something goes wrong. Accounting teams also get closer to a smoother import path for journal entries, which reduces repetitive admin work and makes the system more useful as a real source of truth. That matters because YAHSHUA One is not just trying to look complete on the surface. We are building toward a payroll and HR backoffice with the operational discipline, accounting depth, and usability Filipino businesses need to rely on it with confidence."
+    ]
+  },
+  {
     "date": "2026-05-16",
     "badge": "Progress Update",
     "title": "Trust, Access, and Imports Grow Up",
