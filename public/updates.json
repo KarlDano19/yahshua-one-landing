@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-19",
+    "badge": "Progress Update",
+    "title": "Employee Transfers Get Way Easier to Manage",
+    "description": "We made employee transfer requests far more practical with bulk handling, clearer approval steps, better department and cost center controls, and stronger duplicate protection.",
+    "body": [
+      "Yesterday's work focused on one very real admin headache: moving people between departments, sections, schedules, or locations without turning it into a spreadsheet mess. YAHSHUA One is getting much better at handling employee transfer requests in a way that feels organized instead of fragile.",
+      "In plain language, teams can now prepare and review transfer requests for multiple employees at once, fine-tune details like department, section, cost center, job level, and work schedule more cleanly, and track when a transfer is part of a realignment. We also strengthened the approval flow so transfer requests move through clearer review stages before they are finalized.",
+      "What this means for you is less repetitive encoding, fewer duplicate or conflicting transfer actions, and a cleaner path for handling org changes as your team grows. It is another steady step toward a backoffice that can carry the messy reality of HR operations without making your team do extra cleanup afterward."
+    ]
+  },
+  {
     "date": "2026-05-18",
     "badge": "Progress Update",
     "title": "Approvals and Backoffice Muscle Expand",
