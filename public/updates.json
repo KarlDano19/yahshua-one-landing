@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-05-20",
+    "badge": "Improvement",
+    "title": "Approvals Get Smarter and Easier to Trust",
+    "description": "We made approval routes clearer and more dependable, with better previews, tighter review logic, and safer handling when requests need to move through the right people.",
+    "body": [
+      "Yesterday's work focused heavily on one of the most important parts of running payroll and HR well: approvals. When approval steps are unclear, too fragile, or hard to review, even simple requests can turn into delays, back-and-forth, and avoidable mistakes. YAHSHUA One is getting much better at handling that part of the workflow in a way that feels more organized and trustworthy.",
+      "In plain language, teams can move toward approval flows that are easier to set up, preview, and follow before a request is finalized. We improved how approval routes are resolved, made request details clearer during review, and added stronger fallback handling so the system behaves more predictably when real-world edge cases show up. We also kept tightening the screens and logic behind the approval pipeline so admins have a clearer picture of what should happen and who should act next.",
+      "What this means for you is less guesswork, fewer approval bottlenecks, and a safer path for handling requests that affect employees, payroll, and company operations. It is another steady step toward a backoffice that can carry real business rules without becoming confusing the moment a process gets more nuanced. We are continuing to build YAHSHUA One into a platform Filipino businesses can trust when daily operations get busy and decisions need to move cleanly."
+    ]
+  },
+  {
+    "date": "2026-05-20",
     "badge": "Progress Update",
     "title": "Approvals Become Real Operational Control",
     "description": "We shipped a major wave of approval, accounting, request, and company-control improvements that makes YAHSHUA One feel much more ready for the real daily complexity of payroll and HR operations.",
