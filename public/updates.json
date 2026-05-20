@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-20",
+    "badge": "Progress Update",
+    "title": "Approvals Become Real Operational Control",
+    "description": "We shipped a major wave of approval, accounting, request, and company-control improvements that makes YAHSHUA One feel much more ready for the real daily complexity of payroll and HR operations.",
+    "body": [
+      "As Filipino businesses grow, the hard part of payroll and HR is rarely one big dramatic task. It is the steady stream of approvals, exceptions, policy checks, employee changes, and accounting details that all need to move cleanly together. When those moments are handled through side chats, memory, or half-clear screens, small delays turn into operational drag fast. Business owners need a backoffice that can handle real authority, real accountability, and real edge cases without becoming fragile. This update matters because it pushes YAHSHUA One closer to being that kind of system.",
+      "Yesterday's work delivered a serious wave of product depth across approvals, requests, company settings, and accounting controls. In plain language, teams can move toward cleaner approval routes with better previews, smarter fallback handling, clearer review paths, and stronger visibility into what should happen before a request is finalized. We also strengthened practical workflows around employee imports, transfers, overtime validation, timesheet clarity, security settings, company communication, payroll authority, and request handling that businesses deal with every week. On the accounting side, journal controls, audit visibility, reversals, period locks, and related safeguards kept moving forward so financial records are easier to trust. Put simply, YAHSHUA One is becoming more disciplined behind the scenes while also becoming easier for ordinary teams to use in day-to-day work.",
+      "What this means for you is less guesswork, less manual follow-up, and fewer moments where important work gets stuck between people or systems. Your team can move toward a backoffice where approvals feel intentional, records feel safer, and common HR or payroll actions are easier to review and complete with confidence. That saves time, reduces avoidable confusion, and helps the product support the messy reality of a growing business instead of forcing the business to work around the software. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where approvals, employee operations, reporting, and accounting discipline all reinforce each other in one place. We are continuing to build toward a platform Filipino businesses can rely on when daily operations get busy, nuanced, and very real."
+    ]
+  },
+  {
     "date": "2026-05-19",
     "badge": "Progress Update",
     "title": "Employee Transfers Get Way Easier to Manage",
