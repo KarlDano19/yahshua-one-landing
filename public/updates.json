@@ -2,6 +2,17 @@
   {
     "date": "2026-05-21",
     "badge": "Progress Update",
+    "title": "Reports Get Clearer While the Backoffice Gets Stronger",
+    "description": "We pushed YAHSHUA One forward with a more complete reports experience, deeper accounting tools, and a cleaner everyday interface that is easier for teams to move through.",
+    "body": [
+      "Yesterday's work focused on making YAHSHUA One feel more complete both on the surface and underneath. We improved the reports experience so teams can review business information in a cleaner, more usable way instead of feeling like reporting is still rough around the edges.",
+      "We also moved a big block of accounting work forward, including stronger foundations for journals, general ledger flows, cash handling, planning, and purchasing-related processes. In plain language, the product is getting better at supporting the real finance and backoffice work businesses have to manage day to day — not just payroll and HR on their own.",
+      "On top of that, navigation and onboarding got cleaner, which means teams should have an easier time getting around the product and understanding where to go next. It is another steady step toward a backoffice system Filipino businesses can actually rely on when daily operations start getting busy and detailed."
+    ]
+  },
+  {
+    "date": "2026-05-21",
+    "badge": "Progress Update",
     "title": "Accounting Depth Meets Everyday Clarity",
     "description": "We shipped a big wave of accounting, approvals, navigation, and admin usability improvements that makes YAHSHUA One feel more complete, more understandable, and far more dependable in day-to-day operations.",
     "body": [
