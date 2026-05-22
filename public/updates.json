@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-22",
+    "badge": "Progress Update",
+    "title": "Payroll Controls Get Much Clearer",
+    "description": "We shipped clearer payroll adjustment controls, better review visibility, stronger admin setup for payroll bases, and a cleaner permissions experience that makes daily operations easier to trust.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not only come from getting the final amount right. It also comes from the messy middle where adjustments, reviews, and admin decisions have to make sense to the people doing the work. When a payroll team cannot clearly see what changed, where it should apply, or who should have access to certain actions, small issues turn into delays and second-guessing fast. That friction usually leads to side explanations, repeated checking, and too much dependence on memory. This update matters because it focuses on making those everyday payroll controls clearer and easier to trust.",
+      "Yesterday's work pushed several practical improvements forward across the payroll experience. In plain language, we made it easier to review payroll adjustments by showing them more clearly during run review instead of hiding important details behind extra effort. We also expanded the setup tools for adjustment components and payroll basis options, which helps admins shape payroll behavior in a cleaner, more organized way. On top of that, we added lightweight warnings that help teams catch placement mistakes before they become confusing results later. We also improved how company access information is explained, so people get clearer guidance about what a role can actually do without needing awkward back-and-forth.",
+      "What this means for you is a backoffice that keeps becoming easier to operate with confidence. Your team can review payroll changes more clearly, manage setup with fewer blind spots, and avoid small mistakes that would normally create cleanup work later. That reduces confusion, shortens the time spent double-checking routine decisions, and helps the product feel more dependable in the exact moments payroll teams feel pressure. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where payroll controls, permissions, and everyday admin workflows all reinforce each other in one place. We are continuing to build toward a platform Filipino businesses can rely on when payroll work becomes detailed, nuanced, and very real."
+    ]
+  },
+  {
     "date": "2026-05-21",
     "badge": "Progress Update",
     "title": "Reports Get Clearer While the Backoffice Gets Stronger",
