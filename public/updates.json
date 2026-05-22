@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-05-22",
+    "badge": "Fix",
+    "title": "Payroll Setup Gets Smoother and Access Gets Clearer",
+    "description": "We made onboarding smoother, cleaned up payroll run setup and export behavior, improved role permissions, and fixed a backend issue that helps the accounting side stay steadier.",
+    "body": [
+      "Yesterday's work focused on the parts of a backoffice product people notice fastest when they are trying to get real work done: setup, permissions, and whether the system behaves cleanly when payroll work starts moving. YAHSHUA One is getting better at reducing those small frictions before they turn into support questions or delayed work.",
+      "In plain language, we fixed parts of the onboarding flow so new users get a smoother first experience, cleaned up payroll run setup and export behavior so teams can prepare payroll with less confusion, and improved role permissions so the right people can access the right actions more reliably. We also fixed an accounting-side issue behind the scenes that helps the product stay more stable during everyday use.",
+      "What this means for you is a product that keeps becoming easier to trust in the ordinary moments. New users should have a cleaner start, payroll teams should hit fewer rough edges while setting things up, and admins should get more predictable access behavior. It is steady progress, but it is the kind that makes a serious backoffice feel less fragile and more ready for real daily operations."
+    ]
+  },
+  {
+    "date": "2026-05-22",
     "badge": "Progress Update",
     "title": "Payroll Controls Get Much Clearer",
     "description": "We shipped clearer payroll adjustment controls, better review visibility, stronger admin setup for payroll bases, and a cleaner permissions experience that makes daily operations easier to trust.",
