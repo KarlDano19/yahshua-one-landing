@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-27",
+    "badge": "Progress Update",
+    "title": "Payroll Rules Become Truly Practical",
+    "description": "We pushed YAHSHUA One forward with guided payroll rule building, smarter schedule logic, stronger payslip and deduction controls, and new home and kiosk improvements that make the platform more usable in real daily operations.",
+    "body": [
+      "For many Filipino business owners, payroll gets stressful long before payday itself. The real pressure shows up when schedules change, leaves affect expected work time, deductions need to follow the right logic, and the team still needs clear payslips they can trust. If those rules live in scattered notes or in someone's head, every unusual case becomes a potential mistake and every correction becomes extra admin work. A serious backoffice has to help businesses handle those real-world conditions without turning payroll into a black box. This update matters because YAHSHUA One is getting much better at making payroll logic structured, reviewable, and practical for everyday use.",
+      "Yesterday's work shipped a major block of product depth across payroll rules, work schedules, and everyday usability. In plain language, YAHSHUA One is gaining a clearer way to build payroll decisions, test their impact, trace why a result happened, and control how deductions, compensation inputs, adjustments, and payslip presentation should behave. We also pushed work schedule logic much further, including guided rule building, smarter expected-time evaluation, cleaner handling for approved leave situations, and a stronger path for retroactive schedule corrections when reality changes after the fact. On top of that, the product kept improving around the edges that matter in real use, with a new activity feed on the home screen, careers added to the kiosk experience, better employee ID visibility, and more useful request information where teams review day-to-day actions. Put simply, the platform is becoming both more powerful behind the scenes and easier to understand in the hands of real teams.",
+      "What this means for you is more confidence that YAHSHUA One can handle payroll and HR operations with the nuance a growing business actually needs. Your team gets closer to a setup where payroll rules are easier to shape, schedules are easier to trust, and the reasoning behind outcomes is easier to explain before confusion turns into support work. That reduces manual interpretation, lowers the risk of avoidable errors, and helps the product feel less like a collection of screens and more like a real operating system for the backoffice. It also moves YAHSHUA One closer to being a complete payroll and HR platform where time, pay, requests, access, and communication all reinforce each other in one place. We are continuing to build toward a system Filipino businesses can rely on not only when operations are simple, but when the real messy details of daily work show up."
+    ]
+  },
+  {
     "date": "2026-05-26",
     "badge": "Progress Update",
     "title": "Payroll Access Gets Much Smarter",
