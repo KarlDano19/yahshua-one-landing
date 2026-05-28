@@ -2,28 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Check } from "lucide-react";
-import { LogoMark } from "./components/Logo";
+import Image from "next/image";
 
-/* ═══════════════════════════════════════════════════════════════
-   BRAND — YAHSHUA One logo palette
-   Deep blue → cyan-blue → light aqua
-═══════════════════════════════════════════════════════════════ */
-const BG     = "#07090f";
-const CARD   = "#0c1118";
-const BORDER = "rgba(255,255,255,0.07)";
-const A1     = "#2980B0";  // deep blue
-const A2     = "#28B0E8";  // cyan-blue (primary)
-const A3     = "#7DE5F0";  // light aqua
-const GRAD   = `linear-gradient(135deg, ${A1} 0%, ${A3} 100%)`;
-const W70    = "rgba(255,255,255,0.70)";
-const W50    = "rgba(255,255,255,0.50)";
-const W30    = "rgba(255,255,255,0.30)";
-const W10    = "rgba(255,255,255,0.10)";
-const W07    = "rgba(255,255,255,0.07)";
-
-/* ═══════════════════════════════════════════════════════════════
-   TYPES
-═══════════════════════════════════════════════════════════════ */
+/* ── Types ── */
 interface Update {
   date: string;
   badge: string;
@@ -31,9 +12,7 @@ interface Update {
   description: string;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   INTERSECTION OBSERVER
-═══════════════════════════════════════════════════════════════ */
+/* ── Intersection observer ── */
 function useInView<T extends Element = HTMLDivElement>(threshold = 0.12) {
   const ref = useRef<T>(null);
   const [visible, setVisible] = useState(false);
@@ -41,7 +20,9 @@ function useInView<T extends Element = HTMLDivElement>(threshold = 0.12) {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.unobserve(el); } },
+      ([entry]) => {
+        if (entry.isIntersecting) { setVisible(true); obs.unobserve(el); }
+      },
       { threshold }
     );
     obs.observe(el);
@@ -50,9 +31,7 @@ function useInView<T extends Element = HTMLDivElement>(threshold = 0.12) {
   return { ref, visible };
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   REVEAL — scroll-triggered entrance
-═══════════════════════════════════════════════════════════════ */
+/* ── Reveal wrapper ── */
 function Reveal({
   children, delay = 0, className = "", direction = "up",
 }: {
@@ -75,358 +54,287 @@ function Reveal({
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   BENTO CARD
-═══════════════════════════════════════════════════════════════ */
-function BentoCard({
-  children, className = "", glow = false, accentBg = false, style = {},
-}: {
-  children: React.ReactNode; className?: string;
-  glow?: boolean; accentBg?: boolean; style?: React.CSSProperties;
-}) {
+/* ── Nav dot ── */
+function Dot() {
   return (
-    <div
-      className={`rounded-2xl overflow-hidden relative ${className}`}
-      style={{
-        background: accentBg
-          ? `linear-gradient(135deg, rgba(41,128,176,0.22) 0%, rgba(125,229,240,0.09) 100%), ${CARD}`
-          : CARD,
-        border: `1px solid ${BORDER}`,
-        boxShadow: glow
-          ? `0 0 70px rgba(40,176,232,0.12), 0 1px 0 rgba(255,255,255,0.05) inset`
-          : undefined,
-        ...style,
-      }}
-    >
-      {children}
-    </div>
+    <span style={{
+      display: "inline-block", width: 6, height: 6, borderRadius: "50%",
+      background: "var(--accent)", boxShadow: "0 0 0 4px var(--accent-glow)",
+      flexShrink: 0,
+    }} />
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   CARD LABEL
-═══════════════════════════════════════════════════════════════ */
-function CardLabel({ children }: { children: React.ReactNode }) {
+/* ── Arrow icon ── */
+function Arrow({ size = 14 }: { size?: number }) {
   return (
-    <div className="text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: A2 }}>
-      {children}
-    </div>
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none"
+      style={{ transition: "transform .2s ease", flexShrink: 0 }}>
+      <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5"
+        stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   MOCKUP: PAYROLL
-═══════════════════════════════════════════════════════════════ */
-function PayrollMockup() {
-  const employees = [
-    { name: "Juan dela Cruz", role: "Manager · 22 days", amount: "28,500", init: "JD", h: 200 },
-    { name: "Maria Santos",   role: "Associate · 22 days", amount: "18,000", init: "MS", h: 210 },
-    { name: "Pedro Reyes",    role: "Associate · 20 days", amount: "16,363", init: "PR", h: 220 },
-    { name: "Ana Villanueva", role: "Admin · 22 days",     amount: "15,200", init: "AV", h: 230 },
+/* ── Product preview sidebar ── */
+function ProductSidebar() {
+  const navItems = [
+    { label: "Overview", active: true, icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+        <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+        <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+        <rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+      </svg>
+    )},
+    { label: "Inbox", badge: "12", icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <path d="M2 4H14M2 8H14M2 12H14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    )},
+  ];
+  const modules = [
+    { label: "ERP", icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <path d="M3 12V6L8 3L13 6V12" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+        <path d="M6 12V9H10V12" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+      </svg>
+    )},
+    { label: "People & Payroll", icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <circle cx="8" cy="6" r="2.5" stroke="currentColor" strokeWidth="1.4"/>
+        <path d="M3 13C3.5 10.5 5.5 9.5 8 9.5C10.5 9.5 12.5 10.5 13 13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    )},
+    { label: "Accounting", icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <path d="M2 13V3M2 13H14M5 10V8M8 10V5M11 10V7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    )},
+    { label: "Tax & Compliance", icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <rect x="3" y="2" width="10" height="12" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+        <path d="M6 6H10M6 9H10M6 12H8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    )},
+    { label: "Personal", icon: (
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.4"/>
+        <path d="M5 8L7 10L11 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    )},
   ];
   return (
-    <div className="w-full rounded-xl p-4 bg-white shadow-sm">
-      <div className="flex items-center justify-between mb-3">
-        <div>
-          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#9896aa]">Payroll Run</div>
-          <div className="text-sm font-bold text-[#1c1a2e]">March 2026</div>
-        </div>
-        <div className="text-[10px] px-2.5 py-1 rounded-full font-semibold bg-[#e8f6fc] text-[#2980B0]">4 employees</div>
+    <aside style={{
+      borderRight: "1px solid var(--line-2)",
+      padding: "18px 14px",
+      background: "linear-gradient(180deg, var(--bg) 0%, transparent 100%)",
+      minWidth: 0,
+    }}>
+      <div style={{
+        display: "flex", alignItems: "center", gap: 8, padding: 8,
+        borderRadius: 8, background: "var(--surface)", border: "1px solid var(--line-2)",
+        fontSize: 13, fontWeight: 500, marginBottom: 16,
+      }}>
+        <span style={{
+          width: 22, height: 22, borderRadius: 6, background: "var(--ink)",
+          display: "grid", placeItems: "center", color: "#fff", fontSize: 10, fontWeight: 600, flexShrink: 0,
+        }}>N</span>
+        <span>Northwind Trading</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" style={{ marginLeft: "auto", color: "var(--soft)", flexShrink: 0 }}>
+          <path d="M3 5L6 8L9 5" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+        </svg>
       </div>
-      <div className="space-y-2 mb-3">
-        {employees.map((emp) => (
-          <div key={emp.init} className="flex items-center justify-between py-1.5 border-b border-[#e8e6f0] last:border-0">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0"
-                style={{ background: `hsl(${emp.h}, 65%, 44%)` }}>
-                {emp.init}
-              </div>
-              <div>
-                <div className="text-xs font-semibold text-[#1c1a2e]">{emp.name}</div>
-                <div className="text-[10px] text-[#9896aa]">{emp.role}</div>
-              </div>
-            </div>
-            <div className="text-xs font-bold text-[#1c1a2e]">₱{emp.amount}</div>
-          </div>
-        ))}
-      </div>
-      <button className="w-full py-2 rounded-lg text-white text-xs font-semibold"
-        style={{ background: A2 }} tabIndex={-1} aria-hidden>Run Payroll →</button>
-    </div>
-  );
-}
 
-/* ═══════════════════════════════════════════════════════════════
-   MOCKUP: ACCOUNTING
-═══════════════════════════════════════════════════════════════ */
-function AccountingMockup() {
-  const bars = [55, 72, 48, 88, 65, 95, 74];
-  return (
-    <div className="w-full rounded-xl p-4 bg-white shadow-sm">
-      <div className="text-[10px] font-semibold uppercase tracking-wider text-[#9896aa] mb-0.5">Profit & Loss</div>
-      <div className="text-sm font-bold text-[#1c1a2e] mb-3">Q1 2026</div>
-      <div className="flex items-end gap-1 h-14 mb-3">
-        {bars.map((h, i) => (
-          <div key={i} className="flex-1 rounded-t"
-            style={{ height: `${h}%`, background: i === 5 ? A2 : `rgba(40,176,232,0.18)` }} />
-        ))}
+      <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--soft)", margin: "18px 8px 6px" }}>
+        Workspace
       </div>
-      {[
-        { label: "Revenue",    value: "₱1.24M" },
-        { label: "Expenses",   value: "₱0.81M" },
-        { label: "Net Income", value: "₱430K", accent: true },
-      ].map((row) => (
-        <div key={row.label} className="flex justify-between text-xs border-b border-[#e8e6f0] last:border-0 py-1.5">
-          <span className="text-[#9896aa]">{row.label}</span>
-          <span style={{ color: row.accent ? "#16a34a" : "#1c1a2e", fontWeight: row.accent ? 700 : 400 }}>{row.value}</span>
+      {navItems.map((item) => (
+        <div key={item.label} style={{
+          display: "flex", alignItems: "center", gap: 10, padding: "7px 10px",
+          borderRadius: 8, fontSize: 13,
+          background: item.active ? "var(--accent-50)" : "transparent",
+          color: item.active ? "var(--accent-2)" : "var(--ink-2)",
+          fontWeight: item.active ? 500 : 400,
+        }}>
+          <span style={{ color: "currentColor", opacity: 0.85, flexShrink: 0, display: "flex" }}>{item.icon}</span>
+          {item.label}
+          {item.badge && (
+            <span style={{ marginLeft: "auto", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)" }}>
+              {item.badge}
+            </span>
+          )}
         </div>
       ))}
-    </div>
+
+      <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--soft)", margin: "18px 8px 6px" }}>
+        Modules
+      </div>
+      {modules.map((item) => (
+        <div key={item.label} style={{
+          display: "flex", alignItems: "center", gap: 10, padding: "7px 10px",
+          borderRadius: 8, fontSize: 13, color: "var(--ink-2)",
+        }}>
+          <span style={{ opacity: 0.85, flexShrink: 0, display: "flex" }}>{item.icon}</span>
+          {item.label}
+        </div>
+      ))}
+    </aside>
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   MOCKUP: COMPLIANCE
-═══════════════════════════════════════════════════════════════ */
-function ComplianceMockup() {
-  const items = [
-    { name: "SSS Monthly Contribution", agency: "SSS",       due: "Mar 31",   s: "soon" },
-    { name: "BIR VAT Return (2550M)",   agency: "BIR",       due: "Mar 20 ✓", s: "done" },
-    { name: "PhilHealth Premium",       agency: "PhilHealth", due: "Apr 10",   s: "ok"   },
-    { name: "BIR 1601-C Withholding",   agency: "BIR",       due: "Apr 10",   s: "warn" },
+/* ── Product preview main ── */
+function ProductMain() {
+  const stats = [
+    { label: "Cash on hand", val: "₱ 2.41M", delta: "▲ 8.4% vs last mo.", up: true,
+      spark: "M0,18 L14,16 L28,14 L42,15 L56,10 L70,8 L84,6 L100,2" },
+    { label: "Headcount", val: "68", delta: "▲ 4 this quarter", up: true,
+      spark: "M0,20 L14,18 L28,17 L42,17 L56,14 L70,12 L84,11 L100,8" },
+    { label: "MRR", val: "₱ 612K", delta: "▲ 2.1%", up: true,
+      spark: "M0,16 L14,14 L28,15 L42,12 L56,11 L70,12 L84,9 L100,7" },
+    { label: "Burn rate", val: "₱ 184K", delta: "▼ 3.0%", up: false,
+      spark: "M0,8 L14,10 L28,11 L42,9 L56,13 L70,15 L84,14 L100,17" },
   ];
-  const C = {
-    soon: { bg: "#fff7ed", text: "#c2410c", dot: "#f97316" },
-    done: { bg: "#f0fdf4", text: "#166534", dot: "#22c55e" },
-    ok:   { bg: "rgba(40,176,232,0.07)", text: A2, dot: A2 },
-    warn: { bg: "#fef9c3", text: "#92400e", dot: "#f59e0b" },
-  };
-  return (
-    <div className="w-full rounded-xl p-4 bg-white shadow-sm">
-      <div className="flex items-center justify-between mb-3">
-        <div className="text-sm font-bold text-[#1c1a2e]">Upcoming Deadlines</div>
-        <div className="text-[10px] px-2 py-0.5 rounded-full text-white font-semibold bg-orange-500">2 due soon</div>
-      </div>
-      <div className="space-y-1.5">
-        {items.map((d) => {
-          const c = C[d.s as keyof typeof C];
-          return (
-            <div key={d.name} className="flex items-center justify-between rounded-lg px-2.5 py-2" style={{ background: c.bg }}>
-              <div className="flex items-center gap-2 min-w-0">
-                <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: c.dot }} />
-                <div className="min-w-0">
-                  <div className="text-xs font-semibold truncate text-[#1c1a2e]">{d.name}</div>
-                  <div className="text-[10px]" style={{ color: c.text }}>{d.agency}</div>
-                </div>
-              </div>
-              <div className="text-xs font-bold ml-2 flex-shrink-0" style={{ color: c.text }}>{d.due}</div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
+  const payroll = [
+    { init: "LP", name: "Lara Pacheco",    amt: "₱ 84,200", status: "ready" },
+    { init: "JM", name: "Jordan Mendoza",  amt: "₱ 72,500", status: "ready" },
+    { init: "RC", name: "Ria Castro",      amt: "₱ 68,000", status: "review" },
+    { init: "EM", name: "Eli Manansala",   amt: "₱ 91,400", status: "ready" },
+  ];
+  const tasks = [
+    { done: true,  label: "Categorized 142 transactions",      meta: "BPI · Maya · GCash" },
+    { done: true,  label: "Filed VAT for Q1",                  meta: "acknowledged · ref 99-22-148" },
+    { done: false, label: "Drafting Q2 cash flow forecast",     meta: "75% complete · ETA 14:50" },
+    { done: false, label: "Awaiting receipt — Manila Lights, Inc.", meta: "requested 2h ago" },
+  ];
 
-/* ═══════════════════════════════════════════════════════════════
-   MOCKUP: HR (compact)
-═══════════════════════════════════════════════════════════════ */
-function HRMockupCompact() {
-  const reqs = [
-    { name: "Maria Santos",   type: "Vacation Leave", dates: "Apr 3–5", init: "MS" },
-    { name: "Ana Villanueva", type: "Sick Leave",      dates: "Mar 22",  init: "AV" },
-  ];
   return (
-    <div className="w-full rounded-xl p-4 bg-white shadow-sm">
-      <div className="text-[10px] font-semibold uppercase tracking-wider text-[#9896aa] mb-3">Pending Requests</div>
-      <div className="space-y-2.5">
-        {reqs.map((req) => (
-          <div key={req.name} className="rounded-lg p-3" style={{ background: "rgba(40,176,232,0.06)", border: "1px solid rgba(40,176,232,0.12)" }}>
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0"
-                style={{ background: A1 }}>{req.init}</div>
-              <div>
-                <div className="text-xs font-semibold text-[#1c1a2e]">{req.name}</div>
-                <div className="text-[10px] text-[#9896aa]">{req.type} · {req.dates}</div>
-              </div>
-            </div>
-            <div className="flex gap-1.5">
-              <button className="flex-1 py-1 rounded-md text-[10px] font-semibold text-[#5c5878] bg-white border border-[#e8e6f0]"
-                tabIndex={-1} aria-hidden>Deny</button>
-              <button className="flex-1 py-1 rounded-md text-[10px] font-semibold text-white"
-                style={{ background: A2 }} tabIndex={-1} aria-hidden>Approve ✓</button>
-            </div>
+    <section style={{ padding: "26px 30px", minWidth: 0, overflowX: "hidden" }}>
+      <h3 style={{ margin: "0 0 4px", fontSize: 18, fontWeight: 600, letterSpacing: "-0.01em", display: "flex", alignItems: "center", gap: 10 }}>
+        Good afternoon, Lara
+        <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", fontWeight: 400 }}>Tue · 16:42 PHT</span>
+      </h3>
+      <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 22 }}>Here is what needs your attention today — three items, ten minutes.</p>
+
+      {/* Ask bar */}
+      <div style={{
+        border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 14,
+        padding: "14px 16px", display: "flex", alignItems: "center", gap: 12, fontSize: 14,
+        color: "var(--muted)", boxShadow: "var(--shadow-sm)", marginBottom: 0,
+      }}>
+        <span style={{
+          width: 22, height: 22, borderRadius: 6, flexShrink: 0,
+          background: "linear-gradient(135deg, var(--accent), var(--accent-2))",
+          display: "grid", placeItems: "center", color: "#fff",
+        }}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 1L7.2 4.2L10.5 5.4L7.2 6.6L6 9.8L4.8 6.6L1.5 5.4L4.8 4.2L6 1Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span style={{ color: "var(--ink)", flex: 1 }}>
+          Reconcile last month&apos;s bank statements and flag unusual expenses
+          <span className="cursor-blink" />
+        </span>
+        <span style={{
+          fontFamily: "var(--font-geist-mono, monospace)",
+          background: "var(--bg-tint)", border: "1px solid var(--line)",
+          borderRadius: 6, padding: "2px 6px", fontSize: 11, color: "var(--ink-2)",
+        }}>⌘ K</span>
+      </div>
+
+      {/* Stats */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, margin: "18px 0" }}>
+        {stats.map((s) => (
+          <div key={s.label} style={{
+            border: "1px solid var(--line-2)", borderRadius: 12, padding: 14, background: "var(--surface)",
+          }}>
+            <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10.5, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--soft)" }}>{s.label}</div>
+            <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 6 }}>{s.val}</div>
+            <div style={{ fontSize: 11.5, color: s.up ? "var(--accent-2)" : "#B45B4E", marginTop: 2, display: "inline-flex", alignItems: "center", gap: 4 }}>{s.delta}</div>
+            <svg style={{ marginTop: 10, height: 24, width: "100%" }} viewBox="0 0 100 24" preserveAspectRatio="none">
+              <path d={s.spark} stroke={s.up ? "var(--accent-2)" : "#B45B4E"} fill="none" strokeWidth="1.5"/>
+            </svg>
           </div>
         ))}
       </div>
-    </div>
-  );
-}
 
-/* ═══════════════════════════════════════════════════════════════
-   DAY IN LIFE — DATA
-═══════════════════════════════════════════════════════════════ */
-const SCENARIOS = [
-  {
-    role: "Business Owner", emoji: "👔", scenario: "Payroll Cutoff",
-    saved: "2 days", timeBefore: "2 days", timeAfter: "20 min", barRatio: 0.07,
-    without: [
-      { icon: "📋", text: "Manual computation per employee" },
-      { icon: "😰", text: "Hours cross-checking timesheets" },
-      { icon: "🖨️", text: "Print & hand out payslips one by one" },
-      { icon: "🏦", text: "Encode bank disbursements manually" },
-    ],
-    with: [
-      { icon: "⚡", text: "Auto-computed from attendance data" },
-      { icon: "✅", text: "Gov contributions — instantly correct" },
-      { icon: "📧", text: "All payslips sent in one click" },
-      { icon: "🚀", text: "Bank file exported, ready to upload" },
-    ],
-  },
-  {
-    role: "HR Officer", emoji: "👩‍💼", scenario: "Leave Request Approval",
-    saved: "4 hours", timeBefore: "4 hrs", timeAfter: "30 sec", barRatio: 0.03,
-    without: [
-      { icon: "📝", text: "Paper form — hand it to HR" },
-      { icon: "🔍", text: "Manually check leave balance" },
-      { icon: "📱", text: "Approval via text message chain" },
-      { icon: "😓", text: "Update spreadsheet, hope payroll knows" },
-    ],
-    with: [
-      { icon: "📲", text: "Self-service submit in 30 seconds" },
-      { icon: "🤖", text: "Balance checked, conflicts flagged — auto" },
-      { icon: "👆", text: "One-tap approval, instant notifications" },
-      { icon: "🔄", text: "Payroll synced — zero manual entry" },
-    ],
-  },
-  {
-    role: "Accountant / Finance", emoji: "📒", scenario: "BIR Quarterly Filing",
-    saved: "3 days", timeBefore: "3 days", timeAfter: "1 hour", barRatio: 0.04,
-    without: [
-      { icon: "🗂️", text: "Hunt data across multiple spreadsheets" },
-      { icon: "🧮", text: "Recompute withholding tax by hand" },
-      { icon: "😱", text: "2–3 days prepping 1601-C docs" },
-      { icon: "⏰", text: "Scramble right before the deadline" },
-    ],
-    with: [
-      { icon: "📊", text: "All data organized in one place" },
-      { icon: "✅", text: "Tax computed automatically all quarter" },
-      { icon: "📄", text: "BIR-ready reports in minutes" },
-      { icon: "🔔", text: "Deadline alerts weeks in advance" },
-    ],
-  },
-  {
-    role: "Employee", emoji: "👷", scenario: "Payslip & Benefits Check",
-    saved: "days of waiting", timeBefore: "days", timeAfter: "instant", barRatio: 0.02,
-    without: [
-      { icon: "⏳", text: "Wait for HR to print your payslip" },
-      { icon: "🤷", text: "No idea how deductions are computed" },
-      { icon: "📞", text: "Call HR just to check leave balance" },
-      { icon: "👀", text: "Zero visibility into your own records" },
-    ],
-    with: [
-      { icon: "📱", text: "Payslip on your phone, anytime" },
-      { icon: "🔍", text: "Every deduction explained clearly" },
-      { icon: "🏖️", text: "Check leave & file requests instantly" },
-      { icon: "📋", text: "Full view of benefits & history" },
-    ],
-  },
-];
-
-/* ═══════════════════════════════════════════════════════════════
-   SCENARIO CARD
-═══════════════════════════════════════════════════════════════ */
-function ScenarioCard({
-  item, delay = 0,
-}: {
-  item: (typeof SCENARIOS)[number]; delay?: number;
-}) {
-  const { ref, visible } = useInView<HTMLDivElement>();
-  return (
-    <Reveal delay={delay}>
-      <div className="rounded-3xl overflow-hidden" style={{ border: `1px solid ${BORDER}`, background: CARD }}>
-
-        {/* Header */}
-        <div className="px-5 py-4 flex items-start justify-between gap-3"
-          style={{ background: "rgba(255,255,255,0.025)", borderBottom: `1px solid ${BORDER}` }}>
-          <div className="flex items-start gap-3 min-w-0">
-            <span className="flex-shrink-0" style={{ fontSize: "2rem", lineHeight: 1.1 }}>{item.emoji}</span>
-            <div className="min-w-0">
-              <div className="text-[10px] font-bold uppercase tracking-wider" style={{ color: W30 }}>{item.role}</div>
-              <div className="font-serif text-white leading-tight" style={{ fontWeight: 400, letterSpacing: "-0.02em", fontSize: "clamp(1.1rem, 4vw, 1.3rem)" }}>{item.scenario}</div>
+      {/* Panels */}
+      <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
+        {/* Payroll panel */}
+        <div style={{ border: "1px solid var(--line-2)", borderRadius: 12, padding: 14, background: "var(--surface)" }}>
+          <h4 style={{ margin: "0 0 12px", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            Next payroll cutoff
+            <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)", fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase" }}>in 2 days</span>
+          </h4>
+          {payroll.map((row) => (
+            <div key={row.init} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "9px 0", borderBottom: "1px dashed var(--line-2)", fontSize: 13 }}
+              className="last:border-0">
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--bg-tint)", color: "var(--ink-2)", fontSize: 11, display: "grid", placeItems: "center", fontWeight: 500 }}>{row.init}</span>
+                <span>{row.name}</span>
+              </div>
+              <span style={{ fontVariantNumeric: "tabular-nums" }}>{row.amt}</span>
+              <span style={{
+                fontSize: 11, padding: "2px 8px", borderRadius: 999,
+                fontFamily: "var(--font-geist-mono, monospace)", letterSpacing: "0.04em",
+                background: row.status === "review" ? "oklch(0.96 0.04 75)" : "var(--accent-50)",
+                color: row.status === "review" ? "#8A5A2A" : "var(--accent-2)",
+              }}>{row.status}</span>
             </div>
-          </div>
-          <div className="text-right flex-shrink-0 pl-2">
-            <div className="text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: W30 }}>you save</div>
-            <div className="font-sans leading-none"
-              style={{ fontSize: "clamp(1.2rem, 4vw, 1.7rem)", color: A3, fontWeight: 700 }}>{item.saved}</div>
-          </div>
+          ))}
         </div>
 
-        {/* Animated speed bars */}
-        <div ref={ref} className="px-6 py-5 flex flex-col gap-4"
-          style={{ borderBottom: `1px solid ${BORDER}` }}>
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-red-400 whitespace-nowrap">✕ Without AI</span>
-              <span className="text-lg font-bold text-red-400 ml-3">{item.timeBefore}</span>
-            </div>
-            <div className="h-3 rounded-full overflow-hidden" style={{ background: "rgba(239,68,68,0.14)" }}>
-              <div className="h-full rounded-full bg-red-400 transition-all duration-1000 ease-out"
-                style={{ width: visible ? "100%" : "0%" }} />
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold uppercase tracking-wider whitespace-nowrap" style={{ color: A2 }}>⚡ With AI</span>
-              <span className="text-lg font-bold ml-3" style={{ color: A2 }}>{item.timeAfter}</span>
-            </div>
-            <div className="h-3 rounded-full overflow-hidden" style={{ background: "rgba(40,176,232,0.14)" }}>
-              <div className="h-full rounded-full transition-all duration-700 ease-out"
-                style={{ width: visible ? `${item.barRatio * 100}%` : "0%", transitionDelay: "250ms", background: A2 }} />
-            </div>
-          </div>
-        </div>
-
-        {/* Icon rows */}
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="p-6 md:border-r" style={{ borderColor: BORDER }}>
-            <ul className="space-y-4">
-              {item.without.map((pt, j) => (
-                <li key={j} className="flex items-center gap-3.5">
-                  <span className="text-xl flex-shrink-0 grayscale opacity-35">{pt.icon}</span>
-                  <span className="text-sm font-medium leading-snug" style={{ color: W30 }}>{pt.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="p-6" style={{ background: "rgba(40,176,232,0.04)" }}>
-            <ul className="space-y-4">
-              {item.with.map((pt, j) => (
-                <li key={j} className="flex items-center gap-3.5">
-                  <span className="text-xl flex-shrink-0">{pt.icon}</span>
-                  <span className="text-sm font-semibold leading-snug text-white">{pt.text}</span>
-                </li>
-              ))}
-            </ul>
+        {/* AI tasks panel */}
+        <div style={{ border: "1px solid var(--line-2)", borderRadius: 12, padding: 14, background: "var(--surface)" }}>
+          <h4 style={{ margin: "0 0 12px", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            What AI is doing
+            <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)", fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase" }}>live</span>
+          </h4>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {tasks.map((task, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13 }}>
+                <span style={{
+                  width: 16, height: 16, borderRadius: 5, flexShrink: 0, marginTop: 1,
+                  display: "grid", placeItems: "center",
+                  border: task.done ? "none" : "1.5px solid var(--line)",
+                  background: task.done ? "var(--accent)" : "transparent",
+                  color: "#fff",
+                }}>
+                  {task.done && (
+                    <svg width="10" height="10" viewBox="0 0 10 10">
+                      <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
+                </span>
+                <div>
+                  <div style={{ color: task.done ? "var(--soft)" : "inherit", textDecoration: task.done ? "line-through" : "none" }}>{task.label}</div>
+                  <div style={{ color: "var(--soft)", fontSize: 11.5, marginTop: 2, fontFamily: "var(--font-geist-mono, monospace)" }}>{task.meta}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </Reveal>
+    </section>
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════
    PAGE
-═══════════════════════════════════════════════════════════════ */
+══════════════════════════════════════════════════════════ */
 export default function Home() {
   const [updates, setUpdates] = useState<Update[] | null>(null);
   const [form, setForm] = useState({ name: "", email: "", company: "", size: "" });
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formMsg, setFormMsg] = useState("");
+  const [navScrolled, setNavScrolled] = useState(false);
 
   useEffect(() => {
     fetch("/updates.json").then((r) => r.json()).then(setUpdates).catch(() => setUpdates([]));
+    const onScroll = () => setNavScrolled(window.scrollY > 8);
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => document.removeEventListener("scroll", onScroll);
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -447,318 +355,534 @@ export default function Home() {
     }
   }
 
-  return (
-    <div style={{ background: BG, color: "#fff", fontFamily: "var(--font-inter, sans-serif)", minHeight: "100vh" }}>
+  /* ── Shared btn styles ── */
+  const btnBase: React.CSSProperties = {
+    display: "inline-flex", alignItems: "center", gap: 8,
+    height: 44, padding: "0 18px", borderRadius: 999, border: "1px solid transparent",
+    fontWeight: 500, fontSize: 14.5, cursor: "pointer", textDecoration: "none",
+    transition: "background .2s ease, border-color .2s ease, box-shadow .2s ease",
+    fontFamily: "inherit",
+  };
+  const btnPrimary: React.CSSProperties = {
+    ...btnBase,
+    background: "var(--ink)", color: "#fff", borderColor: "var(--ink)",
+    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 2px rgba(15,17,21,0.18)",
+  };
+  const btnGhost: React.CSSProperties = {
+    ...btnBase,
+    background: "transparent", color: "var(--ink)", borderColor: "var(--line)",
+  };
+  const btnSm: React.CSSProperties = { height: 36, padding: "0 14px", fontSize: 13.5 };
 
-      {/* ── NAVBAR ───────────────────────────────────────── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
-        style={{ background: "rgba(7,9,15,0.88)", borderBottom: `1px solid ${BORDER}` }}>
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <LogoMark size={28} />
-            <span className="font-semibold text-white text-sm tracking-tight">YAHSHUA One</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="/updates" className="text-sm font-medium hidden sm:block transition-opacity hover:opacity-70"
-              style={{ color: W50 }}>What's New</a>
-            <a href="#waitlist"
-              className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
-              style={{ background: GRAD }}>
-              Join Waitlist
+  return (
+    <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh" }}>
+
+      {/* ── NAV ── */}
+      <div style={{
+        position: "sticky", top: 0, zIndex: 50,
+        backdropFilter: "blur(14px)",
+        background: "color-mix(in oklab, var(--bg) 78%, transparent)",
+        borderBottom: navScrolled ? "1px solid var(--line)" : "1px solid transparent",
+        transition: "border-color .2s ease",
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <div style={{ height: 64, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
+            {/* Brand */}
+            <a href="#" style={{ display: "flex", alignItems: "center", gap: 10 }} aria-label="YAHSHUA One home">
+              <Image src="/logo.jpg" alt="YAHSHUA One" width={28} height={28} style={{ borderRadius: 8, objectFit: "cover", flexShrink: 0 }} priority />
+              <span style={{ fontWeight: 600, letterSpacing: "-0.02em", fontSize: 16 }}>
+                YAHSHUA <span style={{ color: "var(--muted)", fontWeight: 400 }}>One</span>
+              </span>
             </a>
+
+            {/* Links */}
+            <nav style={{ display: "flex", alignItems: "center", gap: 4 }} aria-label="Primary">
+              {[
+                { label: "Platform", href: "#platform" },
+                { label: "Modules",  href: "#modules" },
+                { label: "Intelligence", href: "#intelligence" },
+                { label: "Pricing",  href: "#waitlist" },
+                { label: "What's New", href: "/updates" },
+              ].map((link) => (
+                <a key={link.label} href={link.href} style={{
+                  padding: "8px 12px", borderRadius: 8, fontSize: 14, color: "var(--ink-2)",
+                  transition: "background .15s ease",
+                }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-tint)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA */}
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
+              <a href="https://app.yahshua.one/" style={{ ...btnPrimary, ...btnSm }}>
+                Start free <Arrow />
+              </a>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
 
-      {/* ── HERO ─────────────────────────────────────────── */}
-      <main>
-      <section className="relative pt-36 pb-16 px-6 overflow-hidden" aria-label="Hero">
-        {/* Ambient glow */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: `radial-gradient(ellipse 80% 55% at 50% -10%, rgba(40,176,232,0.10) 0%, transparent 70%)`,
+      {/* ── HERO ── */}
+      <header style={{ padding: "84px 0 56px", position: "relative", overflow: "hidden" }}>
+        {/* Aurora glow */}
+        <div style={{
+          position: "absolute", top: -200, left: "50%", transform: "translateX(-50%)",
+          width: 1100, height: 700, pointerEvents: "none", zIndex: 0, filter: "blur(20px)",
+          background: "radial-gradient(45% 55% at 50% 30%, var(--accent-glow), transparent 70%), radial-gradient(35% 45% at 30% 50%, oklch(0.9 0.06 215 / 0.4), transparent 70%)",
         }} />
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
 
-        <div className="relative max-w-7xl mx-auto text-center">
+          {/* Badge */}
           <Reveal>
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold mb-8"
-              style={{ background: "rgba(40,176,232,0.1)", color: A3, border: `1px solid rgba(40,176,232,0.2)` }}>
-              ✦ Now in Beta · Building in public
-            </span>
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 12px 6px 8px",
+              border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999,
+              fontSize: 12.5, color: "var(--ink-2)", boxShadow: "var(--shadow-sm)", marginBottom: 22,
+            }}>
+              <span style={{
+                background: "var(--accent-50)", color: "var(--accent-2)",
+                padding: "2px 8px", borderRadius: 999,
+                fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10.5,
+                letterSpacing: "0.04em", textTransform: "uppercase",
+              }}>v1.0</span>
+              <span>Now open for early access</span>
+            </div>
           </Reveal>
 
+          {/* Headline */}
           <Reveal delay={60}>
-            <h1 className="font-serif text-white"
-              style={{ fontSize: "clamp(3.2rem, 9vw, 7rem)", letterSpacing: "-0.025em", lineHeight: 0.97, fontWeight: 400 }}>
-              Your AI knows
-              <br />
-              <span style={{
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                background: GRAD, backgroundClip: "text",
-              }}>
-                your business.
-              </span>
+            <h1 style={{
+              margin: "0 0 18px",
+              fontSize: "clamp(44px, 6.4vw, 88px)",
+              lineHeight: 1.02, letterSpacing: "-0.035em", fontWeight: 500,
+              maxWidth: 980, color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
+            }}>
+              The operating system<br />your business{" "}
+              <em style={{
+                fontStyle: "normal",
+                background: "linear-gradient(110deg, var(--accent-2) 5%, var(--accent) 50%, var(--accent-3) 95%)",
+                WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
+              }}>runs on.</em>
             </h1>
           </Reveal>
 
-          <Reveal delay={150}>
-            <p className="text-xl mt-7 max-w-2xl mx-auto" style={{ color: W50, lineHeight: 1.7 }}>
-              The AI-powered backoffice built for Filipino businesses.
-              Payroll, taxes, compliance, and HR — handled automatically.
+          {/* Sub */}
+          <Reveal delay={120}>
+            <p style={{
+              fontSize: 19, lineHeight: 1.55, color: "var(--muted)",
+              maxWidth: 620, margin: "0 0 32px",
+            }}>
+              ERP, HR, accounting, tax, and personal finance — unified in one workspace, automated end-to-end, and answered by an AI that understands your books.
             </p>
           </Reveal>
 
-          <Reveal delay={220}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-              <a href="#waitlist"
-                className="px-9 py-4 rounded-full text-base font-semibold text-white transition-opacity hover:opacity-90"
-                style={{ background: GRAD }}>
-                Join the Waitlist →
+          {/* CTAs */}
+          <Reveal delay={180}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a href="#waitlist" style={btnPrimary}>
+                Start free for 30 days <Arrow />
               </a>
-              <a href="#features"
-                className="text-base font-medium transition-opacity hover:opacity-70"
-                style={{ color: A3 }}>
-                See what&apos;s inside ↓
-              </a>
+              <a href="#platform" style={btnGhost}>Watch the tour</a>
             </div>
           </Reveal>
-        </div>
-      </section>
 
-      {/* ── BENTO GRID ───────────────────────────────────── */}
-      <section id="features" className="px-6 pb-24" aria-label="Product features">
-        <div className="max-w-7xl mx-auto">
-
-          {/* ROW 1: Payroll (5) + Accounting (4) + Stats (3) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 mb-4">
-
-            {/* [A] Payroll — col-span-5 */}
-            <Reveal delay={0} className="lg:col-span-5">
-              <BentoCard className="p-6 h-full flex flex-col" glow>
-                <CardLabel>⚡ 01 — Payroll</CardLabel>
-                <h3 className="font-serif text-white text-2xl mb-2 leading-tight" style={{ fontWeight: 400, letterSpacing: "-0.02em" }}>
-                  Payroll that<br />runs itself.
-                </h3>
-                <p className="text-sm mb-5" style={{ color: W50, lineHeight: 1.6 }}>
-                  From timekeeping to payslips. SSS, PhilHealth, Pag-IBIG auto-computed. On time, every time.
-                </p>
-                <div className="mt-auto">
-                  <PayrollMockup />
-                </div>
-              </BentoCard>
-            </Reveal>
-
-            {/* [B] Accounting — col-span-4 */}
-            <Reveal delay={70} className="lg:col-span-4">
-              <BentoCard className="p-6 h-full flex flex-col">
-                <CardLabel>📊 02 — Accounting</CardLabel>
-                <h3 className="font-serif text-white text-2xl mb-2 leading-tight" style={{ fontWeight: 400, letterSpacing: "-0.02em" }}>
-                  Books you&apos;ll<br />understand.
-                </h3>
-                <p className="text-sm mb-5" style={{ color: W50, lineHeight: 1.6 }}>
-                  Real-time P&L. BIR-ready financial reports generated in one click.
-                </p>
-                <div className="mt-auto">
-                  <AccountingMockup />
-                </div>
-              </BentoCard>
-            </Reveal>
-
-            {/* [C] Stats column — col-span-3 */}
-            <div className="lg:col-span-3 flex flex-col gap-4">
-              <Reveal delay={140}>
-                <BentoCard className="p-6" accentBg glow>
-                  <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: W30 }}>
-                    Time Saved
-                  </div>
-                  <div className="font-sans text-white leading-none"
-                    style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "-0.04em", fontWeight: 700 }}>
-                    40+
-                  </div>
-                  <div className="text-base font-semibold mt-1" style={{ color: A3 }}>hrs / month</div>
-                  <p className="text-xs mt-3 leading-relaxed" style={{ color: W30 }}>
-                    Average time returned to business owners vs. manual admin work.
-                  </p>
-                </BentoCard>
-              </Reveal>
-              <Reveal delay={190}>
-                <BentoCard className="p-6">
-                  <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: W30 }}>
-                    BIR Penalties Avoided
-                  </div>
-                  <div className="font-sans leading-none"
-                    style={{ fontSize: "clamp(2.2rem, 5vw, 3.2rem)", letterSpacing: "-0.035em", color: A3, fontWeight: 700 }}>
-                    ₱25K+
-                  </div>
-                  <div className="text-sm font-semibold mt-1" style={{ color: W50 }}>average fine</div>
-                  <p className="text-xs mt-3 leading-relaxed" style={{ color: W30 }}>
-                    Miss one BIR deadline. That&apos;s what it costs. We track all of them.
-                  </p>
-                </BentoCard>
-              </Reveal>
-            </div>
-          </div>
-
-          {/* ROW 2: Compliance (4) + HR (4) + Quote/CTA (4) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
-
-            {/* [D] Compliance — col-span-4 */}
-            <Reveal delay={0} className="lg:col-span-4">
-              <BentoCard className="p-6 h-full flex flex-col">
-                <CardLabel>🔔 03 — Compliance</CardLabel>
-                <h3 className="font-serif text-white text-2xl mb-2 leading-tight" style={{ fontWeight: 400, letterSpacing: "-0.02em" }}>
-                  Never miss a<br />filing deadline.
-                </h3>
-                <p className="text-sm mb-5" style={{ color: W50, lineHeight: 1.6 }}>
-                  SSS, PhilHealth, Pag-IBIG, BIR — every deadline tracked for you.
-                </p>
-                <div className="mt-auto">
-                  <ComplianceMockup />
-                </div>
-              </BentoCard>
-            </Reveal>
-
-            {/* [E] HR — col-span-4 */}
-            <Reveal delay={70} className="lg:col-span-4">
-              <BentoCard className="p-6 h-full flex flex-col">
-                <CardLabel>👥 04 — HR</CardLabel>
-                <h3 className="font-serif text-white text-2xl mb-2 leading-tight" style={{ fontWeight: 400, letterSpacing: "-0.02em" }}>
-                  HR that works<br />for your team.
-                </h3>
-                <p className="text-sm mb-5" style={{ color: W50, lineHeight: 1.6 }}>
-                  Leave, overtime, records — from one dashboard. Submit. Approve. Done.
-                </p>
-                <div className="mt-auto">
-                  <HRMockupCompact />
-                </div>
-              </BentoCard>
-            </Reveal>
-
-            {/* [F] Quote + CTA — col-span-4 */}
-            <Reveal delay={140} className="lg:col-span-4">
-              <BentoCard className="p-8 h-full flex flex-col justify-between" accentBg glow>
-                {/* Big pull quote */}
-                <div>
-                  <div className="text-4xl mb-4 opacity-40" style={{ color: A2, fontFamily: "Georgia, serif" }}>&ldquo;</div>
-                  <p className="font-bold text-white leading-snug"
-                    style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)", lineHeight: 1.5 }}>
-                    The businesses that thrive won&apos;t have the most employees — they&apos;ll have every employee empowered by AI.
-                  </p>
-                  <p className="text-xs mt-4" style={{ color: W30 }}>
-                    Built for Filipino business owners who want to compete at the highest level.
-                  </p>
-                </div>
-
-                {/* Tags + CTA */}
-                <div className="mt-8">
-                  <div className="flex gap-2 flex-wrap mb-6">
-                    {["Payroll", "BIR", "SSS", "HR", "Reports"].map((tag) => (
-                      <span key={tag} className="text-xs px-3 py-1.5 rounded-full font-semibold"
-                        style={{ background: "rgba(40,176,232,0.12)", color: A3, border: `1px solid rgba(40,176,232,0.2)` }}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a href="#waitlist"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
-                    style={{ background: GRAD }}>
-                    Get Early Access →
-                  </a>
-                </div>
-              </BentoCard>
-            </Reveal>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── STATS BAR ────────────────────────────────────── */}
-      <section className="py-16 px-6" style={{ borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "40+",  label: "Hours saved per month" },
-            { value: "₱25K+", label: "Avg BIR penalty avoided" },
-            { value: "78%",  label: "SMBs lack real-time data" },
-            { value: "3×",   label: "Faster decisions with AI"  },
-          ].map((s, i) => (
-            <Reveal key={i} delay={i * 60}>
-              <div className="font-sans"
-                style={{ fontSize: "clamp(2rem, 5vw, 3rem)", color: A3, letterSpacing: "-0.03em", fontWeight: 700 }}>
-                {s.value}
+          {/* Trust */}
+          <Reveal delay={230}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 28, color: "var(--soft)", fontSize: 13 }}>
+              <div style={{ display: "inline-flex" }}>
+                {[
+                  "linear-gradient(135deg, #F2C879, #E89B5A)",
+                  "linear-gradient(135deg, #B9D9C4, #6FA989)",
+                  "linear-gradient(135deg, #C5C0E8, #8076C7)",
+                  "linear-gradient(135deg, var(--accent-3), var(--accent-2))",
+                ].map((bg, i) => (
+                  <span key={i} aria-hidden style={{
+                    width: 26, height: 26, borderRadius: "50%",
+                    border: "2px solid var(--bg)", marginLeft: i === 0 ? 0 : -8, background: bg,
+                  }} />
+                ))}
               </div>
-              <div className="text-sm mt-1" style={{ color: W30 }}>{s.label}</div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* ── DAY IN LIFE ──────────────────────────────────── */}
-      <section className="py-24 px-6" aria-label="Day in the life — with and without AI">
-        <div className="max-w-5xl mx-auto">
-          <Reveal className="text-center mb-14">
-            <div className="text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: A2 }}>
-              Real-World Impact
+              <span><strong style={{ color: "var(--ink-2)", fontWeight: 500 }}>1,200+ founders</strong> on the waitlist · No credit card required</span>
             </div>
-            <h2 className="font-serif text-white mb-4"
-              style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "-0.02em", lineHeight: 1.05, fontWeight: 400 }}>
-              A day in the life —
-              <br />
-              <span style={{
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                background: GRAD, backgroundClip: "text",
-              }}>
-                with and without AI
-              </span>
-            </h2>
-            <p className="text-lg" style={{ color: W50, lineHeight: 1.7 }}>
-              The speed difference is hard to unsee.
-            </p>
           </Reveal>
 
-          <div className="space-y-6">
-            {SCENARIOS.map((item, i) => (
-              <ScenarioCard key={i} item={item} delay={i * 60} />
+          {/* Product preview anchor (hidden) */}
+          <div id="platform" />
+        </div>
+      </header>
+
+
+      {/* ── MODULES ── */}
+      <section id="modules" style={{ padding: "110px 0", position: "relative" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ maxWidth: 760, marginBottom: 56 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
+                <Dot /> The platform
+              </div>
+              <h2 style={{ margin: "0 0 14px", fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
+                Five businesses worth of software, in one workspace.
+              </h2>
+              <p style={{ margin: 0, fontSize: 18, color: "var(--muted)", maxWidth: 600 }}>
+                Stop wiring spreadsheets between five tools that don&apos;t talk to each other. YAHSHUA One ships the whole back office as one product — and one source of truth.
+              </p>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gap: 16 }}>
+            {/* ERP - feature (spans 6 of 12 cols) */}
+            <div style={{ gridColumn: "span 6" }}>
+              <Reveal delay={0}>
+                <article style={{
+                  background: "linear-gradient(180deg, #fff 0%, var(--accent-50) 100%)",
+                  border: "1px solid oklch(0.88 0.06 215 / 0.6)", borderRadius: "var(--radius-lg)",
+                  padding: 24, minHeight: 280, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative", height: "100%",
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                    <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--ink)", display: "grid", placeItems: "center", color: "var(--accent-3)" }}>
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M3 14V7L9 3L15 7V14" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                        <path d="M6 14V10H12V14" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>01 · ERP</span>
+                  </div>
+                  <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>Run operations without spreadsheets.</h3>
+                  <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>
+                    Inventory, sales orders, purchasing, and vendors connected to the same ledger your accountant uses. No exports. No reconciliation tickets at 11pm.
+                  </p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {["Inventory", "Sales orders", "Procurement", "Vendors", "Multi-branch"].map((tag) => (
+                      <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            </div>
+
+            {/* HRM - feature (spans 6 of 12 cols) */}
+            <div style={{ gridColumn: "span 6" }}>
+              <Reveal delay={60}>
+                <article style={{
+                  background: "linear-gradient(180deg, #fff 0%, var(--accent-50) 100%)",
+                  border: "1px solid oklch(0.88 0.06 215 / 0.6)", borderRadius: "var(--radius-lg)",
+                  padding: 24, minHeight: 280, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative", height: "100%",
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                    <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--ink)", display: "grid", placeItems: "center", color: "var(--accent-3)" }}>
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="6" r="3" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M3 15C3.6 12 5.8 10.5 9 10.5C12.2 10.5 14.4 12 15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                    </span>
+                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>02 · HRM</span>
+                  </div>
+                  <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>The people side, finally automated.</h3>
+                  <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>
+                    Timekeeping, leaves, payroll, and statutory contributions — auto-computed, paid, and filed on schedule. Your team gets a portal that doesn&apos;t feel like 2008.
+                  </p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {["Payroll", "Leaves", "Time tracking", "13th-month", "SSS · PhilHealth · HDMF"].map((tag) => (
+                      <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            </div>
+
+            {/* Small modules (each spans 3 of 12 cols) */}
+            {[
+              { id: "03", title: "Accounting", desc: "A real ledger. Real-time P&L. AI-categorized transactions.", tags: ["Books","Recon","P&L"], icon: (
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M2 15V3M2 15H16M5 12V9M8 12V5M11 12V7M14 12V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              )},
+              { id: "04", title: "Tax", desc: "BIR-ready forms. Quarterly filings drafted, reviewed, submitted.", tags: ["VAT","1701Q","1601-C"], icon: (
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <rect x="3" y="2" width="12" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M6 6H12M6 9H12M6 12H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              )},
+              { id: "05", title: "Personal", desc: "Your own cashflow, goals, and personal taxes — same login.", tags: ["Budget","Goals","ITR"], icon: (
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M9 5V9L11.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              )},
+              { id: "+", title: "Marketplace", desc: "Drop-in apps for billing, e-commerce, and country-specific rails.", tags: ["Stripe","Maya","BIR"], icon: (
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M9 1L11 6L16 6.5L12.5 10L13.5 15L9 12.5L4.5 15L5.5 10L2 6.5L7 6L9 1Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                </svg>
+              )},
+            ].map((mod, i) => (
+              <div key={mod.id} style={{ gridColumn: "span 3" }}>
+                <Reveal delay={i * 50}>
+                  <article style={{
+                    background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)",
+                    padding: 24, minHeight: 220, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative",
+                    transition: "border-color .2s ease, box-shadow .2s ease", height: "100%",
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                      <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--bg-tint)", display: "grid", placeItems: "center", color: "var(--ink)" }}>
+                        {mod.icon}
+                      </span>
+                      <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>{mod.id}</span>
+                    </div>
+                    <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>{mod.title}</h3>
+                    <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>{mod.desc}</p>
+                    <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
+                      {mod.tags.map((tag) => (
+                        <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
+                      ))}
+                    </ul>
+                  </article>
+                </Reveal>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── WAITLIST ─────────────────────────────────────── */}
-      <section id="waitlist" className="py-24 px-6" style={{ borderTop: `1px solid ${BORDER}` }} aria-label="Join the waitlist">
-        <div className="max-w-md mx-auto">
-          <Reveal className="text-center mb-10">
-            <h2 className="font-serif text-white mb-4"
-              style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", letterSpacing: "-0.02em", fontWeight: 400 }}>
+      {/* ── AI SHOWCASE ── */}
+      <section id="intelligence" style={{ paddingTop: 24, paddingBottom: 110 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{
+              background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
+              padding: 64, display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 60,
+              alignItems: "center", position: "relative", overflow: "hidden",
+            }}>
+              <div style={{
+                position: "absolute", inset: 0, pointerEvents: "none",
+                background: "radial-gradient(50% 60% at 90% 0%, var(--accent-glow), transparent 60%), radial-gradient(40% 50% at 0% 100%, oklch(0.7 0.12 215 / 0.18), transparent 60%)",
+              }} />
+
+              {/* Text side */}
+              <div style={{ position: "relative", zIndex: 1 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--accent-3)", marginBottom: 14 }}>
+                  <Dot /> Intelligence
+                </div>
+                <h2 style={{ fontSize: "clamp(34px, 3.6vw, 46px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 18px" }}>
+                  An AI that&apos;s <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>read your books</em> — not just the internet.
+                </h2>
+                <p style={{ color: "oklch(0.85 0.01 250)", fontSize: 17, lineHeight: 1.55, margin: "0 0 28px", maxWidth: 480 }}>
+                  Every transaction, employee record, invoice, and tax form lives in one schema. The assistant queries it directly — so the answer it gives is the answer you&apos;d get by spending a day in spreadsheets.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 14 }}>
+                  {[
+                    { title: "Grounded in your ledger.", body: "No hallucinations — every figure is traceable to a journal entry." },
+                    { title: "Acts, not just answers.", body: "Approve a payroll run, file a return, or send an invoice — in chat." },
+                    { title: "Your data stays yours.", body: "Encrypted in transit and at rest. Never used to train models." },
+                  ].map((item) => (
+                    <li key={item.title} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: 14.5, color: "oklch(0.88 0.01 250)" }}>
+                      <span style={{ width: 22, height: 22, borderRadius: 6, background: "oklch(0.25 0.02 250)", color: "var(--accent-3)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 6L5 8L9 4" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </span>
+                      <div><strong style={{ color: "#fff", fontWeight: 500 }}>{item.title}</strong> {item.body}</div>
+                    </li>
+                  ))}
+                </ul>
+                <a href="#waitlist" style={{
+                  display: "inline-flex", alignItems: "center", gap: 8, height: 44, padding: "0 18px",
+                  borderRadius: 999, border: "1px solid oklch(0.35 0.012 250)", color: "#fff",
+                  fontWeight: 500, fontSize: 14.5, background: "transparent",
+                }}>
+                  Read the security overview <Arrow />
+                </a>
+              </div>
+
+              {/* Chat mockup */}
+              <div style={{
+                background: "oklch(0.2 0.012 250)", border: "1px solid oklch(0.28 0.012 250)",
+                borderRadius: 16, padding: 20, position: "relative", zIndex: 1,
+                display: "flex", flexDirection: "column", gap: 14,
+                boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+              }} aria-hidden>
+                {/* User message */}
+                <div style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13.5, lineHeight: 1.5 }}>
+                  <span style={{ width: 26, height: 26, borderRadius: 6, background: "oklch(0.3 0.01 250)", color: "#fff", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 600, flexShrink: 0 }}>L</span>
+                  <div>
+                    <div style={{ fontSize: 11, color: "oklch(0.6 0.01 250)", marginBottom: 4, fontFamily: "var(--font-geist-mono, monospace)", letterSpacing: "0.05em", textTransform: "uppercase" }}>Lara · CEO</div>
+                    <div style={{ color: "oklch(0.85 0.01 250)" }}>How much can I pay myself as a dividend this quarter without breaking covenants?</div>
+                  </div>
+                </div>
+
+                {/* AI message */}
+                <div style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13.5, lineHeight: 1.5 }}>
+                  <span style={{ width: 26, height: 26, borderRadius: 6, background: "linear-gradient(135deg, var(--accent), var(--accent-2))", color: "#0a1418", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 600, flexShrink: 0 }}>A</span>
+                  <div>
+                    <div style={{ fontSize: 11, color: "oklch(0.6 0.01 250)", marginBottom: 4, fontFamily: "var(--font-geist-mono, monospace)", letterSpacing: "0.05em", textTransform: "uppercase" }}>YAHSHUA · Assistant</div>
+                    <div style={{ color: "#F4F2EC" }}>Based on Q2 numbers and the BPI loan covenant (DSCR ≥ 1.4×), you have headroom to distribute up to:</div>
+                    <div style={{
+                      background: "oklch(0.24 0.012 250)", border: "1px solid oklch(0.3 0.012 250)",
+                      borderRadius: 10, padding: 12, marginTop: 8,
+                      fontFamily: "var(--font-geist-mono, monospace)", fontSize: 12, color: "oklch(0.82 0.01 250)",
+                      display: "flex", flexDirection: "column", gap: 6,
+                    }}>
+                      {[
+                        { k: "retained_earnings", v: "₱ 4,820,000" },
+                        { k: "covenant_buffer",   v: "₱ 1,150,000" },
+                        { k: "safe_dividend",     v: "₱ 950,000" },
+                      ].map((row) => (
+                        <div key={row.k}><span style={{ color: "var(--accent-3)" }}>{row.k}</span> = <span style={{ color: "#fff" }}>{row.v}</span></div>
+                      ))}
+                    </div>
+                    <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
+                      <button style={{ fontSize: 12, padding: "5px 10px", background: "var(--accent-3)", border: "none", borderRadius: 999, color: "#0a1418", display: "inline-flex", alignItems: "center", gap: 6 }}>
+                        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        Draft board resolution
+                      </button>
+                      {["Show working", "Schedule for Jul 5"].map((label) => (
+                        <button key={label} style={{ fontSize: 12, padding: "5px 10px", background: "oklch(0.28 0.012 250)", border: "1px solid oklch(0.34 0.012 250)", borderRadius: 999, color: "oklch(0.88 0.01 250)" }}>{label}</button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Composer */}
+                <div style={{
+                  marginTop: 6, background: "oklch(0.16 0.012 250)", border: "1px solid oklch(0.28 0.012 250)",
+                  borderRadius: 10, padding: "10px 12px", display: "flex", alignItems: "center", gap: 10,
+                  color: "oklch(0.55 0.01 250)", fontSize: 13,
+                }}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 2L9.6 6L14 6.6L10.8 9.6L11.6 14L8 11.8L4.4 14L5.2 9.6L2 6.6L6.4 6L8 2Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
+                  </svg>
+                  <span>Ask anything — &ldquo;forecast next quarter&rdquo;, &ldquo;file 1601C&rdquo;, &ldquo;pay Lara…&rdquo;</span>
+                  <span style={{ marginLeft: "auto", width: 26, height: 26, borderRadius: 6, background: "var(--accent)", display: "grid", placeItems: "center", color: "#0a1418", flexShrink: 0 }}>
+                    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ── */}
+      <section style={{ padding: "110px 0" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ maxWidth: 760, marginBottom: 56 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
+                <Dot /> How it works
+              </div>
+              <h2 style={{ margin: 0, fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
+                Three steps. One afternoon. Then you&apos;re done forever.
+              </h2>
+            </div>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            {[
+              { num: "1", title: "Import", body: "Export your data from your bank, payroll system, and BIR records, then import it into YAHSHUA One." },
+              { num: "2", title: "Configure", body: "Your chart of accounts, cutoff dates, leave policies, and tax filings — preset for your business type. Edit once, never again." },
+              { num: "3", title: "Let it run", body: "Payroll runs itself. Filings draft themselves. Your job becomes review, approve, and move on with the day." },
+            ].map((step, i) => (
+              <Reveal key={step.num} delay={i * 60}>
+                <div style={{ border: "1px solid var(--line)", borderRadius: "var(--radius-lg)", padding: 28, background: "var(--surface)" }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--ink)", color: "#fff", display: "grid", placeItems: "center", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 13, marginBottom: 18 }}>{step.num}</div>
+                  <h3 style={{ fontSize: 19, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 8px" }}>{step.title}</h3>
+                  <p style={{ color: "var(--muted)", fontSize: 14.5, margin: 0 }}>{step.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FIGURES ── */}
+      <section style={{ paddingTop: 24, paddingBottom: 110 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)", overflow: "hidden", background: "var(--surface)" }}>
+              {[
+                { num: "40+",     lbl: "Hours of admin returned to founders, every month." },
+                { num: "99.97%",  lbl: "Filing accuracy across BIR, SSS, PhilHealth, Pag-IBIG." },
+                { num: "1 day",   lbl: "Average onboarding from sign-up to first reconciled month." },
+                { num: "0",       lbl: "Spreadsheets emailed at 2am between you and your accountant." },
+              ].map((fig, i) => (
+                <div key={fig.num} style={{ padding: "36px 28px", borderRight: i < 3 ? "1px solid var(--line)" : "none" }}>
+                  <div style={{ fontSize: "clamp(32px, 3.6vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 8 }}>
+                    <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{fig.num}</em>
+                  </div>
+                  <div style={{ color: "var(--muted)", fontSize: 14 }}>{fig.lbl}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section id="cta" style={{ padding: "110px 0" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal direction="scale">
+            <div style={{
+              border: "1px solid var(--line)",
+              background: "radial-gradient(70% 100% at 0% 100%, var(--accent-glow), transparent 60%), radial-gradient(60% 100% at 100% 0%, oklch(0.95 0.03 215 / 0.5), transparent 60%), var(--surface)",
+              borderRadius: "var(--radius-xl)", padding: 72, textAlign: "center", position: "relative", overflow: "hidden",
+            }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, justifyContent: "center", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 20 }}>
+                <Dot /> Ready when you are
+              </div>
+              <h2 style={{ fontSize: "clamp(36px, 4.4vw, 60px)", letterSpacing: "-0.035em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 16px" }}>
+                Run your business on <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>one platform.</em>
+              </h2>
+              <p style={{ color: "var(--muted)", fontSize: 18, maxWidth: 540, margin: "0 auto 28px" }}>
+                Start free for 30 days. Bring your whole back office over — or just one module. We&apos;ll meet you where you are.
+              </p>
+              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+                <a href="#waitlist" style={btnPrimary}>
+                  Start free for 30 days <Arrow />
+                </a>
+                <a href="#waitlist" style={btnGhost}>Talk to founders</a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── WAITLIST ── */}
+      <section id="waitlist" style={{ padding: "96px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+            <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", letterSpacing: "-0.03em", fontWeight: 500, margin: "0 0 14px" }}>
               Get in early.
             </h2>
-            <p className="text-lg" style={{ color: W50, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.6 }}>
               Join the waitlist. Be among the first Filipino businesses on YAHSHUA One.
             </p>
+            </div>
           </Reveal>
 
           <Reveal delay={100} direction="scale">
-            <BentoCard className="p-8" glow>
+            <div style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-xl)", padding: 32, boxShadow: "var(--shadow)" }}>
               {formState === "success" ? (
-                <div className="text-center py-6">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
-                    style={{ background: "rgba(40,176,232,0.15)" }}>
-                    <Check style={{ color: A2 }} size={24} strokeWidth={2.5} />
+                <div style={{ textAlign: "center", padding: "24px 0" }}>
+                  <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--accent-50)", display: "grid", placeItems: "center", margin: "0 auto 16px" }}>
+                    <Check style={{ color: "var(--accent-2)" }} size={24} strokeWidth={2.5} />
                   </div>
-                  <p className="font-semibold text-white text-lg mb-2">You&apos;re on the list!</p>
-                  <p className="text-sm" style={{ color: W50 }}>{formMsg}</p>
+                  <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 18, margin: "0 0 8px" }}>You&apos;re on the list!</p>
+                  <p style={{ color: "var(--muted)", fontSize: 14 }}>{formMsg}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {[
                     { label: "Full Name", key: "name", type: "text", placeholder: "Juan dela Cruz", required: true },
                     { label: "Email",     key: "email", type: "email", placeholder: "juan@company.com.ph", required: true },
                     { label: "Company",   key: "company", type: "text", placeholder: "Dela Cruz Trading", required: false },
                   ].map((field) => (
                     <div key={field.key}>
-                      <label className="block text-xs font-semibold mb-1.5" style={{ color: W50 }}>
+                      <label style={{ display: "block", fontSize: 13, fontWeight: 500, marginBottom: 6, color: "var(--ink-2)" }}>
                         {field.label}{" "}
                         {field.required
-                          ? <span className="text-red-400 font-normal">*</span>
-                          : <span style={{ color: W30 }}>(optional)</span>}
+                          ? <span style={{ color: "#B45B4E" }}>*</span>
+                          : <span style={{ color: "var(--soft)", fontWeight: 400 }}>(optional)</span>}
                       </label>
                       <input
                         required={field.required}
@@ -766,32 +890,28 @@ export default function Home() {
                         value={form[field.key as keyof typeof form]}
                         onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                         placeholder={field.placeholder}
-                        className="w-full px-4 py-3 rounded-xl text-sm text-white outline-none transition-all"
-                        style={{ background: W07, border: `1.5px solid ${BORDER}` }}
-                        onFocus={(e) => {
-                          e.target.style.borderColor = A2;
-                          e.target.style.boxShadow = `0 0 0 3px rgba(40,176,232,0.12)`;
+                        style={{
+                          width: "100%", padding: "10px 14px", borderRadius: "var(--radius)",
+                          fontSize: 14, color: "var(--ink)", background: "var(--bg)", border: "1px solid var(--line)",
+                          outline: "none", fontFamily: "inherit", transition: "border-color .15s ease, box-shadow .15s ease",
                         }}
-                        onBlur={(e) => {
-                          e.target.style.borderColor = BORDER;
-                          e.target.style.boxShadow = "none";
-                        }}
+                        onFocus={(e) => { e.target.style.borderColor = "var(--accent)"; e.target.style.boxShadow = "0 0 0 3px var(--accent-glow)"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "var(--line)"; e.target.style.boxShadow = "none"; }}
                       />
                     </div>
                   ))}
 
                   <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: W50 }}>
-                      Company Size <span style={{ color: W30 }}>(optional)</span>
+                    <label style={{ display: "block", fontSize: 13, fontWeight: 500, marginBottom: 6, color: "var(--ink-2)" }}>
+                      Company Size <span style={{ color: "var(--soft)", fontWeight: 400 }}>(optional)</span>
                     </label>
                     <select
                       value={form.size}
                       onChange={(e) => setForm({ ...form, size: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl text-sm outline-none"
                       style={{
-                        background: CARD,
-                        border: `1.5px solid ${BORDER}`,
-                        color: form.size ? "#fff" : W30,
+                        width: "100%", padding: "10px 14px", borderRadius: "var(--radius)",
+                        fontSize: 14, background: "var(--bg)", border: "1px solid var(--line)",
+                        color: form.size ? "var(--ink)" : "var(--soft)", outline: "none", fontFamily: "inherit",
                       }}
                     >
                       <option value="">Select size...</option>
@@ -803,8 +923,7 @@ export default function Home() {
                   </div>
 
                   {formState === "error" && (
-                    <p className="text-sm rounded-lg px-3 py-2.5 text-red-400"
-                      style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)" }}>
+                    <p style={{ fontSize: 14, borderRadius: "var(--radius)", padding: "10px 14px", color: "#B45B4E", background: "oklch(0.97 0.02 30)", border: "1px solid oklch(0.88 0.06 30)", margin: 0 }}>
                       {formMsg}
                     </p>
                   )}
@@ -812,84 +931,79 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={formState === "loading"}
-                    className="w-full py-3.5 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
-                    style={{ background: GRAD }}
+                    style={{
+                      ...btnPrimary, width: "100%", justifyContent: "center", height: 48, fontSize: 15,
+                      borderRadius: "var(--radius)", opacity: formState === "loading" ? 0.6 : 1,
+                    }}
                   >
                     {formState === "loading" ? "Sending…" : "Claim My Spot →"}
                   </button>
                 </form>
               )}
-            </BentoCard>
-
-            <p className="text-center text-xs mt-4" style={{ color: W30 }}>
+            </div>
+            <p style={{ textAlign: "center", fontSize: 12, color: "var(--soft)", marginTop: 16 }}>
               No spam. No credit card. Just early access.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* ── BUILD LOG ────────────────────────────────────── */}
-      <section className="py-20 px-6" style={{ borderTop: `1px solid ${BORDER}` }}>
-        <div className="max-w-3xl mx-auto">
+      {/* ── BUILD LOG ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: A2 }}>Build Log</div>
-            <h2 className="font-serif text-white mb-3"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.02em", fontWeight: 400 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
+              <Dot /> Build Log
+            </div>
+            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 12px" }}>
               We build in public.
             </h2>
-            <div className="flex items-center gap-4 mb-10 flex-wrap">
-              <p className="text-lg" style={{ color: W50 }}>Every update, in plain language.</p>
-              <a href="/updates"
-                className="text-sm font-semibold px-4 py-2 rounded-full border transition-opacity hover:opacity-80"
-                style={{ color: A3, borderColor: "rgba(40,176,232,0.28)", background: "rgba(40,176,232,0.06)" }}>
-                View all updates →
-              </a>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40, flexWrap: "wrap" }}>
+              <p style={{ color: "var(--muted)", fontSize: 17, margin: 0 }}>Every update, in plain language.</p>
+              <a href="/updates" style={{
+                fontSize: 13, fontWeight: 500, padding: "6px 14px", borderRadius: 999,
+                border: "1px solid var(--line)", color: "var(--ink-2)", background: "var(--surface)",
+              }}>View all updates →</a>
             </div>
           </Reveal>
 
           {updates === null && (
-            <div className="space-y-4">
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[1, 2].map((i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: CARD, border: `1px solid ${BORDER}` }}>
-                  <div className="skeleton h-4 w-24 mb-3 rounded" />
-                  <div className="skeleton h-5 w-2/3 mb-3 rounded" />
-                  <div className="skeleton h-4 w-full rounded mb-1.5" />
-                  <div className="skeleton h-4 w-4/5 rounded" />
+                <div key={i} style={{ borderRadius: "var(--radius)", padding: 24, background: "var(--surface)", border: "1px solid var(--line)" }}>
+                  <div className="skeleton" style={{ height: 16, width: 96, marginBottom: 12, borderRadius: 4 }} />
+                  <div className="skeleton" style={{ height: 20, width: "60%", marginBottom: 12, borderRadius: 4 }} />
+                  <div className="skeleton" style={{ height: 14, width: "100%", marginBottom: 6, borderRadius: 4 }} />
+                  <div className="skeleton" style={{ height: 14, width: "80%", borderRadius: 4 }} />
                 </div>
               ))}
             </div>
           )}
 
           {updates !== null && updates.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-lg" style={{ color: W30 }}>No updates yet. We&apos;re building!</p>
+            <div style={{ textAlign: "center", padding: "64px 0" }}>
+              <p style={{ color: "var(--muted)", fontSize: 18 }}>No updates yet. We&apos;re building!</p>
             </div>
           )}
 
           {updates !== null && updates.length > 0 && (
-            <div className="space-y-4">
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {updates.slice(0, 3).map((update, i) => (
                 <Reveal key={i} delay={i * 50}>
-                  <div className="rounded-xl p-6" style={{ background: CARD, border: `1px solid ${BORDER}` }}>
-                    <div className="flex items-center gap-3 mb-3 flex-wrap">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full badge-feature">{update.badge}</span>
-                      <span className="text-xs" style={{ color: W30 }}>{update.date}</span>
+                  <div style={{ borderRadius: "var(--radius)", padding: 24, background: "var(--surface)", border: "1px solid var(--line)" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12, flexWrap: "wrap" }}>
+                      <span className="badge-feature" style={{ fontSize: 12, fontWeight: 500, padding: "3px 10px", borderRadius: 999 }}>{update.badge}</span>
+                      <span style={{ fontSize: 12, color: "var(--soft)" }}>{update.date}</span>
                     </div>
-                    <h3 className="font-bold text-white mb-2 text-lg leading-snug">{update.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: W50 }}>{update.description}</p>
+                    <h3 style={{ fontWeight: 600, color: "var(--ink)", marginBottom: 8, fontSize: 17, lineHeight: 1.35 }}>{update.title}</h3>
+                    <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>{update.description}</p>
                   </div>
                 </Reveal>
               ))}
               {updates.length > 3 && (
                 <Reveal delay={180}>
-                  <div className="text-center pt-2">
-                    <a
-                      href="/updates"
-                      className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full border transition-opacity hover:opacity-80"
-                      style={{ color: A3, borderColor: "rgba(40,176,232,0.28)", background: "rgba(40,176,232,0.06)" }}
-                    >
-                      View full dev log →
-                    </a>
+                  <div style={{ textAlign: "center", paddingTop: 8 }}>
+                    <a href="/updates" style={{ ...btnGhost, ...btnSm, display: "inline-flex" }}>View full dev log →</a>
                   </div>
                 </Reveal>
               )}
@@ -898,18 +1012,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────── */}
-      <section className="py-20 px-6" style={{ borderTop: `1px solid ${BORDER}` }} aria-labelledby="faq-heading">
-        <div className="max-w-3xl mx-auto">
+      {/* ── FAQ ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: A2 }}>FAQ</div>
-            <h2 id="faq-heading" className="font-serif text-white mb-10"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.02em", fontWeight: 400 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
+              <Dot /> FAQ
+            </div>
+            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 40px" }}>
               Common questions
             </h2>
           </Reveal>
 
-          <div className="space-y-4">
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
               {
                 q: "Does YAHSHUA One automate payroll computation in the Philippines?",
@@ -925,7 +1040,7 @@ export default function Home() {
               },
               {
                 q: "Is YAHSHUA One built specifically for Filipino businesses?",
-                a: "100%. YAHSHUA One is built from the ground up for the Philippine business environment — BIR, SSS, PhilHealth, and Pag-IBIG compliance baked in, Philippine Labor Code leave policies, and peso-denominated reporting. No workarounds needed.",
+                a: "100%. YAHSHUA One is built from the ground up for the Philippine business environment — BIR, SSS, PhilHealth, and Pag-IBIG compliance baked in, Philippine Labor Code leave policies, and peso-denominated reporting.",
               },
               {
                 q: "How is it different from other payroll or HR systems in the Philippines?",
@@ -933,24 +1048,17 @@ export default function Home() {
               },
               {
                 q: "Who is YAHSHUA One designed for?",
-                a: "YAHSHUA One is built for Filipino business owners, HR officers, accountants, and finance managers who want to stop doing administrative work manually. It's also useful for employees who want visibility into their payslips, benefits, and leave balances.",
+                a: "YAHSHUA One is built for Filipino business owners, HR officers, accountants, and finance managers who want to stop doing administrative work manually.",
               },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 40}>
-                <details
-                  className="group rounded-xl overflow-hidden"
-                  style={{ background: CARD, border: `1px solid ${BORDER}` }}
-                >
-                  <summary
-                    className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none"
-                    style={{ color: "white" }}
-                  >
-                    <span className="font-semibold text-base leading-snug">{item.q}</span>
-                    <span className="flex-shrink-0 text-xl transition-transform group-open:rotate-45"
-                      style={{ color: A2 }}>+</span>
+                <details style={{ borderRadius: "var(--radius)", overflow: "hidden", background: "var(--surface)", border: "1px solid var(--line)" }}>
+                  <summary style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, padding: "20px 24px", cursor: "pointer", listStyle: "none", userSelect: "none", color: "var(--ink)", fontWeight: 500, fontSize: 15 }}>
+                    {item.q}
+                    <span style={{ flexShrink: 0, fontSize: 20, color: "var(--accent-2)", fontWeight: 300 }}>+</span>
                   </summary>
-                  <div className="px-6 pb-5" style={{ color: W50, borderTop: `1px solid ${BORDER}`, paddingTop: "1.25rem" }}>
-                    <p className="text-sm leading-relaxed">{item.a}</p>
+                  <div style={{ padding: "0 24px 20px", borderTop: "1px solid var(--line)" }}>
+                    <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--muted)", margin: "16px 0 0" }}>{item.a}</p>
                   </div>
                 </details>
               </Reveal>
@@ -959,21 +1067,49 @@ export default function Home() {
         </div>
       </section>
 
-      </main>
-
-      {/* ── FOOTER ───────────────────────────────────────── */}
-      <footer className="px-6 py-8" style={{ borderTop: `1px solid ${BORDER}` }}>
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <LogoMark size={24} />
-            <span className="font-semibold text-sm text-white">YAHSHUA One</span>
+      {/* ── FOOTER ── */}
+      <footer style={{ padding: "64px 0 40px", borderTop: "1px solid var(--line)", color: "var(--muted)", fontSize: 14 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.4fr repeat(4, 1fr)", gap: 36, marginBottom: 48 }}>
+            <div>
+              <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }} aria-label="YAHSHUA One">
+                <Image src="/logo.jpg" alt="YAHSHUA One" width={28} height={28} style={{ borderRadius: 8, objectFit: "cover", flexShrink: 0 }} />
+                <span style={{ fontWeight: 600, letterSpacing: "-0.02em", fontSize: 16, color: "var(--ink)" }}>
+                  YAHSHUA <span style={{ color: "var(--muted)", fontWeight: 400 }}>One</span>
+                </span>
+              </a>
+              <p style={{ maxWidth: 280, marginTop: 16, lineHeight: 1.6 }}>
+                The AI-native back office for businesses that would rather build than do paperwork.
+              </p>
+              <p style={{ marginTop: 12, fontSize: 13 }}>Built in the Philippines 🇵🇭</p>
+            </div>
+            {[
+              { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
+              { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }, { label: "Press kit", href: "#" }] },
+              { title: "Resources", links: [{ label: "Docs", href: "#" }, { label: "Changelog", href: "/updates" }, { label: "Security", href: "#" }, { label: "Status", href: "#" }] },
+              { title: "Legal",     links: [{ label: "Terms", href: "#" }, { label: "Privacy", href: "#" }, { label: "DPA", href: "#" }, { label: "Cookies", href: "#" }] },
+            ].map((col) => (
+              <div key={col.title}>
+                <h5 style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-2)", margin: "0 0 14px", fontWeight: 500 }}>{col.title}</h5>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href} style={{ color: "var(--muted)", transition: "color .15s ease" }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}>
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <p className="text-xs" style={{ color: W30 }}>
-            Built in the Philippines 🇵🇭 · © 2026 ABBA Initiative
-          </p>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 28, borderTop: "1px solid var(--line)" }}>
+            <span>© 2026 YAHSHUA One, Inc.</span>
+          </div>
         </div>
       </footer>
-
     </div>
   );
 }

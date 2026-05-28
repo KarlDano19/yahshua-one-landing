@@ -1,168 +1,131 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter), "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, serif;
-  --color-background: #07090f;
-  --color-foreground: #ffffff;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-background: #FAFAF7;
+  --color-foreground: #14161A;
 }
 
+/* ── Design tokens ── */
 :root {
-  --accent:       oklch(0.50 0.22 264);
-  --accent-hover: oklch(0.44 0.22 264);
-  --accent-light: oklch(0.96 0.04 264);
-  --accent-border: oklch(0.88 0.10 264);
-  --accent-mid:   oklch(0.92 0.08 264);
-  --text-primary:   #0f172a;
-  --text-secondary: #64748b;
-  --text-muted:     #94a3b8;
-  --border:         #e2e8f0;
+  --bg:        #FAFAF7;
+  --bg-tint:   #F3F2EC;
+  --surface:   #FFFFFF;
+  --ink:       #14161A;
+  --ink-2:     #2A2D33;
+  --muted:     #6B6F77;
+  --soft:      #9CA0A8;
+  --line:      #E7E5DE;
+  --line-2:    #EFEDE6;
+
+  --accent:      oklch(0.74 0.12 215);
+  --accent-2:    oklch(0.66 0.13 215);
+  --accent-3:    oklch(0.82 0.09 215);
+  --accent-50:   oklch(0.96 0.025 215);
+  --accent-glow: oklch(0.78 0.13 215 / 0.18);
+
+  --radius-sm: 8px;
+  --radius:    12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --shadow-sm: 0 1px 2px rgba(15,17,21,0.04);
+  --shadow:    0 1px 0 rgba(15,17,21,0.04), 0 8px 28px rgba(15,17,21,0.06);
+  --shadow-lg: 0 1px 0 rgba(15,17,21,0.04), 0 24px 60px rgba(15,17,21,0.08);
 }
 
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: #07090f;
-  color: #ffffff;
-  font-family: var(--font-inter), "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist, ui-sans-serif, system-ui, sans-serif);
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
-/* ── Font utilities ── */
-.font-serif  { font-family: var(--font-newsreader), ui-serif, Georgia, serif; }
-.font-sans   { font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; }
+::selection { background: var(--accent-glow); color: var(--ink); }
+
+/* ── Typography helpers ── */
+.font-mono { font-family: var(--font-geist-mono, ui-monospace, monospace); }
+.eyebrow {
+  font-family: var(--font-geist-mono, ui-monospace, monospace);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
 /* ── Animations ── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes skeleton-pulse {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.45; }
 }
+@keyframes blink {
+  0%, 50%       { opacity: 1; }
+  50.01%, 100%  { opacity: 0; }
+}
 
-.animate-fade-up {
+/* ── Scroll-triggered reveals ── */
+.reveal {
   opacity: 0;
-  animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(20px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* Scroll-triggered animation */
-.anim {
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-left {
   opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-28px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.anim.visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible { opacity: 1; transform: none; }
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* ── Skeleton loading ── */
+.skeleton {
+  background: rgba(20,22,26,0.06);
+  border-radius: 4px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
 }
 
-/* Delay utilities (work for both animation-delay and transition-delay) */
-.delay-100 { animation-delay: 0.1s; transition-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; transition-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; transition-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; transition-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; transition-delay: 0.5s; }
-
-/* Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-up,
-  .anim,
-  .anim.visible,
-  .feature-card,
-  .btn-primary,
-  .btn-ghost,
-  .form-input {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
+/* ── Cursor blink ── */
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background: var(--ink);
+  margin-left: 2px;
+  vertical-align: -2px;
+  animation: blink 1s steps(2) infinite;
 }
-
-/* ── Primary button (indigo solid) ── */
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 600;
-  transition:
-    background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-primary:hover  { background: var(--accent-hover); }
-.btn-primary:active { transform: translateY(0.5px); }
-.btn-primary:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
-
-/* ── Ghost button (outline) ── */
-.btn-ghost {
-  border: 1.5px solid var(--border);
-  color: var(--text-primary);
-  transition:
-    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-ghost:hover {
-  border-color: var(--accent-border);
-  background: var(--accent-light);
-}
-.btn-ghost:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-/* ── Feature card ── */
-.feature-card {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  transition:
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.feature-card:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-  border-color: var(--accent-border);
-  transform: translateY(-2px);
-}
-
-/* ── Section label ── */
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-/* ── Form inputs ── */
-.form-input {
-  background: #ffffff;
-  border: 1.5px solid var(--border);
-  color: var(--text-primary);
-  transition:
-    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.form-input:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px oklch(0.50 0.22 264 / 0.12);
-}
-.form-input:focus-visible { outline: none; }
-.form-input::placeholder { color: var(--text-muted); }
-.form-input option { background: #ffffff; color: var(--text-primary); }
 
 /* ── Update log badge variants ── */
 .badge-launch {
@@ -171,9 +134,9 @@ body {
   border: 1px solid oklch(0.88 0.10 70);
 }
 .badge-feature {
-  background: var(--accent-light);
-  color: var(--accent);
-  border: 1px solid var(--accent-border);
+  background: var(--accent-50);
+  color: var(--accent-2);
+  border: 1px solid oklch(0.88 0.06 215);
 }
 .badge-improvement {
   background: oklch(0.97 0.04 160);
@@ -186,119 +149,18 @@ body {
   border: 1px solid oklch(0.88 0.10 25);
 }
 
-/* ── Skeleton loading ── */
-.skeleton {
-  background: rgba(255,255,255,0.07);
-  border-radius: 4px;
-  animation: skeleton-pulse 1.5s ease-in-out infinite;
-}
-
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #ffffff; }
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover { background: var(--accent-border); }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--soft); }
 
-/* ═══════════════════════════════════════════
-   HERO LOAD ANIMATIONS
-═══════════════════════════════════════════ */
-@keyframes hero-word {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-word {
-  opacity: 0;
-  animation: hero-word 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.hero-badge {
-  opacity: 0;
-  animation: hero-word 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.hero-subtext {
-  opacity: 0;
-  animation: hero-word 0.45s cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
-}
-.hero-cta {
-  opacity: 0;
-  animation: hero-word 0.45s cubic-bezier(0.16, 1, 0.3, 1) 350ms forwards;
-}
-
-/* ═══════════════════════════════════════════
-   SCROLL-TRIGGERED DIRECTIONAL REVEALS
-═══════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-28px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal-left.visible {
-  opacity: 1;
-  transform: none;
-}
-.reveal-right {
-  opacity: 0;
-  transform: translateX(28px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal-right.visible {
-  opacity: 1;
-  transform: none;
-}
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.97);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal-scale.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ═══════════════════════════════════════════
-   BOUNCE CHEVRON
-═══════════════════════════════════════════ */
-@keyframes bounce-chevron {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
-}
-.bounce-chevron {
-  animation: bounce-chevron 1.5s ease-in-out infinite;
-}
-
-/* ═══════════════════════════════════════════
-   REDUCED MOTION — new animation classes
-═══════════════════════════════════════════ */
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale {
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
-  .hero-word,
-  .hero-badge,
-  .hero-subtext,
-  .hero-cta {
-    opacity: 1 !important;
-    animation: none !important;
-  }
-  .bounce-chevron { animation: none !important; }
+  .cursor-blink { animation: none !important; }
 }

@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-geist",
   display: "swap",
 });
 
-const newsreader = Newsreader({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-newsreader",
+  variable: "--font-geist-mono",
   display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const BASE_URL = "https://www.yahshua.one";
@@ -101,7 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-PH" className={`${inter.variable} ${newsreader.variable}`}>
+    <html lang="en-PH" className={`${geist.variable} ${geistMono.variable}`}>
       <head>
         <link rel="canonical" href={BASE_URL} />
         <meta name="geo.region" content="PH" />
