@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-28",
+    "badge": "Progress Update",
+    "title": "Employee Payroll Control Gets Deeper",
+    "description": "We pushed YAHSHUA One forward with stronger employee payroll controls, better leave and bank account management, clearer work history tracking, and safer handling for tax, loans, and deductions across real business scenarios.",
+    "body": [
+      "For many Filipino business owners, payroll problems rarely begin on payday itself. They begin earlier, when employee records are incomplete, leave balances are hard to trust, bank details are awkward to maintain, or deductions and tax carryovers live in scattered manual processes. Once those foundations are messy, every payroll run becomes heavier than it should be and every exception takes longer to explain. A real backoffice has to make the employee record itself dependable, because that is where payroll accuracy starts. This update matters because YAHSHUA One is getting stronger in the exact employee-level details that determine whether payroll feels calm or chaotic.",
+      "Yesterday's work shipped a broad set of practical improvements across employee payroll and record management. In plain language, YAHSHUA One is gaining better ways to manage leave balances, leave credits, recurring deductions, one-time deductions, bank account details, work schedule history, tax beginning balances, and employee salary or rate status data. We also pushed the system further in how it handles final-pay style scenarios, including loan balance deductions and payroll integration for pensionable earnings, so more of the hard edge cases can be handled inside the product instead of outside it. On top of that, employee profiles are becoming more complete with stronger assignment history, clearer setup requirements, and better sorting and organization for everyday admin work. Put simply, the platform is becoming more capable of storing the real truth about each employee and turning that truth into cleaner payroll behavior.",
+      "What this means for you is more confidence that YAHSHUA One can support the messy details real businesses deal with every week. Your team gets closer to a setup where employee records, leave monitoring, deduction timing, banking details, and tax carryovers all live in one place with less guesswork and less manual cleanup. That reduces avoidable errors, makes payroll outcomes easier to explain, and helps the product feel more like a true operating system for payroll and HR instead of a collection of disconnected screens. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice that can carry not just standard payroll flows, but the exceptions and historical details that serious businesses actually need. We are continuing to build toward a platform Filipino businesses can rely on when operations get detailed, high-stakes, and very real."
+    ]
+  },
+  {
     "date": "2026-05-27",
     "badge": "Progress Update",
     "title": "Payroll Rules Become Truly Practical",
