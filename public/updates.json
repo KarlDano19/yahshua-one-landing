@@ -2,6 +2,17 @@
   {
     "date": "2026-05-28",
     "badge": "Progress Update",
+    "title": "Employee Records Get Easier to Trust",
+    "description": "We improved employee org chart handling, bank account management, and ID history so teams can keep records cleaner and payroll setup easier to manage.",
+    "body": [
+      "Yesterday's work focused on the employee details that quietly affect payroll and HR every week. YAHSHUA One is getting better at handling where employees sit in the organization, how their bank details are managed, and how important identity history is tracked over time.",
+      "In plain language, teams are getting a clearer org chart workspace, smoother employee bank account management, and better visibility into employee ID history and related policy controls. We also cleaned up a few smaller usability issues so these day-to-day admin flows feel less awkward to work through.",
+      "What this means for you is less record confusion, cleaner employee setup, and a stronger foundation for payroll and HR operations. It is another steady step toward a backoffice system Filipino businesses can actually rely on when employee data needs to stay accurate, organized, and easy to review."
+    ]
+  },
+  {
+    "date": "2026-05-28",
+    "badge": "Progress Update",
     "title": "Employee Payroll Control Gets Deeper",
     "description": "We pushed YAHSHUA One forward with stronger employee payroll controls, better leave and bank account management, clearer work history tracking, and safer handling for tax, loans, and deductions across real business scenarios.",
     "body": [
