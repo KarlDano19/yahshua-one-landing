@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-30",
+    "badge": "Progress Update",
+    "title": "Daily Logs Get Much More Real",
+    "description": "We made daily log requests far more complete with geolocation, photo support, duplicate protection, and automatic syncing into timesheets once approvals are done.",
+    "body": [
+      "For many Filipino business owners, timekeeping problems do not begin when payroll is computed. They begin earlier, when a daily log request is missing the details needed to prove where someone was, what actually happened, and whether the record can be trusted. If those gaps stay unresolved, HR and operations teams end up chasing clarifications through chat, screenshots, and memory just to clean up one attendance issue. That adds friction to approvals, slows payroll preparation, and creates doubt around records that should already be clear. This update matters because YAHSHUA One is getting better at capturing the real truth behind daily log requests before those small issues become bigger payroll headaches.",
+      "Yesterday's work made daily log requests much more complete in plain language. YAHSHUA One can now capture the location details that matter, including address, map coordinates, and supporting photos, so a request carries more real-world context instead of just a bare explanation. We also added stronger checks to prevent time entries from colliding too closely with existing biometric records, which helps reduce duplicate or suspicious submissions before they create confusion downstream. On top of that, approved daily log requests can now flow directly into the timesheet record instead of forcing teams to re-enter the same correction by hand after approval. Put simply, the product is getting better at turning a request into a trustworthy attendance update instead of leaving HR to stitch the story together manually.",
+      "What this means for you is a cleaner and more reliable path from attendance correction to payroll readiness. Your team can review daily log requests with better evidence, approve them with more confidence, and trust that the result will carry through into the actual time record without extra encoding work. That reduces manual cleanup, lowers the chance of avoidable disputes, and helps attendance data feel more credible when cutoff pressure starts building. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice where requests, approvals, timesheets, and payroll all reinforce each other in one system. We are continuing to build toward a platform Filipino businesses can rely on when the everyday messiness of real attendance and payroll operations shows up."
+    ]
+  },
+  {
     "date": "2026-05-28",
     "badge": "Progress Update",
     "title": "Employee Records Get Easier to Trust",
