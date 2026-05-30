@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-05-30",
+    "badge": "Improvement",
+    "title": "Approvals and Requests Get Much Easier to Work Through",
+    "description": "We reorganized approvals and request pages into clearer workspaces, added helpful counters, and fixed confusing filters so teams can move through payroll actions with less guesswork.",
+    "body": [
+      "Yesterday's work focused on making one of the busiest parts of the product feel less cluttered and easier to trust. Approvals and request-heavy payroll workflows are getting a cleaner structure, so teams can spend less time hunting through pages and more time actually reviewing what needs action.",
+      "In plain language, YAHSHUA One now gives approvals and requests more dedicated workspaces, organizes related pages in a more intuitive way, and shows clearer counters so people can quickly see where work is waiting. We also fixed a frustrating filter issue that could show confusing placeholder values instead of real labels, which makes screens feel more understandable from the first click. On top of that, a few navigation paths were cleaned up so people land in the right home profile area more reliably.",
+      "What this means for you is less friction in the day-to-day review flow. Payroll teams and approvers should find it easier to move through requests, understand what needs attention, and trust what the interface is telling them without extra second-guessing. It is another practical step toward a backoffice that feels organized, human-readable, and ready for real daily use."
+    ]
+  },
+  {
+    "date": "2026-05-30",
     "badge": "Progress Update",
     "title": "Daily Logs Get Much More Real",
     "description": "We made daily log requests far more complete with geolocation, photo support, duplicate protection, and automatic syncing into timesheets once approvals are done.",
