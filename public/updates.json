@@ -2,6 +2,17 @@
   {
     "date": "2026-05-31",
     "badge": "Progress Update",
+    "title": "Payroll Setup Can Now Fit Your Business Better",
+    "description": "We started rolling out custom payroll fields, so YAHSHUA One can store company-specific employee details and use them in payroll rules without messy side spreadsheets.",
+    "body": [
+      "Yesterday's work focused on a very real payroll headache: every company has a few employee details that matter to pay setup, but most systems force teams to track those details somewhere else. Once that happens, payroll becomes more dependent on side spreadsheets, memory, and manual double-checking than it should be.",
+      "In plain language, YAHSHUA One is gaining custom payroll fields for each employee. That means teams can store business-specific payroll details directly inside the system, use those details in payroll logic, and fill them in through cleaner, easier-to-understand screens. We also tightened the checks around those values so incorrect entries are more likely to get caught early instead of quietly slipping through.",
+      "What this means for you is a payroll setup that can reflect how your company actually works without as much patchwork behind the scenes. It is another step toward a backoffice Filipino businesses can shape around real operations, not just whatever a generic payroll template happens to allow."
+    ]
+  },
+  {
+    "date": "2026-05-31",
+    "badge": "Progress Update",
     "title": "Payroll Compliance Gets Real Teeth",
     "description": "We pushed YAHSHUA One forward with stronger statutory compliance controls, cleaner payroll definition management, and better safeguards that help Filipino businesses trust payroll setup before problems snowball.",
     "body": [
