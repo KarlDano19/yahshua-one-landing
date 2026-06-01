@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-01",
+    "badge": "Progress Update",
+    "title": "Payroll Setup Starts Thinking Ahead",
+    "description": "We pushed YAHSHUA One closer to an AI-guided payroll setup experience, with smarter onboarding, clearer previews, safer go-live steps, and stronger compliance foundations for Filipino businesses.",
+    "body": [
+      "For many Filipino business owners, payroll setup does not become stressful because the business is careless. It becomes stressful because the rules are real, the details are messy, and too much of the process still depends on someone remembering what to do next. A strong backoffice should not just store settings after the fact. It should help a team understand what is missing, what needs review, and what should happen before anything goes live. That matters even more in the Philippines, where compliance, custom payroll practices, and employee-specific details can quickly turn setup into a fragile manual process. Yesterday's work focused on making YAHSHUA One more proactive, more guided, and much easier to trust during that setup stage.",
+      "In plain language, we moved a big block of work forward to help YAHSHUA One guide payroll setup more intelligently from start to finish. The product is learning how to read setup documents, interpret company policies, suggest the payroll fields and rules a business actually needs, and show those suggestions in a cleaner review flow before anything is finalized. We also built stronger sample run previews, so teams can see how a setup would behave before committing it for real, and we tightened the go-live process so publishing changes feels more deliberate and less risky. On the experience side, Theo's simpler chat-first workspace kept improving too, which makes this setup process feel more approachable instead of buried inside technical-looking screens. At the same time, statutory compliance foundations kept moving forward underneath, so smarter setup is being paired with stronger payroll discipline where it counts.",
+      "What this means for you is a future where setting up payroll in YAHSHUA One feels less like assembling a puzzle by hand and more like being guided by a system that understands the job. Your team gets closer to a workflow where missing details are easier to catch, policy-driven payroll logic is easier to shape, and setup changes can be reviewed in plain language before they affect a real payroll run. That reduces guesswork, lowers the risk of costly configuration mistakes, and helps businesses move faster without feeling reckless. It also pushes YAHSHUA One closer to being a complete payroll and HR backoffice, where onboarding, compliance, payroll logic, and AI guidance all reinforce each other instead of living in separate tools. We are building toward a product Filipino businesses can rely on not only to run payroll, but to help them set it up right from the start."
+    ]
+  },
+  {
     "date": "2026-05-31",
     "badge": "Progress Update",
     "title": "Payroll Setup Can Now Fit Your Business Better",
