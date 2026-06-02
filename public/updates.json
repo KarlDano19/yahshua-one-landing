@@ -2,6 +2,17 @@
   {
     "date": "2026-06-02",
     "badge": "Progress Update",
+    "title": "Theo Gets More Helpful While Approvals Get Smarter",
+    "description": "We made Theo’s new simple mode much richer with clearer tables, charts, summaries, and action prompts, while also improving approval handoffs and tightening a few payroll details that help teams avoid confusion.",
+    "body": [
+      "Yesterday's work focused on making YAHSHUA One feel more helpful in the moment, not just more powerful behind the scenes. Theo's simpler experience kept expanding so people can get answers in a cleaner way, with richer visual outputs and clearer prompts instead of walls of text or awkward back-and-forth.",
+      "In plain language, Theo is getting better at showing useful information as organized tables, charts, summaries, action lists, and guided choices, including a cleaner experience across desktop and mobile. We also improved the live reply experience so Theo feels more responsive while it is still thinking. On the operational side, approval flows now handle unavailable approvers more gracefully through delegation, which helps requests keep moving instead of getting stuck waiting on the wrong person. A payroll export detail was also fixed so location-based exports stay aligned with the filters your team actually selected.",
+      "What this means for you is a backoffice that keeps getting easier to use under real pressure. Theo is moving closer to feeling like a practical work partner instead of just a chat box, while the approval and payroll side keeps getting safer and less frustrating in the edge cases that usually slow teams down. It is another solid step toward a platform Filipino businesses can rely on for both everyday decisions and day-to-day execution."
+    ]
+  },
+  {
+    "date": "2026-06-02",
+    "badge": "Progress Update",
     "title": "Payroll Setup Gets Much Smarter",
     "description": "We moved YAHSHUA One forward with guided payroll setup, safer subscription controls, deeper attendance and leave rules, and stronger reporting foundations for real Philippine business operations.",
     "body": [
