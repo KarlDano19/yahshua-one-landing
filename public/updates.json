@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-03",
+    "badge": "Progress Update",
+    "title": "Theo Starts Explaining Payroll Clearly",
+    "description": "We taught Theo to explain payroll results in plain language, guide payroll operators through more real workflows, and make setup imports far easier to review and trust.",
+    "body": [
+      "For many Filipino business owners, payroll stress is not only about getting a number out on time. It is also about being able to explain where that number came from when an employee, manager, or approver asks questions. If the system cannot clearly show why a result happened, teams fall back to screenshots, side spreadsheets, and memory just to defend a payroll outcome. That creates doubt even when the calculation is technically correct. Yesterday's progress focused on making YAHSHUA One more explainable, more guided, and easier to trust in the exact moments people need clarity most.",
+      "In plain language, we taught Theo to do much more than just return an answer. Theo can now walk through payroll computations, pull clearer breakdowns, show line-level traces, and turn complex calculation details into explanations ordinary operators can actually understand. We also expanded Theo's payroll operator coverage so it can help with sample runs, approvals, attendance exceptions, and other practical workflows that happen before payroll is finalized. On the setup side, YAHSHUA One got smarter about reading employee and timekeeping data, saving reusable mappings, and showing review cards that make imported information easier to validate before mistakes spread. Even the surrounding product experience kept improving, with cleaner company selection, better profile and kiosk flows, and a more polished navigation structure that makes everyday work feel less clunky.",
+      "What this means for you is a backoffice that keeps getting closer to thinking with your team instead of forcing your team to translate the system by hand. You can move toward a workflow where payroll results are easier to inspect, setup imports are easier to trust, and Theo can help operators understand what needs attention before a run goes live. That reduces guesswork, lowers the cost of payroll confusion, and makes it easier for growing businesses to operate with confidence even when payroll details get messy. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where setup, validation, explanation, and execution all reinforce each other in one place. We are continuing to build toward a platform Filipino businesses can rely on not just to compute payroll, but to make payroll understandable and actionable every day."
+    ]
+  },
+  {
     "date": "2026-06-02",
     "badge": "Progress Update",
     "title": "Theo Gets More Helpful While Approvals Get Smarter",
