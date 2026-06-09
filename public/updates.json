@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-06-09",
+    "badge": "Improvement",
+    "title": "Clearer Team Permissions Across Payroll Workflows",
+    "description": "We tightened team access controls so businesses can more clearly decide who can create, edit, and manage sensitive payroll and attendance tasks without giving broader access than necessary.",
+    "body": [
+      "As a company grows, one of the fastest ways for payroll and HR work to get messy is when permissions are too broad or too vague. If too many people can change sensitive records, mistakes become harder to prevent and even harder to trace. But if access is too restrictive, routine work slows to a crawl. That balance matters a lot in day-to-day operations, especially when attendance, imports, and employee records are involved.",
+      "Yesterday's work focused on making those access rules much clearer inside YAHSHUA One. In plain language, businesses are getting finer control over who can create something new versus who can only update or manage existing records. We also improved how these rules apply across attendance-related tools, imports, and other payroll workflows, so teams should see permissions behave more consistently throughout the system instead of feeling patchy from one screen to another.",
+      "For early supporters, the big takeaway is simple: YAHSHUA One is becoming safer and easier to manage as more people use it inside a real company. Better permission controls mean fewer accidental changes, clearer accountability, and a smoother path to giving each team member the access they actually need—without opening up everything by default. It is quiet work on the surface, but it is exactly the kind of foundation that makes a serious backoffice platform trustworthy over time."
+    ]
+  },
+  {
+    "date": "2026-06-09",
     "badge": "Progress Update",
     "title": "Approvals Start Ready From Day One",
     "description": "We made new companies in YAHSHUA One start with approval flows already in place, so teams can onboard faster and handle payroll and HR decisions with less setup friction.",
