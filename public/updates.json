@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-09",
+    "badge": "Progress Update",
+    "title": "Approvals Start Ready From Day One",
+    "description": "We made new companies in YAHSHUA One start with approval flows already in place, so teams can onboard faster and handle payroll and HR decisions with less setup friction.",
+    "body": [
+      "For many Filipino business owners, backoffice stress does not begin when payroll is finally processed. It starts much earlier, when a new company is setting things up and still has to decide who should review, recommend, or approve important actions. If those approval paths are missing or unclear on day one, teams fall back to chat messages, memory, and verbal instructions just to keep work moving. That creates risk fast, especially once payroll, employee requests, and operational changes start piling up. This update matters because YAHSHUA One is getting better at giving companies a cleaner operational foundation from the moment they begin.",
+      "In plain language, we made YAHSHUA One automatically prepare default approval pipelines when a new company is created, while also aligning that behavior with the onboarding flow. That means a new business no longer has to start from a blank, awkward state before basic decisions can move through the right people. Instead of asking teams to manually stitch together review and approval steps after setup, the product now gives them a more ready-to-use structure from the start. This makes the early experience feel less technical and less fragile for founders, HR staff, and payroll operators. Put simply, we removed a chunk of first-day setup friction and made the system behave more like a real backoffice from the beginning.",
+      "What this means for you is a faster path from signing up to actually running your business inside YAHSHUA One. Your team can start with clearer approval logic already in place, which makes onboarding smoother and reduces the chances of important requests getting handled informally or inconsistently. That saves time, lowers confusion, and helps businesses build better operating habits before bad workarounds become normal. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where setup, approvals, and daily execution all reinforce each other in one system. We are continuing to build toward a platform Filipino businesses can rely on from day one, not only after weeks of manual configuration."
+    ]
+  },
+  {
     "date": "2026-06-03",
     "badge": "Progress Update",
     "title": "Theo Starts Explaining Payroll Clearly",
