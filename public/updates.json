@@ -2,6 +2,17 @@
   {
     "date": "2026-06-10",
     "badge": "Progress Update",
+    "title": "Everyday Payroll and HR Work Gets Clearer",
+    "description": "We improved how teams manage access, search employee records, review attendance details, and move through the product, so routine backoffice work feels easier to trust and less patchy.",
+    "body": [
+      "Yesterday's work focused on the parts of a backoffice product people feel every single day: finding the right employee faster, reviewing attendance details more clearly, and making sure the right people can access the right settings without awkward workarounds. YAHSHUA One is getting better at the ordinary workflow moments that usually create the most follow-up for HR and payroll teams.",
+      "In plain language, teams are getting a cleaner sidebar and navigation experience, a more useful employee search flow, better visibility into attendance logs and date-based reviews, and steadier handling for employee records, IDs, and required details. We also tightened permissions in company settings and payroll-related setup so access can be managed more precisely as more people use the system. On top of that, a bunch of smaller fixes and polish landed across forms, imports, and table views so everyday screens behave more consistently instead of feeling stitched together.",
+      "What this means for you is less friction in the small tasks that eat up time across a week. Your team gets closer to a setup where records are easier to find, attendance issues are easier to review, and sensitive settings are easier to control without overexposing the whole system. It is steady progress, but it is exactly the kind that makes a serious payroll and HR backoffice feel calmer, cleaner, and more trustworthy as your company grows."
+    ]
+  },
+  {
+    "date": "2026-06-10",
+    "badge": "Progress Update",
     "title": "Employee Pay Controls Grow Up",
     "description": "We expanded how businesses manage employee deductions and one-time earnings, making payroll details easier to organize, review, and trust as day-to-day operations get more complex.",
     "body": [
