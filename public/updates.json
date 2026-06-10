@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-10",
+    "badge": "Progress Update",
+    "title": "Employee Pay Controls Grow Up",
+    "description": "We expanded how businesses manage employee deductions and one-time earnings, making payroll details easier to organize, review, and trust as day-to-day operations get more complex.",
+    "body": [
+      "As a business grows, payroll gets messy in very ordinary ways long before payday itself becomes dramatic. A loan gets restructured, a one-time earning needs to be tracked properly, or a deduction follows a schedule that people need to understand at a glance. When those details live in side notes, memory, or awkward workarounds, small payroll tasks start turning into repeated follow-up for HR and finance. That costs time, creates avoidable confusion, and makes employee records harder to trust over time. This update matters because YAHSHUA One is getting better at handling those real employee-level payroll details inside the system itself, where they belong.",
+      "Yesterday's work pushed a meaningful set of improvements across employee deductions and one-time earnings. In plain language, teams are getting a more complete place to manage regular deductions per employee, clearer visibility into deduction schedules, and support for handling loan restructuring without turning the record into a manual patch job. We also expanded how one-time earnings are stored and reviewed, including cleaner employee history views and better tracking of whether a payroll-related item is still pending, already processed, or fully closed. On top of that, supporting API and backend work moved forward so these records behave more consistently behind the scenes instead of feeling stitched together. Put simply, YAHSHUA One is becoming more capable of reflecting the real lifecycle of employee pay adjustments, not just the final number that shows up later.",
+      "What this means for you is more confidence in the small payroll details that usually create the most cleanup work. Your team gets closer to a setup where deductions, loan changes, and one-time earnings can be reviewed more clearly, updated more safely, and understood more easily when someone asks what happened. That reduces spreadsheet dependency, cuts down on avoidable back-and-forth, and helps payroll records stay cleaner as your company grows. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where employee records, payroll adjustments, and operational follow-through all live in one trustworthy system. We are continuing to build toward a platform Filipino businesses can rely on not just for payroll output, but for the messy real-world details behind it."
+    ]
+  },
+  {
     "date": "2026-06-09",
     "badge": "Improvement",
     "title": "Clearer Team Permissions Across Payroll Workflows",
