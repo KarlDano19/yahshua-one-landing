@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-11",
+    "badge": "Progress Update",
+    "title": "The Developer Portal Gets Safer and Easier to Use",
+    "description": "We tightened access to developer-only areas, cleaned up navigation, improved daily log handling, and made payroll setup guidance smoother so the product feels clearer and more dependable in day-to-day use.",
+    "body": [
+      "Yesterday's work focused on the parts of a growing product that quietly shape trust: who gets access to sensitive areas, how easy it is to move through the app, and whether routine setup flows feel guided instead of awkward. YAHSHUA One is getting better at helping teams work confidently without stumbling into pages or settings they should not be dealing with in the first place.",
+      "In plain language, the developer-only side of the product now has stronger guardrails, so access to those tools can be controlled more deliberately. We also cleaned up the overall layout and navigation, which should make it easier to find your way around instead of feeling like parts of the product were stitched together. On top of that, daily log and form-related flows were improved, and the payroll setup tours and onboarding guidance got more polish so new users can understand what to do next with less guesswork.",
+      "What this means for you is a product that keeps feeling more mature, not just more feature-heavy. Teams should get a cleaner path through the system, safer handling around more technical areas, and a smoother first-run experience when setting things up. It is steady progress, but it is exactly the kind that makes a serious payroll and HR backoffice easier to trust as more people start using it every day."
+    ]
+  },
+  {
     "date": "2026-06-10",
     "badge": "Progress Update",
     "title": "Everyday Payroll and HR Work Gets Clearer",
