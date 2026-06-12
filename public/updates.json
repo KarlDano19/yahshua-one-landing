@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-12",
+    "badge": "Improvement",
+    "title": "Company Settings and Everyday Admin Work Feel Cleaner",
+    "description": "We cleaned up company settings, restored shift assignment on employee profiles, improved how time is shown across the product, and polished attendance-related screens so everyday work feels clearer and less patchy.",
+    "body": [
+      "Yesterday's work focused on the kind of product polish people feel every day, even if it does not arrive as one giant flashy feature. YAHSHUA One is getting better at the ordinary admin moments that either make a system feel dependable or make it feel stitched together.",
+      "In plain language, company settings are now laid out more cleanly again, shift assignment is back where teams expect it on employee records, and time information is being shown more clearly across the product. We also polished some attendance-related screens and general interface details so reviewing records and moving through routine tasks feels less awkward.",
+      "What this means for you is less friction in the small tasks that quietly eat up attention across a week. Admins should have an easier time managing settings, keeping employee shift details accurate, and reading important timing information without second-guessing the screen. It is steady progress, but it is exactly the kind that makes a serious backoffice product feel calmer and more trustworthy in daily use."
+    ]
+  },
+  {
     "date": "2026-06-11",
     "badge": "Progress Update",
     "title": "The Developer Portal Gets Safer and Easier to Use",
