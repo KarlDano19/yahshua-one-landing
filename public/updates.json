@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-14",
+    "badge": "Progress Update",
+    "title": "Timekeeping Gets Real Operational Depth",
+    "description": "We shipped a major wave of scheduling, attendance, overtime, leave, and company timekeeping improvements so YAHSHUA One can handle far more of the real rules Filipino businesses deal with every week.",
+    "body": [
+      "For many Filipino business owners, timekeeping is where backoffice stress quietly begins. A system can look polished on the surface and still fall apart the moment schedules change, shifts cross midnight, overtime needs approval, or leave should affect expected work hours in a very specific way. Once those edge cases start piling up, teams usually fall back to side spreadsheets, memory, or manual corrections just to keep payroll trustworthy. That is expensive in time and even worse for confidence. This update matters because YAHSHUA One is getting much better at reflecting how real companies actually run work, not just how a clean demo version of work looks.",
+      "Yesterday's work delivered a big connected set of improvements across work schedules, attendance rules, and payroll handoff. In plain language, businesses can now shape schedules more clearly with presets, weekly planning tools, visual editing, schedule groups, and live previews that help teams understand how a day will be classified before it affects actual records. We also expanded how the system handles tricky but common realities like cross-midnight shifts, approved overtime rules, leave based on scheduled hours, weekly hour tracking, and attendance penalties that depend on both timing and consequence. On top of that, company timekeeping settings got a cleaner experience, and older schedule screens were removed so the product feels less fragmented. Put simply, YAHSHUA One is becoming much better at turning messy real-world attendance logic into something structured, visible, and easier to trust.",
+      "What this means for you is more confidence that the system can keep up when your operations stop being simple. Your team gets closer to a workflow where schedules are easier to plan, attendance outcomes are easier to explain, and payroll receives cleaner inputs without so much manual cleanup after the fact. That reduces guesswork, lowers the chance of avoidable disputes, and helps managers make clearer decisions when employees ask why a result happened. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where schedule planning, attendance interpretation, leave handling, and payroll execution all reinforce each other in one place. We are continuing to build toward a platform Filipino businesses can rely on when real operating complexity shows up and the system still needs to stay calm, clear, and correct."
+    ]
+  },
+  {
     "date": "2026-06-12",
     "badge": "Improvement",
     "title": "Company Settings and Everyday Admin Work Feel Cleaner",
