@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-15",
+    "badge": "Progress Update",
+    "title": "Payroll Setup Starts Feeling Guided",
+    "description": "We began rolling out a guided payroll setup flow and cleaned up payroll rate handling, so new companies can get configured with less guesswork and more confidence.",
+    "body": [
+      "Yesterday's work focused on one of the biggest early hurdles in any payroll system: getting set up without feeling like you need to decode the product first. YAHSHUA One is getting better at guiding new companies through payroll setup in a way that feels clearer, less fragile, and much closer to how a real team actually gets started.",
+      "In plain language, we started building a more guided payroll setup flow so businesses can move through key setup steps with better structure instead of piecing everything together manually. We also cleaned up a few important payroll details behind the scenes, including how employee pay rates are picked up, so payroll runs should behave more reliably once a company starts configuring real people and real pay rules. On top of that, we kept polishing the payroll home and onboarding experience so the whole setup path feels less awkward.",
+      "What this means for you is a smoother path from signing up to having payroll configured in a way you can trust. New teams get closer to a setup experience that explains itself better, reduces avoidable mistakes, and gives more confidence that payroll is pulling from the right information from the start. It is another solid step toward making YAHSHUA One feel less like a complicated system you have to fight and more like a backoffice platform that actually helps you get moving."
+    ]
+  },
+  {
     "date": "2026-06-14",
     "badge": "Progress Update",
     "title": "Timekeeping Gets Real Operational Depth",
