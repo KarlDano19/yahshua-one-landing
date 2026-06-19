@@ -2,6 +2,17 @@
   {
     "date": "2026-06-19",
     "badge": "Progress Update",
+    "title": "Schedules and Payroll Rules Get Clearer",
+    "description": "We improved schedule planning, attendance visibility, payroll correction safeguards, and everyday navigation so YAHSHUA One feels easier to trust when real work gets messy.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not begin when a payslip is released. It starts earlier, when schedules change, attendance has gaps, and the team is left guessing what the system thinks really happened on a given day. If those basics are unclear, even a correct payroll run can still feel risky because nobody wants to discover a mistake too late. That is where backoffice software quietly wins or loses trust. This update matters because YAHSHUA One is getting better at making those everyday operational details more visible and easier to manage.",
+      "Yesterday's work pushed several connected improvements forward at once. In plain language, teams are getting a clearer schedule planning experience, a more reliable way to work with employee schedules, and better visibility into attendance days where no logs exist so managers can understand what kind of day the system is recognizing. We also tightened how payroll handles corrections and protected periods, which helps prevent awkward downstream surprises when changes need to be made carefully. On top of that, we cleaned up navigation so work schedules, org structure, and related settings are easier to find where teams expect them. We also polished practical edges like shared-account mobile behavior, salary rate visibility, and product guides so the platform feels less patchy in daily use.",
+      "What this means for you is a calmer path from timekeeping to payroll confidence. Your team gets closer to a workflow where schedules are easier to plan, attendance outcomes are easier to interpret, and payroll corrections are easier to trust before they create bigger cleanup later. That reduces guesswork, lowers the chance of avoidable back-and-forth, and helps managers move faster when real-world exceptions show up. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where schedules, attendance, corrections, and compliance all reinforce each other in one place. We are still building fast, but this is exactly the kind of progress that makes the product feel more serious, more usable, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-19",
+    "badge": "Progress Update",
     "title": "Payroll Setup Gets Much More Real",
     "description": "We shipped a major wave of payroll compliance, employee onboarding import, schedule management, and navigation improvements so YAHSHUA One can handle more of the real setup work Filipino businesses face before payroll even begins.",
     "body": [
