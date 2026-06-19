@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-19",
+    "badge": "Progress Update",
+    "title": "Payroll Setup Gets Much More Real",
+    "description": "We shipped a major wave of payroll compliance, employee onboarding import, schedule management, and navigation improvements so YAHSHUA One can handle more of the real setup work Filipino businesses face before payroll even begins.",
+    "body": [
+      "For many Filipino business owners, the hardest part of payroll is not the final computation. It is the messy setup work that comes before it, when employee records need to be imported cleanly, schedules need to reflect real operations, and compliance rules need to hold up under pressure. If those foundations are shaky, teams end up patching the system with spreadsheets, side notes, and manual double-checking before a single payroll run can feel trustworthy. That is exhausting for growing companies that simply want one backoffice they can rely on. This update matters because YAHSHUA One is getting much stronger at turning that setup chaos into something structured, visible, and dependable.",
+      "Yesterday's work pushed several connected product improvements forward at once. In plain language, businesses are getting a more complete employee onboarding import flow that can pull people in more intelligently, create the right surrounding setup, and reduce the need for awkward cleanup after the fact. We also improved how schedules are managed and surfaced across the product, including clearer schedule assignment, better attendance breakdowns for days without logs, and a cleaner navigation structure so important settings are easier to find where teams expect them. On the payroll side, we strengthened statutory compliance behavior, reporting reliability, and test coverage so compliance rules are less likely to behave like a black box. We also cleaned up a set of practical interface issues, from mobile employment handling to menu transitions and leave page friction, so the product feels calmer in everyday use instead of stitched together.",
+      "What this means for you is a faster path from setup to confidence. Your team gets closer to a workflow where employee data is easier to bring in, work schedules are easier to understand, and payroll compliance is easier to trust before errors can spread downstream. That reduces manual cleanup, lowers the chance of avoidable setup mistakes, and helps the platform support the real operating complexity Filipino businesses deal with every week. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where onboarding, schedules, compliance, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of depth that makes the product feel less like a promising tool and more like a serious system you can actually run on."
+    ]
+  },
+  {
     "date": "2026-06-16",
     "badge": "Progress Update",
     "title": "Schedules and Attendance Grow Up",
