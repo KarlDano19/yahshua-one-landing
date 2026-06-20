@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-20",
+    "badge": "Progress Update",
+    "title": "Setup and Attendance Feel More Trustworthy",
+    "description": "We made employee onboarding imports smarter, daily attendance clearer to review, and product navigation less confusing so YAHSHUA One feels easier to trust during real setup and day-to-day payroll work.",
+    "body": [
+      "For many Filipino business owners, trust in a payroll system is won long before payroll is actually released. It starts during setup, when employee records are being brought in, and during attendance review, when teams need to understand what the system thinks happened on a given day. If imports are fragile or attendance screens feel patchy, operations slow down and people fall back to side notes, screenshots, and manual checking. That creates stress before the real payroll pressure even begins. This update matters because YAHSHUA One is getting better at making those early and everyday moments feel clearer, steadier, and easier to trust.",
+      "Yesterday's work improved several connected parts of the product in practical ways. In plain language, employee onboarding imports are getting smarter by matching setup information more reliably, which helps new records land with less cleanup and less awkward correction after the fact. We also improved the daily attendance view so gaps are easier to understand, statuses are clearer, and schedule context is easier to inspect while reviewing a person's day. On top of that, we cleaned up navigation by removing confusing duplication and placing technical areas where they make more sense, so teams spend less time hunting through the product. We also tightened a few payroll setup details behind the scenes, which helps the overall experience feel less brittle and more disciplined.",
+      "What this means for you is a calmer path from company setup to everyday payroll readiness. Your team gets closer to a workflow where employee data is easier to bring in, attendance issues are easier to spot and explain, and important settings are easier to find without second-guessing the interface. That reduces manual cleanup, lowers the chance of avoidable setup mistakes, and helps managers move faster when real operational questions come up. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where onboarding, attendance review, and payroll preparation all reinforce each other in one place. We are still building fast, but this is exactly the kind of progress that makes the product feel more mature, more usable, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-06-19",
     "badge": "Progress Update",
     "title": "Schedules and Payroll Rules Get Clearer",
