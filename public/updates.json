@@ -2,6 +2,17 @@
   {
     "date": "2026-06-20",
     "badge": "Progress Update",
+    "title": "Payroll Premium Rules Get Much Clearer",
+    "description": "We made premium pay rules easier to manage, improved how night and holiday overtime is calculated, and added clearer payroll diagnostics so teams can trust tricky payroll cases with less guesswork.",
+    "body": [
+      "For many Filipino businesses, payroll trust is tested most when work hours stop being simple. Night work, overtime, holidays, and overlapping premium rules can quickly turn a normal payroll run into a stressful review session if the system is hard to configure or the results are hard to explain. When that happens, teams fall back to spreadsheets, side calculations, and repeated double-checking just to feel safe. That costs time and makes even correct results feel fragile. This update matters because YAHSHUA One is getting much better at handling those tricky pay situations in a way that feels clearer and easier to trust.",
+      "Yesterday's work focused on making premium pay rules much more usable in plain language. Instead of scattering these settings across awkward screens, YAHSHUA One is moving toward a cleaner single place where teams can review and adjust how overtime, night work, and combined holiday scenarios should behave. We also improved how the system handles night overtime and double-holiday cases, so premium pay follows the intended rules more accurately even in more complex combinations. On top of that, payroll uploads are being aligned more carefully with the same premium logic, which helps imported data behave more consistently instead of creating confusing exceptions. Staff also now get a better way to look up payroll generation issues and understand zero-pay situations, which makes it easier to investigate what happened without digging blindly behind the scenes.",
+      "What this means for you is more confidence when payroll starts dealing with real-world edge cases instead of only the easy scenarios. Your team gets closer to a workflow where premium pay rules are easier to maintain, unusual shifts are easier to process correctly, and payroll issues are easier to explain when someone asks why a result came out a certain way. That reduces manual checking, lowers the risk of avoidable payroll corrections, and makes the platform feel more dependable under real operating pressure. It also helps more teams work safely inside the payroll module with clearer permissions and cleaner review tools. We are still building fast, but this is exactly the kind of progress that makes YAHSHUA One feel more serious, more trustworthy, and more ready for real payroll complexity in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-20",
+    "badge": "Progress Update",
     "title": "Setup and Attendance Feel More Trustworthy",
     "description": "We made employee onboarding imports smarter, daily attendance clearer to review, and product navigation less confusing so YAHSHUA One feels easier to trust during real setup and day-to-day payroll work.",
     "body": [
