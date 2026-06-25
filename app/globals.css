@@ -164,3 +164,135 @@ button { font: inherit; cursor: pointer; }
   }
   .cursor-blink { animation: none !important; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE LAYOUT SYSTEM
+══════════════════════════════════════════════════════════ */
+
+/* ── Navigation ── */
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-cta   { display: flex; gap: 8px; align-items: center; }
+.nav-burger {
+  display: none;
+  background: transparent; border: none;
+  padding: 8px; border-radius: 8px;
+  cursor: pointer; color: var(--ink);
+  align-items: center; justify-content: center;
+  transition: background 0.15s ease;
+}
+.nav-burger:hover { background: var(--bg-tint); }
+
+/* Mobile menu drawer */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 10px 18px 20px;
+  border-top: 1px solid var(--line-2);
+  background: color-mix(in oklab, var(--bg) 94%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu__link {
+  display: block; padding: 11px 14px;
+  border-radius: 8px; font-size: 15px;
+  color: var(--ink-2); transition: background 0.15s ease;
+}
+.mobile-menu__link:hover { background: var(--bg-tint); }
+.mobile-menu hr { border: none; border-top: 1px solid var(--line-2); margin: 8px 0; }
+.mobile-menu__ctas { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.mobile-menu__ctas a {
+  display: block; text-align: center;
+  padding: 12px 16px; border-radius: 999px;
+  font-size: 15px; font-weight: 500;
+}
+
+/* ── Module grid (12-col → 2-col → 1-col) ── */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+.col-6 { grid-column: span 6; }
+.col-3 { grid-column: span 3; }
+
+/* ── AI showcase (2-col → 1-col) ── */
+.grid-ai {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 60px;
+  align-items: center;
+  padding: 64px;
+}
+
+/* ── How-it-works (3-col → 1-col) ── */
+.grid-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Figures (4-col → 2-col → 1-col) ── */
+.grid-figures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.fig-item { border-right: 1px solid var(--line); }
+.fig-item:last-child { border-right: none; }
+
+/* ── Footer (5-col → 2-col → 1-col) ── */
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 36px;
+  margin-bottom: 48px;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+/* ── Tablet (768–1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-3 { grid-column: span 6; }
+  .grid-ai { grid-template-columns: 1fr; gap: 40px; padding: 48px; }
+  .footer-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+
+/* ── Mobile (< 768px) ── */
+@media (max-width: 767px) {
+  .nav-links { display: none; }
+  .nav-cta   { display: none; }
+  .nav-burger { display: flex; }
+
+  .modules-grid { grid-template-columns: 1fr; }
+  .col-6, .col-3 { grid-column: span 1; }
+
+  .grid-ai { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+
+  .grid-steps { grid-template-columns: 1fr; gap: 12px; }
+
+  .grid-figures { grid-template-columns: repeat(2, 1fr); }
+  .fig-item { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .fig-item:nth-child(even) { border-right: none; }
+  .fig-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .footer-cols { grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* ── Small mobile (< 480px) ── */
+@media (max-width: 479px) {
+  .footer-cols { grid-template-columns: 1fr; gap: 20px; }
+  .grid-figures { grid-template-columns: 1fr; }
+  .fig-item { border-right: none; border-bottom: 1px solid var(--line); }
+  .fig-item:last-child { border-bottom: none; }
+  .fig-item:nth-child(even) { border-right: none; }
+}

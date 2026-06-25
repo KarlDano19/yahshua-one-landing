@@ -328,6 +328,7 @@ export default function Home() {
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formMsg, setFormMsg] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     fetch("/updates.json").then((r) => r.json()).then(setUpdates).catch(() => setUpdates([]));
@@ -395,8 +396,8 @@ export default function Home() {
               </span>
             </a>
 
-            {/* Links */}
-            <nav style={{ display: "flex", alignItems: "center", gap: 4 }} aria-label="Primary">
+            {/* Links — hidden on mobile */}
+            <nav className="nav-links" aria-label="Primary">
               {[
                 { label: "Platform", href: "#platform" },
                 { label: "Modules",  href: "#modules" },
@@ -415,14 +416,53 @@ export default function Home() {
               ))}
             </nav>
 
-            {/* CTA */}
-            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            {/* CTA — hidden on mobile */}
+            <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <a href="https://app.yahshua.one/" style={{ ...btnPrimary, ...btnSm }}>
                 Start free <Arrow />
               </a>
             </div>
+
+            {/* Hamburger — mobile only */}
+            <button
+              className="nav-burger"
+              aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileNavOpen}
+              onClick={() => setMobileNavOpen((o) => !o)}
+            >
+              {mobileNavOpen ? (
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                </svg>
+              ) : (
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+                  <path d="M1 1h20M1 8h20M1 15h20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                </svg>
+              )}
+            </button>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile menu drawer */}
+      <div className={`mobile-menu${mobileNavOpen ? " open" : ""}`} aria-label="Mobile navigation">
+        {[
+          { label: "Platform",     href: "#platform" },
+          { label: "Modules",      href: "#modules" },
+          { label: "Intelligence", href: "#intelligence" },
+          { label: "Pricing",      href: "#waitlist" },
+          { label: "What's New",   href: "/updates" },
+        ].map((link) => (
+          <a key={link.label} href={link.href} className="mobile-menu__link"
+            onClick={() => setMobileNavOpen(false)}>
+            {link.label}
+          </a>
+        ))}
+        <hr />
+        <div className="mobile-menu__ctas">
+          <a href="https://app.yahshua.one/" style={{ ...btnGhost }}>Sign in</a>
+          <a href="https://app.yahshua.one/" style={{ ...btnPrimary }}>Start free →</a>
         </div>
       </div>
 
@@ -462,11 +502,7 @@ export default function Home() {
               maxWidth: 980, color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
             }}>
               The operating system<br />your business{" "}
-              <em style={{
-                fontStyle: "normal",
-                background: "linear-gradient(110deg, var(--accent-2) 5%, var(--accent) 50%, var(--accent-3) 95%)",
-                WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
-              }}>runs on.</em>
+              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>runs on.</em>
             </h1>
           </Reveal>
 
@@ -486,7 +522,7 @@ export default function Home() {
               <a href="#waitlist" style={btnPrimary}>
                 Start free for 30 days <Arrow />
               </a>
-              <a href="#platform" style={btnGhost}>Watch the tour</a>
+              <a href="#platform" style={btnGhost}>See the product</a>
             </div>
           </Reveal>
 
@@ -510,20 +546,73 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Product preview anchor (hidden) */}
-          <div id="platform" />
         </div>
       </header>
 
+      {/* ── PLATFORM PREVIEW ── */}
+      <section id="platform" style={{ padding: "0 0 110px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <h2 style={{
+              fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500,
+              margin: "0 0 28px", maxWidth: 680,
+            }}>
+              The whole back office. One workspace.
+            </h2>
+          </Reveal>
+          <Reveal delay={60}>
+            <div style={{
+              background: "var(--ink)", borderRadius: "var(--radius-xl)",
+              border: "1px solid oklch(0.22 0.020 155)",
+              boxShadow: "0 32px 80px rgba(0,0,0,0.18)",
+              overflow: "hidden",
+            }}>
+              {/* Browser chrome bar */}
+              <div style={{
+                display: "flex", alignItems: "center", gap: 12,
+                padding: "11px 16px",
+                borderBottom: "1px solid oklch(0.20 0.015 155)",
+                background: "oklch(0.135 0.012 155)",
+              }}>
+                <div style={{ display: "flex", gap: 6, flexShrink: 0 }} aria-hidden>
+                  {["#FF5F57", "#FEBC2E", "#28C840"].map((c) => (
+                    <span key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c, display: "block" }} />
+                  ))}
+                </div>
+                <div style={{
+                  flex: "0 0 auto", width: 260,
+                  background: "oklch(0.20 0.015 155)",
+                  border: "1px solid oklch(0.26 0.012 155)",
+                  borderRadius: 6, padding: "4px 10px",
+                  display: "flex", alignItems: "center", gap: 6,
+                  fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11.5,
+                  color: "oklch(0.52 0.010 155)",
+                }} aria-hidden>
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <rect x="2" y="4" width="6" height="5" rx="1" stroke="currentColor" strokeWidth="1.2"/>
+                    <path d="M4 4V3a2 2 0 0 1 2 0v1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                  </svg>
+                  app.yahshua.one/overview
+                </div>
+              </div>
+
+              {/* Product shell */}
+              <div style={{ overflowX: "auto" }} aria-label="YAHSHUA One product preview">
+                <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", minWidth: 680 }}>
+                  <ProductSidebar />
+                  <ProductMain />
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* ── MODULES ── */}
       <section id="modules" style={{ padding: "110px 0", position: "relative" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 760, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> The platform
-              </div>
               <h2 style={{ margin: "0 0 14px", fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
                 Five businesses worth of software, in one workspace.
               </h2>
@@ -533,23 +622,22 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gap: 16 }}>
+          <div className="modules-grid">
             {/* ERP - feature (spans 6 of 12 cols) */}
-            <div style={{ gridColumn: "span 6" }}>
+            <div className="col-6">
               <Reveal delay={0}>
                 <article style={{
                   background: "linear-gradient(180deg, #fff 0%, var(--accent-50) 100%)",
                   border: "1px solid oklch(0.88 0.06 215 / 0.6)", borderRadius: "var(--radius-lg)",
                   padding: 24, minHeight: 280, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative", height: "100%",
                 }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                  <div style={{ marginBottom: 12 }}>
                     <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--ink)", display: "grid", placeItems: "center", color: "var(--accent-3)" }}>
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <path d="M3 14V7L9 3L15 7V14" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
                         <path d="M6 14V10H12V14" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
                       </svg>
                     </span>
-                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>01 · ERP</span>
                   </div>
                   <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>Run operations without spreadsheets.</h3>
                   <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>
@@ -565,21 +653,20 @@ export default function Home() {
             </div>
 
             {/* HRM - feature (spans 6 of 12 cols) */}
-            <div style={{ gridColumn: "span 6" }}>
+            <div className="col-6">
               <Reveal delay={60}>
                 <article style={{
                   background: "linear-gradient(180deg, #fff 0%, var(--accent-50) 100%)",
                   border: "1px solid oklch(0.88 0.06 215 / 0.6)", borderRadius: "var(--radius-lg)",
                   padding: 24, minHeight: 280, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative", height: "100%",
                 }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                  <div style={{ marginBottom: 12 }}>
                     <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--ink)", display: "grid", placeItems: "center", color: "var(--accent-3)" }}>
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <circle cx="9" cy="6" r="3" stroke="currentColor" strokeWidth="1.5"/>
                         <path d="M3 15C3.6 12 5.8 10.5 9 10.5C12.2 10.5 14.4 12 15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </span>
-                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>02 · HRM</span>
                   </div>
                   <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>The people side, finally automated.</h3>
                   <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>
@@ -619,18 +706,17 @@ export default function Home() {
                 </svg>
               )},
             ].map((mod, i) => (
-              <div key={mod.id} style={{ gridColumn: "span 3" }}>
+              <div key={mod.id} className="col-3">
                 <Reveal delay={i * 50}>
                   <article style={{
                     background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)",
-                    padding: 24, minHeight: 220, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative",
-                    transition: "border-color .2s ease, box-shadow .2s ease", height: "100%",
+                    padding: 24, minHeight: 220, height: "100%", display: "flex", flexDirection: "column", overflow: "hidden", position: "relative",
+                    transition: "border-color .2s ease, box-shadow .2s ease",
                   }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                    <div style={{ marginBottom: 12 }}>
                       <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--bg-tint)", display: "grid", placeItems: "center", color: "var(--ink)" }}>
                         {mod.icon}
                       </span>
-                      <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>{mod.id}</span>
                     </div>
                     <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>{mod.title}</h3>
                     <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>{mod.desc}</p>
@@ -651,10 +737,9 @@ export default function Home() {
       <section id="intelligence" style={{ paddingTop: 24, paddingBottom: 110 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{
+            <div className="grid-ai" style={{
               background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
-              padding: 64, display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 60,
-              alignItems: "center", position: "relative", overflow: "hidden",
+              position: "relative", overflow: "hidden",
             }}>
               <div style={{
                 position: "absolute", inset: 0, pointerEvents: "none",
@@ -768,15 +853,12 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 760, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> How it works
-              </div>
               <h2 style={{ margin: 0, fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
                 Three steps. One afternoon. Then you&apos;re done forever.
               </h2>
             </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="grid-steps">
             {[
               { num: "1", title: "Import", body: "Export your data from your bank, payroll system, and BIR records, then import it into YAHSHUA One." },
               { num: "2", title: "Configure", body: "Your chart of accounts, cutoff dates, leave policies, and tax filings — preset for your business type. Edit once, never again." },
@@ -798,14 +880,14 @@ export default function Home() {
       <section style={{ paddingTop: 24, paddingBottom: 110 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)", overflow: "hidden", background: "var(--surface)" }}>
+            <div className="grid-figures">
               {[
                 { num: "40+",     lbl: "Hours of admin returned to founders, every month." },
                 { num: "99.97%",  lbl: "Filing accuracy across BIR, SSS, PhilHealth, Pag-IBIG." },
                 { num: "1 day",   lbl: "Average onboarding from sign-up to first reconciled month." },
                 { num: "0",       lbl: "Spreadsheets emailed at 2am between you and your accountant." },
               ].map((fig, i) => (
-                <div key={fig.num} style={{ padding: "36px 28px", borderRight: i < 3 ? "1px solid var(--line)" : "none" }}>
+                <div key={fig.num} className="fig-item" style={{ padding: "36px 28px" }}>
                   <div style={{ fontSize: "clamp(32px, 3.6vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 8 }}>
                     <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{fig.num}</em>
                   </div>
@@ -826,9 +908,6 @@ export default function Home() {
               background: "radial-gradient(70% 100% at 0% 100%, var(--accent-glow), transparent 60%), radial-gradient(60% 100% at 100% 0%, oklch(0.95 0.03 215 / 0.5), transparent 60%), var(--surface)",
               borderRadius: "var(--radius-xl)", padding: 72, textAlign: "center", position: "relative", overflow: "hidden",
             }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, justifyContent: "center", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 20 }}>
-                <Dot /> Ready when you are
-              </div>
               <h2 style={{ fontSize: "clamp(36px, 4.4vw, 60px)", letterSpacing: "-0.035em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 16px" }}>
                 Run your business on <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>one platform.</em>
               </h2>
@@ -952,9 +1031,6 @@ export default function Home() {
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
-              <Dot /> Build Log
-            </div>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 12px" }}>
               We build in public.
             </h2>
@@ -1016,9 +1092,6 @@ export default function Home() {
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
-              <Dot /> FAQ
-            </div>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 40px" }}>
               Common questions
             </h2>
@@ -1070,7 +1143,7 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer style={{ padding: "64px 0 40px", borderTop: "1px solid var(--line)", color: "var(--muted)", fontSize: 14 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.4fr repeat(4, 1fr)", gap: 36, marginBottom: 48 }}>
+          <div className="footer-cols">
             <div>
               <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }} aria-label="YAHSHUA One">
                 <Image src="/logo.jpg" alt="YAHSHUA One" width={28} height={28} style={{ borderRadius: 8, objectFit: "cover", flexShrink: 0 }} />
@@ -1105,7 +1178,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 28, borderTop: "1px solid var(--line)" }}>
+          <div className="footer-bottom">
             <span>© 2026 YAHSHUA One, Inc.</span>
           </div>
         </div>
