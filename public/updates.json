@@ -2,6 +2,17 @@
   {
     "date": "2026-06-25",
     "badge": "Progress Update",
+    "title": "Attendance and Payroll Decisions Get Clearer",
+    "description": "We made attendance reviews easier to understand, improved how leave balances and allowances behave, and added clearer payroll approval outcomes so teams can trust more of the messy day-to-day cases without extra guesswork.",
+    "body": [
+      "For many Filipino businesses, payroll stops feeling simple the moment attendance gets messy. A missing log, an unusual work schedule, a leave balance that changes over time, or a request that gets rejected can all create confusion if the system does not explain what is happening clearly. When that clarity is missing, teams fall back to spreadsheets, side notes, and repeated double-checking just to feel safe. This update matters because YAHSHUA One is getting much better at making those tricky payroll and attendance moments easier to review and easier to trust.",
+      "Yesterday's work pushed several connected improvements forward in plain language. Attendance screens now show more of the schedule context behind each day, make day-level edits easier, and help teams review records in a more natural order. We also improved how leave credits and balances build up over time, while expanding how payroll allowances can be applied in more real business situations, including hybrid setups and final pay scenarios. On top of that, approval flows now show disapproved outcomes more clearly and mobile request handling kept moving forward, which helps teams understand what happened instead of getting stuck in vague status updates.",
+      "What this means for you is more confidence when payroll and attendance stop fitting into neat, simple cases. Your team gets closer to a workflow where attendance issues are easier to interpret, leave balances are easier to trust, and payroll decisions are easier to explain before they turn into follow-up or correction work. That reduces guesswork, lowers the chance of avoidable disputes, and makes the platform feel more dependable under real operating pressure. We are still building fast, but this is exactly the kind of depth that makes YAHSHUA One feel more serious, more usable, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "badge": "Progress Update",
     "title": "Payroll Trust Gets a Serious Upgrade",
     "description": "We strengthened attendance classification, leave balance logic, and payroll compliance checks so YAHSHUA One can handle more of the messy real-world rules Filipino businesses face before payroll goes out.",
     "body": [
