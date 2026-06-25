@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-25",
+    "badge": "Progress Update",
+    "title": "Payroll Trust Gets a Serious Upgrade",
+    "description": "We strengthened attendance classification, leave balance logic, and payroll compliance checks so YAHSHUA One can handle more of the messy real-world rules Filipino businesses face before payroll goes out.",
+    "body": [
+      "For many Filipino business owners, payroll gets stressful the moment work stops fitting into neat categories. A normal day can quickly become messy when schedules, overtime, rest days, holidays, and leave balances all start interacting at once. If the system cannot interpret those situations clearly, teams end up double-checking everything in spreadsheets and side notes just to feel safe. That wastes time and makes even correct payroll runs feel fragile. This update matters because YAHSHUA One is getting much better at understanding the real conditions behind payroll before errors and confusion have a chance to spread.",
+      "Yesterday's work pushed several connected improvements forward across attendance logic, leave balances, and payroll compliance. In plain language, the product is getting a clearer way to define how different attendance situations should be classified, including safer defaults and a smoother path for teams to shape those rules without the setup feeling like a black box. We also improved how leave credits and balances are granted, initialized, replenished, and tracked over time, which helps businesses manage leave entitlements with less manual patchwork. On top of that, more compliance checks were completed for critical payroll situations like hourly wage handling, overtime premiums, excess hours, rest days, holidays, and minimum take-home protection. Put simply, YAHSHUA One is becoming better at turning complicated policy rules into something structured, visible, and much easier to trust.",
+      "What this means for you is more confidence that the system can keep up when real payroll conditions get complicated. Your team gets closer to a workflow where attendance outcomes are easier to interpret, leave balances are easier to trust, and payroll warnings surface before a problem turns into a correction. That reduces guesswork, lowers the chance of avoidable payroll disputes, and makes the product feel far more dependable under real operating pressure. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where attendance, leave, compliance, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of depth that makes the platform feel more serious, more mature, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-06-20",
     "badge": "Progress Update",
     "title": "Payroll Premium Rules Get Much Clearer",
