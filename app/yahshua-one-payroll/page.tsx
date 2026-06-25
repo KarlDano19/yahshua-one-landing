@@ -215,6 +215,7 @@ function ComplianceBadge({ label, color }: { label: string; color: string }) {
 ══════════════════════════════════════════════════════════ */
 export default function PayrollPage() {
   const [navScrolled, setNavScrolled] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 8);
@@ -269,7 +270,7 @@ export default function PayrollPage() {
             </a>
 
             {/* Links */}
-            <nav style={{ display: "flex", alignItems: "center", gap: 4 }} aria-label="Primary">
+            <nav className="nav-links" aria-label="Primary">
               {[
                 { label: "Features", href: "#features" },
                 { label: "Compliance", href: "#compliance" },
@@ -289,11 +290,44 @@ export default function PayrollPage() {
             </nav>
 
             {/* CTA */}
-            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <a href="#waitlist" style={{ ...btnPrimary, ...btnSm }}>
                 Start free <Arrow />
               </a>
+            </div>
+
+            {/* Burger */}
+            <button
+              className="nav-burger"
+              onClick={() => setMobileNavOpen(v => !v)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileNavOpen}
+            >
+              {mobileNavOpen
+                ? <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                : <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+              }
+            </button>
+          </div>
+
+          {/* Mobile menu */}
+          <div className={`mobile-menu${mobileNavOpen ? " open" : ""}`}>
+            {[
+              { label: "Features", href: "#features" },
+              { label: "Compliance", href: "#compliance" },
+              { label: "How it works", href: "#how-it-works" },
+              { label: "FAQ", href: "#faq" },
+              { label: "← All modules", href: "/#modules" },
+            ].map((link) => (
+              <a key={link.label} href={link.href} className="mobile-menu__link" onClick={() => setMobileNavOpen(false)}>
+                {link.label}
+              </a>
+            ))}
+            <hr />
+            <div className="mobile-menu__ctas">
+              <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
+              <a href="#waitlist" style={{ ...btnPrimary, ...btnSm }}>Start free <Arrow /></a>
             </div>
           </div>
         </div>
@@ -309,7 +343,7 @@ export default function PayrollPage() {
         }} />
 
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 60, alignItems: "center" }}>
+          <div className="grid-2col-hero">
             {/* Left: copy */}
             <div>
               <Reveal>
@@ -336,11 +370,7 @@ export default function PayrollPage() {
                   color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
                 }}>
                   Payroll that{" "}
-                  <em style={{
-                    fontStyle: "normal",
-                    background: "linear-gradient(110deg, var(--accent-2) 5%, var(--accent) 50%, var(--accent-3) 95%)",
-                    WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
-                  }}>runs itself.</em>
+                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>runs itself.</em>
                 </h1>
               </Reveal>
 
@@ -397,17 +427,14 @@ export default function PayrollPage() {
       {/* ── STAT STRIP ── */}
       <section style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="stat-strip">
             {[
               { num: "0 errors", lbl: "Payroll computation accuracy across all employees" },
               { num: "< 5 min", lbl: "Average time to run full payroll for 50-person team" },
               { num: "99.97%", lbl: "BIR filing accuracy on 1601-C, 2550M, quarterly returns" },
               { num: "₱ 0", lbl: "Penalty exposure when deadlines are managed by YAHSHUA" },
             ].map((fig, i) => (
-              <div key={fig.num} style={{
-                padding: "32px 28px",
-                borderRight: i < 3 ? "1px solid var(--line)" : "none",
-              }}>
+              <div key={fig.num} className="stat-item" style={{ padding: "32px 28px" }}>
                 <Reveal delay={i * 40}>
                   <div style={{ fontSize: "clamp(24px, 2.8vw, 36px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 6 }}>
                     <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{fig.num}</em>
@@ -425,9 +452,6 @@ export default function PayrollPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> Features
-              </div>
               <h2 style={{ margin: "0 0 14px", fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
                 Everything payroll needs — and nothing it doesn&apos;t.
               </h2>
@@ -437,7 +461,7 @@ export default function PayrollPage() {
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          <div className="grid-3">
             {[
               {
                 icon: (
@@ -541,10 +565,9 @@ export default function PayrollPage() {
       <section id="compliance" style={{ paddingBottom: 110 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{
+            <div className="grid-ai" style={{
               background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
-              padding: 64, display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 60,
-              alignItems: "center", position: "relative", overflow: "hidden",
+              position: "relative", overflow: "hidden",
             }}>
               {/* Glow */}
               <div style={{
@@ -638,7 +661,7 @@ export default function PayrollPage() {
                           </div>
                         </div>
                         <div style={{ height: 4, borderRadius: 99, background: "oklch(0.28 0.012 250)" }}>
-                          <div style={{ height: "100%", borderRadius: 99, background: row.color, width: `${row.bar * 100}%`, transition: "width 1s ease" }} />
+                          <div style={{ height: "100%", borderRadius: 99, background: row.color, width: `${row.bar * 100}%` }} />
                         </div>
                       </div>
                     ))}
@@ -666,16 +689,13 @@ export default function PayrollPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> How it works
-              </div>
               <h2 style={{ margin: 0, fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
                 Set it up once. It runs every cutoff, automatically.
               </h2>
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          <div className="grid-4">
             {[
               {
                 num: "01",
@@ -740,16 +760,13 @@ export default function PayrollPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> Also included
-              </div>
               <h2 style={{ margin: 0, fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
                 The full people module, not just payroll.
               </h2>
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+          <div className="grid-2col">
             {[
               {
                 title: "Leave management",
@@ -795,9 +812,6 @@ export default function PayrollPage() {
       <section id="faq" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
-              <Dot /> FAQ
-            </div>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 40px" }}>
               Payroll questions, answered.
             </h2>
@@ -855,9 +869,6 @@ export default function PayrollPage() {
               background: "radial-gradient(70% 100% at 0% 100%, var(--accent-glow), transparent 60%), radial-gradient(60% 100% at 100% 0%, oklch(0.95 0.03 215 / 0.5), transparent 60%), var(--surface)",
               borderRadius: "var(--radius-xl)", padding: "56px 48px", position: "relative", overflow: "hidden",
             }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, justifyContent: "center", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 20 }}>
-                <Dot /> Ready when you are
-              </div>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 14px" }}>
                 Stop doing payroll manually.
               </h2>

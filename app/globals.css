@@ -259,11 +259,46 @@ button { font: inherit; cursor: pointer; }
   border-top: 1px solid var(--line);
 }
 
+/* ── Payroll page layout classes ── */
+.grid-2col-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item { border-right: 1px solid var(--line); }
+.stat-item:last-child { border-right: none; }
+
 /* ── Tablet (768–1023px) ── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .col-3 { grid-column: span 6; }
   .grid-ai { grid-template-columns: 1fr; gap: 40px; padding: 48px; }
   .footer-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .grid-2col-hero { grid-template-columns: 1fr; gap: 40px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
 }
 
 /* ── Mobile (< 768px) ── */
@@ -286,6 +321,15 @@ button { font: inherit; cursor: pointer; }
 
   .footer-cols { grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  .grid-2col-hero { grid-template-columns: 1fr; gap: 32px; }
+  .grid-2col { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; gap: 12px; }
+  .grid-4 { grid-template-columns: 1fr; gap: 12px; }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stat-item:nth-child(even) { border-right: none; }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
 }
 
 /* ── Small mobile (< 480px) ── */
@@ -295,4 +339,7 @@ button { font: inherit; cursor: pointer; }
   .fig-item { border-right: none; border-bottom: 1px solid var(--line); }
   .fig-item:last-child { border-bottom: none; }
   .fig-item:nth-child(even) { border-right: none; }
+  .stat-strip { grid-template-columns: 1fr; }
+  .stat-item { border-right: none; }
+  .stat-item:last-child { border-bottom: none; }
 }
