@@ -2,6 +2,17 @@
   {
     "date": "2026-06-25",
     "badge": "Progress Update",
+    "title": "Payroll Edge Cases Start Behaving",
+    "description": "We expanded payroll support for multi-assignment employees, recurring earnings, hire-date-aware runs, and stricter schedule checks so more real-world payroll cases work correctly without extra cleanup.",
+    "body": [
+      "For many Filipino business owners, payroll starts getting stressful the moment an employee no longer fits a simple single-role setup. Someone may work across multiple assignments, start in the middle of a payroll period, receive recurring earnings on top of base pay, or follow schedules that need tighter checks before payroll can be trusted. When a system cannot handle those realities cleanly, teams fall back to spreadsheets, side notes, and manual corrections just to feel safe before releasing pay. That creates delay, confusion, and unnecessary second-guessing in the exact part of operations that should feel disciplined. This update matters because YAHSHUA One is getting much better at handling the messy but normal payroll situations real businesses in the Philippines deal with every cycle.",
+      "Yesterday's work pushed several connected payroll improvements forward in plain language. YAHSHUA One can now better support payroll generation for employees with multiple assignments, which matters for businesses where one person may wear more than one operational hat. We also added stronger support for recurring earnings, making it easier for regular extra pay items to behave more consistently instead of feeling like awkward exceptions. On top of that, payroll runs are now being scoped more carefully based on hire date, while schedule fit checks and lateness policy handling are becoming stricter and more dependable behind the scenes. Even smaller fixes, like preventing certain employee import crashes and tightening assignment updates, help the whole payroll flow feel less fragile in real use.",
+      "What this means for you is more confidence that YAHSHUA One can keep up once payroll stops being neat and predictable. Your team gets closer to a workflow where multi-role employees, recurring pay items, and mid-period employment changes can be handled inside the system with less manual patchwork. That reduces avoidable corrections, lowers the risk of payroll disputes, and helps managers trust the outputs before they turn into follow-up work. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where schedules, employee assignments, pay rules, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of depth that makes the platform feel more serious, more resilient, and more ready for real businesses."
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "badge": "Progress Update",
     "title": "Attendance and Payroll Decisions Get Clearer",
     "description": "We made attendance reviews easier to understand, improved how leave balances and allowances behave, and added clearer payroll approval outcomes so teams can trust more of the messy day-to-day cases without extra guesswork.",
     "body": [
