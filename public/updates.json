@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-26",
+    "badge": "Progress Update",
+    "title": "Payroll Gets More Flexible for Real-World Teams",
+    "description": "We expanded support for recurring earnings, flexible break windows, hire-date-aware payroll runs, cleaner attendance imports, and more complete timesheets so everyday payroll work holds up better when real schedules get messy.",
+    "body": [
+      "For many Filipino businesses, payroll stops feeling simple the moment employees, schedules, and pay rules no longer fit a neat template. Someone may start mid-period, earn recurring add-ons, work under a more flexible break setup, or show up in attendance files that were exported in awkward date and time formats. When a system cannot absorb those realities cleanly, payroll teams end up doing extra checking, cleanup, and side adjustments just to feel safe before releasing pay. This update matters because YAHSHUA One is getting better at handling those normal-but-messy situations inside the product instead of pushing the burden back onto your team.",
+      "Yesterday's work pushed several connected improvements forward in plain language. YAHSHUA One now has stronger support for recurring earnings, more flexibility around break-window payroll coverage, and better checks to make sure a payroll period actually fits the employees and schedules it is supposed to cover. We also made salary and rate information easier to see, improved attendance imports so more Excel-style date and time formats are accepted cleanly, and removed extra friction from employee import setup. On the timekeeping side, timesheets can now be generated more completely even for absent days, which helps the system reflect a fuller picture of what actually happened instead of leaving awkward gaps behind.",
+      "What this means for you is a payroll workflow that keeps getting more dependable once real business conditions start showing up. Your team gets closer to a setup where recurring pay items, mid-period realities, flexible schedule rules, and messy attendance files can be handled with less manual patchwork. That reduces avoidable corrections, shortens review time, and makes the platform feel more trustworthy when payroll stops being clean and predictable. We are still building fast, but this is exactly the kind of product depth that helps YAHSHUA One feel more serious, more usable, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-06-25",
     "badge": "Progress Update",
     "title": "Payroll Edge Cases Start Behaving",
