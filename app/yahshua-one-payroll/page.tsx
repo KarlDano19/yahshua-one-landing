@@ -22,18 +22,38 @@ function useInView<T extends Element = HTMLDivElement>(threshold = 0.12) {
   return { ref, visible };
 }
 
+/* ── Count-up animation ── */
+function useCountUp(from: number, to: number, duration: number, active: boolean): number {
+  const [val, setVal] = useState(from);
+  const rafRef = useRef<number>(0);
+  useEffect(() => {
+    if (!active) return;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const ease = 1 - Math.pow(1 - t, 4);
+      setVal(from + (to - from) * ease);
+      if (t < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [active, from, to, duration]);
+  return val;
+}
+
 /* ── Reveal wrapper ── */
 function Reveal({
   children, delay = 0, className = "", direction = "up",
 }: {
   children: React.ReactNode; delay?: number; className?: string;
-  direction?: "up" | "left" | "right" | "scale";
+  direction?: "up" | "left" | "right" | "scale" | "clip";
 }) {
   const { ref, visible } = useInView();
   const base =
     direction === "left"  ? "reveal-left"  :
     direction === "right" ? "reveal-right" :
-    direction === "scale" ? "reveal-scale" : "reveal";
+    direction === "scale" ? "reveal-scale" :
+    direction === "clip"  ? "reveal-clip"  : "reveal";
   return (
     <div
       ref={ref}
@@ -73,6 +93,67 @@ function Check({ size = 14, color = "var(--accent-2)" }: { size?: number; color?
     <svg width={size} height={size} viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
       <path d="M2.5 7L5.5 10L11.5 4" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+  );
+}
+
+/* ── Animated stat counter ── */
+function AnimatedStat({ from, to, format, delay, lbl }: {
+  from: number; to: number;
+  format: (v: number) => string;
+  delay: number; lbl: string;
+}) {
+  const { ref, visible } = useInView<HTMLDivElement>(0.3);
+  const val = useCountUp(from, to, 1400, visible);
+  return (
+    <div ref={ref} className="stat-item" style={{ padding: "40px 28px" }}>
+      <Reveal delay={delay}>
+        <div style={{ fontSize: "clamp(38px, 4.8vw, 60px)", letterSpacing: "-0.04em", fontWeight: 700, lineHeight: 1, marginBottom: 10 }}>
+          <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{format(val)}</em>
+        </div>
+        <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>{lbl}</div>
+      </Reveal>
+    </div>
+  );
+}
+
+/* ── FAQ accordion item ── */
+function FaqItem({ q, a, delay }: { q: string; a: string; delay: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <Reveal delay={delay}>
+      <div style={{ borderRadius: "var(--radius)", background: "var(--surface)", border: "1px solid var(--line)" }}>
+        <button
+          onClick={() => setOpen(v => !v)}
+          aria-expanded={open}
+          style={{
+            width: "100%", display: "flex", alignItems: "center",
+            justifyContent: "space-between", gap: 16,
+            padding: "20px 24px", cursor: "pointer", textAlign: "left",
+            background: "none", border: "none", color: "var(--ink)",
+            fontWeight: 500, fontSize: 15, fontFamily: "inherit",
+          }}
+        >
+          {q}
+          <span aria-hidden style={{
+            flexShrink: 0, fontSize: 20, color: "var(--accent-2)", fontWeight: 300,
+            display: "inline-block",
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+            transition: "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}>+</span>
+        </button>
+        <div style={{
+          display: "grid",
+          gridTemplateRows: open ? "1fr" : "0fr",
+          transition: "grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1)",
+        }}>
+          <div style={{ overflow: "hidden", minHeight: 0 }}>
+            <div style={{ borderTop: "1px solid var(--line)", padding: "16px 24px 20px" }}>
+              <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--muted)", margin: 0 }}>{a}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Reveal>
   );
 }
 
@@ -362,21 +443,21 @@ export default function PayrollPage() {
                 </div>
               </Reveal>
 
-              <Reveal delay={60}>
+              <Reveal delay={60} direction="clip">
                 <h1 style={{
-                  margin: "0 0 18px",
-                  fontSize: "clamp(40px, 5.5vw, 72px)",
-                  lineHeight: 1.03, letterSpacing: "-0.035em", fontWeight: 500,
+                  margin: "0 0 20px",
+                  fontSize: "clamp(48px, 7.5vw, 92px)",
+                  lineHeight: 1.0, letterSpacing: "-0.04em", fontWeight: 300,
                   color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
                 }}>
                   Payroll that{" "}
-                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>runs itself.</em>
+                  <em style={{ fontStyle: "normal", color: "var(--accent-2)", fontWeight: 800 }}>runs itself.</em>
                 </h1>
               </Reveal>
 
               <Reveal delay={120}>
                 <p style={{
-                  fontSize: 19, lineHeight: 1.55, color: "var(--muted)",
+                  fontSize: 19, lineHeight: 1.6, color: "var(--ink-2)",
                   maxWidth: 560, margin: "0 0 32px",
                 }}>
                   Auto-compute payroll, statutory contributions, and withholding tax for every employee in your roster — then disburse with one click. Built for Philippine Labor Code and BIR.
@@ -418,7 +499,9 @@ export default function PayrollPage() {
 
             {/* Right: payslip mockup */}
             <Reveal direction="left" delay={100}>
-              <PayslipMockup />
+              <div className="payslip-float">
+                <PayslipMockup />
+              </div>
             </Reveal>
           </div>
         </div>
@@ -428,21 +511,34 @@ export default function PayrollPage() {
       <section style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div className="stat-strip">
-            {[
-              { num: "0 errors", lbl: "Payroll computation accuracy across all employees" },
-              { num: "< 5 min", lbl: "Average time to run full payroll for 50-person team" },
-              { num: "99.97%", lbl: "BIR filing accuracy on 1601-C, 2550M, quarterly returns" },
-              { num: "₱ 0", lbl: "Penalty exposure when deadlines are managed by YAHSHUA" },
-            ].map((fig, i) => (
-              <div key={fig.num} className="stat-item" style={{ padding: "32px 28px" }}>
-                <Reveal delay={i * 40}>
-                  <div style={{ fontSize: "clamp(24px, 2.8vw, 36px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 6 }}>
-                    <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{fig.num}</em>
-                  </div>
-                  <div style={{ color: "var(--muted)", fontSize: 13.5, lineHeight: 1.5 }}>{fig.lbl}</div>
-                </Reveal>
-              </div>
-            ))}
+            <div className="stat-item" style={{ padding: "40px 28px" }}>
+              <Reveal delay={0}>
+                <div style={{ fontSize: "clamp(38px, 4.8vw, 60px)", letterSpacing: "-0.04em", fontWeight: 700, lineHeight: 1, marginBottom: 10 }}>
+                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>0 errors</em>
+                </div>
+                <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>Payroll computation accuracy across all employees</div>
+              </Reveal>
+            </div>
+            <div className="stat-item" style={{ padding: "40px 28px" }}>
+              <Reveal delay={40}>
+                <div style={{ fontSize: "clamp(38px, 4.8vw, 60px)", letterSpacing: "-0.04em", fontWeight: 700, lineHeight: 1, marginBottom: 10 }}>
+                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{"< 5 min"}</em>
+                </div>
+                <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>Average time to run full payroll for 50-person team</div>
+              </Reveal>
+            </div>
+            <AnimatedStat
+              from={0} to={99.97}
+              format={(v) => (v >= 99.9 ? v.toFixed(2) : Math.round(v).toString()) + "%"}
+              delay={80}
+              lbl="BIR filing accuracy on 1601-C, 2550M, quarterly returns"
+            />
+            <AnimatedStat
+              from={4800} to={0}
+              format={(v) => "₱ " + (Math.round(v) >= 1000 ? Math.round(v).toLocaleString("en-US") : Math.round(v).toString())}
+              delay={120}
+              lbl="Penalty exposure when deadlines are managed by YAHSHUA"
+            />
           </div>
         </div>
       </section>
@@ -452,7 +548,7 @@ export default function PayrollPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
-              <h2 style={{ margin: "0 0 14px", fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
+              <h2 style={{ margin: "0 0 14px", fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.035em", fontWeight: 600, lineHeight: 1.05 }}>
                 Everything payroll needs — and nothing it doesn&apos;t.
               </h2>
               <p style={{ margin: 0, fontSize: 18, color: "var(--muted)", maxWidth: 580 }}>
@@ -461,100 +557,58 @@ export default function PayrollPage() {
             </div>
           </Reveal>
 
-          <div className="grid-3">
+          <div>
             {[
               {
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <circle cx="10" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M3 17C3.7 13.5 6.5 12 10 12C13.5 12 16.3 13.5 17 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
                 title: "Employee roster management",
                 body: "Maintain complete employee records — hire date, position, rate, and employment type. Changes reflect instantly in payroll.",
                 tags: ["Full-time", "Part-time", "Contractual", "Probationary"],
               },
               {
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M7 3V6M13 3V6M2 9H18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M6 13H8M10 13H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
                 title: "Cutoff scheduling",
                 body: "Define semi-monthly or monthly payroll cutoffs. Payroll auto-locks at cutoff, preventing unauthorized changes.",
                 tags: ["Semi-monthly", "Monthly", "Auto-lock", "Cutoff alerts"],
               },
               {
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M2 17V5M2 17H18M6 14V10M10 14V7M14 14V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
                 title: "Automatic computation",
                 body: "Every peso is computed — basic, OT, night diff, holiday pay, 13th month, and all statutory deductions. Zero manual entry.",
                 tags: ["OT", "Night diff", "Holiday pay", "13th month"],
               },
               {
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <rect x="3" y="2" width="14" height="16" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
                 title: "Digital payslips",
                 body: "Every employee gets a PDF payslip via email or employee portal — branded, detailed, and delivered automatically.",
                 tags: ["PDF export", "Email delivery", "Employee portal", "Branding"],
               },
               {
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 2L12 7.5L18 8.2L14 12L15 18L10 15L5 18L6 12L2 8.2L8 7.5L10 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                  </svg>
-                ),
                 title: "Bank disbursement files",
                 body: "Generate bank-ready disbursement files for BPI, BDO, UnionBank, and GCash in one click. No more manual transfers.",
                 tags: ["BPI", "BDO", "UnionBank", "GCash", "Maya"],
               },
               {
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M10 6v4l3 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
                 title: "Payroll history & audit log",
                 body: "Every run is logged with a full audit trail. Retrieve any historical payroll run for compliance, disputes, or internal review.",
                 tags: ["Audit trail", "Payroll history", "Dispute resolution"],
               },
             ].map((feat, i) => (
-              <Reveal key={feat.title} delay={i * 50}>
-                <article style={{
-                  background: "var(--surface)", border: "1px solid var(--line)",
-                  borderRadius: "var(--radius-lg)", padding: 24,
-                  display: "flex", flexDirection: "column", height: "100%",
-                  transition: "border-color .2s ease, box-shadow .2s ease",
-                }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.88 0.06 215)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--line)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                  }}>
-                  <span style={{ width: 36, height: 36, borderRadius: 10, background: "var(--accent-50)", display: "grid", placeItems: "center", color: "var(--accent-2)", marginBottom: 16 }}>
-                    {feat.icon}
-                  </span>
-                  <h3 style={{ fontSize: 17, fontWeight: 500, letterSpacing: "-0.01em", margin: "0 0 8px" }}>{feat.title}</h3>
-                  <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.55, margin: "0 0 16px" }}>{feat.body}</p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {feat.tags.map((tag) => (
-                      <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
-                    ))}
-                  </ul>
-                </article>
+              <Reveal key={feat.title} delay={i * 40}>
+                <div className="feature-row">
+                  <div>
+                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.1em" }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 600, letterSpacing: "-0.025em", margin: "8px 0 0", lineHeight: 1.2 }}>
+                      {feat.title}
+                    </h3>
+                  </div>
+                  <div>
+                    <p style={{ color: "var(--muted)", fontSize: 15.5, lineHeight: 1.65, margin: "0 0 14px" }}>{feat.body}</p>
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexWrap: "wrap", gap: 6 }}>
+                      {feat.tags.map((tag) => (
+                        <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -689,7 +743,7 @@ export default function PayrollPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
-              <h2 style={{ margin: 0, fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
+              <h2 style={{ margin: 0, fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.035em", fontWeight: 600, lineHeight: 1.05 }}>
                 Set it up once. It runs every cutoff, automatically.
               </h2>
             </div>
@@ -760,7 +814,7 @@ export default function PayrollPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
-              <h2 style={{ margin: 0, fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
+              <h2 style={{ margin: 0, fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.035em", fontWeight: 600, lineHeight: 1.05 }}>
                 The full people module, not just payroll.
               </h2>
             </div>
@@ -818,80 +872,76 @@ export default function PayrollPage() {
           </Reveal>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {[
-              {
-                q: "Does YAHSHUA One automatically compute SSS, PhilHealth, and Pag-IBIG contributions?",
-                a: "Yes. YAHSHUA One computes SSS (employee and employer share), PhilHealth (both shares), and Pag-IBIG (both shares) automatically based on each employee's monthly basic salary. Contribution tables are kept current — when government agencies update rates, YAHSHUA updates too.",
-              },
-              {
-                q: "How does YAHSHUA handle withholding tax computation?",
-                a: "YAHSHUA uses the BIR's TRAIN Law tax table (RR 11-2018) to compute monthly withholding tax for each employee. It accounts for exemptions, de minimis benefits, and 13th month pay exclusions. The monthly 1601-C report is generated automatically.",
-              },
-              {
-                q: "Can it handle different pay schedules (semi-monthly, monthly)?",
-                a: "Yes. You can set semi-monthly or monthly payroll cutoffs per company or per department. Statutory contributions and tax are apportioned correctly across pay periods.",
-              },
-              {
-                q: "What happens if an employee is absent or late?",
-                a: "Tardiness, undertime, and absences are auto-deducted based on the employee's daily rate and your attendance policy. Absences approved as leave are excluded from deductions.",
-              },
-              {
-                q: "Does it generate BIR Form 2316 (Certificate of Compensation)?",
-                a: "Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal.",
-              },
-              {
-                q: "Can YAHSHUA handle the 13th month pay computation?",
-                a: "Yes. 13th month pay is computed automatically per DOLE guidelines — total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE.",
-              },
-            ].map((item, i) => (
-              <Reveal key={i} delay={i * 40}>
-                <details style={{ borderRadius: "var(--radius)", overflow: "hidden", background: "var(--surface)", border: "1px solid var(--line)" }}>
-                  <summary style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, padding: "20px 24px", cursor: "pointer", listStyle: "none", userSelect: "none", color: "var(--ink)", fontWeight: 500, fontSize: 15 }}>
-                    {item.q}
-                    <span style={{ flexShrink: 0, fontSize: 20, color: "var(--accent-2)", fontWeight: 300 }}>+</span>
-                  </summary>
-                  <div style={{ padding: "0 24px 20px", borderTop: "1px solid var(--line)" }}>
-                    <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--muted)", margin: "16px 0 0" }}>{item.a}</p>
-                  </div>
-                </details>
-              </Reveal>
-            ))}
+            <FaqItem delay={0}
+              q="Does YAHSHUA One automatically compute SSS, PhilHealth, and Pag-IBIG contributions?"
+              a="Yes. YAHSHUA One computes SSS (employee and employer share), PhilHealth (both shares), and Pag-IBIG (both shares) automatically based on each employee's monthly basic salary. Contribution tables are kept current — when government agencies update rates, YAHSHUA updates too."
+            />
+            <FaqItem delay={40}
+              q="How does YAHSHUA handle withholding tax computation?"
+              a="YAHSHUA uses the BIR's TRAIN Law tax table (RR 11-2018) to compute monthly withholding tax for each employee. It accounts for exemptions, de minimis benefits, and 13th month pay exclusions. The monthly 1601-C report is generated automatically."
+            />
+            <FaqItem delay={80}
+              q="Can it handle different pay schedules (semi-monthly, monthly)?"
+              a="Yes. You can set semi-monthly or monthly payroll cutoffs per company or per department. Statutory contributions and tax are apportioned correctly across pay periods."
+            />
+            <FaqItem delay={120}
+              q="What happens if an employee is absent or late?"
+              a="Tardiness, undertime, and absences are auto-deducted based on the employee's daily rate and your attendance policy. Absences approved as leave are excluded from deductions."
+            />
+            <FaqItem delay={160}
+              q="Does it generate BIR Form 2316 (Certificate of Compensation)?"
+              a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal."
+            />
+            <FaqItem delay={200}
+              q="Can YAHSHUA handle the 13th month pay computation?"
+              a="Yes. 13th month pay is computed automatically per DOLE guidelines — total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE."
+            />
           </div>
         </div>
       </section>
 
       {/* ── CTA / WAITLIST ── */}
-      <section id="waitlist" style={{ padding: "96px 0", borderTop: "1px solid var(--line)" }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", padding: "0 28px", textAlign: "center" }}>
-          <Reveal direction="scale">
-            <div style={{
-              border: "1px solid var(--line)",
-              background: "radial-gradient(70% 100% at 0% 100%, var(--accent-glow), transparent 60%), radial-gradient(60% 100% at 100% 0%, oklch(0.95 0.03 215 / 0.5), transparent 60%), var(--surface)",
-              borderRadius: "var(--radius-xl)", padding: "56px 48px", position: "relative", overflow: "hidden",
-            }}>
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 14px" }}>
-                Stop doing payroll manually.
+      <section id="waitlist" style={{ borderTop: "1px solid var(--line)" }}>
+        <div style={{
+          background: "var(--ink)",
+          padding: "100px 28px",
+          position: "relative", overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", inset: 0, pointerEvents: "none",
+            background: "radial-gradient(60% 80% at 50% 110%, oklch(0.78 0.13 215 / 0.22), transparent 60%)",
+          }} />
+          <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+            <Reveal direction="scale">
+              <h2 style={{ fontSize: "clamp(36px, 5.5vw, 72px)", letterSpacing: "-0.04em", fontWeight: 700, lineHeight: 1.0, margin: "0 0 18px", color: "#fff" }}>
+                Stop doing payroll<br />manually.
               </h2>
-              <p style={{ color: "var(--muted)", fontSize: 17, maxWidth: 440, margin: "0 auto 28px", lineHeight: 1.6 }}>
+              <p style={{ color: "oklch(0.72 0.01 250)", fontSize: 18, maxWidth: 460, margin: "0 auto 36px", lineHeight: 1.6 }}>
                 Join 1,200+ Filipino business owners on the YAHSHUA One waitlist. Free for 30 days. No credit card.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="/#waitlist" style={btnPrimary}>
+                <a href="/#waitlist" style={{
+                  ...btnBase,
+                  background: "#fff", color: "var(--ink)", borderColor: "#fff",
+                  boxShadow: "0 1px 2px rgba(0,0,0,0.12)",
+                }}>
                   Join the waitlist <Arrow />
                 </a>
-                <a href="/" style={btnGhost}>See all modules</a>
+                <a href="/" style={{
+                  ...btnBase,
+                  background: "transparent", color: "#fff", borderColor: "oklch(0.35 0.02 250)",
+                }}>See all modules</a>
               </div>
-
-              <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 28, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 32, flexWrap: "wrap" }}>
                 {["SSS compliant", "BIR-ready", "DOLE-aligned", "PhilHealth"].map((badge) => (
-                  <div key={badge} style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 12.5, color: "var(--muted)" }}>
-                    <Check size={12} />
+                  <div key={badge} style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 12.5, color: "oklch(0.52 0.01 250)" }}>
+                    <Check size={12} color="var(--accent)" />
                     {badge}
                   </div>
                 ))}
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 
