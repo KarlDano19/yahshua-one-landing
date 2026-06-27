@@ -2,6 +2,17 @@
   {
     "date": "2026-06-27",
     "badge": "Progress Update",
+    "title": "Payroll Gets Faster, Clearer, and Easier to Act On",
+    "description": "We shipped a big round of payroll and workflow improvements so teams can generate payroll without getting stuck, catch attendance issues more clearly, manage leave settings more easily, and move approvals forward with less back-and-forth.",
+    "body": [
+      "This latest round of work focused on the kind of product details that make a payroll and HR system feel usable in real life, not just technically complete on paper. For growing teams, the pain usually is not one dramatic failure. It is the accumulation of smaller frictions: payroll taking too long to finish, attendance issues being hard to interpret, approvals getting buried, or settings being scattered in ways that slow down already busy managers. The goal of this update was to reduce those daily interruptions so work feels smoother, faster, and easier to trust.",
+      "In plain language, YAHSHUA One can now handle payroll generation in a more scalable background flow, which means teams are moving closer to a setup where heavy payroll work does not feel like it freezes everything around it. We also improved payroll breakdowns and break reports so people can understand time and payroll details with less guesswork. On the attendance side, duplicate manual attendance entries are now explained more clearly instead of leaving users to wonder what went wrong. We also added better controls for leave types, including the ability to edit and deactivate them more cleanly, while payroll settings and work schedule views are becoming easier to navigate and manage.",
+      "Another important part of this update is workflow clarity. Approval actions now support deeper linking and safer governed edits, which helps people get straight to what needs attention instead of hunting through the product. Breadcrumbs and navigation were also cleaned up so settings pages feel less stitched together. What this means for early supporters is simple: YAHSHUA One keeps becoming more practical for real operating teams. Payroll work is getting faster, approvals are becoming easier to act on, and the product is steadily feeling more like a serious backoffice system built for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-27",
+    "badge": "Progress Update",
     "title": "Approvals and Schedules Get Sharper",
     "description": "We made approval flows more actionable and dependable while improving work schedule visibility, safer schedule changes, and payroll clarity so real teams can move faster with less guesswork.",
     "body": [
