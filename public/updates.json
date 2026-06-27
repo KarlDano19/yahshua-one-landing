@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-27",
+    "badge": "Progress Update",
+    "title": "Approvals and Schedules Get Sharper",
+    "description": "We made approval flows more actionable and dependable while improving work schedule visibility, safer schedule changes, and payroll clarity so real teams can move faster with less guesswork.",
+    "body": [
+      "For many Filipino business owners, payroll friction rarely starts with one big dramatic mistake. It usually starts with smaller operational gaps that pile up over time, like approvals that are hard to act on, schedules that are harder to read than they should be, or payroll details that need extra explaining before a team feels safe moving forward. When those daily edges stay rough, managers end up relying on side chats, memory, and manual follow-up just to keep work flowing. That slows down decisions and makes even correct payroll work feel more stressful than it needs to be. This update matters because YAHSHUA One is getting better at handling those practical day-to-day moments with more clarity and discipline.",
+      "Yesterday's work pushed several connected improvements forward in plain language. Approval flows are becoming more usable, with clearer action paths, deeper links that take people straight where they need to go, and stronger support for governed edits even after something has already been approved. We also expanded the approval structure itself so reviewer and recommender workflows are seeded more cleanly, which helps real organizations reflect how decisions actually move before final approval happens. On the scheduling side, YAHSHUA One now gives a clearer table view of work schedules, improves how schedule hours are explained, and supports safer date-range assignment changes without breaking ongoing employee setups. We also tightened payroll behavior behind the scenes with better lateness policy refresh handling, stronger recurring allowance quality checks, and more reliable recurring deduction setup, which helps the product feel less fragile when real payroll conditions start getting messy.",
+      "What this means for you is a backoffice that keeps getting easier to trust once real operations start involving more people, more schedules, and more approvals. Your team gets closer to a workflow where requests are easier to act on, schedule information is easier to review, and payroll decisions are supported by cleaner guardrails instead of awkward workarounds. That reduces avoidable follow-up, shortens review time, and makes the system feel calmer under real business pressure. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where approvals, schedule management, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of practical product depth that makes the platform feel more serious, more usable, and more ready for growing businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-06-26",
     "badge": "Progress Update",
     "title": "Payroll Gets More Flexible for Real-World Teams",
