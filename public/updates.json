@@ -2,6 +2,17 @@
   {
     "date": "2026-06-28",
     "badge": "Progress Update",
+    "title": "Setup, Billing, and Daily Navigation Got Much Smoother",
+    "description": "We made YAHSHUA One easier to get into, easier to move around, and less frustrating in everyday use by improving onboarding for existing companies, cleaning up billing, fixing saved cards, and polishing key screens across the product.",
+    "body": [
+      "Yesterday's work focused on a simple but important goal: making YAHSHUA One feel smoother in the ordinary moments teams deal with every day. A serious backoffice does not only need big payroll features. It also needs cleaner setup, simpler billing, and pages that help people get where they need to go without extra friction.",
+      "In plain language, existing companies can now move through subscription setup more easily during onboarding instead of hitting awkward dead ends. We also redesigned the company detail page so it works more like a practical launch point, removed a confusing change-plan path from billing, and fixed saved card behavior so payment details are more dependable when businesses need them. On top of that, we added better homepage shortcuts and polished the look and feel of key settings and theme changes so the product feels more coherent across the day.",
+      "What this means for you is a backoffice that keeps getting easier to trust in real use. Teams should have a cleaner path into the product, fewer billing headaches, and a faster way to move through common tasks without the interface feeling patchy. It is steady progress, but it is exactly the kind that helps YAHSHUA One feel more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-28",
+    "badge": "Progress Update",
     "title": "Everyday Workflows Feel Faster and Cleaner",
     "description": "We improved how teams move through onboarding, company pages, subscriptions, saved cards, and everyday settings so YAHSHUA One feels smoother, clearer, and easier to act on in real daily use.",
     "body": [
