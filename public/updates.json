@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-29",
+    "badge": "Progress Update",
+    "title": "Leave Requests and Attendance Details Get Much Clearer",
+    "description": "We made time-related requests easier to understand and safer to process by showing leave credits more clearly, requiring better request details, labeling special versus regular holidays, and fixing a couple of frustrating interface behaviors.",
+    "body": [
+      "Yesterday's work focused on a simple but important part of payroll and HR: helping teams understand requests and attendance details before they turn into confusion. When leave balances are hard to see, request reasons are vague, or holiday treatment is easy to misread, small questions can quickly turn into manual follow-up and second-guessing. This update matters because YAHSHUA One is getting better at making those everyday decisions clearer before they become cleanup work.",
+      "In plain language, teams can now see leave credits more clearly when reviewing requests, which helps people understand what is still available before filing or approving something. We also tightened request requirements so time-related filings need clearer reasons and duration details, reducing the chance of half-complete requests bouncing around for clarification. On top of that, attendance breakdowns now label special holidays versus regular holidays more clearly, and we fixed a couple of frustrating interface behaviors so controls do not trigger the wrong row actions and billing-related actions behave more reliably for staff.",
+      "What this means for you is a backoffice that keeps getting easier to trust in the messy daily moments. Your team gets better visibility into leave balances, clearer context around submitted requests, and more understandable attendance records when holiday rules come into play. That reduces guesswork, shortens review time, and helps the product feel calmer and more dependable in real day-to-day use."
+    ]
+  },
+  {
     "date": "2026-06-28",
     "badge": "Progress Update",
     "title": "Setup, Billing, and Daily Navigation Got Much Smoother",
