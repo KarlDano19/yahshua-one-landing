@@ -463,11 +463,48 @@ button { font: inherit; cursor: pointer; }
   .ftabs-bar { margin-bottom: 36px; }
 }
 
-/* ── App dashboard (hero mockup) ── */
-@keyframes app-glow-pulse {
-  0%, 100% { opacity: 0.6; }
-  50%       { opacity: 1; }
+/* ── Showcase (Folio-style alternating feature sections) ── */
+.showcase-section {
+  border-top: 1px solid var(--line);
 }
-.app-dashboard-glow {
-  animation: app-glow-pulse 4s ease-in-out infinite;
+.showcase-section.dark {
+  background: var(--ink);
+  border-color: oklch(0.22 0.012 250);
+}
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 80px;
+  align-items: center;
+  padding: 96px 0;
+}
+.showcase-grid.flip {
+  grid-template-columns: 1.15fr 1fr;
+}
+.showcase-grid.flip .showcase-img { order: -1; }
+.showcase-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+.showcase-section.dark .showcase-img img {
+  border-color: oklch(0.26 0.012 250);
+}
+
+@media (max-width: 1023px) {
+  .showcase-grid, .showcase-grid.flip {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 0;
+  }
+  .showcase-grid.flip .showcase-img { order: 0; }
+}
+@media (max-width: 767px) {
+  .showcase-grid, .showcase-grid.flip {
+    gap: 28px;
+    padding: 48px 0;
+  }
 }
