@@ -175,7 +175,7 @@ const SHOWCASE = [
       "Year-to-date summary on every payslip",
       "Download PDF, export XLSX, or email direct",
     ],
-    img: "/ss-payslip.jpg", imgW: 1200, imgH: 800,
+    clip: "/clip-payslip.mp4", img: "/ss-payslip.jpg",
     alt: "YAHSHUA One Payroll payslip for Ana Reyes showing ₱14,705.62 net pay with earnings and deduction breakdown",
     flip: false,
   },
@@ -190,7 +190,7 @@ const SHOWCASE = [
       "Acts on your behalf within your permission level",
       "Full conversation history per topic",
     ],
-    img: "/ss-theo.jpg", imgW: 1200, imgH: 712,
+    clip: "/clip-theo.mp4", img: "/ss-theo.jpg",
     alt: "Theo AI conversation showing de minimis cap analysis with ₱8,000 annual cap warning and formula suggestion",
     flip: true,
   },
@@ -205,7 +205,7 @@ const SHOWCASE = [
       "HR-ready language, zero manual writing",
       "Updates automatically when settings change",
     ],
-    img: "/ss-handbook.jpg", imgW: 1200, imgH: 800,
+    clip: "/clip-handbook.mp4", img: "/ss-handbook.jpg",
     alt: "YAHSHUA One Policy Handbook showing Pay Schedule section with semi-monthly cutoffs and payday offset settings",
     flip: false,
   },
@@ -220,7 +220,7 @@ const SHOWCASE = [
       "Timesheets, files, and payroll run previews",
       "Permission-aware output",
     ],
-    img: "/ss-reports.jpg", imgW: 1200, imgH: 800,
+    clip: "/clip-reports.mp4", img: "/ss-reports.jpg",
     alt: "YAHSHUA One Reports page showing custom reports including Government Contributions Summary and Overtime Trend",
     flip: true,
   },
@@ -235,7 +235,7 @@ const SHOWCASE = [
       "Visual org chart from your structure",
       "Updates automatically as your org changes",
     ],
-    img: "/ss-orgchart.jpg", imgW: 1200, imgH: 800,
+    clip: "/clip-orgchart.mp4", img: "/ss-orgchart.jpg",
     alt: "YAHSHUA One org chart showing hierarchical structure with Human Resources, Operations, and Customer Success departments",
     flip: false,
   },
@@ -250,7 +250,7 @@ const SHOWCASE = [
       "Flow Builder for full payroll run sequence",
       "Decision rules, lookup tables, basis catalog",
     ],
-    img: "/ss-formulas.jpg", imgW: 1200, imgH: 800,
+    clip: "/clip-formulas.mp4", img: "/ss-formulas.jpg",
     alt: "YAHSHUA One Components and Formulas page showing Basic Pay formula with Ask Theo prompt to draft formulas",
     flip: true,
   },
@@ -574,16 +574,19 @@ export default function PayrollPage() {
                     </div>
                   </Reveal>
 
-                  {/* Screenshot */}
+                  {/* Feature clip */}
                   <Reveal delay={0} direction="img" className="showcase-img">
-                    <img
-                      src={feat.img}
-                      alt={feat.alt}
-                      width={feat.imgW}
-                      height={feat.imgH}
-                      loading={i === 0 ? "eager" : "lazy"}
-                      decoding="async"
-                    />
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster={feat.img}
+                      aria-label={feat.alt}
+                      style={{ width: "100%", display: "block" }}
+                    >
+                      <source src={feat.clip} type="video/mp4" />
+                    </video>
                   </Reveal>
 
                 </div>

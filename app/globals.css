@@ -485,7 +485,8 @@ button { font: inherit; cursor: pointer; }
   grid-template-columns: 1.15fr 1fr;
 }
 .showcase-grid.flip .showcase-img { order: -1; }
-.showcase-img img {
+.showcase-img img,
+.showcase-img video {
   width: 100%;
   height: auto;
   display: block;
@@ -493,7 +494,8 @@ button { font: inherit; cursor: pointer; }
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
 }
-.showcase-section.dark .showcase-img img {
+.showcase-section.dark .showcase-img img,
+.showcase-section.dark .showcase-img video {
   border-color: oklch(0.26 0.012 250);
   box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 24px 60px rgba(0,0,0,0.45);
 }
