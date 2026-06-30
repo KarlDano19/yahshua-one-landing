@@ -444,7 +444,7 @@ export default function PayrollPage() {
                   fontSize: 19, lineHeight: 1.6, color: "var(--ink-2)",
                   maxWidth: 560, margin: "0 0 32px",
                 }}>
-                  Auto-compute payroll, statutory contributions, and withholding tax for every employee in your roster. Disburse in one click. Ask Theo — the built-in AI that reads your actual company data — any payroll question, any time.
+                  Your payroll runs automatically every cutoff. Statutory contributions, withholding tax, overtime, night differential, and 13th month, all computed for you. On cutoff day, just review and approve. And if you have any questions about your setup, you can just ask Theo. It reads your actual company data and gives you the answer.
                 </p>
               </Reveal>
 
@@ -533,10 +533,10 @@ export default function PayrollPage() {
           <Reveal>
             <div style={{ maxWidth: 720, marginBottom: 56 }}>
               <h2 style={{ margin: "0 0 14px", fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.035em", fontWeight: 600, lineHeight: 1.05 }}>
-                Everything payroll needs — and nothing it doesn&apos;t.
+                Everything your payroll needs. Nothing more.
               </h2>
               <p style={{ margin: 0, fontSize: 18, color: "var(--muted)", maxWidth: 580 }}>
-                From timekeeping to bank disbursement, every step of your payroll cycle is handled — automatically, accurately, and on time.
+                From timekeeping to bank disbursement, every step of your payroll cycle is handled automatically, accurately, and on time.
               </p>
             </div>
           </Reveal>
@@ -544,33 +544,33 @@ export default function PayrollPage() {
           <div>
             {[
               {
-                title: "Theo AI — your payroll intelligence layer",
-                body: "Ask anything about your payroll in plain language — allowance setups, de minimis caps, contribution breakdowns, missing timesheets. Theo reads your actual company data and answers from it. It can also perform actions on your behalf, within your role's permissions.",
+                title: "Theo AI, your payroll intelligence layer",
+                body: "You can ask Theo anything about your payroll in plain language. Ask about your allowance setup, your de minimis cap, or how a specific employee's deductions were computed. Theo reads your actual company data and gives you the answer. You can also ask Theo to perform actions for you, within your account's permissions.",
                 tags: ["Ask anything", "AI actions", "Permission-aware", "Global search"],
               },
               {
-                title: "Policy Handbook — auto-generated, always current",
-                body: "Every configuration decision you make in YAHSHUA Payroll becomes a readable policy document — automatically. No manual writing. No stale HR manuals. When your settings change, the handbook updates itself.",
+                title: "Policy Handbook, auto-generated and always current",
+                body: "Inside YAHSHUA Payroll, your settings already capture how payroll works in your company. The Policy Handbook turns all of that into a readable document automatically. You don't need to type anything or build it yourself. When your settings change, the handbook updates on its own.",
                 tags: ["Auto-generated", "Setting-aware", "Zero maintenance", "HR-ready"],
               },
               {
                 title: "Automatic computation",
-                body: "Every peso computed — basic pay, OT, night diff, holiday pay, 13th month, and all statutory deductions. Formula-driven, not manual. Zero entry errors.",
+                body: "YAHSHUA computes your entire payroll for every employee. Basic pay, overtime, night differential, holiday pay, 13th month, and all statutory deductions. Everything is formula-driven. You don't have to enter any of it manually.",
                 tags: ["OT", "Night diff", "Holiday pay", "13th month"],
               },
               {
-                title: "Custom formulas & payroll flows",
-                body: "Every company processes payroll differently. Define exactly how pay components are computed using an Excel-like formula editor — or ask Theo to write the formulas for you. Then build your payroll flow: basic earnings → premium pay → statutory contributions → withholding tax → post-tax.",
+                title: "Custom formulas and payroll flows",
+                body: "Every company does payroll a little differently. In YAHSHUA Payroll, you can define how your pay components are computed using a formula editor that works like Excel. If you're not sure how to write a formula, you can just ask Theo and it will build it for you. You can also set your own payroll flow: basic earnings first, then premium pay, then statutory contributions, then withholding tax.",
                 tags: ["Formula editor", "Flow builder", "Conditional logic", "AI-assisted"],
               },
               {
                 title: "Custom reports via AI",
-                body: "Standard reports are built in. For everything else — government contribution summaries, headcount by department, cost-per-head — describe what you need and AI generates it from your actual payroll data. Respects every user's roles and permissions.",
+                body: "YAHSHUA Payroll comes with standard reports built in. But if you need something specific, like a government contribution summary or a headcount by department, you can ask AI to generate it from your company's own data. It only shows information that your account has access to.",
                 tags: ["Standard reports", "AI-generated", "Permission-aware", "Exportable"],
               },
               {
                 title: "Organizational chart",
-                body: "Define departments, divisions, sections, units, and locations — then view your full org chart automatically. One of the most-requested features from YAHSHUA users, now built into YAHSHUA Payroll.",
+                body: "In YAHSHUA Payroll, you can set up your company's departments, divisions, sections, units, and locations. Once they're set up, you can view your full organizational chart right inside the app. We know a lot of you have been asking for this, and we're really excited to bring it to you.",
                 tags: ["Departments", "Divisions", "Sections", "Units", "Locations"],
               },
             ].map((feat, i) => (
@@ -622,7 +622,7 @@ export default function PayrollPage() {
                   Every statutory deduction, <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>auto-computed.</em>
                 </h2>
                 <p style={{ color: "oklch(0.85 0.01 250)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px", maxWidth: 440 }}>
-                  YAHSHUA One has Philippine government agencies baked in — not bolted on. Rates update automatically. No manual table lookups. No calculation errors.
+                  YAHSHUA One is built around Philippine government agencies from the start. Rates update automatically. No manual table lookups. No calculation errors.
                 </p>
 
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
@@ -738,7 +738,7 @@ export default function PayrollPage() {
               {
                 num: "01",
                 title: "Import your roster",
-                body: "Upload employee records — name, position, daily rate, and hired date. Import from Excel or connect your existing HRIS.",
+                body: "Upload your employee records: name, position, daily rate, and hire date. You can import from Excel or connect your existing HRIS.",
               },
               {
                 num: "02",
@@ -786,7 +786,7 @@ export default function PayrollPage() {
               </span>
               <div>
                 <div style={{ fontWeight: 500, fontSize: 14, color: "var(--accent-2)" }}>Theo AI is always watching</div>
-                <div style={{ fontSize: 13, color: "var(--muted)" }}>Theo flags anomalies before you approve — duplicate entries, rate mismatches, missing timesheets. Ask it anything about your setup and it answers from your actual company data, not a manual.</div>
+                <div style={{ fontSize: 13, color: "var(--muted)" }}>Theo flags anomalies before you approve: duplicate entries, rate mismatches, missing timesheets. Ask Theo anything about your setup and it answers from your actual company data, not a manual.</div>
               </div>
             </div>
           </Reveal>
@@ -808,12 +808,12 @@ export default function PayrollPage() {
             {[
               {
                 title: "Leave management",
-                body: "Vacation, sick, emergency, and special non-working leaves — tracked per Philippine Labor Code. Employees file online; managers approve in one tap. Balances reflect in payroll automatically.",
+                body: "Vacation, sick, emergency, and special non-working leaves are all tracked per Philippine Labor Code. Employees can file online. Managers approve in one tap. Leave balances reflect in payroll automatically.",
                 tags: ["VL", "SL", "Emergency", "Maternity", "Paternity", "Solo parent"],
               },
               {
                 title: "Employee self-service portal",
-                body: "Your team accesses their own payslips, leave balances, attendance records, and tax forms anytime — without sending HR a message every payday.",
+                body: "Your team can access their own payslips, leave balances, attendance records, and tax forms anytime. No need to message HR every payday.",
                 tags: ["Payslip access", "Leave filing", "DTR viewing", "2316 download"],
               },
               {
@@ -858,7 +858,7 @@ export default function PayrollPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <FaqItem delay={0}
               q="Does YAHSHUA One automatically compute SSS, PhilHealth, and Pag-IBIG contributions?"
-              a="Yes. YAHSHUA One computes SSS (employee and employer share), PhilHealth (both shares), and Pag-IBIG (both shares) automatically based on each employee's monthly basic salary. Contribution tables are kept current — when government agencies update rates, YAHSHUA updates too."
+              a="Yes. YAHSHUA One computes SSS (employee and employer share), PhilHealth (both shares), and Pag-IBIG (both shares) automatically based on each employee's monthly basic salary. Contribution tables are kept current. When government agencies update their rates, YAHSHUA updates too."
             />
             <FaqItem delay={40}
               q="How does YAHSHUA handle withholding tax computation?"
@@ -878,7 +878,7 @@ export default function PayrollPage() {
             />
             <FaqItem delay={200}
               q="Can YAHSHUA handle the 13th month pay computation?"
-              a="Yes. 13th month pay is computed automatically per DOLE guidelines — total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE."
+              a="Yes. 13th month pay is computed automatically per DOLE guidelines. It is your total basic pay for the year, divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE."
             />
           </div>
         </div>
