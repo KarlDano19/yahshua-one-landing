@@ -377,3 +377,97 @@ button { font: inherit; cursor: pointer; }
   .stat-item { border-right: none; }
   .stat-item:last-child { border-bottom: none; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   BENTO GRID — Y1P features
+══════════════════════════════════════════════════════════ */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  grid-template-areas:
+    "theo      theo      handbook"
+    "compute   formulas  reports "
+    "orgchart  orgchart  reports ";
+}
+.bento-theo     { grid-area: theo; }
+.bento-handbook { grid-area: handbook; }
+.bento-compute  { grid-area: compute; }
+.bento-formulas { grid-area: formulas; }
+.bento-reports  { grid-area: reports; }
+.bento-orgchart { grid-area: orgchart; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "theo      theo    "
+      "handbook  compute "
+      "formulas  reports "
+      "orgchart  orgchart";
+  }
+}
+@media (max-width: 767px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "theo" "handbook" "compute" "formulas" "reports" "orgchart";
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   FEATURE TABS — Y1P module explorer
+══════════════════════════════════════════════════════════ */
+.ftabs-bar {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-bottom: 52px;
+}
+.ftabs-bar::-webkit-scrollbar { display: none; }
+.ftab-btn {
+  padding: 14px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  font-family: inherit;
+  letter-spacing: -0.01em;
+}
+.ftab-btn.active { color: var(--ink); }
+.ftab-btn:hover:not(.active) { color: var(--ink-2); }
+.ftab-indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent-2);
+  border-radius: 1px 1px 0 0;
+  transition: left 0.36s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.ftab-content {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .ftab-content { grid-template-columns: 1fr; gap: 32px; }
+  .ftabs-bar { margin-bottom: 36px; }
+}
+
+/* ── App dashboard (hero mockup) ── */
+@keyframes app-glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+.app-dashboard-glow {
+  animation: app-glow-pulse 4s ease-in-out infinite;
+}
