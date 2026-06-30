@@ -262,6 +262,8 @@ const SHOWCASE = [
 export default function PayrollPage() {
   const [navScrolled, setNavScrolled] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 8);
@@ -269,6 +271,17 @@ export default function PayrollPage() {
     onScroll();
     return () => document.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setVideoOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = videoOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [videoOpen]);
 
   const btnBase: React.CSSProperties = {
     display: "inline-flex", alignItems: "center", gap: 8, height: 44, padding: "0 18px",
@@ -429,13 +442,43 @@ export default function PayrollPage() {
                       </span>
                     </div>
                   </div>
-                  <video
-                    autoPlay muted loop playsInline
-                    poster="/ss-employees.jpg"
-                    style={{ width: "100%", display: "block" }}
-                  >
-                    <source src="/payroll-preview.mp4" type="video/mp4" />
-                  </video>
+                  <div style={{ position: "relative" }}>
+                    <video
+                      autoPlay muted loop playsInline
+                      poster="/ss-employees.jpg"
+                      style={{ width: "100%", display: "block" }}
+                    >
+                      <source src="/payroll-preview.mp4" type="video/mp4" />
+                    </video>
+                    <button
+                      onClick={() => setVideoOpen(true)}
+                      aria-label="Watch the full walkthrough"
+                      style={{
+                        position: "absolute", bottom: 14, left: 14,
+                        display: "inline-flex", alignItems: "center", gap: 7,
+                        padding: "7px 14px 7px 10px",
+                        background: "rgba(10,14,20,0.72)",
+                        backdropFilter: "blur(10px)",
+                        border: "1px solid rgba(255,255,255,0.13)",
+                        borderRadius: 999, color: "#fff",
+                        fontSize: 12.5, fontWeight: 500,
+                        cursor: "pointer", fontFamily: "inherit",
+                        transition: "background .2s ease, border-color .2s ease",
+                      }}
+                      onMouseEnter={e => { e.currentTarget.style.background = "rgba(10,14,20,0.9)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)"; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = "rgba(10,14,20,0.72)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)"; }}
+                    >
+                      <span style={{
+                        width: 22, height: 22, borderRadius: "50%",
+                        background: "var(--accent-3)", display: "grid", placeItems: "center", flexShrink: 0,
+                      }}>
+                        <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
+                          <path d="M1 1L7 5L1 9V1Z" fill="#0a1418" />
+                        </svg>
+                      </span>
+                      Watch the full walkthrough
+                    </button>
+                  </div>
                 </div>
               </Reveal>
 
@@ -690,6 +733,71 @@ export default function PayrollPage() {
           <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 YAHSHUA One · Built in the Philippines 🇵🇭</span>
         </div>
       </footer>
+
+      {/* ── VIDEO MODAL ── */}
+      {videoOpen && (
+        <div
+          onClick={() => setVideoOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Full walkthrough video"
+          style={{
+            position: "fixed", inset: 0, zIndex: 200,
+            background: "rgba(0,0,0,0.88)",
+            backdropFilter: "blur(6px)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            padding: "24px",
+          }}
+        >
+          <button
+            onClick={() => setVideoOpen(false)}
+            aria-label="Close video"
+            style={{
+              position: "absolute", top: 20, right: 24,
+              width: 38, height: 38, borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.18)",
+              background: "rgba(255,255,255,0.08)",
+              color: "#fff", cursor: "pointer",
+              display: "grid", placeItems: "center",
+              fontSize: 20, lineHeight: 1, fontFamily: "inherit",
+              transition: "background .15s ease",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+          >
+            ×
+          </button>
+
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{
+              width: "min(92vw, 1100px)",
+              borderRadius: 14, overflow: "hidden",
+              boxShadow: "0 40px 100px rgba(0,0,0,0.8)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: "#000",
+            }}
+          >
+            <video
+              ref={modalVideoRef}
+              autoPlay
+              controls
+              playsInline
+              style={{ width: "100%", display: "block", maxHeight: "80vh" }}
+            >
+              <source src="/payroll-preview.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div style={{
+            position: "absolute", bottom: 20,
+            fontSize: 12, color: "rgba(255,255,255,0.35)",
+            fontFamily: "var(--font-geist-mono, monospace)",
+          }}>
+            Press ESC or click outside to close
+          </div>
+        </div>
+      )}
 
     </div>
   );
