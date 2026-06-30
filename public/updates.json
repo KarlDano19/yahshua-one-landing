@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-30",
+    "badge": "Progress Update",
+    "title": "Payroll Rules Become Truly Flexible",
+    "description": "We made statutory contributions and tax rules configurable, while also adding a clearer safeguard so teams know when a government formula needs manual handling before payroll goes live.",
+    "body": [
+      "For many Filipino business owners, payroll trust breaks the moment the system feels too rigid for how their company actually works. Government contributions and tax rules are not just technical details hiding in the background. They affect how confident a team feels when handling special cases, company-specific policies, and payroll decisions that do not fit a one-size-fits-all flow. If the system cannot adapt cleanly, operators end up relying on side notes, manual checks, and anxious double-checking before each run. This update matters because YAHSHUA One is getting better at giving businesses flexibility without throwing discipline out the window.",
+      "Yesterday's work focused on making the payroll engine more practical in plain language. We moved statutory contributions and tax behavior toward a configurable setup, which means businesses get a stronger path for shaping how these core payroll rules behave instead of treating them like a sealed black box. We also tightened the review flow around those settings by adding a clear warning when a government formula has been unlocked and should now follow a manual path before publishing. On top of that, the latest product work in review is building legal-document controls for the app itself, including branded agreement pages, first-login acceptance gates, and internal visibility into who accepted what. Put simply, YAHSHUA One is becoming better at handling both payroll accountability and platform trust in a way that feels more serious and more usable.",
+      "What this means for you is more control without losing clarity. Your team gets closer to a payroll setup where statutory rules can reflect real business needs, while still giving clear signals when something requires extra care before it affects live payroll. That reduces hidden surprises, lowers the risk of avoidable setup mistakes, and makes payroll reviews feel more explainable when sensitive rules need attention. It also helps YAHSHUA One grow into a more complete payroll and HR backoffice, where compliance, approvals, employee trust, and platform governance all reinforce each other in one place. We are still building fast, but this is exactly the kind of progress that makes the system feel more flexible, more disciplined, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-06-29",
     "badge": "Progress Update",
     "title": "Leave Requests and Attendance Details Get Much Clearer",
