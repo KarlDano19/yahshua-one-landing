@@ -2,6 +2,17 @@
   {
     "date": "2026-06-30",
     "badge": "Progress Update",
+    "title": "Legal Agreements, Payroll Reporting, and Navigation Get Clearer",
+    "description": "We made YAHSHUA One easier to trust in everyday use by adding clearer legal agreement handling, a new overtime summary report, smoother company switching, and cleaner billing and payroll details.",
+    "body": [
+      "Yesterday's work focused on the parts of a serious backoffice product that people feel in everyday operations: knowing what employees still need to agree to, seeing payroll details more clearly, and moving around the system without unnecessary friction. When legal requirements, reporting, and navigation feel patchy, teams waste time double-checking simple things that should already be obvious.",
+      "In plain language, companies can now manage legal agreements more clearly inside YAHSHUA One, while staff get a cleaner first-login flow for reviewing required documents and a more obvious file-upload experience when something needs to be submitted. We also added a new overtime summary report, tightened several payroll and payroll-setting behaviors, and made it easier to move between companies with a searchable company switcher. On top of that, billing and account screens got a cleaner pass so everyday admin work feels less awkward.",
+      "What this means for you is a product that keeps getting easier to trust in the small but important moments. Your team gets better visibility into compliance-related tasks, clearer payroll reporting, and a smoother way to move through the system when handling multiple companies or day-to-day admin work. It is steady progress, but it is exactly the kind that makes YAHSHUA One feel more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-30",
+    "badge": "Progress Update",
     "title": "Payroll Rules Become Truly Flexible",
     "description": "We made statutory contributions and tax rules configurable, while also adding a clearer safeguard so teams know when a government formula needs manual handling before payroll goes live.",
     "body": [
