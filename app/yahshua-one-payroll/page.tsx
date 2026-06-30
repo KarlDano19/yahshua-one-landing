@@ -427,22 +427,6 @@ export default function PayrollPage() {
           <div className="grid-2col-hero">
             {/* Left: copy */}
             <div>
-              <Reveal>
-                <div style={{
-                  display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 12px 6px 8px",
-                  border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999,
-                  fontSize: 12.5, color: "var(--ink-2)", boxShadow: "var(--shadow-sm)", marginBottom: 22,
-                }}>
-                  <span style={{
-                    background: "var(--accent-50)", color: "var(--accent-2)",
-                    padding: "2px 8px", borderRadius: 999,
-                    fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10.5,
-                    letterSpacing: "0.04em", textTransform: "uppercase",
-                  }}>People & Payroll</span>
-                  <span>Module 02 of YAHSHUA One</span>
-                </div>
-              </Reveal>
-
               <Reveal delay={60} direction="clip">
                 <h1 style={{
                   margin: "0 0 20px",
@@ -460,7 +444,7 @@ export default function PayrollPage() {
                   fontSize: 19, lineHeight: 1.6, color: "var(--ink-2)",
                   maxWidth: 560, margin: "0 0 32px",
                 }}>
-                  Auto-compute payroll, statutory contributions, and withholding tax for every employee in your roster — then disburse with one click. Built for Philippine Labor Code and BIR.
+                  Auto-compute payroll, statutory contributions, and withholding tax for every employee in your roster. Disburse in one click. Ask Theo — the built-in AI that reads your actual company data — any payroll question, any time.
                 </p>
               </Reveal>
 
@@ -560,34 +544,34 @@ export default function PayrollPage() {
           <div>
             {[
               {
-                title: "Employee roster management",
-                body: "Maintain complete employee records — hire date, position, rate, and employment type. Changes reflect instantly in payroll.",
-                tags: ["Full-time", "Part-time", "Contractual", "Probationary"],
+                title: "Theo AI — your payroll intelligence layer",
+                body: "Ask anything about your payroll in plain language — allowance setups, de minimis caps, contribution breakdowns, missing timesheets. Theo reads your actual company data and answers from it. It can also perform actions on your behalf, within your role's permissions.",
+                tags: ["Ask anything", "AI actions", "Permission-aware", "Global search"],
               },
               {
-                title: "Cutoff scheduling",
-                body: "Define semi-monthly or monthly payroll cutoffs. Payroll auto-locks at cutoff, preventing unauthorized changes.",
-                tags: ["Semi-monthly", "Monthly", "Auto-lock", "Cutoff alerts"],
+                title: "Policy Handbook — auto-generated, always current",
+                body: "Every configuration decision you make in YAHSHUA Payroll becomes a readable policy document — automatically. No manual writing. No stale HR manuals. When your settings change, the handbook updates itself.",
+                tags: ["Auto-generated", "Setting-aware", "Zero maintenance", "HR-ready"],
               },
               {
                 title: "Automatic computation",
-                body: "Every peso is computed — basic, OT, night diff, holiday pay, 13th month, and all statutory deductions. Zero manual entry.",
+                body: "Every peso computed — basic pay, OT, night diff, holiday pay, 13th month, and all statutory deductions. Formula-driven, not manual. Zero entry errors.",
                 tags: ["OT", "Night diff", "Holiday pay", "13th month"],
               },
               {
-                title: "Digital payslips",
-                body: "Every employee gets a PDF payslip via email or employee portal — branded, detailed, and delivered automatically.",
-                tags: ["PDF export", "Email delivery", "Employee portal", "Branding"],
+                title: "Custom formulas & payroll flows",
+                body: "Every company processes payroll differently. Define exactly how pay components are computed using an Excel-like formula editor — or ask Theo to write the formulas for you. Then build your payroll flow: basic earnings → premium pay → statutory contributions → withholding tax → post-tax.",
+                tags: ["Formula editor", "Flow builder", "Conditional logic", "AI-assisted"],
               },
               {
-                title: "Bank disbursement files",
-                body: "Generate bank-ready disbursement files for BPI, BDO, UnionBank, and GCash in one click. No more manual transfers.",
-                tags: ["BPI", "BDO", "UnionBank", "GCash", "Maya"],
+                title: "Custom reports via AI",
+                body: "Standard reports are built in. For everything else — government contribution summaries, headcount by department, cost-per-head — describe what you need and AI generates it from your actual payroll data. Respects every user's roles and permissions.",
+                tags: ["Standard reports", "AI-generated", "Permission-aware", "Exportable"],
               },
               {
-                title: "Payroll history & audit log",
-                body: "Every run is logged with a full audit trail. Retrieve any historical payroll run for compliance, disputes, or internal review.",
-                tags: ["Audit trail", "Payroll history", "Dispute resolution"],
+                title: "Organizational chart",
+                body: "Define departments, divisions, sections, units, and locations — then view your full org chart automatically. One of the most-requested features from YAHSHUA users, now built into YAHSHUA Payroll.",
+                tags: ["Departments", "Divisions", "Sections", "Units", "Locations"],
               },
             ].map((feat, i) => (
               <Reveal key={feat.title} delay={i * 40}>
@@ -801,8 +785,8 @@ export default function PayrollPage() {
                 </svg>
               </span>
               <div>
-                <div style={{ fontWeight: 500, fontSize: 14, color: "var(--accent-2)" }}>Payroll AI is always watching</div>
-                <div style={{ fontSize: 13, color: "var(--muted)" }}>YAHSHUA flags anomalies automatically — duplicate entries, rate mismatches, missing timesheets — before you approve.</div>
+                <div style={{ fontWeight: 500, fontSize: 14, color: "var(--accent-2)" }}>Theo AI is always watching</div>
+                <div style={{ fontSize: 13, color: "var(--muted)" }}>Theo flags anomalies before you approve — duplicate entries, rate mismatches, missing timesheets. Ask it anything about your setup and it answers from your actual company data, not a manual.</div>
               </div>
             </div>
           </Reveal>
