@@ -109,7 +109,7 @@ function AnimatedStat({ from, to, format, delay, lbl }: {
 }
 
 /* ── FAQ item ── */
-function FaqItem({ q, a, delay }: { q: string; a: string; delay: number }) {
+function FaqItem({ q, a, delay }: { q: string; a: React.ReactNode; delay: number }) {
   const [open, setOpen] = useState(false);
   return (
     <Reveal delay={delay}>
@@ -129,7 +129,7 @@ function FaqItem({ q, a, delay }: { q: string; a: string; delay: number }) {
         <div style={{ display: "grid", gridTemplateRows: open ? "1fr" : "0fr", transition: "grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1)" }}>
           <div style={{ overflow: "hidden", minHeight: 0 }}>
             <div style={{ borderTop: "1px solid var(--line)", padding: "16px 24px 20px" }}>
-              <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--muted)", margin: 0 }}>{a}</p>
+              <div style={{ fontSize: 14, lineHeight: 1.7, color: "var(--muted)", margin: 0 }}>{a}</div>
             </div>
           </div>
         </div>
@@ -696,6 +696,103 @@ export default function PayrollPage() {
               a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal." />
             <FaqItem delay={200} q="Can YAHSHUA handle the 13th month pay computation?"
               a="Yes. 13th month pay is computed automatically per DOLE guidelines: your total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE." />
+            <FaqItem delay={240} q="What are the differences between YPO and Y1P?"
+              a={<>
+                Y1P is a ground-up rebuild of the payroll platform. Key differences include:
+                <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
+                  <li>Modern, faster tech stack with improved performance and scalability</li>
+                  <li>Three-tier payroll configuration (company → pay group → individual employee) so rules can be tailored at any level without affecting others</li>
+                  <li>Built-in employee self-service portal for leaves, overtime, payslips, and more</li>
+                  <li>Integrated accounting module with direct GL posting</li>
+                  <li>AI-assisted payroll copilot for faster issue resolution</li>
+                  <li>Facial recognition attendance with geo-fencing</li>
+                  <li>Mobile approvals for managers</li>
+                </ul>
+              </>} />
+            <FaqItem delay={280} q="What new features does Y1P offer?"
+              a={<>
+                Y1P includes features not available in YPO:
+                <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
+                  <li>Employee self-service portal — file leaves, OT, OB, cash advances, and view payslips anytime</li>
+                  <li>Facial recognition + geo-fencing — modern attendance clocking with location validation</li>
+                  <li>Mobile approvals — managers can approve requests from any device</li>
+                  <li>Configurable formula engine — full catalogue of premium pay types (OT, night differential, all holiday types, rest day, retro pay, longevity pay, and more) plus support for custom formulas</li>
+                  <li>Three-tier config cascade — rules differ per pay group or per employee without manual overrides each run</li>
+                  <li>Automated allowance and deduction rules — triggered by employee status changes</li>
+                  <li>Back pay and final pay modules</li>
+                  <li>Deduction priority management</li>
+                  <li>Full audit logs — every rate, formula, and income setup change is tracked</li>
+                  <li>Integrated accounting — payroll entries post directly to GL accounts</li>
+                </ul>
+              </>} />
+            <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
+              a="Y1P includes an AI copilot accessible from within the app. It helps you understand payroll computations, surface discrepancies, and answer questions about your payroll data in plain language — without needing to dig through reports manually. It works on top of your actual company data, not generic templates." />
+            <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
+              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and all statutory compliance reports. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
+            <FaqItem delay={400} q="What pay frequencies does Y1P support?"
+              a="Y1P supports Monthly, Semi-Monthly, Weekly, and Bi-Weekly pay frequencies. These are configurable per pay group, so different employee groups can have different pay schedules within the same company." />
+            <FaqItem delay={440} q="What premium pay types are built in?"
+              a={<>
+                Y1P ships with a full predefined formula catalogue aligned with Philippine labor law:
+                <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
+                  <li>Straight Time (ST) and Regular Day OT</li>
+                  <li>Night Differential (ND) — ST ND, OT ND, configurable time windows</li>
+                  <li>Rest Day (ST, OT, ND combinations)</li>
+                  <li>Regular Holiday (ST, OT, ND, Rest Day combinations)</li>
+                  <li>Special Holiday (ST, OT, ND, Rest Day combinations)</li>
+                  <li>Double Holiday</li>
+                  <li>Preshift OT and Preshift OT ND</li>
+                  <li>Retro Pay (ST, OT, ND, Rest Day, Holiday)</li>
+                  <li>13th Month Pay proration</li>
+                  <li>Longevity Pay</li>
+                  <li>Leave conversions (Sick, Vacation, Emergency)</li>
+                  <li>Standard deductions (absent, late, undertime)</li>
+                  <li>SSS, PhilHealth, Pag-IBIG, and Withholding Tax</li>
+                </ul>
+                <p style={{ margin: "8px 0 0" }}>Custom formulas can also be created for company-specific needs.</p>
+              </>} />
+            <FaqItem delay={480} q="Does Y1P handle SSS, PhilHealth, Pag-IBIG, and BIR?"
+              a={<>
+                Yes. All four are handled automatically:
+                <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
+                  <li>SSS, PhilHealth, Pag-IBIG — computed based on configurable statutory tables, with contribution reports included</li>
+                  <li>BIR withholding tax — computed per BIR tax tables, with BIR-specific reports (including 1604-C support) and full audit trails</li>
+                </ul>
+                <p style={{ margin: "8px 0 0" }}>Government-mandated table updates are applied as compliance updates throughout the transition period.</p>
+              </>} />
+            <FaqItem delay={520} q="What reports are available in Y1P?"
+              a={<>
+                Y1P includes the following report types:
+                <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
+                  <li>Payslips</li>
+                  <li>Payroll Register</li>
+                  <li>Payroll Summary</li>
+                  <li>Ledger Reports</li>
+                  <li>Contribution Reports (SSS, PhilHealth, Pag-IBIG)</li>
+                  <li>BIR Reports</li>
+                  <li>13th Month Pay Report</li>
+                  <li>Attendance Reports</li>
+                  <li>Activity Reports</li>
+                  <li>Accounting/GL Reports</li>
+                </ul>
+                <p style={{ margin: "8px 0 0" }}>YPO-specific custom reports will be reviewed during migration planning to confirm availability or a Y1P equivalent.</p>
+              </>} />
+            <FaqItem delay={560} q="Can Y1P handle our current company structure?"
+              a="Yes. Y1P supports multi-company setups, multiple pay groups per company, and per-employee configuration overrides. Complex organizational structures — departments, sections, cost centers, and different employee classifications — are all supported." />
+            <FaqItem delay={600} q="Is Y1P faster than YPO?"
+              a="Yes. Y1P is built on a modern, performance-optimized stack. The payroll computation engine is designed for batch efficiency — all configuration is loaded upfront so that processing large employee rosters does not create bottlenecks during a payroll run." />
+            <FaqItem delay={640} q="Can we request a Y1P demo?"
+              a="Yes. Demos can be scheduled upon request. Please reach out to your account manager or the YAHSHUA implementation team to set one up." />
+            <FaqItem delay={680} q="Can we compare YPO vs. Y1P features?"
+              a="Yes. A feature comparison matrix is available and can be shared upon request. Your account manager can walk you through it during a pre-migration consultation." />
+            <FaqItem delay={720} q="Will historical payroll data be migrated?"
+              a="Yes. Historical and active employee and payroll data will be migrated as part of the transition. The exact scope (how far back, which records) will be confirmed during migration planning. Data is validated by both the client and the implementation team before go-live." />
+            <FaqItem delay={760} q="Is there a risk of data loss?"
+              a="Data is validated before and after migration to ensure accuracy and integrity. Parallel testing is conducted before go-live. If discrepancies are found, corrections can be made — even after go-live." />
+            <FaqItem delay={800} q="Will we do testing before go-live?"
+              a="Yes. Parallel testing is a required step in the migration process. Both the client team and the YAHSHUA implementation team validate results before the system goes live." />
+            <FaqItem delay={840} q="How will Y1P feature requests be evaluated?"
+              a="Feature requests for Y1P are reviewed based on: business need, client value, alignment with the product roadmap, technical feasibility, and priority relative to ongoing development. Requests can be submitted through your account manager." />
           </div>
         </div>
       </section>
