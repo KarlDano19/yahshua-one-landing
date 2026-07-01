@@ -206,7 +206,7 @@ export default function Home() {
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>
                 Get Started <Arrow />
-              </a>
+              </button>
             </div>
           </div>
         </div>
