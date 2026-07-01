@@ -165,22 +165,7 @@ function MarqueeStrip() {
 ══════════════════════════════════════════════════════════ */
 const SHOWCASE = [
   {
-    num: "01", dark: false,
-    label: "Payroll & Pay Slips",
-    title: "Your people get paid right, every cutoff.",
-    body: "YAHSHUA One Payroll computes every payslip automatically: basic pay, overtime, night differential, 13th month, and all statutory deductions. The payslip breakdown shows exactly what each employee earned, what was taken out, and what the employer contributed. On cutoff day, you review and approve.",
-    bullets: [
-      "Automatic computation per employee",
-      "Government contributions auto-deducted",
-      "Year-to-date summary on every payslip",
-      "Download PDF, export XLSX, or email direct",
-    ],
-    clip: "/clip-payslip.mp4", img: "/ss-payslip.jpg",
-    alt: "YAHSHUA One Payroll payslip for Ana Reyes showing ₱14,705.62 net pay with earnings and deduction breakdown",
-    flip: false,
-  },
-  {
-    num: "02", dark: true,
+    num: "01", dark: true,
     label: "Theo AI",
     title: "Ask anything. Theo reads your actual company data.",
     body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, your overtime multiplier, or how a specific employee's net was computed. Theo can also take action for you: drafting formulas, flagging anomalies, or pulling specific reports, all within your account permissions.",
@@ -409,18 +394,9 @@ export default function PayrollPage() {
                   </p>
                 </Reveal>
                 <Reveal delay={180}>
-                  <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 28 }}>
-                    <a href="#waitlist" style={btnHeroPrimary}>Start free for 30 days <Arrow /></a>
+                  <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                    <a href="/#waitlist" style={btnHeroPrimary}>Join waitlist <Arrow /></a>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
-                  </div>
-                </Reveal>
-                <Reveal delay={230}>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                    {["SSS auto-compute", "PhilHealth", "Pag-IBIG", "BIR 1601-C", "13th month", "Night diff & OT"].map((tag) => (
-                      <div key={tag} style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 12.5, padding: "4px 10px", borderRadius: 999, border: "1px solid oklch(0.3 0.015 250)", color: "oklch(0.68 0.01 250)", background: "oklch(0.18 0.012 250)" }}>
-                        <Check size={11} color="var(--accent)" />{tag}
-                      </div>
-                    ))}
                   </div>
                 </Reveal>
               </div>
