@@ -248,6 +248,7 @@ export default function PayrollPage() {
   const [navScrolled, setNavScrolled] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [ctaOpen, setCtaOpen] = useState(false);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -258,7 +259,7 @@ export default function PayrollPage() {
   }, []);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setVideoOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setVideoOpen(false); setCtaOpen(false); } };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
@@ -336,7 +337,7 @@ export default function PayrollPage() {
             </nav>
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <a href="#waitlist" style={{ ...btnPrimary, ...btnSm }}>Start free <Arrow /></a>
+              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
               {mobileNavOpen
@@ -357,7 +358,7 @@ export default function PayrollPage() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <a href="#waitlist" style={{ ...btnPrimary, ...btnSm }}>Start free <Arrow /></a>
+              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
             </div>
           </div>
         </div>
@@ -395,7 +396,7 @@ export default function PayrollPage() {
                 </Reveal>
                 <Reveal delay={180}>
                   <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                    <a href="/#waitlist" style={btnHeroPrimary}>Join waitlist <Arrow /></a>
+                    <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Get Started <Arrow /></button>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
                   </div>
                 </Reveal>
@@ -543,7 +544,7 @@ export default function PayrollPage() {
                           </li>
                         ))}
                       </ul>
-                      <a href="#waitlist" style={d ? btnDarkCta : btnPrimary}>Start free <Arrow /></a>
+                      <button onClick={() => setCtaOpen(true)} style={d ? btnDarkCta : btnPrimary}>Get Started <Arrow /></button>
                     </div>
                   </Reveal>
 
@@ -712,9 +713,9 @@ export default function PayrollPage() {
                 Join 1,200+ Filipino business owners on the YAHSHUA One waitlist. Free for 30 days. No credit card.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="/#waitlist" style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
-                  Join the waitlist <Arrow />
-                </a>
+                <button onClick={() => setCtaOpen(true)} style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
+                  Get Started <Arrow />
+                </button>
                 <a href="/" style={{ ...btnBase, background: "transparent", color: "#fff", borderColor: "oklch(0.35 0.02 250)" }}>
                   See all modules
                 </a>
@@ -817,6 +818,81 @@ export default function PayrollPage() {
         </div>
       )}
 
+      {/* ── GET STARTED MODAL ── */}
+      {ctaOpen && (
+        <div
+          onClick={() => setCtaOpen(false)}
+          role="dialog" aria-modal="true" aria-label="Get started"
+          style={{
+            position: "fixed", inset: 0, zIndex: 300,
+            background: "rgba(10,14,20,0.72)", backdropFilter: "blur(8px)",
+            display: "flex", alignItems: "center", justifyContent: "center", padding: 24,
+          }}
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{
+              background: "var(--bg)", borderRadius: 20,
+              border: "1px solid var(--line)",
+              padding: "44px 36px 36px",
+              maxWidth: 420, width: "100%",
+              boxShadow: "0 40px 100px rgba(0,0,0,0.28)",
+              position: "relative",
+            }}
+          >
+            <button
+              onClick={() => setCtaOpen(false)}
+              aria-label="Close"
+              style={{
+                position: "absolute", top: 16, right: 16,
+                width: 30, height: 30, borderRadius: "50%",
+                border: "1px solid var(--line)", background: "var(--surface)",
+                color: "var(--muted)", cursor: "pointer",
+                display: "grid", placeItems: "center", fontSize: 17, lineHeight: 1,
+                fontFamily: "inherit",
+              }}
+            >×</button>
+
+            <h3 style={{ margin: "0 0 6px", fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", color: "var(--ink)" }}>
+              Are you a YAHSHUA One client?
+            </h3>
+            <p style={{ margin: "0 0 24px", fontSize: 14, color: "var(--muted)", lineHeight: 1.5 }}>
+              Let us point you to the right place.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <a
+                href="https://calendly.com/clientrelations-abba/presentation?utm_source=website&utm_medium=web&utm_campaign=yahshuaone"
+                target="_blank" rel="noopener noreferrer"
+                onClick={() => setCtaOpen(false)}
+                style={{
+                  display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
+                  borderRadius: 12, background: "var(--ink)", border: "1px solid var(--ink)",
+                  textDecoration: "none",
+                }}
+              >
+                <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA One</span>
+                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free presentation with our team</span>
+              </a>
+
+              <button
+                onClick={() => {
+                  setCtaOpen(false);
+                  window.location.href = "/#waitlist";
+                }}
+                style={{
+                  display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
+                  borderRadius: 12, background: "var(--surface)", border: "1px solid var(--line)",
+                  textAlign: "left", cursor: "pointer", fontFamily: "inherit",
+                }}
+              >
+                <span style={{ fontWeight: 500, fontSize: 15, color: "var(--ink)" }}>Yes, I&apos;m an existing client</span>
+                <span style={{ fontSize: 13, color: "var(--muted)" }}>Join the waitlist for early platform access</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
