@@ -85,6 +85,8 @@ export default function Home() {
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formMsg, setFormMsg] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
+  const heroVideoRef = useRef<HTMLDivElement>(null);
+  const y1pVideoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch("/updates.json").then((r) => r.json()).then(setUpdates).catch(() => setUpdates([]));
@@ -194,7 +196,7 @@ export default function Home() {
           width: 1100, height: 700, pointerEvents: "none", zIndex: 0, filter: "blur(20px)",
           background: "radial-gradient(45% 55% at 50% 30%, var(--accent-glow), transparent 70%), radial-gradient(35% 45% at 30% 50%, oklch(0.9 0.06 215 / 0.4), transparent 70%)",
         }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1, textAlign: "center" }}>
 
           <Reveal>
             <div style={{
@@ -214,10 +216,10 @@ export default function Home() {
 
           <Reveal delay={60}>
             <h1 style={{
-              margin: "0 0 18px",
+              margin: "0 auto 18px",
               fontSize: "clamp(44px, 6.4vw, 88px)",
               lineHeight: 1.02, letterSpacing: "-0.035em", fontWeight: 500,
-              maxWidth: 980, color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
+              maxWidth: 900, color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
             }}>
               The operating system<br />your business{" "}
               <em style={{
@@ -231,14 +233,14 @@ export default function Home() {
           <Reveal delay={120}>
             <p style={{
               fontSize: 19, lineHeight: 1.55, color: "var(--muted)",
-              maxWidth: 620, margin: "0 0 32px",
+              maxWidth: 580, margin: "0 auto 32px",
             }}>
               ERP, HR, accounting, tax, and personal finance — unified in one workspace, automated end-to-end, and answered by an AI that understands your books.
             </p>
           </Reveal>
 
           <Reveal delay={180}>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
               <a href="#waitlist" style={btnPrimary}>
                 Join waitlist <Arrow />
               </a>
@@ -246,7 +248,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={230}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 28, color: "var(--soft)", fontSize: 13 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 28, color: "var(--soft)", fontSize: 13, justifyContent: "center" }}>
               <div style={{ display: "inline-flex" }}>
                 {[
                   "linear-gradient(135deg, #F2C879, #E89B5A)",
@@ -268,11 +270,15 @@ export default function Home() {
         {/* ── HERO VIDEO ── */}
         <div style={{ maxWidth: 1200, margin: "56px auto 0", padding: "0 28px", position: "relative", zIndex: 1 }} id="platform">
           <Reveal delay={280}>
-            <div style={{
-              borderRadius: 16, overflow: "hidden",
-              border: "1px solid var(--line)",
-              boxShadow: "0 32px 100px rgba(0,0,0,0.12)",
-            }}>
+            <div
+              ref={heroVideoRef}
+              style={{
+                borderRadius: 16, overflow: "hidden",
+                border: "1px solid var(--line)",
+                boxShadow: "0 32px 100px rgba(0,0,0,0.12)",
+                position: "relative",
+              }}
+            >
               {/* Browser chrome */}
               <div style={{ height: 36, background: "var(--surface)", display: "flex", alignItems: "center", gap: 6, padding: "0 14px", borderBottom: "1px solid var(--line-2)" }}>
                 {(["#FF5F57","#FEBC2E","#28C840"] as const).map((c, i) => (
@@ -291,6 +297,23 @@ export default function Home() {
               >
                 <source src="/y1-intro.mp4" type="video/mp4" />
               </video>
+              {/* Fullscreen button */}
+              <button
+                onClick={() => heroVideoRef.current?.requestFullscreen?.()}
+                aria-label="View fullscreen"
+                style={{
+                  position: "absolute", bottom: 12, right: 12,
+                  width: 32, height: 32, borderRadius: 8,
+                  background: "rgba(0,0,0,0.45)", backdropFilter: "blur(8px)",
+                  border: "1px solid rgba(255,255,255,0.16)",
+                  color: "#fff", cursor: "pointer",
+                  display: "grid", placeItems: "center", padding: 0,
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M1 5V1H5M9 1H13V5M13 9V13H9M5 13H1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
           </Reveal>
         </div>
@@ -639,7 +662,7 @@ export default function Home() {
       {/* ── YAHSHUA ONE PAYROLL SPOTLIGHT ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.45fr", gap: 64, alignItems: "center" }}>
             <Reveal>
               <div>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "4px 12px 4px 8px", border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999, fontSize: 12, marginBottom: 20, boxShadow: "var(--shadow-sm)" }}>
@@ -679,7 +702,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal direction="left">
-              <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid oklch(0.22 0.012 250)", boxShadow: "0 24px 80px rgba(0,0,0,0.18)" }}>
+              <div
+                ref={y1pVideoRef}
+                style={{ borderRadius: 16, overflow: "hidden", border: "1px solid oklch(0.22 0.012 250)", boxShadow: "0 24px 80px rgba(0,0,0,0.18)", position: "relative" }}
+              >
                 {/* Dark chrome — matches Y1P */}
                 <div style={{ height: 36, background: "oklch(0.1 0.01 250)", display: "flex", alignItems: "center", gap: 6, padding: "0 14px", borderBottom: "1px solid oklch(0.18 0.01 250)" }}>
                   {(["oklch(0.55 0.18 25)","oklch(0.7 0.16 70)","oklch(0.6 0.18 145)"] as const).map((bg, i) => (
@@ -698,6 +724,23 @@ export default function Home() {
                 >
                   <source src="/clip-payslip.mp4" type="video/mp4" />
                 </video>
+                {/* Fullscreen button */}
+                <button
+                  onClick={() => y1pVideoRef.current?.requestFullscreen?.()}
+                  aria-label="View fullscreen"
+                  style={{
+                    position: "absolute", bottom: 12, right: 12,
+                    width: 32, height: 32, borderRadius: 8,
+                    background: "rgba(0,0,0,0.45)", backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(255,255,255,0.16)",
+                    color: "#fff", cursor: "pointer",
+                    display: "grid", placeItems: "center", padding: 0,
+                  }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 5V1H5M9 1H13V5M13 9V13H9M5 13H1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             </Reveal>
           </div>
