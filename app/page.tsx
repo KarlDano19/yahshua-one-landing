@@ -252,7 +252,7 @@ export default function Home() {
               fontSize: 19, lineHeight: 1.55, color: "var(--muted)",
               maxWidth: 580, margin: "0 auto 32px",
             }}>
-              ERP, HR, accounting, tax, and personal finance — unified in one workspace, automated end-to-end, and answered by an AI that understands your books.
+              ERP, HR, accounting, tax, and personal finance: unified in one workspace, automated end-to-end, and answered by an AI that understands your books.
             </p>
           </Reveal>
 
@@ -348,7 +348,7 @@ export default function Home() {
               Five businesses worth of software,<br />in one workspace.
             </h2>
             <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 600, margin: "0 auto" }}>
-              Stop wiring spreadsheets between five tools that don&apos;t talk to each other. YAHSHUA One ships the whole back office as one product — and one source of truth.
+              Stop wiring spreadsheets between five tools that don&apos;t talk to each other. YAHSHUA One ships the whole back office as one product, one source of truth.
             </p>
           </div>
         </Reveal>
@@ -367,7 +367,7 @@ export default function Home() {
                   The people side, finally automated.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  Timekeeping, leaves, payroll, and statutory contributions — auto-computed, paid, and filed on schedule. Your team gets a portal that doesn&apos;t feel like 2008.
+                  Timekeeping, leaves, payroll, and statutory contributions: auto-computed, paid, and filed on schedule. Your team gets a portal that doesn&apos;t feel like 2008.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexWrap: "wrap", gap: 8 }}>
                   {["Payroll", "Leaves", "Time tracking", "13th-month", "SSS · PhilHealth · HDMF"].map((tag) => (
@@ -451,7 +451,7 @@ export default function Home() {
                 ))}
                 <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", background: "var(--surface)", display: "flex", alignItems: "center", gap: 8 }}>
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="var(--accent-2)" strokeWidth="1.3"/><path d="M7 4V7L9 9" stroke="var(--accent-2)" strokeWidth="1.3" strokeLinecap="round"/></svg>
-                  Next deadline in <strong style={{ color: "var(--ink-2)" }}>10 days</strong> — draft already prepared
+                  Next deadline in <strong style={{ color: "var(--ink-2)" }}>10 days</strong>. Draft already prepared.
                 </div>
               </div>
             </Reveal>
@@ -465,7 +465,7 @@ export default function Home() {
                   BIR-ready forms. Quarterly filings drafted, reviewed, submitted.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  Every BIR deadline tracked, every return drafted from your actual books. You review and sign — YAHSHUA One handles the rest.
+                  Every BIR deadline tracked, every return drafted from your actual books. You review and sign. YAHSHUA One handles the rest.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexWrap: "wrap", gap: 8 }}>
                   {["VAT", "1701Q", "1601-C", "SSS", "PhilHealth", "Pag-IBIG"].map((tag) => (
@@ -498,15 +498,15 @@ export default function Home() {
                   Intelligence
                 </div>
                 <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 18px" }}>
-                  An AI that&apos;s <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>read your books</em> — not just the internet.
+                  An AI that&apos;s <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>read your books.</em> Not just the internet.
                 </h2>
                 <p style={{ color: "oklch(0.85 0.01 250)", fontSize: 17, lineHeight: 1.55, margin: "0 0 28px", maxWidth: 480 }}>
-                  Every transaction, employee record, invoice, and tax form lives in one schema. The assistant queries it directly — so the answer it gives is the answer you&apos;d get by spending a day in spreadsheets.
+                  Every transaction, employee record, invoice, and tax form lives in one schema. The assistant queries it directly, so the answer it gives is the answer you&apos;d get by spending a day in spreadsheets.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
-                    { title: "Grounded in your ledger.", body: "No hallucinations — every figure is traceable to a journal entry." },
-                    { title: "Acts, not just answers.", body: "Approve a payroll run, file a return, or send an invoice — in chat." },
+                    { title: "Grounded in your ledger.", body: "No hallucinations. Every figure is traceable to a journal entry." },
+                    { title: "Acts, not just answers.", body: "Approve a payroll run, file a return, or send an invoice. In chat." },
                     { title: "Your data stays yours.", body: "Encrypted in transit and at rest. Never used to train models." },
                   ].map((item) => (
                     <li key={item.title} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: 14.5, color: "oklch(0.88 0.01 250)" }}>
@@ -581,7 +581,7 @@ export default function Home() {
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M8 2L9.6 6L14 6.6L10.8 9.6L11.6 14L8 11.8L4.4 14L5.2 9.6L2 6.6L6.4 6L8 2Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
                   </svg>
-                  <span>Ask anything — &ldquo;forecast next quarter&rdquo;, &ldquo;file 1601C&rdquo;, &ldquo;pay Lara…&rdquo;</span>
+                  <span>Ask anything: &ldquo;forecast next quarter&rdquo;, &ldquo;file 1601C&rdquo;, &ldquo;pay Lara…&rdquo;</span>
                   <span style={{ marginLeft: "auto", width: 26, height: 26, borderRadius: 6, background: "var(--accent)", display: "grid", placeItems: "center", color: "#0a1418", flexShrink: 0 }}>
                     <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
@@ -691,11 +691,11 @@ export default function Home() {
                   Need just payroll?<br />It stands on its own.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  YAHSHUA One Payroll is a focused product you can run without the full platform — everything your payroll team needs, nothing it doesn&apos;t. Theo AI reads your actual company data and answers compliance questions in plain language.
+                  YAHSHUA One Payroll is a focused product you can run without the full platform. Everything your payroll team needs, nothing it doesn&apos;t. Theo AI reads your actual company data and answers compliance questions in plain language.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
                   {[
-                    "Theo AI — payroll questions answered from your real data",
+                    "Theo AI: payroll questions answered from your real data",
                     "Policy Handbook auto-generated from your settings",
                     "Custom reports on demand",
                     "Org chart built from your structure",
@@ -766,66 +766,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <div style={{ textAlign: "center", marginBottom: 52 }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>
-                <Dot /> From the waitlist
-              </div>
-              <h2 style={{ fontSize: "clamp(28px, 3.6vw, 44px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: 0 }}>
-                What founders are saying.
-              </h2>
-            </div>
-          </Reveal>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-            {[
-              {
-                quote: "We used to spend three days every month just on payroll computation. With YAHSHUA One, we review and approve in under 20 minutes. That time goes back to building the business.",
-                name: "Maria Santos",
-                title: "CFO, Artisan Coffee Roasters",
-                initials: "MS",
-                color: "linear-gradient(135deg, #F2C879, #E89B5A)",
-              },
-              {
-                quote: "BIR deadlines used to give me genuine anxiety every quarter. YAHSHUA One sends me a fully drafted return weeks before it's due. I just review, sign, and it's filed.",
-                name: "Roy Dela Cruz",
-                title: "Owner, Dela Cruz Construction",
-                initials: "RD",
-                color: "linear-gradient(135deg, var(--accent-3), var(--accent-2))",
-              },
-              {
-                quote: "Finally an accounting system that doesn't need 40 hours of training before it's useful. Our books are reconciled the same day transactions come in from the bank.",
-                name: "Ana Reyes",
-                title: "Operations Manager, Sunlight Trading",
-                initials: "AR",
-                color: "linear-gradient(135deg, #C5C0E8, #8076C7)",
-              },
-            ].map((t, i) => (
-              <Reveal key={i} delay={i * 60}>
-                <div style={{
-                  border: "1px solid var(--line)", borderRadius: "var(--radius-lg)",
-                  padding: 28, background: "var(--bg)", display: "flex", flexDirection: "column", gap: 20, height: "100%",
-                }}>
-                  <div style={{ fontSize: 15, lineHeight: 1.6, color: "var(--ink-2)", flex: 1 }}>
-                    &ldquo;{t.quote}&rdquo;
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <span style={{ width: 36, height: 36, borderRadius: "50%", background: t.color, display: "grid", placeItems: "center", fontSize: 12, fontWeight: 600, color: "#fff", flexShrink: 0 }}>{t.initials}</span>
-                    <div>
-                      <div style={{ fontWeight: 500, fontSize: 13.5, color: "var(--ink)" }}>{t.name}</div>
-                      <div style={{ fontSize: 12, color: "var(--soft)" }}>{t.title}</div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
@@ -842,7 +782,7 @@ export default function Home() {
                 Run your business on <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>one platform.</em>
               </h2>
               <p style={{ color: "var(--muted)", fontSize: 18, maxWidth: 540, margin: "0 auto 28px" }}>
-                Start free for 30 days. Bring your whole back office over — or just one module. We&apos;ll meet you where you are.
+                Start free for 30 days. Bring your whole back office over, or just one module. We&apos;ll meet you where you are.
               </p>
               <a href="#waitlist" style={btnPrimary}>
                 Join waitlist <Arrow />
@@ -1034,23 +974,23 @@ export default function Home() {
             {[
               {
                 q: "Does YAHSHUA One automate payroll computation in the Philippines?",
-                a: "Yes. YAHSHUA One automatically computes payroll for all employees — including SSS, PhilHealth, Pag-IBIG, and withholding tax deductions. It generates payslips and prepares bank disbursement files with zero manual computation required.",
+                a: "Yes. YAHSHUA One automatically computes payroll for all employees, including SSS, PhilHealth, Pag-IBIG, and withholding tax deductions. It generates payslips and prepares bank disbursement files with zero manual computation required.",
               },
               {
                 q: "Does it handle BIR compliance and tax filings?",
-                a: "Yes. YAHSHUA One tracks all BIR deadlines including 1601-C, 2550M, and quarterly returns. It generates BIR-ready reports and alerts you weeks before every filing deadline — so you never incur penalties again.",
+                a: "Yes. YAHSHUA One tracks all BIR deadlines including 1601-C, 2550M, and quarterly returns. It generates BIR-ready reports and alerts you weeks before every filing deadline so you never incur penalties again.",
               },
               {
                 q: "Can YAHSHUA One handle HR onboarding and offboarding?",
-                a: "Yes. YAHSHUA One manages the full employee lifecycle — digital onboarding, contract management, leave requests, overtime approvals, and offboarding. Employees get a self-service portal to view their payslips, leave balances, and records anytime.",
+                a: "Yes. YAHSHUA One manages the full employee lifecycle: digital onboarding, contract management, leave requests, overtime approvals, and offboarding. Employees get a self-service portal to view their payslips, leave balances, and records anytime.",
               },
               {
                 q: "Is YAHSHUA One built specifically for Filipino businesses?",
-                a: "100%. YAHSHUA One is built from the ground up for the Philippine business environment — BIR, SSS, PhilHealth, and Pag-IBIG compliance baked in, Philippine Labor Code leave policies, and peso-denominated reporting.",
+                a: "100%. YAHSHUA One is built from the ground up for the Philippine business environment: BIR, SSS, PhilHealth, and Pag-IBIG compliance baked in, Philippine Labor Code leave policies, and peso-denominated reporting.",
               },
               {
                 q: "How is it different from other payroll or HR systems in the Philippines?",
-                a: "Most systems only cover one area — payroll OR HR OR accounting. YAHSHUA One combines all of them in one AI-powered platform. It's also built specifically for Filipino SMBs, not adapted from a foreign product.",
+                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One combines all of them in one AI-powered platform. It's also built specifically for Filipino SMBs, not adapted from a foreign product.",
               },
               {
                 q: "Who is YAHSHUA One designed for?",

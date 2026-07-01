@@ -168,7 +168,7 @@ const SHOWCASE = [
     num: "01", dark: false,
     label: "Payroll & Pay Slips",
     title: "Your people get paid right, every cutoff.",
-    body: "YAHSHUA One Payroll computes every payslip automatically — basic pay, overtime, night differential, 13th month, and all statutory deductions. The payslip breakdown shows exactly what each employee earned, what was taken out, and what the employer contributed. On cutoff day, you review and approve.",
+    body: "YAHSHUA One Payroll computes every payslip automatically: basic pay, overtime, night differential, 13th month, and all statutory deductions. The payslip breakdown shows exactly what each employee earned, what was taken out, and what the employer contributed. On cutoff day, you review and approve.",
     bullets: [
       "Automatic computation per employee",
       "Government contributions auto-deducted",
@@ -183,7 +183,7 @@ const SHOWCASE = [
     num: "02", dark: true,
     label: "Theo AI",
     title: "Ask anything. Theo reads your actual company data.",
-    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, your overtime multiplier, or how a specific employee's net was computed. Theo can also take action for you — drafting formulas, flagging anomalies, or pulling specific reports — within your account permissions.",
+    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, your overtime multiplier, or how a specific employee's net was computed. Theo can also take action for you: drafting formulas, flagging anomalies, or pulling specific reports, all within your account permissions.",
     bullets: [
       "Reads your real payroll data, not generic answers",
       "Answers BIR, SSS, PhilHealth, Pag-IBIG questions",
@@ -198,7 +198,7 @@ const SHOWCASE = [
     num: "03", dark: false,
     label: "Policy Handbook",
     title: "Your policy manual, written from your settings.",
-    body: "The Policy Handbook reads your payroll configuration and turns it into a plain-language document. Pay Schedule, Rate Calculation, Overtime Rules, Night Differential, Government Contributions, Withholding Tax, De Minimis Benefits — all explained, all linked back to the exact setting behind each rule. You didn't write any of it. When your settings change, it updates on its own.",
+    body: "The Policy Handbook reads your payroll configuration and turns it into a plain-language document. Pay Schedule, Rate Calculation, Overtime Rules, Night Differential, Government Contributions, Withholding Tax, De Minimis Benefits: all explained, all linked back to the exact setting behind each rule. You didn't write any of it. When your settings change, it updates on its own.",
     bullets: [
       "Auto-generated from your actual settings",
       "Links every policy to the exact setting behind it",
@@ -213,7 +213,7 @@ const SHOWCASE = [
     num: "04", dark: true,
     label: "Custom Reports",
     title: "Standard reports included. Anything else, just ask.",
-    body: "YAHSHUA One Payroll ships with standard reports for every common payroll need. For anything beyond that — government contribution summaries, overtime trends, headcount by department, payroll cost breakdowns — describe what you need and the AI generates it from your own company data. Every report respects your permission level.",
+    body: "YAHSHUA One Payroll ships with standard reports for every common payroll need. For anything beyond that, describe what you need and the AI generates it from your own company data: contribution summaries, overtime trends, headcount by department, payroll cost breakdowns. Every report respects your permission level.",
     bullets: [
       "Standard reports out of the box",
       "AI-generated custom reports on demand",
@@ -228,7 +228,7 @@ const SHOWCASE = [
     num: "05", dark: false,
     label: "Organizational Chart",
     title: "Set up your structure. See your org chart.",
-    body: "Define your departments, divisions, sections, units, sub-units, and locations inside YAHSHUA One Payroll. The organizational chart builds itself from that data. One of the most requested features from existing YAHSHUA users — now built directly into the platform, no separate tool required.",
+    body: "Define your departments, divisions, sections, units, sub-units, and locations inside YAHSHUA One Payroll. The organizational chart builds itself from that data. One of the most requested features from existing YAHSHUA users, now built directly into the platform. No separate tool required.",
     bullets: [
       "Departments, divisions, sections, units",
       "Locations and cost centers",
@@ -243,7 +243,7 @@ const SHOWCASE = [
     num: "06", dark: true,
     label: "Components & Formulas",
     title: "Custom formulas. Theo writes them for you.",
-    body: "Every pay component in YAHSHUA One Payroll is formula-driven. Basic pay, overtime, night differential, allowances — you can inspect and customize any of them. If formula syntax feels unfamiliar, you can ask Theo to draft it for you in plain language. The Flow Builder lets you control the full sequence of your payroll computation.",
+    body: "Every pay component in YAHSHUA One Payroll is formula-driven. Basic pay, overtime, night differential, allowances: you can inspect and customize any of them. If formula syntax feels unfamiliar, you can ask Theo to draft it for you in plain language. The Flow Builder lets you control the full sequence of your payroll computation.",
     bullets: [
       "Formula editor for every pay component",
       "Ask Theo to write formulas in plain language",
@@ -399,13 +399,13 @@ export default function PayrollPage() {
                     color: "#F7F6F1",
                     textWrap: "balance" as React.CSSProperties["textWrap"],
                   }}>
-                    Payroll that{" "}
-                    <em style={{ fontStyle: "normal", color: "var(--accent-3)", fontWeight: 800 }}>runs itself.</em>
+                    Philippine payroll.<br />
+                    <em style={{ fontStyle: "normal", color: "var(--accent-3)", fontWeight: 800 }}>Zero errors.</em>
                   </h1>
                 </Reveal>
                 <Reveal delay={120}>
                   <p style={{ fontSize: 18, lineHeight: 1.65, color: "oklch(0.68 0.01 250)", maxWidth: 500, margin: "0 0 32px" }}>
-                    Automatic computation every cutoff. Statutory contributions, withholding tax, overtime, 13th month — handled. On payday, you just review and approve. And if you have questions about your setup, you can ask Theo. It reads your actual company data and gives you a real answer.
+                    Automatic computation every cutoff. Statutory contributions, withholding tax, overtime, 13th month: all handled. On payday, you just review and approve. And if you have questions about your setup, you can ask Theo. It reads your actual company data and gives you a real answer.
                   </p>
                 </Reveal>
                 <Reveal delay={180}>
@@ -486,9 +486,6 @@ export default function PayrollPage() {
           </div>
         </header>
       </div>
-
-      {/* ── MARQUEE ── */}
-      <MarqueeStrip />
 
       {/* ── STAT STRIP ── */}
       <section style={{ borderBottom: "1px solid var(--line)" }}>
@@ -679,7 +676,7 @@ export default function PayrollPage() {
             <FaqItem delay={160} q="Does it generate BIR Form 2316 (Certificate of Compensation)?"
               a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal." />
             <FaqItem delay={200} q="Can YAHSHUA handle the 13th month pay computation?"
-              a="Yes. 13th month pay is computed automatically per DOLE guidelines — your total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE." />
+              a="Yes. 13th month pay is computed automatically per DOLE guidelines: your total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE." />
           </div>
         </div>
       </section>
