@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-01",
+    "badge": "Progress Update",
+    "title": "Reminders and Payroll Get Sharper",
+    "description": "We added built-in payroll reminders and fixed important payroll run issues so teams can follow through on recurring work with less guesswork and more confidence.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not only come from computing numbers correctly. It also comes from remembering the follow-through around those numbers, like what needs attention next, what needs to happen on schedule, and whether the system will surface issues before they turn into payroll cleanup. When reminders live in someone's memory or inside scattered chat messages, important work becomes fragile fast. The same is true when payroll runs do not clearly show what is wrong or when a monthly run behaves in an unexpected way. This update matters because YAHSHUA One is getting better at carrying both the discipline of recurring follow-through and the reliability of the payroll run itself.",
+      "In plain language, we built a new reminders experience directly into YAHSHUA One so teams can create, view, edit, and manage recurring reminders from inside the product instead of depending on outside tools or memory. These reminders are now backed by a stronger automation engine, which gives the platform a more serious way to trigger timely notifications and support repeatable operational habits. We also improved how reminders appear in the product experience, including the surrounding notification flow, so they feel like part of the backoffice instead of a bolt-on extra. On the payroll side, we fixed important issues around monthly payroll run creation and posting behavior so teams are less likely to hit confusing dead ends when starting or reviewing a run. We also surfaced payroll run issues more clearly and tightened supporting checks so operators can understand problems earlier instead of discovering them too late.",
+      "What this means for you is a backoffice that keeps getting better at both memory and execution. Your team can now rely more on YAHSHUA One to help remember recurring payroll and admin follow-through, while also trusting payroll runs to behave more consistently when monthly processing begins. That reduces the mental load on founders, payroll staff, and operators who are already juggling too many moving parts across the week. It also helps the product feel more complete, because a serious payroll and HR backoffice should not only process work after you remember it, it should help make sure the right work happens on time in the first place. Every step like this moves YAHSHUA One closer to being the kind of operating system Filipino businesses can depend on for both daily discipline and real payroll reliability."
+    ]
+  },
+  {
     "date": "2026-06-30",
     "badge": "Progress Update",
     "title": "Legal Agreements, Payroll Reporting, and Navigation Get Clearer",
