@@ -374,6 +374,12 @@ export default function Home() {
   };
   const btnSm: React.CSSProperties = { height: 36, padding: "0 14px", fontSize: 13.5 };
 
+  const checkIcon = (
+    <svg width="10" height="10" viewBox="0 0 10 10">
+      <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+
   return (
     <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh" }}>
 
@@ -387,7 +393,6 @@ export default function Home() {
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div style={{ height: 64, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
-            {/* Brand */}
             <a href="#" style={{ display: "flex", alignItems: "center", gap: 10 }} aria-label="YAHSHUA One home">
               <Image src="/logo.jpg" alt="YAHSHUA One" width={28} height={28} style={{ borderRadius: 8, objectFit: "cover", flexShrink: 0 }} priority />
               <span style={{ fontWeight: 600, letterSpacing: "-0.02em", fontSize: 16 }}>
@@ -395,14 +400,13 @@ export default function Home() {
               </span>
             </a>
 
-            {/* Links */}
             <nav style={{ display: "flex", alignItems: "center", gap: 4 }} aria-label="Primary">
               {[
-                { label: "Platform", href: "#platform" },
-                { label: "Modules",  href: "#modules" },
+                { label: "Platform",     href: "#platform" },
+                { label: "Features",     href: "#features" },
                 { label: "Intelligence", href: "#intelligence" },
-                { label: "Pricing",  href: "#waitlist" },
-                { label: "What's New", href: "/updates" },
+                { label: "Pricing",      href: "#waitlist" },
+                { label: "What's New",   href: "/updates" },
               ].map((link) => (
                 <a key={link.label} href={link.href} style={{
                   padding: "8px 12px", borderRadius: 8, fontSize: 14, color: "var(--ink-2)",
@@ -415,7 +419,6 @@ export default function Home() {
               ))}
             </nav>
 
-            {/* CTA */}
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <a href="https://app.yahshua.one/" style={{ ...btnPrimary, ...btnSm }}>
@@ -428,7 +431,6 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <header style={{ padding: "84px 0 56px", position: "relative", overflow: "hidden" }}>
-        {/* Aurora glow */}
         <div style={{
           position: "absolute", top: -200, left: "50%", transform: "translateX(-50%)",
           width: 1100, height: 700, pointerEvents: "none", zIndex: 0, filter: "blur(20px)",
@@ -436,7 +438,6 @@ export default function Home() {
         }} />
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
 
-          {/* Badge */}
           <Reveal>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 12px 6px 8px",
@@ -453,7 +454,6 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Headline */}
           <Reveal delay={60}>
             <h1 style={{
               margin: "0 0 18px",
@@ -470,7 +470,6 @@ export default function Home() {
             </h1>
           </Reveal>
 
-          {/* Sub */}
           <Reveal delay={120}>
             <p style={{
               fontSize: 19, lineHeight: 1.55, color: "var(--muted)",
@@ -480,17 +479,15 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* CTAs */}
           <Reveal delay={180}>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href="#waitlist" style={btnPrimary}>
                 Start free for 30 days <Arrow />
               </a>
-              <a href="#platform" style={btnGhost}>Watch the tour</a>
+              <a href="#platform" style={btnGhost}>See the platform</a>
             </div>
           </Reveal>
 
-          {/* Trust */}
           <Reveal delay={230}>
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 28, color: "var(--soft)", fontSize: 13 }}>
               <div style={{ display: "inline-flex" }}>
@@ -510,163 +507,226 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Product preview anchor (hidden) */}
           <div id="platform" />
         </div>
       </header>
 
-
-      {/* ── MODULES ── */}
-      <section id="modules" style={{ padding: "110px 0", position: "relative" }}>
+      {/* ── PRODUCT DASHBOARD ── */}
+      <section style={{ padding: "0 0 110px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{ maxWidth: 760, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> The platform
+            <div style={{
+              border: "1px solid var(--line)", borderRadius: 16,
+              overflow: "hidden", background: "var(--bg)",
+              boxShadow: "0 32px 100px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.04)",
+            }}>
+              {/* Browser chrome */}
+              <div style={{
+                background: "var(--surface)", borderBottom: "1px solid var(--line)",
+                padding: "10px 16px", display: "flex", alignItems: "center", gap: 8,
+              }}>
+                {(["#FF5F57","#FEBC2E","#28C840"] as const).map((c, i) => (
+                  <span key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: c, flexShrink: 0 }} />
+                ))}
+                <div style={{
+                  flex: 1, margin: "0 16px", background: "var(--bg-tint)", borderRadius: 6,
+                  height: 24, display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 11, color: "var(--soft)", fontFamily: "var(--font-geist-mono, monospace)",
+                }}>
+                  app.yahshua.one
+                </div>
               </div>
-              <h2 style={{ margin: "0 0 14px", fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
-                Five businesses worth of software, in one workspace.
-              </h2>
-              <p style={{ margin: 0, fontSize: 18, color: "var(--muted)", maxWidth: 600 }}>
-                Stop wiring spreadsheets between five tools that don&apos;t talk to each other. YAHSHUA One ships the whole back office as one product — and one source of truth.
-              </p>
+              {/* Dashboard grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "200px 1fr" }}>
+                <ProductSidebar />
+                <ProductMain />
+              </div>
             </div>
           </Reveal>
+        </div>
+      </section>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gap: 16 }}>
-            {/* ERP - feature (spans 6 of 12 cols) */}
-            <div style={{ gridColumn: "span 6" }}>
-              <Reveal delay={0}>
-                <article style={{
-                  background: "linear-gradient(180deg, #fff 0%, var(--accent-50) 100%)",
-                  border: "1px solid oklch(0.88 0.06 215 / 0.6)", borderRadius: "var(--radius-lg)",
-                  padding: 24, minHeight: 280, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative", height: "100%",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                    <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--ink)", display: "grid", placeItems: "center", color: "var(--accent-3)" }}>
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M3 14V7L9 3L15 7V14" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                        <path d="M6 14V10H12V14" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
-                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>01 · ERP</span>
-                  </div>
-                  <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>Run operations without spreadsheets.</h3>
-                  <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>
-                    Inventory, sales orders, purchasing, and vendors connected to the same ledger your accountant uses. No exports. No reconciliation tickets at 11pm.
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["Inventory", "Sales orders", "Procurement", "Vendors", "Multi-branch"].map((tag) => (
-                      <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
-                    ))}
-                  </ul>
-                </article>
-              </Reveal>
+      {/* ── FEATURES HEADER ── */}
+      <div id="features" style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px 64px" }}>
+        <Reveal>
+          <div style={{ textAlign: "center" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+              <Dot /> The platform
             </div>
+            <h2 style={{ fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 16px" }}>
+              Five businesses worth of software,<br />in one workspace.
+            </h2>
+            <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 560, margin: "0 auto" }}>
+              Stop wiring spreadsheets between tools that don&apos;t talk to each other. YAHSHUA One is one product — one source of truth.
+            </p>
+          </div>
+        </Reveal>
+      </div>
 
-            {/* HRM - feature (spans 6 of 12 cols) */}
-            <div style={{ gridColumn: "span 6" }}>
-              <Reveal delay={60}>
-                <article style={{
-                  background: "linear-gradient(180deg, #fff 0%, var(--accent-50) 100%)",
-                  border: "1px solid oklch(0.88 0.06 215 / 0.6)", borderRadius: "var(--radius-lg)",
-                  padding: 24, minHeight: 280, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative", height: "100%",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                    <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--ink)", display: "grid", placeItems: "center", color: "var(--accent-3)" }}>
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <circle cx="9" cy="6" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                        <path d="M3 15C3.6 12 5.8 10.5 9 10.5C12.2 10.5 14.4 12 15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                      </svg>
-                    </span>
-                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>02 · HRM</span>
-                  </div>
-                  <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>The people side, finally automated.</h3>
-                  <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>
-                    Timekeeping, leaves, payroll, and statutory contributions — auto-computed, paid, and filed on schedule. Your team gets a portal that doesn&apos;t feel like 2008.
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
-                    {["Payroll", "Leaves", "Time tracking", "13th-month", "SSS · PhilHealth · HDMF"].map((tag) => (
-                      <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
-                    ))}
-                  </ul>
-                </article>
-              </Reveal>
-            </div>
-
-            {/* Small modules (each spans 3 of 12 cols) */}
-            {[
-              { id: "03", title: "Accounting", desc: "A real ledger. Real-time P&L. AI-categorized transactions.", tags: ["Books","Recon","P&L"], icon: (
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M2 15V3M2 15H16M5 12V9M8 12V5M11 12V7M14 12V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              )},
-              { id: "04", title: "Tax", desc: "BIR-ready forms. Quarterly filings drafted, reviewed, submitted.", tags: ["VAT","1701Q","1601-C"], icon: (
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <rect x="3" y="2" width="12" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M6 6H12M6 9H12M6 12H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              )},
-              { id: "05", title: "Personal", desc: "Your own cashflow, goals, and personal taxes — same login.", tags: ["Budget","Goals","ITR"], icon: (
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M9 5V9L11.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              )},
-              { id: "+", title: "Marketplace", desc: "Drop-in apps for billing, e-commerce, and country-specific rails.", tags: ["Stripe","Maya","BIR"], icon: (
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M9 1L11 6L16 6.5L12.5 10L13.5 15L9 12.5L4.5 15L5.5 10L2 6.5L7 6L9 1Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                </svg>
-              )},
-            ].map((mod, i) => (
-              <div key={mod.id} style={{ gridColumn: "span 3" }}>
-                <Reveal delay={i * 50}>
-                  <article style={{
-                    background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)",
-                    padding: 24, minHeight: 220, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative",
-                    transition: "border-color .2s ease, box-shadow .2s ease", height: "100%",
-                  }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                      <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--bg-tint)", display: "grid", placeItems: "center", color: "var(--ink)" }}>
-                        {mod.icon}
+      {/* ── FEATURE: PAYROLL ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+            <Reveal>
+              <div>
+                <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+                  02 · People & Payroll
+                </div>
+                <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
+                  Payroll that runs itself.
+                </h2>
+                <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
+                  SSS, PhilHealth, Pag-IBIG, and withholding tax — computed automatically every cutoff. Review the numbers, approve, release. Done in 20 minutes.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
+                  {[
+                    "Auto-computation of all statutory contributions",
+                    "13th-month, overtime, and night differential",
+                    "Bank disbursement files for BPI, BDO, and Maya",
+                    "Employee self-service payslip portal",
+                  ].map((item) => (
+                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
+                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                        {checkIcon}
                       </span>
-                      <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", letterSpacing: "0.06em" }}>{mod.id}</span>
-                    </div>
-                    <h3 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: "8px 0 6px" }}>{mod.title}</h3>
-                    <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5, margin: "0 0 14px" }}>{mod.desc}</p>
-                    <ul style={{ listStyle: "none", padding: 0, margin: "auto 0 0", display: "flex", flexWrap: "wrap", gap: 6 }}>
-                      {mod.tags.map((tag) => (
-                        <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 8px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)" }}>{tag}</li>
-                      ))}
-                    </ul>
-                  </article>
-                </Reveal>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#waitlist" style={{ ...btnPrimary }}>Start free <Arrow /></a>
               </div>
-            ))}
+            </Reveal>
+
+            <Reveal direction="left">
+              <div style={{ border: "1px solid var(--line)", borderRadius: 16, overflow: "hidden", background: "var(--surface)", boxShadow: "var(--shadow)" }}>
+                <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>June 2026 Payroll</span>
+                  <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, background: "var(--accent-50)", color: "var(--accent-2)", padding: "2px 8px", borderRadius: 999 }}>Cutoff in 2 days</span>
+                </div>
+                {[
+                  { init: "LP", name: "Lara Pacheco",   role: "CEO",     amt: "₱ 84,200", status: "ready" },
+                  { init: "JM", name: "Jordan Mendoza", role: "Dev",     amt: "₱ 72,500", status: "ready" },
+                  { init: "RC", name: "Ria Castro",     role: "Finance", amt: "₱ 68,000", status: "review" },
+                  { init: "EM", name: "Eli Manansala",  role: "Sales",   amt: "₱ 91,400", status: "ready" },
+                  { init: "BT", name: "Ben Torres",     role: "HR",      amt: "₱ 65,800", status: "ready" },
+                ].map((row) => (
+                  <div key={row.init} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 20px", borderBottom: "1px solid var(--line-2)", fontSize: 13 }}>
+                    <span style={{ width: 28, height: 28, borderRadius: "50%", background: "var(--bg-tint)", color: "var(--ink-2)", fontSize: 11, display: "grid", placeItems: "center", fontWeight: 500, flexShrink: 0 }}>{row.init}</span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 500 }}>{row.name}</div>
+                      <div style={{ fontSize: 11, color: "var(--soft)" }}>{row.role}</div>
+                    </div>
+                    <span style={{ fontVariantNumeric: "tabular-nums", color: "var(--ink-2)" }}>{row.amt}</span>
+                    <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 999, fontFamily: "var(--font-geist-mono, monospace)", background: row.status === "review" ? "oklch(0.96 0.04 75)" : "var(--accent-50)", color: row.status === "review" ? "#8A5A2A" : "var(--accent-2)" }}>{row.status}</span>
+                  </div>
+                ))}
+                <div style={{ padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 13, color: "var(--muted)" }}>5 employees · ₱ 381,900 total</span>
+                  <button style={{ fontSize: 12, padding: "7px 14px", background: "var(--ink)", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", fontWeight: 500 }}>
+                    Process payroll →
+                  </button>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── AI SHOWCASE ── */}
-      <section id="intelligence" style={{ paddingTop: 24, paddingBottom: 110 }}>
+      {/* ── FEATURE: BIR / TAX ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <div style={{
-              background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
-              padding: 64, display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 60,
-              alignItems: "center", position: "relative", overflow: "hidden",
-            }}>
-              <div style={{
-                position: "absolute", inset: 0, pointerEvents: "none",
-                background: "radial-gradient(50% 60% at 90% 0%, var(--accent-glow), transparent 60%), radial-gradient(40% 50% at 0% 100%, oklch(0.7 0.12 215 / 0.18), transparent 60%)",
-              }} />
-
-              {/* Text side */}
-              <div style={{ position: "relative", zIndex: 1 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--accent-3)", marginBottom: 14 }}>
-                  <Dot /> Intelligence
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+            <Reveal direction="right">
+              <div style={{ border: "1px solid var(--line)", borderRadius: 16, overflow: "hidden", background: "var(--bg)", boxShadow: "var(--shadow)" }}>
+                <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>BIR Filing Calendar</span>
+                  <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)" }}>Q2 · 2026</span>
                 </div>
-                <h2 style={{ fontSize: "clamp(34px, 3.6vw, 46px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 18px" }}>
+                {[
+                  { form: "1601-C", label: "Withholding Tax on Compensation", due: "Jul 10", status: "filed",    ref: "ref 99-22-148" },
+                  { form: "2550M",  label: "Monthly VAT Declaration",          due: "Jul 20", status: "draft",    ref: "Draft ready" },
+                  { form: "1701Q",  label: "Quarterly Income Tax Return",      due: "Aug 15", status: "upcoming", ref: "AI drafting Q2 data" },
+                  { form: "1604-C", label: "Annual Withholding Summary",        due: "Jan 31", status: "upcoming", ref: "Next cycle" },
+                ].map((row) => (
+                  <div key={row.form} style={{ display: "flex", alignItems: "center", gap: 14, padding: "12px 20px", borderBottom: "1px solid var(--line-2)", fontSize: 13 }}>
+                    <span style={{
+                      fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, fontWeight: 600,
+                      color: "var(--accent-2)", background: "var(--accent-50)", padding: "3px 8px", borderRadius: 6, flexShrink: 0, minWidth: 56, textAlign: "center",
+                    }}>{row.form}</span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{row.label}</div>
+                      <div style={{ fontSize: 11, color: "var(--soft)", marginTop: 2 }}>{row.ref}</div>
+                    </div>
+                    <div style={{ textAlign: "right", flexShrink: 0 }}>
+                      <div style={{ fontSize: 11, color: "var(--muted)", fontFamily: "var(--font-geist-mono, monospace)" }}>{row.due}</div>
+                      <span style={{
+                        fontSize: 10, padding: "2px 8px", borderRadius: 999, marginTop: 3, display: "inline-block",
+                        fontFamily: "var(--font-geist-mono, monospace)",
+                        background: row.status === "filed" ? "var(--accent-50)" : row.status === "draft" ? "oklch(0.95 0.04 75)" : "var(--bg-tint)",
+                        color: row.status === "filed" ? "var(--accent-2)" : row.status === "draft" ? "#8A5A2A" : "var(--soft)",
+                      }}>{row.status}</span>
+                    </div>
+                  </div>
+                ))}
+                <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", background: "var(--surface)", display: "flex", alignItems: "center", gap: 8 }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="var(--accent-2)" strokeWidth="1.3"/><path d="M7 4V7L9 9" stroke="var(--accent-2)" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                  Next deadline in <strong style={{ color: "var(--ink-2)" }}>10 days</strong> — draft already prepared
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <div>
+                <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+                  04 · Tax & Compliance
+                </div>
+                <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
+                  BIR filings drafted before you remember they&apos;re due.
+                </h2>
+                <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
+                  Every form — 1601-C, 2550M, 1701Q — tracked, drafted, and ready for your signature weeks before the deadline. No more penalties for forms you forgot.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
+                  {[
+                    "Full BIR deadline calendar with auto-reminders",
+                    "AI-drafted returns populated from your actual books",
+                    "SSS, PhilHealth, and Pag-IBIG contribution reports",
+                    "Audit trail for every filed return",
+                  ].map((item) => (
+                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
+                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                        {checkIcon}
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#waitlist" style={{ ...btnPrimary }}>Start free <Arrow /></a>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURE: AI ── */}
+      <section id="intelligence" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <div style={{
+            background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
+            padding: 64, display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 60,
+            alignItems: "center", position: "relative", overflow: "hidden",
+          }}>
+            <div style={{
+              position: "absolute", inset: 0, pointerEvents: "none",
+              background: "radial-gradient(50% 60% at 90% 0%, var(--accent-glow), transparent 60%), radial-gradient(40% 50% at 0% 100%, oklch(0.7 0.12 215 / 0.18), transparent 60%)",
+            }} />
+
+            <Reveal>
+              <div style={{ position: "relative", zIndex: 1 }}>
+                <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--accent-3)", marginBottom: 14 }}>
+                  Intelligence
+                </div>
+                <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 18px" }}>
                   An AI that&apos;s <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>read your books</em> — not just the internet.
                 </h2>
                 <p style={{ color: "oklch(0.85 0.01 250)", fontSize: 17, lineHeight: 1.55, margin: "0 0 28px", maxWidth: 480 }}>
@@ -694,15 +754,15 @@ export default function Home() {
                   Read the security overview <Arrow />
                 </a>
               </div>
+            </Reveal>
 
-              {/* Chat mockup */}
+            <Reveal direction="left">
               <div style={{
                 background: "oklch(0.2 0.012 250)", border: "1px solid oklch(0.28 0.012 250)",
                 borderRadius: 16, padding: 20, position: "relative", zIndex: 1,
                 display: "flex", flexDirection: "column", gap: 14,
                 boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
               }} aria-hidden>
-                {/* User message */}
                 <div style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13.5, lineHeight: 1.5 }}>
                   <span style={{ width: 26, height: 26, borderRadius: 6, background: "oklch(0.3 0.01 250)", color: "#fff", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 600, flexShrink: 0 }}>L</span>
                   <div>
@@ -711,7 +771,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* AI message */}
                 <div style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13.5, lineHeight: 1.5 }}>
                   <span style={{ width: 26, height: 26, borderRadius: 6, background: "linear-gradient(135deg, var(--accent), var(--accent-2))", color: "#0a1418", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 600, flexShrink: 0 }}>A</span>
                   <div>
@@ -743,7 +802,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Composer */}
                 <div style={{
                   marginTop: 6, background: "oklch(0.16 0.012 250)", border: "1px solid oklch(0.28 0.012 250)",
                   borderRadius: 10, padding: "10px 12px", display: "flex", alignItems: "center", gap: 10,
@@ -758,52 +816,93 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── HOW IT WORKS ── */}
-      <section style={{ padding: "110px 0" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <div style={{ maxWidth: 760, marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
-                <Dot /> How it works
-              </div>
-              <h2 style={{ margin: 0, fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05 }}>
-                Three steps. One afternoon. Then you&apos;re done forever.
-              </h2>
-            </div>
-          </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-            {[
-              { num: "1", title: "Import", body: "Export your data from your bank, payroll system, and BIR records, then import it into YAHSHUA One." },
-              { num: "2", title: "Configure", body: "Your chart of accounts, cutoff dates, leave policies, and tax filings — preset for your business type. Edit once, never again." },
-              { num: "3", title: "Let it run", body: "Payroll runs itself. Filings draft themselves. Your job becomes review, approve, and move on with the day." },
-            ].map((step, i) => (
-              <Reveal key={step.num} delay={i * 60}>
-                <div style={{ border: "1px solid var(--line)", borderRadius: "var(--radius-lg)", padding: 28, background: "var(--surface)" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--ink)", color: "#fff", display: "grid", placeItems: "center", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 13, marginBottom: 18 }}>{step.num}</div>
-                  <h3 style={{ fontSize: 19, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 8px" }}>{step.title}</h3>
-                  <p style={{ color: "var(--muted)", fontSize: 14.5, margin: 0 }}>{step.body}</p>
-                </div>
-              </Reveal>
-            ))}
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── FIGURES ── */}
-      <section style={{ paddingTop: 24, paddingBottom: 110 }}>
+      {/* ── FEATURE: ERP / OPERATIONS ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+            <Reveal direction="right">
+              <div style={{ border: "1px solid var(--line)", borderRadius: 16, overflow: "hidden", background: "var(--bg)", boxShadow: "var(--shadow)" }}>
+                <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>Inventory & Orders</span>
+                  <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)" }}>Northwind Trading</span>
+                </div>
+                {[
+                  { sku: "NWT-001", item: "Robusta Green Beans (50kg)", stock: 240,  reorder: 50,  status: "ok" },
+                  { sku: "NWT-002", item: "Arabica Blend (25kg)",       stock: 18,   reorder: 30,  status: "low" },
+                  { sku: "NWT-003", item: "Export Bags (box/100)",      stock: 580,  reorder: 100, status: "ok" },
+                  { sku: "NWT-004", item: "Roasting Labels (roll)",     stock: 4,    reorder: 20,  status: "low" },
+                ].map((row) => (
+                  <div key={row.sku} style={{ display: "flex", alignItems: "center", gap: 14, padding: "11px 20px", borderBottom: "1px solid var(--line-2)", fontSize: 13 }}>
+                    <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)", flexShrink: 0 }}>{row.sku}</span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{row.item}</div>
+                    </div>
+                    <div style={{ textAlign: "right", flexShrink: 0 }}>
+                      <div style={{ fontVariantNumeric: "tabular-nums", color: "var(--ink-2)" }}>{row.stock} units</div>
+                      <span style={{
+                        fontSize: 10, padding: "2px 8px", borderRadius: 999, marginTop: 3, display: "inline-block",
+                        fontFamily: "var(--font-geist-mono, monospace)",
+                        background: row.status === "ok" ? "var(--accent-50)" : "oklch(0.96 0.06 30)",
+                        color: row.status === "ok" ? "var(--accent-2)" : "#B45B4E",
+                      }}>{row.status === "low" ? "reorder" : "ok"}</span>
+                    </div>
+                  </div>
+                ))}
+                <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span>4 SKUs · 2 below reorder point</span>
+                  <button style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontFamily: "inherit" }}>Auto-reorder →</button>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <div>
+                <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+                  01 · ERP
+                </div>
+                <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
+                  Operations without the spreadsheets.
+                </h2>
+                <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
+                  Inventory, sales orders, purchasing, and vendors — all connected to the same ledger your accountant uses. No exports. No reconciliation at 11pm.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
+                  {[
+                    "Real-time inventory with low-stock alerts and auto-reorder",
+                    "Sales orders linked directly to your GL",
+                    "Vendor management and purchase orders",
+                    "Multi-branch support",
+                  ].map((item) => (
+                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
+                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                        {checkIcon}
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#waitlist" style={{ ...btnPrimary }}>Start free <Arrow /></a>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── STATS ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)", overflow: "hidden", background: "var(--surface)" }}>
               {[
-                { num: "40+",     lbl: "Hours of admin returned to founders, every month." },
-                { num: "99.97%",  lbl: "Filing accuracy across BIR, SSS, PhilHealth, Pag-IBIG." },
-                { num: "1 day",   lbl: "Average onboarding from sign-up to first reconciled month." },
-                { num: "0",       lbl: "Spreadsheets emailed at 2am between you and your accountant." },
+                { num: "40+",    lbl: "Hours of admin returned to founders every month." },
+                { num: "99.97%", lbl: "Filing accuracy across BIR, SSS, PhilHealth, Pag-IBIG." },
+                { num: "1 day",  lbl: "Average onboarding from sign-up to first reconciled month." },
+                { num: "0",      lbl: "Spreadsheets emailed at 2am between you and your accountant." },
               ].map((fig, i) => (
                 <div key={fig.num} style={{ padding: "36px 28px", borderRight: i < 3 ? "1px solid var(--line)" : "none" }}>
                   <div style={{ fontSize: "clamp(32px, 3.6vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 8 }}>
@@ -817,8 +916,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 52 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>
+                <Dot /> From the waitlist
+              </div>
+              <h2 style={{ fontSize: "clamp(28px, 3.6vw, 44px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: 0 }}>
+                What founders are saying.
+              </h2>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+            {[
+              {
+                quote: "We used to spend three days every month just on payroll computation. With YAHSHUA One, we review and approve in under 20 minutes. That time goes back to building the business.",
+                name: "Maria Santos",
+                title: "CFO, Artisan Coffee Roasters",
+                initials: "MS",
+                color: "linear-gradient(135deg, #F2C879, #E89B5A)",
+              },
+              {
+                quote: "BIR deadlines used to give me genuine anxiety every quarter. YAHSHUA One sends me a fully drafted return weeks before it's due. I just review, sign, and it's filed.",
+                name: "Roy Dela Cruz",
+                title: "Owner, Dela Cruz Construction",
+                initials: "RD",
+                color: "linear-gradient(135deg, var(--accent-3), var(--accent-2))",
+              },
+              {
+                quote: "Finally an accounting system that doesn't need 40 hours of training before it's useful. Our books are reconciled the same day transactions come in from the bank.",
+                name: "Ana Reyes",
+                title: "Operations Manager, Sunlight Trading",
+                initials: "AR",
+                color: "linear-gradient(135deg, #C5C0E8, #8076C7)",
+              },
+            ].map((t, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div style={{
+                  border: "1px solid var(--line)", borderRadius: "var(--radius-lg)",
+                  padding: 28, background: "var(--bg)", display: "flex", flexDirection: "column", gap: 20, height: "100%",
+                }}>
+                  <div style={{ fontSize: 15, lineHeight: 1.6, color: "var(--ink-2)", flex: 1 }}>
+                    &ldquo;{t.quote}&rdquo;
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <span style={{ width: 36, height: 36, borderRadius: "50%", background: t.color, display: "grid", placeItems: "center", fontSize: 12, fontWeight: 600, color: "#fff", flexShrink: 0 }}>{t.initials}</span>
+                    <div>
+                      <div style={{ fontWeight: 500, fontSize: 13.5, color: "var(--ink)" }}>{t.name}</div>
+                      <div style={{ fontSize: 12, color: "var(--soft)" }}>{t.title}</div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
-      <section id="cta" style={{ padding: "110px 0" }}>
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal direction="scale">
             <div style={{
@@ -851,12 +1010,12 @@ export default function Home() {
         <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", letterSpacing: "-0.03em", fontWeight: 500, margin: "0 0 14px" }}>
-              Get in early.
-            </h2>
-            <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.6 }}>
-              Join the waitlist. Be among the first Filipino businesses on YAHSHUA One.
-            </p>
+              <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", letterSpacing: "-0.03em", fontWeight: 500, margin: "0 0 14px" }}>
+                Get in early.
+              </h2>
+              <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.6 }}>
+                Join the waitlist. Be among the first Filipino businesses on YAHSHUA One.
+              </p>
             </div>
           </Reveal>
 
@@ -873,9 +1032,9 @@ export default function Home() {
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {[
-                    { label: "Full Name", key: "name", type: "text", placeholder: "Juan dela Cruz", required: true },
-                    { label: "Email",     key: "email", type: "email", placeholder: "juan@company.com.ph", required: true },
-                    { label: "Company",   key: "company", type: "text", placeholder: "Dela Cruz Trading", required: false },
+                    { label: "Full Name", key: "name",    type: "text",  placeholder: "Juan dela Cruz",      required: true },
+                    { label: "Email",     key: "email",   type: "email", placeholder: "juan@company.com.ph", required: true },
+                    { label: "Company",   key: "company", type: "text",  placeholder: "Dela Cruz Trading",   required: false },
                   ].map((field) => (
                     <div key={field.key}>
                       <label style={{ display: "block", fontSize: 13, fontWeight: 500, marginBottom: 6, color: "var(--ink-2)" }}>
@@ -1084,7 +1243,7 @@ export default function Home() {
               <p style={{ marginTop: 12, fontSize: 13 }}>Built in the Philippines 🇵🇭</p>
             </div>
             {[
-              { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
+              { title: "Product",   links: [{ label: "Features", href: "#features" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
               { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }, { label: "Press kit", href: "#" }] },
               { title: "Resources", links: [{ label: "Docs", href: "#" }, { label: "Changelog", href: "/updates" }, { label: "Security", href: "#" }, { label: "Status", href: "#" }] },
               { title: "Legal",     links: [{ label: "Terms", href: "#" }, { label: "Privacy", href: "#" }, { label: "DPA", href: "#" }, { label: "Cookies", href: "#" }] },
