@@ -677,6 +677,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── BIR REGISTRATION ── */}
+      <section style={{ padding: "56px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <p style={{
+              textAlign: "center", fontFamily: "var(--font-geist-mono, monospace)",
+              fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase",
+              color: "var(--soft)", marginBottom: 32,
+            }}>
+              Officially registered · Bureau of Internal Revenue
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              {[
+                { src: "/BIR%20Registration%20Seal%20Badge_1.png",  alt: "BIR Registration Seal Badge 1" },
+                { src: "/BIR%20Registration%20Seal%20Badge_%202.png", alt: "BIR Registration Seal Badge 2" },
+                { src: "/BIR%20Registration%20Seal%20Badge_3.png",  alt: "BIR Registration Seal Badge 3" },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
+                  background: "var(--surface)", boxShadow: "var(--shadow-sm)",
+                }}>
+                  <img
+                    src={item.src} alt={item.alt}
+                    loading="lazy" decoding="async"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── YAHSHUA ONE PAYROLL SPOTLIGHT ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
