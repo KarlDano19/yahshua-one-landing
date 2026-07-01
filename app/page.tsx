@@ -271,18 +271,20 @@ export default function Home() {
             <div style={{
               borderRadius: 16, overflow: "hidden",
               border: "1px solid var(--line)",
-              boxShadow: "0 32px 100px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)",
-              background: "var(--ink)",
+              boxShadow: "0 32px 100px rgba(0,0,0,0.12)",
+              background: "#000",
+              maxHeight: "75vh",
+              display: "flex", alignItems: "center", justifyContent: "center",
             }}>
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                style={{ display: "block", width: "100%", height: "auto" }}
-              >
-                <source src="/Y1%20intro.mp4" type="video/mp4" />
-              </video>
+                src="/Y1 intro.mp4"
+                style={{ display: "block", width: "100%", height: "auto", maxHeight: "75vh", objectFit: "contain" }}
+              />
             </div>
           </Reveal>
         </div>
