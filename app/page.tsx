@@ -76,249 +76,6 @@ function Arrow({ size = 14 }: { size?: number }) {
   );
 }
 
-/* ── Product preview sidebar ── */
-function ProductSidebar() {
-  const navItems = [
-    { label: "Overview", active: true, icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
-        <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
-        <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
-        <rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
-      </svg>
-    )},
-    { label: "Inbox", badge: "12", icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <path d="M2 4H14M2 8H14M2 12H14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    )},
-  ];
-  const modules = [
-    { label: "ERP", icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <path d="M3 12V6L8 3L13 6V12" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
-        <path d="M6 12V9H10V12" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
-      </svg>
-    )},
-    { label: "People & Payroll", icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <circle cx="8" cy="6" r="2.5" stroke="currentColor" strokeWidth="1.4"/>
-        <path d="M3 13C3.5 10.5 5.5 9.5 8 9.5C10.5 9.5 12.5 10.5 13 13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    )},
-    { label: "Accounting", icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <path d="M2 13V3M2 13H14M5 10V8M8 10V5M11 10V7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    )},
-    { label: "Tax & Compliance", icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <rect x="3" y="2" width="10" height="12" rx="1" stroke="currentColor" strokeWidth="1.4"/>
-        <path d="M6 6H10M6 9H10M6 12H8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    )},
-    { label: "Personal", icon: (
-      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
-        <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.4"/>
-        <path d="M5 8L7 10L11 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    )},
-  ];
-  return (
-    <aside style={{
-      borderRight: "1px solid var(--line-2)",
-      padding: "18px 14px",
-      background: "linear-gradient(180deg, var(--bg) 0%, transparent 100%)",
-      minWidth: 0,
-    }}>
-      <div style={{
-        display: "flex", alignItems: "center", gap: 8, padding: 8,
-        borderRadius: 8, background: "var(--surface)", border: "1px solid var(--line-2)",
-        fontSize: 13, fontWeight: 500, marginBottom: 16,
-      }}>
-        <span style={{
-          width: 22, height: 22, borderRadius: 6, background: "var(--ink)",
-          display: "grid", placeItems: "center", color: "#fff", fontSize: 10, fontWeight: 600, flexShrink: 0,
-        }}>N</span>
-        <span>Northwind Trading</span>
-        <svg width="12" height="12" viewBox="0 0 12 12" style={{ marginLeft: "auto", color: "var(--soft)", flexShrink: 0 }}>
-          <path d="M3 5L6 8L9 5" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
-        </svg>
-      </div>
-
-      <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--soft)", margin: "18px 8px 6px" }}>
-        Workspace
-      </div>
-      {navItems.map((item) => (
-        <div key={item.label} style={{
-          display: "flex", alignItems: "center", gap: 10, padding: "7px 10px",
-          borderRadius: 8, fontSize: 13,
-          background: item.active ? "var(--accent-50)" : "transparent",
-          color: item.active ? "var(--accent-2)" : "var(--ink-2)",
-          fontWeight: item.active ? 500 : 400,
-        }}>
-          <span style={{ color: "currentColor", opacity: 0.85, flexShrink: 0, display: "flex" }}>{item.icon}</span>
-          {item.label}
-          {item.badge && (
-            <span style={{ marginLeft: "auto", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)" }}>
-              {item.badge}
-            </span>
-          )}
-        </div>
-      ))}
-
-      <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--soft)", margin: "18px 8px 6px" }}>
-        Modules
-      </div>
-      {modules.map((item) => (
-        <div key={item.label} style={{
-          display: "flex", alignItems: "center", gap: 10, padding: "7px 10px",
-          borderRadius: 8, fontSize: 13, color: "var(--ink-2)",
-        }}>
-          <span style={{ opacity: 0.85, flexShrink: 0, display: "flex" }}>{item.icon}</span>
-          {item.label}
-        </div>
-      ))}
-    </aside>
-  );
-}
-
-/* ── Product preview main ── */
-function ProductMain() {
-  const stats = [
-    { label: "Cash on hand", val: "₱ 2.41M", delta: "▲ 8.4% vs last mo.", up: true,
-      spark: "M0,18 L14,16 L28,14 L42,15 L56,10 L70,8 L84,6 L100,2" },
-    { label: "Headcount", val: "68", delta: "▲ 4 this quarter", up: true,
-      spark: "M0,20 L14,18 L28,17 L42,17 L56,14 L70,12 L84,11 L100,8" },
-    { label: "MRR", val: "₱ 612K", delta: "▲ 2.1%", up: true,
-      spark: "M0,16 L14,14 L28,15 L42,12 L56,11 L70,12 L84,9 L100,7" },
-    { label: "Burn rate", val: "₱ 184K", delta: "▼ 3.0%", up: false,
-      spark: "M0,8 L14,10 L28,11 L42,9 L56,13 L70,15 L84,14 L100,17" },
-  ];
-  const payroll = [
-    { init: "LP", name: "Lara Pacheco",    amt: "₱ 84,200", status: "ready" },
-    { init: "JM", name: "Jordan Mendoza",  amt: "₱ 72,500", status: "ready" },
-    { init: "RC", name: "Ria Castro",      amt: "₱ 68,000", status: "review" },
-    { init: "EM", name: "Eli Manansala",   amt: "₱ 91,400", status: "ready" },
-  ];
-  const tasks = [
-    { done: true,  label: "Categorized 142 transactions",      meta: "BPI · Maya · GCash" },
-    { done: true,  label: "Filed VAT for Q1",                  meta: "acknowledged · ref 99-22-148" },
-    { done: false, label: "Drafting Q2 cash flow forecast",     meta: "75% complete · ETA 14:50" },
-    { done: false, label: "Awaiting receipt — Manila Lights, Inc.", meta: "requested 2h ago" },
-  ];
-
-  return (
-    <section style={{ padding: "26px 30px", minWidth: 0, overflowX: "hidden" }}>
-      <h3 style={{ margin: "0 0 4px", fontSize: 18, fontWeight: 600, letterSpacing: "-0.01em", display: "flex", alignItems: "center", gap: 10 }}>
-        Good afternoon, Lara
-        <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)", fontWeight: 400 }}>Tue · 16:42 PHT</span>
-      </h3>
-      <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 22 }}>Here is what needs your attention today — three items, ten minutes.</p>
-
-      {/* Ask bar */}
-      <div style={{
-        border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 14,
-        padding: "14px 16px", display: "flex", alignItems: "center", gap: 12, fontSize: 14,
-        color: "var(--muted)", boxShadow: "var(--shadow-sm)", marginBottom: 0,
-      }}>
-        <span style={{
-          width: 22, height: 22, borderRadius: 6, flexShrink: 0,
-          background: "linear-gradient(135deg, var(--accent), var(--accent-2))",
-          display: "grid", placeItems: "center", color: "#fff",
-        }}>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M6 1L7.2 4.2L10.5 5.4L7.2 6.6L6 9.8L4.8 6.6L1.5 5.4L4.8 4.2L6 1Z" fill="currentColor"/>
-          </svg>
-        </span>
-        <span style={{ color: "var(--ink)", flex: 1 }}>
-          Reconcile last month&apos;s bank statements and flag unusual expenses
-          <span className="cursor-blink" />
-        </span>
-        <span style={{
-          fontFamily: "var(--font-geist-mono, monospace)",
-          background: "var(--bg-tint)", border: "1px solid var(--line)",
-          borderRadius: 6, padding: "2px 6px", fontSize: 11, color: "var(--ink-2)",
-        }}>⌘ K</span>
-      </div>
-
-      {/* Stats */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, margin: "18px 0" }}>
-        {stats.map((s) => (
-          <div key={s.label} style={{
-            border: "1px solid var(--line-2)", borderRadius: 12, padding: 14, background: "var(--surface)",
-          }}>
-            <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10.5, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--soft)" }}>{s.label}</div>
-            <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 6 }}>{s.val}</div>
-            <div style={{ fontSize: 11.5, color: s.up ? "var(--accent-2)" : "#B45B4E", marginTop: 2, display: "inline-flex", alignItems: "center", gap: 4 }}>{s.delta}</div>
-            <svg style={{ marginTop: 10, height: 24, width: "100%" }} viewBox="0 0 100 24" preserveAspectRatio="none">
-              <path d={s.spark} stroke={s.up ? "var(--accent-2)" : "#B45B4E"} fill="none" strokeWidth="1.5"/>
-            </svg>
-          </div>
-        ))}
-      </div>
-
-      {/* Panels */}
-      <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
-        {/* Payroll panel */}
-        <div style={{ border: "1px solid var(--line-2)", borderRadius: 12, padding: 14, background: "var(--surface)" }}>
-          <h4 style={{ margin: "0 0 12px", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            Next payroll cutoff
-            <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)", fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase" }}>in 2 days</span>
-          </h4>
-          {payroll.map((row) => (
-            <div key={row.init} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "9px 0", borderBottom: "1px dashed var(--line-2)", fontSize: 13 }}
-              className="last:border-0">
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--bg-tint)", color: "var(--ink-2)", fontSize: 11, display: "grid", placeItems: "center", fontWeight: 500 }}>{row.init}</span>
-                <span>{row.name}</span>
-              </div>
-              <span style={{ fontVariantNumeric: "tabular-nums" }}>{row.amt}</span>
-              <span style={{
-                fontSize: 11, padding: "2px 8px", borderRadius: 999,
-                fontFamily: "var(--font-geist-mono, monospace)", letterSpacing: "0.04em",
-                background: row.status === "review" ? "oklch(0.96 0.04 75)" : "var(--accent-50)",
-                color: row.status === "review" ? "#8A5A2A" : "var(--accent-2)",
-              }}>{row.status}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* AI tasks panel */}
-        <div style={{ border: "1px solid var(--line-2)", borderRadius: 12, padding: 14, background: "var(--surface)" }}>
-          <h4 style={{ margin: "0 0 12px", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            What AI is doing
-            <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)", fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase" }}>live</span>
-          </h4>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {tasks.map((task, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13 }}>
-                <span style={{
-                  width: 16, height: 16, borderRadius: 5, flexShrink: 0, marginTop: 1,
-                  display: "grid", placeItems: "center",
-                  border: task.done ? "none" : "1.5px solid var(--line)",
-                  background: task.done ? "var(--accent)" : "transparent",
-                  color: "#fff",
-                }}>
-                  {task.done && (
-                    <svg width="10" height="10" viewBox="0 0 10 10">
-                      <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )}
-                </span>
-                <div>
-                  <div style={{ color: task.done ? "var(--soft)" : "inherit", textDecoration: task.done ? "line-through" : "none" }}>{task.label}</div>
-                  <div style={{ color: "var(--soft)", fontSize: 11.5, marginTop: 2, fontFamily: "var(--font-geist-mono, monospace)" }}>{task.meta}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ══════════════════════════════════════════════════════════
    PAGE
 ══════════════════════════════════════════════════════════ */
@@ -403,7 +160,7 @@ export default function Home() {
             <nav style={{ display: "flex", alignItems: "center", gap: 4 }} aria-label="Primary">
               {[
                 { label: "Platform",     href: "#platform" },
-                { label: "Features",     href: "#features" },
+                { label: "Modules",      href: "#modules" },
                 { label: "Intelligence", href: "#intelligence" },
                 { label: "Pricing",      href: "#waitlist" },
                 { label: "What's New",   href: "/updates" },
@@ -421,8 +178,8 @@ export default function Home() {
 
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <a href="https://app.yahshua.one/" style={{ ...btnPrimary, ...btnSm }}>
-                Start free <Arrow />
+              <a href="#waitlist" style={{ ...btnPrimary, ...btnSm }}>
+                Join waitlist <Arrow />
               </a>
             </div>
           </div>
@@ -430,7 +187,8 @@ export default function Home() {
       </div>
 
       {/* ── HERO ── */}
-      <header style={{ padding: "84px 0 56px", position: "relative", overflow: "hidden" }}>
+      <header style={{ padding: "84px 0 0", position: "relative", overflow: "hidden" }}>
+        {/* Aurora glow */}
         <div style={{
           position: "absolute", top: -200, left: "50%", transform: "translateX(-50%)",
           width: 1100, height: 700, pointerEvents: "none", zIndex: 0, filter: "blur(20px)",
@@ -482,9 +240,8 @@ export default function Home() {
           <Reveal delay={180}>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href="#waitlist" style={btnPrimary}>
-                Start free for 30 days <Arrow />
+                Join waitlist <Arrow />
               </a>
-              <a href="#platform" style={btnGhost}>See the platform</a>
             </div>
           </Reveal>
 
@@ -506,48 +263,33 @@ export default function Home() {
               <span><strong style={{ color: "var(--ink-2)", fontWeight: 500 }}>1,200+ founders</strong> on the waitlist · No credit card required</span>
             </div>
           </Reveal>
-
-          <div id="platform" />
         </div>
-      </header>
 
-      {/* ── PRODUCT DASHBOARD ── */}
-      <section style={{ padding: "0 0 110px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
+        {/* ── HERO VIDEO ── */}
+        <div style={{ maxWidth: 1200, margin: "56px auto 0", padding: "0 28px", position: "relative", zIndex: 1 }} id="platform">
+          <Reveal delay={280}>
             <div style={{
-              border: "1px solid var(--line)", borderRadius: 16,
-              overflow: "hidden", background: "var(--bg)",
-              boxShadow: "0 32px 100px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.04)",
+              borderRadius: 16, overflow: "hidden",
+              border: "1px solid var(--line)",
+              boxShadow: "0 32px 100px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)",
+              background: "var(--ink)",
             }}>
-              {/* Browser chrome */}
-              <div style={{
-                background: "var(--surface)", borderBottom: "1px solid var(--line)",
-                padding: "10px 16px", display: "flex", alignItems: "center", gap: 8,
-              }}>
-                {(["#FF5F57","#FEBC2E","#28C840"] as const).map((c, i) => (
-                  <span key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: c, flexShrink: 0 }} />
-                ))}
-                <div style={{
-                  flex: 1, margin: "0 16px", background: "var(--bg-tint)", borderRadius: 6,
-                  height: 24, display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 11, color: "var(--soft)", fontFamily: "var(--font-geist-mono, monospace)",
-                }}>
-                  app.yahshua.one
-                </div>
-              </div>
-              {/* Dashboard grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px 1fr" }}>
-                <ProductSidebar />
-                <ProductMain />
-              </div>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ display: "block", width: "100%", height: "auto" }}
+              >
+                <source src="/Y1%20intro.mp4" type="video/mp4" />
+              </video>
             </div>
           </Reveal>
         </div>
-      </section>
+      </header>
 
-      {/* ── FEATURES HEADER ── */}
-      <div id="features" style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px 64px" }}>
+      {/* ── MODULES HEADER ── */}
+      <div id="modules" style={{ maxWidth: 1200, margin: "0 auto", padding: "110px 28px 64px" }}>
         <Reveal>
           <div style={{ textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
@@ -556,14 +298,14 @@ export default function Home() {
             <h2 style={{ fontSize: "clamp(34px, 4.2vw, 52px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 16px" }}>
               Five businesses worth of software,<br />in one workspace.
             </h2>
-            <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 560, margin: "0 auto" }}>
-              Stop wiring spreadsheets between tools that don&apos;t talk to each other. YAHSHUA One is one product — one source of truth.
+            <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 600, margin: "0 auto" }}>
+              Stop wiring spreadsheets between five tools that don&apos;t talk to each other. YAHSHUA One ships the whole back office as one product — and one source of truth.
             </p>
           </div>
         </Reveal>
       </div>
 
-      {/* ── FEATURE: PAYROLL ── */}
+      {/* ── FEATURE: PEOPLE & PAYROLL ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
@@ -573,27 +315,17 @@ export default function Home() {
                   02 · People & Payroll
                 </div>
                 <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
-                  Payroll that runs itself.
+                  The people side, finally automated.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  SSS, PhilHealth, Pag-IBIG, and withholding tax — computed automatically every cutoff. Review the numbers, approve, release. Done in 20 minutes.
+                  Timekeeping, leaves, payroll, and statutory contributions — auto-computed, paid, and filed on schedule. Your team gets a portal that doesn&apos;t feel like 2008.
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
-                  {[
-                    "Auto-computation of all statutory contributions",
-                    "13th-month, overtime, and night differential",
-                    "Bank disbursement files for BPI, BDO, and Maya",
-                    "Employee self-service payslip portal",
-                  ].map((item) => (
-                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
-                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
-                        {checkIcon}
-                      </span>
-                      {item}
-                    </li>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {["Payroll", "Leaves", "Time tracking", "13th-month", "SSS · PhilHealth · HDMF"].map((tag) => (
+                    <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
-                <a href="#waitlist" style={{ ...btnPrimary }}>Start free <Arrow /></a>
+                <a href="#waitlist" style={{ ...btnPrimary }}>Join waitlist <Arrow /></a>
               </div>
             </Reveal>
 
@@ -622,9 +354,9 @@ export default function Home() {
                 ))}
                 <div style={{ padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <span style={{ fontSize: 13, color: "var(--muted)" }}>5 employees · ₱ 381,900 total</span>
-                  <button style={{ fontSize: 12, padding: "7px 14px", background: "var(--ink)", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "inherit", fontWeight: 500 }}>
+                  <span style={{ fontSize: 12, padding: "7px 14px", background: "var(--ink)", color: "#fff", borderRadius: 8, fontFamily: "inherit" }}>
                     Process payroll →
-                  </button>
+                  </span>
                 </div>
               </div>
             </Reveal>
@@ -632,7 +364,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FEATURE: BIR / TAX ── */}
+      {/* ── FEATURE: TAX & COMPLIANCE ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
@@ -681,27 +413,17 @@ export default function Home() {
                   04 · Tax & Compliance
                 </div>
                 <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
-                  BIR filings drafted before you remember they&apos;re due.
+                  BIR-ready forms. Quarterly filings drafted, reviewed, submitted.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  Every form — 1601-C, 2550M, 1701Q — tracked, drafted, and ready for your signature weeks before the deadline. No more penalties for forms you forgot.
+                  Every BIR deadline tracked, every return drafted from your actual books. You review and sign — YAHSHUA One handles the rest.
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
-                  {[
-                    "Full BIR deadline calendar with auto-reminders",
-                    "AI-drafted returns populated from your actual books",
-                    "SSS, PhilHealth, and Pag-IBIG contribution reports",
-                    "Audit trail for every filed return",
-                  ].map((item) => (
-                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
-                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
-                        {checkIcon}
-                      </span>
-                      {item}
-                    </li>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {["VAT", "1701Q", "1601-C", "SSS", "PhilHealth", "Pag-IBIG"].map((tag) => (
+                    <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
-                <a href="#waitlist" style={{ ...btnPrimary }}>Start free <Arrow /></a>
+                <a href="#waitlist" style={{ ...btnPrimary }}>Join waitlist <Arrow /></a>
               </div>
             </Reveal>
           </div>
@@ -751,7 +473,7 @@ export default function Home() {
                   borderRadius: 999, border: "1px solid oklch(0.35 0.012 250)", color: "#fff",
                   fontWeight: 500, fontSize: 14.5, background: "transparent",
                 }}>
-                  Read the security overview <Arrow />
+                  Join waitlist <Arrow />
                 </a>
               </div>
             </Reveal>
@@ -821,7 +543,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FEATURE: ERP / OPERATIONS ── */}
+      {/* ── FEATURE: ERP ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
@@ -832,10 +554,10 @@ export default function Home() {
                   <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)" }}>Northwind Trading</span>
                 </div>
                 {[
-                  { sku: "NWT-001", item: "Robusta Green Beans (50kg)", stock: 240,  reorder: 50,  status: "ok" },
-                  { sku: "NWT-002", item: "Arabica Blend (25kg)",       stock: 18,   reorder: 30,  status: "low" },
-                  { sku: "NWT-003", item: "Export Bags (box/100)",      stock: 580,  reorder: 100, status: "ok" },
-                  { sku: "NWT-004", item: "Roasting Labels (roll)",     stock: 4,    reorder: 20,  status: "low" },
+                  { sku: "NWT-001", item: "Robusta Green Beans (50kg)", stock: 240,  status: "ok" },
+                  { sku: "NWT-002", item: "Arabica Blend (25kg)",       stock: 18,   status: "low" },
+                  { sku: "NWT-003", item: "Export Bags (box/100)",      stock: 580,  status: "ok" },
+                  { sku: "NWT-004", item: "Roasting Labels (roll)",     stock: 4,    status: "low" },
                 ].map((row) => (
                   <div key={row.sku} style={{ display: "flex", alignItems: "center", gap: 14, padding: "11px 20px", borderBottom: "1px solid var(--line-2)", fontSize: 13 }}>
                     <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10, color: "var(--soft)", flexShrink: 0 }}>{row.sku}</span>
@@ -855,7 +577,7 @@ export default function Home() {
                 ))}
                 <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <span>4 SKUs · 2 below reorder point</span>
-                  <button style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontFamily: "inherit" }}>Auto-reorder →</button>
+                  <span style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", borderRadius: 6, fontFamily: "inherit" }}>Auto-reorder →</span>
                 </div>
               </div>
             </Reveal>
@@ -866,27 +588,17 @@ export default function Home() {
                   01 · ERP
                 </div>
                 <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
-                  Operations without the spreadsheets.
+                  Run operations without spreadsheets.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  Inventory, sales orders, purchasing, and vendors — all connected to the same ledger your accountant uses. No exports. No reconciliation at 11pm.
+                  Inventory, sales orders, purchasing, and vendors connected to the same ledger your accountant uses. No exports. No reconciliation tickets at 11pm.
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
-                  {[
-                    "Real-time inventory with low-stock alerts and auto-reorder",
-                    "Sales orders linked directly to your GL",
-                    "Vendor management and purchase orders",
-                    "Multi-branch support",
-                  ].map((item) => (
-                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
-                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
-                        {checkIcon}
-                      </span>
-                      {item}
-                    </li>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {["Inventory", "Sales orders", "Procurement", "Vendors", "Multi-branch"].map((tag) => (
+                    <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
-                <a href="#waitlist" style={{ ...btnPrimary }}>Start free <Arrow /></a>
+                <a href="#waitlist" style={{ ...btnPrimary }}>Join waitlist <Arrow /></a>
               </div>
             </Reveal>
           </div>
@@ -994,12 +706,9 @@ export default function Home() {
               <p style={{ color: "var(--muted)", fontSize: 18, maxWidth: 540, margin: "0 auto 28px" }}>
                 Start free for 30 days. Bring your whole back office over — or just one module. We&apos;ll meet you where you are.
               </p>
-              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="#waitlist" style={btnPrimary}>
-                  Start free for 30 days <Arrow />
-                </a>
-                <a href="#waitlist" style={btnGhost}>Talk to founders</a>
-              </div>
+              <a href="#waitlist" style={btnPrimary}>
+                Join waitlist <Arrow />
+              </a>
             </div>
           </Reveal>
         </div>
@@ -1243,7 +952,7 @@ export default function Home() {
               <p style={{ marginTop: 12, fontSize: 13 }}>Built in the Philippines 🇵🇭</p>
             </div>
             {[
-              { title: "Product",   links: [{ label: "Features", href: "#features" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
+              { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
               { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }, { label: "Press kit", href: "#" }] },
               { title: "Resources", links: [{ label: "Docs", href: "#" }, { label: "Changelog", href: "/updates" }, { label: "Security", href: "#" }, { label: "Status", href: "#" }] },
               { title: "Legal",     links: [{ label: "Terms", href: "#" }, { label: "Privacy", href: "#" }, { label: "DPA", href: "#" }, { label: "Cookies", href: "#" }] },
