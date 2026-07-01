@@ -376,7 +376,7 @@ export default function PayrollPage() {
 
               {/* Left copy */}
               <div>
-                <Reveal delay={60} direction="clip">
+                <Reveal delay={60}>
                   <h1 style={{
                     margin: "0 0 22px",
                     fontSize: "clamp(46px, 6.5vw, 84px)",
@@ -390,7 +390,7 @@ export default function PayrollPage() {
                 </Reveal>
                 <Reveal delay={120}>
                   <p style={{ fontSize: 18, lineHeight: 1.65, color: "oklch(0.68 0.01 250)", maxWidth: 500, margin: "0 0 32px" }}>
-                    Ask Theo anything: your de minimis cap, your overtime rate, why a specific employee&apos;s net changed. It reads your actual payroll data and gives you a real answer, not a generic one.
+                    Set up once, run every cutoff without thinking about it. SSS, PhilHealth, Pag-IBIG, withholding tax, 13th month: all computed automatically. Payslips ready before you ask. And when a question comes up, Theo reads your actual data and gives you a precise answer.
                   </p>
                 </Reveal>
                 <Reveal delay={180}>
