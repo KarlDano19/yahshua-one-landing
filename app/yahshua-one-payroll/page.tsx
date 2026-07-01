@@ -632,6 +632,48 @@ export default function PayrollPage() {
         </div>
       </section>
 
+      {/* ── BIR REGISTRATION ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 52 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>
+                <Dot /> Official Registration
+              </div>
+              <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 14px" }}>
+                BIR Registered.
+              </h2>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 460, margin: "0 auto" }}>
+                YAHSHUA One holds active BIR registration. You can run payroll knowing the platform behind it is compliant.
+              </p>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, maxWidth: 900, margin: "0 auto" }}>
+            {[
+              { src: "/BIR%20Registration%20Seal%20Badge_1.png", label: "BIR Registration Seal Badge 1" },
+              { src: "/BIR%20Registration%20Seal%20Badge_%202.png", label: "BIR Registration Seal Badge 2" },
+              { src: "/BIR%20Registration%20Seal%20Badge_3.png", label: "BIR Registration Seal Badge 3" },
+            ].map((item, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div style={{
+                  border: "1px solid var(--line)", borderRadius: 12, overflow: "hidden",
+                  background: "var(--surface)", boxShadow: "var(--shadow)",
+                }}>
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section id="faq" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
