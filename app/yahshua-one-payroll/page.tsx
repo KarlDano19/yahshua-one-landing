@@ -854,7 +854,7 @@ export default function PayrollPage() {
             >×</button>
 
             <h3 style={{ margin: "0 0 6px", fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", color: "var(--ink)" }}>
-              Are you a YAHSHUA One client?
+              Are you a current YAHSHUA client?
             </h3>
             <p style={{ margin: "0 0 24px", fontSize: 14, color: "var(--muted)", lineHeight: 1.5 }}>
               Let us point you to the right place.
@@ -871,7 +871,7 @@ export default function PayrollPage() {
                   textDecoration: "none",
                 }}
               >
-                <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA One</span>
+                <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA</span>
                 <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free presentation with our team</span>
               </a>
 
