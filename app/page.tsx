@@ -272,19 +272,25 @@ export default function Home() {
               borderRadius: 16, overflow: "hidden",
               border: "1px solid var(--line)",
               boxShadow: "0 32px 100px rgba(0,0,0,0.12)",
-              background: "#000",
-              maxHeight: "75vh",
-              display: "flex", alignItems: "center", justifyContent: "center",
             }}>
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              {/* Browser chrome */}
+              <div style={{ height: 36, background: "var(--surface)", display: "flex", alignItems: "center", gap: 6, padding: "0 14px", borderBottom: "1px solid var(--line-2)" }}>
+                {(["#FF5F57","#FEBC2E","#28C840"] as const).map((c, i) => (
+                  <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: c }} />
+                ))}
+                <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                  <span style={{ fontSize: 11, color: "var(--soft)", fontFamily: "var(--font-geist-mono, monospace)", background: "var(--bg-tint)", border: "1px solid var(--line-2)", borderRadius: 5, padding: "2px 12px" }}>
+                    app.yahshua.one
+                  </span>
+                </div>
+              </div>
+              {/* Video */}
               <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                src="/Y1 intro.mp4"
-                style={{ display: "block", width: "100%", height: "auto", maxHeight: "75vh", objectFit: "contain" }}
-              />
+                autoPlay muted loop playsInline
+                style={{ width: "100%", display: "block" }}
+              >
+                <source src="/y1-intro.mp4" type="video/mp4" />
+              </video>
             </div>
           </Reveal>
         </div>
@@ -627,6 +633,74 @@ export default function Home() {
               ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── YAHSHUA ONE PAYROLL SPOTLIGHT ── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+            <Reveal>
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "4px 12px 4px 8px", border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999, fontSize: 12, marginBottom: 20, boxShadow: "var(--shadow-sm)" }}>
+                  <span style={{ width: 20, height: 20, borderRadius: 6, background: "var(--ink)", color: "var(--accent-3)", display: "grid", placeItems: "center", fontSize: 10, fontWeight: 700, flexShrink: 0 }}>P</span>
+                  <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.04em", color: "var(--ink-2)", textTransform: "uppercase" }}>YAHSHUA One Payroll</span>
+                </div>
+                <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
+                  Need just payroll?<br />It stands on its own.
+                </h2>
+                <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
+                  YAHSHUA One Payroll is a focused product you can run without the full platform — everything your payroll team needs, nothing it doesn&apos;t. Theo AI reads your actual company data and answers compliance questions in plain language.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 12 }}>
+                  {[
+                    "Theo AI — payroll questions answered from your real data",
+                    "Policy Handbook auto-generated from your settings",
+                    "Custom reports on demand",
+                    "Org chart built from your structure",
+                  ].map((item) => (
+                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--ink-2)" }}>
+                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "var(--accent-50)", color: "var(--accent-2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="/yahshua-one-payroll" style={{
+                  display: "inline-flex", alignItems: "center", gap: 8, height: 44, padding: "0 18px",
+                  borderRadius: 999, background: "var(--ink)", color: "#fff",
+                  fontWeight: 500, fontSize: 14.5, textDecoration: "none",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 2px rgba(15,17,21,0.18)",
+                }}>
+                  Explore YAHSHUA One Payroll <Arrow />
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal direction="left">
+              <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid oklch(0.22 0.012 250)", boxShadow: "0 24px 80px rgba(0,0,0,0.18)" }}>
+                {/* Dark chrome — matches Y1P */}
+                <div style={{ height: 36, background: "oklch(0.1 0.01 250)", display: "flex", alignItems: "center", gap: 6, padding: "0 14px", borderBottom: "1px solid oklch(0.18 0.01 250)" }}>
+                  {(["oklch(0.55 0.18 25)","oklch(0.7 0.16 70)","oklch(0.6 0.18 145)"] as const).map((bg, i) => (
+                    <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: bg }} />
+                  ))}
+                  <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                    <span style={{ fontSize: 11, color: "oklch(0.38 0.01 250)", fontFamily: "var(--font-geist-mono, monospace)", background: "oklch(0.15 0.01 250)", border: "1px solid oklch(0.22 0.01 250)", borderRadius: 5, padding: "2px 12px" }}>
+                      app.yahshua.one · Payroll
+                    </span>
+                  </div>
+                </div>
+                <video
+                  autoPlay muted loop playsInline
+                  poster="/ss-payslip.jpg"
+                  style={{ width: "100%", display: "block" }}
+                >
+                  <source src="/clip-payslip.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
