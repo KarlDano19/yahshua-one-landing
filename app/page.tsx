@@ -86,7 +86,24 @@ export default function Home() {
   const [formMsg, setFormMsg] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
   const heroVideoRef = useRef<HTMLDivElement>(null);
+  const heroVideoElRef = useRef<HTMLVideoElement>(null);
   const y1pVideoRef = useRef<HTMLDivElement>(null);
+  const y1pVideoElRef = useRef<HTMLVideoElement>(null);
+
+  function enterFullscreen(container: HTMLDivElement | null, video: HTMLVideoElement | null) {
+    if (!container || !video) return;
+    video.muted = false;
+    video.controls = true;
+    container.requestFullscreen?.();
+    const onExit = () => {
+      if (!document.fullscreenElement) {
+        video.muted = true;
+        video.controls = false;
+        document.removeEventListener("fullscreenchange", onExit);
+      }
+    };
+    document.addEventListener("fullscreenchange", onExit);
+  }
 
   useEffect(() => {
     fetch("/updates.json").then((r) => r.json()).then(setUpdates).catch(() => setUpdates([]));
@@ -292,6 +309,7 @@ export default function Home() {
               </div>
               {/* Video */}
               <video
+                ref={heroVideoElRef}
                 autoPlay muted loop playsInline
                 style={{ width: "100%", display: "block" }}
               >
@@ -299,7 +317,7 @@ export default function Home() {
               </video>
               {/* Fullscreen button */}
               <button
-                onClick={() => heroVideoRef.current?.requestFullscreen?.()}
+                onClick={() => enterFullscreen(heroVideoRef.current, heroVideoElRef.current)}
                 aria-label="View fullscreen"
                 style={{
                   position: "absolute", bottom: 12, right: 12,
@@ -718,6 +736,7 @@ export default function Home() {
                   </div>
                 </div>
                 <video
+                  ref={y1pVideoElRef}
                   autoPlay muted loop playsInline
                   poster="/ss-payslip.jpg"
                   style={{ width: "100%", display: "block" }}
@@ -726,7 +745,7 @@ export default function Home() {
                 </video>
                 {/* Fullscreen button */}
                 <button
-                  onClick={() => y1pVideoRef.current?.requestFullscreen?.()}
+                  onClick={() => enterFullscreen(y1pVideoRef.current, y1pVideoElRef.current)}
                   aria-label="View fullscreen"
                   style={{
                     position: "absolute", bottom: 12, right: 12,
