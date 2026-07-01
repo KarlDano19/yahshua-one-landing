@@ -384,13 +384,13 @@ export default function PayrollPage() {
                     color: "#F7F6F1",
                     textWrap: "balance" as React.CSSProperties["textWrap"],
                   }}>
-                    Philippine payroll.<br />
-                    <em style={{ fontStyle: "normal", color: "var(--accent-3)", fontWeight: 800 }}>Zero errors.</em>
+                    Payroll that{" "}
+                    <em style={{ fontStyle: "normal", color: "var(--accent-3)", fontWeight: 800 }}>knows your company.</em>
                   </h1>
                 </Reveal>
                 <Reveal delay={120}>
                   <p style={{ fontSize: 18, lineHeight: 1.65, color: "oklch(0.68 0.01 250)", maxWidth: 500, margin: "0 0 32px" }}>
-                    Automatic computation every cutoff. Statutory contributions, withholding tax, overtime, 13th month: all handled. On payday, you just review and approve. And if you have questions about your setup, you can ask Theo. It reads your actual company data and gives you a real answer.
+                    Ask Theo anything: your de minimis cap, your overtime rate, why a specific employee&apos;s net changed. It reads your actual payroll data and gives you a real answer, not a generic one.
                   </p>
                 </Reveal>
                 <Reveal delay={180}>
