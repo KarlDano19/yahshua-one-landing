@@ -249,6 +249,7 @@ export default function PayrollPage() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [ctaOpen, setCtaOpen] = useState(false);
+  const [appsOpen, setAppsOpen] = useState(false);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -334,6 +335,46 @@ export default function PayrollPage() {
                   {link.label}
                 </a>
               ))}
+              <div style={{ position: "relative" }}
+                onMouseEnter={() => setAppsOpen(true)}
+                onMouseLeave={() => setAppsOpen(false)}>
+                <button style={{
+                  display: "flex", alignItems: "center", gap: 5,
+                  padding: "8px 12px", borderRadius: 8, fontSize: 14, color: "var(--ink-2)",
+                  background: appsOpen ? "var(--bg-tint)" : "transparent",
+                  border: "none", cursor: "pointer", fontFamily: "inherit",
+                  transition: "background .15s ease",
+                }}>
+                  Apps
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ transition: "transform .15s ease", transform: appsOpen ? "rotate(180deg)" : "rotate(0deg)", opacity: 0.6 }}>
+                    <path d="M2 4L5.5 7.5L9 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {appsOpen && (
+                  <div style={{
+                    position: "absolute", top: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)",
+                    background: "var(--bg)", border: "1px solid var(--line)",
+                    borderRadius: 12, padding: 6, minWidth: 220,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
+                    zIndex: 100,
+                  }}>
+                    <a href="/payroll" style={{
+                      display: "flex", alignItems: "center", gap: 10,
+                      padding: "10px 12px", borderRadius: 8,
+                      color: "var(--ink)", textDecoration: "none", fontSize: 14,
+                      transition: "background .15s ease",
+                    }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-tint)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
+                      <Image src="/logo.jpg" alt="" width={22} height={22} style={{ borderRadius: 6, objectFit: "cover", flexShrink: 0 }} />
+                      <div>
+                        <div style={{ fontWeight: 500, fontSize: 13, lineHeight: 1.3 }}>YAHSHUA One Payroll</div>
+                        <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 1 }}>Automated payroll & compliance</div>
+                      </div>
+                    </a>
+                  </div>
+                )}
+              </div>
             </nav>
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
