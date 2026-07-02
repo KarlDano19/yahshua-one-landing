@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     "payroll for SMB Philippines",
   ],
   alternates: {
-    canonical: `${BASE_URL}/yahshua-one-payroll`,
+    canonical: `${BASE_URL}/payroll`,
   },
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: `${BASE_URL}/yahshua-one-payroll`,
+    url: `${BASE_URL}/payroll`,
     siteName: "YAHSHUA One",
     title: "YAHSHUA One Payroll — Payroll That Runs Itself",
     description:

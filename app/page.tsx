@@ -790,7 +790,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <a href="/yahshua-one-payroll" style={{
+                <a href="/payroll" style={{
                   display: "inline-flex", alignItems: "center", gap: 8, height: 44, padding: "0 18px",
                   borderRadius: 999, background: "var(--ink)", color: "#fff",
                   fontWeight: 500, fontSize: 14.5, textDecoration: "none",
