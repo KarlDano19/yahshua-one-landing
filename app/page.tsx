@@ -778,9 +778,9 @@ export default function Home() {
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
               {[
-                { src: "/SOC2%20Type%202.svg",  alt: "SOC 2 Type II certified" },
-                { src: "/GDPR.svg",             alt: "GDPR compliant" },
-                { src: "/ISO%2027001.svg",       alt: "ISO 27001 certified" },
+                { src: "/SOC2%20TYPE%202.png",                          alt: "SOC 2 Type II certified" },
+                { src: "/EU%20GDPR.png",                                alt: "GDPR compliant" },
+                { src: "/ISO27001-certificate-logo-4%20(1).png",        alt: "ISO 27001 certified" },
               ].map((item, i) => (
                 <div key={i} style={{
                   border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
