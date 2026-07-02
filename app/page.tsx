@@ -778,47 +778,16 @@ export default function Home() {
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
               {[
-                {
-                  name: "SOC 2 Type II",
-                  desc: "Security, availability & confidentiality audited",
-                  icon: (
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <path d="M14 2.5L4 7.5V14c0 6.1 4.1 11.8 10 13.1C19.9 25.8 24 20.1 24 14V7.5L14 2.5z" fill="var(--accent-50)" stroke="var(--accent-2)" strokeWidth="1.4"/>
-                      <path d="M10 14l3 3 5-5" stroke="var(--accent-2)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  ),
-                },
-                {
-                  name: "GDPR",
-                  desc: "EU data privacy standards met",
-                  icon: (
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <rect x="6" y="13" width="16" height="11" rx="2.5" fill="var(--accent-50)" stroke="var(--accent-2)" strokeWidth="1.4"/>
-                      <path d="M9.5 13V9.5a4.5 4.5 0 0 1 9 0V13" stroke="var(--accent-2)" strokeWidth="1.4" strokeLinecap="round"/>
-                      <circle cx="14" cy="18.5" r="1.8" fill="var(--accent-2)"/>
-                    </svg>
-                  ),
-                },
-                {
-                  name: "ISO 27001",
-                  desc: "Information security management certified",
-                  icon: (
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <circle cx="14" cy="14" r="10.5" fill="var(--accent-50)" stroke="var(--accent-2)" strokeWidth="1.4"/>
-                      <path d="M9.5 14l3 3 6-6" stroke="var(--accent-2)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  ),
-                },
-              ].map((cert) => (
-                <div key={cert.name} style={{
-                  border: "1px solid var(--line)", borderRadius: 10,
+                { src: "/SOC2%20Type%202.svg",  alt: "SOC 2 Type II certified" },
+                { src: "/GDPR.svg",             alt: "GDPR compliant" },
+                { src: "/ISO%2027001.svg",       alt: "ISO 27001 certified" },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
                   background: "var(--surface)", boxShadow: "var(--shadow-sm)",
-                  padding: "20px 16px", display: "flex", flexDirection: "column",
-                  alignItems: "center", gap: 10, textAlign: "center",
                 }}>
-                  {cert.icon}
-                  <div style={{ fontWeight: 600, fontSize: 13, letterSpacing: "-0.01em" }}>{cert.name}</div>
-                  <div style={{ fontSize: 11.5, color: "var(--muted)", lineHeight: 1.4 }}>{cert.desc}</div>
+                  <img src={item.src} alt={item.alt} loading="lazy" decoding="async"
+                    style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
               ))}
             </div>
