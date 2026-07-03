@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-03",
+    "badge": "Progress Update",
+    "title": "Payslips and Permissions Get Real",
+    "description": "We pushed YAHSHUA One much closer to real-world rollout by making payslips customizable, tightening who can see employee data, and expanding practical payroll and employee-management tools.",
+    "body": [
+      "For many Filipino business owners, payroll trust is not only about computing the right amount. It is also about whether the right people can see the right employee information, whether payslips look like something you would actually want to send out, and whether everyday payroll setup can keep up with how a real company operates. If visibility is too loose, private information becomes risky. If payslips are too rigid, the product feels unfinished the moment a business wants something that matches its brand or reporting style. This update matters because YAHSHUA One is getting much closer to handling those real-world expectations like a serious backoffice should.",
+      "In plain language, we moved payslips forward in a big way. Teams are getting a stronger payslip engine, a classic print foundation, support for generating PDF batches and email-ready output, and a custom builder with live preview so companies can shape how payslips actually look instead of settling for a one-size-fits-all template. We also added the ability to view the actual payslip more directly and pushed work toward AI-assisted custom payslip generation, including support for using reference files when shaping a design. At the same time, we tightened employee visibility across payroll, reports, leave, attendance, timesheets, and employee selectors so people only see the records they are supposed to see. On top of that, several practical payroll and employee tools moved forward too, including compressed workweek support, bulk period-based schedule assignment, bank-account management improvements, tax beginning-balance safeguards, and deeper salary and rate-status handling.",
+      "What this means for you is a backoffice that keeps feeling more usable, more private, and more rollout-ready. Your team gets closer to a world where payslips can match the business more naturally, sensitive employee data is protected more carefully, and payroll operations can support the messier real cases that growing companies actually face. That reduces awkward workarounds, lowers the risk of oversharing information internally, and makes the product easier to trust when payroll is no longer just a simple demo flow. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where design flexibility, permission discipline, and payroll depth all reinforce each other in one system. We are still building fast, but this is exactly the kind of progress that makes the platform feel more serious and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-07-01",
     "badge": "Progress Update",
     "title": "Staff Tools, Payroll Runs, and Reminders Get More Practical",
