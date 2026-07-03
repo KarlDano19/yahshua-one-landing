@@ -87,6 +87,7 @@ export default function Home() {
   const [navScrolled, setNavScrolled] = useState(false);
   const [ctaOpen, setCtaOpen] = useState(false);
   const [appsOpen, setAppsOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const heroVideoRef = useRef<HTMLDivElement>(null);
   const heroVideoElRef = useRef<HTMLVideoElement>(null);
   const y1pVideoRef = useRef<HTMLDivElement>(null);
@@ -116,7 +117,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setCtaOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setCtaOpen(false); setMobileNavOpen(false); } };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
@@ -184,7 +185,7 @@ export default function Home() {
               </span>
             </a>
 
-            <nav style={{ display: "flex", alignItems: "center", gap: 4 }} aria-label="Primary">
+            <nav className="nav-links" aria-label="Primary">
               {[
                 { label: "Platform",     href: "#platform" },
                 { label: "Modules",      href: "#modules" },
@@ -243,11 +244,34 @@ export default function Home() {
               </div>
             </nav>
 
-            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>
                 Get Started <Arrow />
               </button>
+            </div>
+            <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
+              {mobileNavOpen
+                ? <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+                : <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+              }
+            </button>
+          </div>
+          <div className={`mobile-menu${mobileNavOpen ? " open" : ""}`}>
+            {[
+              { label: "Platform",     href: "#platform" },
+              { label: "Modules",      href: "#modules" },
+              { label: "Intelligence", href: "#intelligence" },
+              { label: "Pricing",      href: "#waitlist" },
+              { label: "What's New",   href: "/updates" },
+              { label: "Payroll",      href: "/payroll" },
+            ].map((link) => (
+              <a key={link.label} href={link.href} className="mobile-menu__link" onClick={() => setMobileNavOpen(false)}>{link.label}</a>
+            ))}
+            <hr />
+            <div className="mobile-menu__ctas">
+              <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
+              <button onClick={() => { setCtaOpen(true); setMobileNavOpen(false); }} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
             </div>
           </div>
         </div>
@@ -405,7 +429,7 @@ export default function Home() {
       {/* ── FEATURE: PEOPLE & PAYROLL ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="grid-feature">
             <Reveal>
               <div>
                 <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
@@ -464,7 +488,7 @@ export default function Home() {
       {/* ── FEATURE: TAX & COMPLIANCE ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="grid-feature">
             <Reveal direction="right">
               <div style={{ border: "1px solid var(--line)", borderRadius: 16, overflow: "hidden", background: "var(--bg)", boxShadow: "var(--shadow)" }}>
                 <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -530,10 +554,9 @@ export default function Home() {
       {/* ── FEATURE: AI ── */}
       <section id="intelligence" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{
+          <div className="grid-ai" style={{
             background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
-            padding: 64, display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 60,
-            alignItems: "center", position: "relative", overflow: "hidden",
+            position: "relative", overflow: "hidden",
           }}>
             <div style={{
               position: "absolute", inset: 0, pointerEvents: "none",
@@ -644,7 +667,7 @@ export default function Home() {
       {/* ── FEATURE: ERP ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="grid-feature">
             <Reveal direction="right">
               <div style={{ border: "1px solid var(--line)", borderRadius: 16, overflow: "hidden", background: "var(--bg)", boxShadow: "var(--shadow)" }}>
                 <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -707,14 +730,14 @@ export default function Home() {
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", border: "1px solid var(--line)", borderRadius: "var(--radius-lg)", overflow: "hidden", background: "var(--surface)" }}>
+            <div className="grid-figures">
               {[
                 { num: "40+",    lbl: "Hours of admin returned to founders every month." },
                 { num: "99.97%", lbl: "Filing accuracy across BIR, SSS, PhilHealth, Pag-IBIG." },
                 { num: "1 day",  lbl: "Average onboarding from sign-up to first reconciled month." },
                 { num: "0",      lbl: "Spreadsheets emailed at 2am between you and your accountant." },
-              ].map((fig, i) => (
-                <div key={fig.num} style={{ padding: "36px 28px", borderRight: i < 3 ? "1px solid var(--line)" : "none" }}>
+              ].map((fig) => (
+                <div key={fig.num} className="fig-item" style={{ padding: "36px 28px" }}>
                   <div style={{ fontSize: "clamp(32px, 3.6vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 8 }}>
                     <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{fig.num}</em>
                   </div>
@@ -752,7 +775,7 @@ export default function Home() {
             }}>
               Bureau of Internal Revenue
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 28 }}>
+            <div className="grid-badges" style={{ marginBottom: 28 }}>
               {[
                 { src: "/BIR%20Registration%20Seal%20Badge_1.png",  alt: "BIR Registration Seal Badge 1" },
                 { src: "/BIR%20Registration%20Seal%20Badge_%202.png", alt: "BIR Registration Seal Badge 2" },
@@ -776,7 +799,7 @@ export default function Home() {
             }}>
               Security & privacy
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+            <div className="grid-badges">
               {[
                 { src: "/SOC2%20TYPE%202.png",                          alt: "SOC 2 Type II certified" },
                 { src: "/EU%20GDPR.png",                                alt: "GDPR compliant" },
@@ -798,7 +821,7 @@ export default function Home() {
       {/* ── YAHSHUA ONE PAYROLL SPOTLIGHT ── */}
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.45fr", gap: 64, alignItems: "center" }}>
+          <div className="grid-spotlight">
             <Reveal>
               <div>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "4px 12px 4px 8px", border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999, fontSize: 12, marginBottom: 20, boxShadow: "var(--shadow-sm)" }}>
@@ -888,10 +911,10 @@ export default function Home() {
       <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal direction="scale">
-            <div style={{
+            <div className="cta-card" style={{
               border: "1px solid var(--line)",
               background: "radial-gradient(70% 100% at 0% 100%, var(--accent-glow), transparent 60%), radial-gradient(60% 100% at 100% 0%, oklch(0.95 0.03 215 / 0.5), transparent 60%), var(--surface)",
-              borderRadius: "var(--radius-xl)", padding: 72, textAlign: "center", position: "relative", overflow: "hidden",
+              borderRadius: "var(--radius-xl)", textAlign: "center", position: "relative", overflow: "hidden",
             }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, justifyContent: "center", fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 20 }}>
                 <Dot /> Ready when you are
@@ -1134,7 +1157,7 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer style={{ padding: "64px 0 40px", borderTop: "1px solid var(--line)", color: "var(--muted)", fontSize: 14 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.4fr repeat(4, 1fr)", gap: 36, marginBottom: 48 }}>
+          <div className="footer-cols">
             <div>
               <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }} aria-label="YAHSHUA One">
                 <Image src="/logo.jpg" alt="YAHSHUA One" width={28} height={28} style={{ borderRadius: 8, objectFit: "cover", flexShrink: 0 }} />
@@ -1169,7 +1192,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 28, borderTop: "1px solid var(--line)" }}>
+          <div className="footer-bottom">
             <span>© 2026 YAHSHUA One, Inc.</span>
           </div>
         </div>

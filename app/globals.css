@@ -323,6 +323,32 @@ button { font: inherit; cursor: pointer; }
 .feature-row h3 { transition: color 0.18s ease; }
 .feature-row:hover h3 { color: var(--accent-2); }
 
+/* ── Feature section grids (2-col → 1-col) ── */
+.grid-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Payroll spotlight (asymmetric → 1-col) ── */
+.grid-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ── Compliance badge grids (3-col → 2-col → 1-col) ── */
+.grid-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ── CTA card (responsive padding) ── */
+.cta-card { padding: 72px; }
+
 /* ── Tablet (768–1023px) ── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .col-3 { grid-column: span 6; }
@@ -335,6 +361,9 @@ button { font: inherit; cursor: pointer; }
   .stat-item:nth-child(2) { border-right: none; }
   .stat-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .feature-row { grid-template-columns: 200px 1fr; gap: 32px; }
+  .grid-feature { grid-template-columns: 1fr; gap: 48px; }
+  .grid-spotlight { grid-template-columns: 1fr; gap: 40px; }
+  .grid-badges { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Mobile (< 768px) ── */
@@ -367,6 +396,10 @@ button { font: inherit; cursor: pointer; }
   .stat-item { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .stat-item:nth-child(even) { border-right: none; }
   .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+  .grid-feature { grid-template-columns: 1fr; gap: 32px; }
+  .grid-spotlight { grid-template-columns: 1fr; gap: 28px; }
+  .grid-badges { grid-template-columns: repeat(2, 1fr); }
+  .cta-card { padding: 36px 24px; }
 }
 
 /* ── Small mobile (< 480px) ── */
@@ -379,6 +412,7 @@ button { font: inherit; cursor: pointer; }
   .stat-strip { grid-template-columns: 1fr; }
   .stat-item { border-right: none; }
   .stat-item:last-child { border-bottom: none; }
+  .grid-badges { grid-template-columns: 1fr; }
 }
 
 /* ══════════════════════════════════════════════════════════
