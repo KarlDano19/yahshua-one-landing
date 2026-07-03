@@ -190,7 +190,7 @@ export default function Home() {
                 { label: "Platform",     href: "#platform" },
                 { label: "Modules",      href: "#modules" },
                 { label: "Intelligence", href: "#intelligence" },
-                { label: "Pricing",      href: "#waitlist" },
+                { label: "Pricing",      href: "/pricing" },
                 { label: "What's New",   href: "/updates" },
               ].map((link) => (
                 <a key={link.label} href={link.href} style={{
@@ -262,7 +262,7 @@ export default function Home() {
               { label: "Platform",     href: "#platform" },
               { label: "Modules",      href: "#modules" },
               { label: "Intelligence", href: "#intelligence" },
-              { label: "Pricing",      href: "#waitlist" },
+              { label: "Pricing",      href: "/pricing" },
               { label: "What's New",   href: "/updates" },
               { label: "Payroll",      href: "/payroll" },
             ].map((link) => (
