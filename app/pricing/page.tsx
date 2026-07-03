@@ -217,11 +217,11 @@ export default function PricingPage() {
               fontSize: "clamp(36px, 5.5vw, 68px)", letterSpacing: "-0.04em",
               fontWeight: 500, lineHeight: 1.0, margin: "0 0 20px",
             }}>
-              Priced for Philippine SMBs.{" "}
-              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Not repriced from&nbsp;USD.</em>
+              A fair price for the work{" "}
+              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>you&apos;re actually doing.</em>
             </h1>
             <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.65, maxWidth: 520, margin: "0 auto 36px" }}>
-              One platform. Modular pricing. No per-seat surprises. Start with the modules your business actually needs, and add more as you grow.
+              We&apos;d rather understand your setup than send you a price list. Talk to us — we&apos;ll find what makes sense.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
