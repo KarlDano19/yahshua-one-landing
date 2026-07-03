@@ -900,7 +900,7 @@ export default function Home() {
                 Run your business on <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>one platform.</em>
               </h2>
               <p style={{ color: "var(--muted)", fontSize: 18, maxWidth: 540, margin: "0 auto 28px" }}>
-                Start free for 30 days. Bring your whole back office over, or just one module. We&apos;ll meet you where you are.
+                Bring your whole back office over, or just one module. We&apos;ll meet you where you are.
               </p>
               <button onClick={() => setCtaOpen(true)} style={btnPrimary}>
                 Get Started <Arrow />
@@ -911,7 +911,7 @@ export default function Home() {
       </section>
 
       {/* ── WAITLIST ── */}
-      <section id="waitlist" style={{ padding: "96px 0", borderTop: "1px solid var(--line)" }}>
+      <section id="waitlist" style={{ padding: "96px 0", borderTop: "1px solid var(--line)", scrollMarginTop: "80px" }}>
         <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
