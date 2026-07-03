@@ -848,7 +848,7 @@ export default function PayrollPage() {
                 Stop doing payroll<br />manually.
               </h2>
               <p style={{ color: "oklch(0.65 0.01 250)", fontSize: 18, maxWidth: 460, margin: "0 auto 36px", lineHeight: 1.6 }}>
-                Join 1,200+ Filipino business owners on the YAHSHUA One waitlist. Free for 30 days. No credit card.
+                Join 1,200+ Filipino business owners on the YAHSHUA One waitlist. No credit card required.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <button onClick={() => setCtaOpen(true)} style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
