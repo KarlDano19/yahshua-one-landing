@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-04",
+    "badge": "Progress Update",
+    "title": "Partner Workflows and Attendance Recovery Get More Practical",
+    "description": "We made it easier to manage partner-side client setup and billing, while also giving teams a cleaner way to restore deleted attendance logs and spot pending work faster.",
+    "body": [
+      "Yesterday's work focused on two very practical sides of running a serious backoffice platform: helping partners manage growing client operations more cleanly, and helping internal teams recover when attendance records need to be fixed instead of manually pieced back together. As YAHSHUA One expands, that kind of operational support matters just as much as headline payroll features. Partners need better tools to onboard and support client companies, and business teams need confidence that mistakes or deleted records do not turn into permanent cleanup headaches.",
+      "In plain language, YAHSHUA One is getting stronger partner-side tools for managing client companies, billing activity, and CRM-related follow-through, which helps the people supporting businesses stay more organized as partner operations grow. We also added a cleaner way to restore deleted attendance logs, improved the attendance upload flow, and made pending counts in the sidebar update live so teams can spot waiting work faster instead of refreshing or second-guessing what still needs attention. On top of that, several behind-the-scenes fixes and review cleanups landed to make these workflows feel steadier in real use.",
+      "What this means for you is a backoffice that keeps getting more resilient and more operationally useful. Teams get a better path for handling partner and client coordination, a safer way to recover attendance records when something needs to be undone, and quicker visibility into what still needs action across the product. That reduces manual follow-up, lowers the risk of losing track of important work, and helps YAHSHUA One feel more like a dependable operating system for real businesses in the Philippines instead of a fragile collection of screens."
+    ]
+  },
+  {
     "date": "2026-07-03",
     "badge": "Progress Update",
     "title": "Payslips and Permissions Get Real",
