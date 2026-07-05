@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-05",
+    "badge": "Progress Update",
+    "title": "Payroll Visibility Meets Biometric Reality",
+    "description": "We pushed YAHSHUA One closer to real-world rollout by tightening who can see employee records across payroll workflows and by building the bridge from biometric devices straight into attendance.",
+    "body": [
+      "For many Filipino business owners, payroll breaks down long before payday if the wrong people can see the wrong employee records or if attendance still depends on manual cleanup from scattered devices. A serious backoffice has to do two things at once: protect sensitive employee information and capture time data in a way that reflects what really happened on the ground. That matters even more once a company grows across locations, departments, and teams with different levels of authority. If visibility is too loose, privacy becomes risky and reports become harder to trust. If time capture is too fragile, payroll teams end up spending hours repairing inputs before they can even begin reviewing pay.",
+      "Yesterday's work pushed both of those foundations forward in a big way. In plain language, YAHSHUA One now applies employee visibility more consistently across payroll runs, payslips, leave, attendance, timesheets, reports, exports, and even employee selectors, so people are much closer to seeing only the records they are actually supposed to handle. At the same time, we moved the biometric device sync system forward from multiple angles, including device registration, live online and offline status, punch uploads, duplicate handling, unmatched log recovery, server-to-device command delivery, diagnosis views, and employee-to-device assignment. That means the platform is learning how to accept raw time data directly from biometric hardware, organize it more safely, and help teams resolve messy edge cases instead of hiding them. We also tightened cross-module test coverage so these rules are less likely to feel patchy from one part of the product to another.",
+      "What this means for you is a backoffice that keeps becoming more trustworthy at the exact points where real operations usually get messy. Your team gets closer to a setup where managers, payroll staff, and reviewers only see the employee information they genuinely need, while attendance records can start flowing in from biometric devices with far less manual stitching behind the scenes. That reduces privacy risk, cuts down avoidable payroll cleanup, and makes it easier to trust both the data entering the system and the people allowed to work with it. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because secure visibility and dependable attendance capture are two of the biggest foundations a real company needs. We are still building fast, but this is exactly the kind of progress that makes the platform feel more serious, more operational, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
     "date": "2026-07-04",
     "badge": "Progress Update",
     "title": "Partner Workflows and Attendance Recovery Get More Practical",
