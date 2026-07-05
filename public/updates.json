@@ -2,6 +2,17 @@
   {
     "date": "2026-07-05",
     "badge": "Progress Update",
+    "title": "Biometric Attendance Gets Much More Reliable",
+    "description": "We made it easier to connect biometric devices, match them to the right employees, catch unknown devices early, and clean up messy time logs before they turn into payroll headaches.",
+    "body": [
+      "Yesterday's work focused on one of the messiest parts of running payroll in the real world: getting trustworthy attendance data out of biometric devices and into the system without a ton of manual cleanup. When device records come in half-broken, duplicated, or tied to the wrong people, payroll teams end up wasting hours just trying to reconstruct what actually happened. That is exactly the kind of operational mess YAHSHUA One is being built to remove.",
+      "In plain language, YAHSHUA One is getting much better at the full biometric attendance flow. Teams can register devices more cleanly, assign employees to the right device, spot unknown or suspicious devices earlier, send commands back to devices, and use diagnosis views when something looks off. We also improved how the system handles unmatched punches and duplicate logs, so messy attendance records can be recovered and corrected instead of quietly becoming bigger problems later.",
+      "What this means for you is a backoffice that is getting closer to handling real biometric attendance like a dependable part of operations instead of a fragile side process. Your team gets a cleaner path from device activity to usable attendance data, faster recovery when logs do not line up perfectly, and more confidence that payroll is starting from records that reflect what actually happened on the ground. It is steady progress, but it is exactly the kind that makes YAHSHUA One feel more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-05",
+    "badge": "Progress Update",
     "title": "Payroll Visibility Meets Biometric Reality",
     "description": "We pushed YAHSHUA One closer to real-world rollout by tightening who can see employee records across payroll workflows and by building the bridge from biometric devices straight into attendance.",
     "body": [
