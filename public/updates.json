@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-07-06",
+    "badge": "Fix",
+    "title": "Partner Onboarding and Billing Feel More Trustworthy",
+    "description": "We fixed partner-side welcome emails, cleared up a confusing sign-in issue, and made partner-managed billing much easier for client companies to understand.",
+    "body": [
+      "Yesterday's work focused on a part of backoffice software people notice quickly when something feels off: getting welcomed properly, understanding what kind of session they are in, and knowing who is actually handling billing. For partner-managed companies especially, trust drops fast if the first email feels generic, if a normal login looks suspicious, or if billing details are hidden behind guesswork. This update matters because YAHSHUA One is getting clearer and more dependable in those moments that shape first impressions and everyday confidence.",
+      "In plain language, new client companies set up through partners should now receive the right welcome email more consistently, so the onboarding experience feels branded and intentional instead of patchy. We also fixed a confusing sign-in issue that could make a normal client login look like staff impersonation when it really was not. On top of that, client companies can now see partner-managed billing details more clearly, including who manages the billing, what usage is being counted, the estimated charge for the current period, and the current payment status. When billing is handled by a partner, self-serve pay and cancel actions are also hidden so the screen matches the real relationship instead of implying the wrong controls.",
+      "What this means for you is a calmer and more trustworthy experience for companies coming into YAHSHUA One through partner channels. New users should get a cleaner welcome, everyday sign-in should feel less confusing, and billing conversations should involve fewer back-and-forth clarifications because the essentials are easier to see at a glance. It is practical product work, but it is exactly the kind that helps the platform feel more ready for real partner rollouts and real business relationships in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-06",
     "badge": "Progress Update",
     "title": "Compass Turns Company Knowledge Into Action",
     "description": "We built a new Compass workspace for policies, team context, processes, and answers, while also tightening who can see employee data and laying stronger groundwork for biometric device operations.",
