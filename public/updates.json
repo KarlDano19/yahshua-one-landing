@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-06",
+    "badge": "Progress Update",
+    "title": "Compass Turns Company Knowledge Into Action",
+    "description": "We built a new Compass workspace for policies, team context, processes, and answers, while also tightening who can see employee data and laying stronger groundwork for biometric device operations.",
+    "body": [
+      "As a business grows, one of the first things that starts breaking is not effort, but clarity. Policies live in one place, process notes live somewhere else, and the people who need answers are often forced to ask around instead of simply getting what they need. That slows teams down, creates inconsistent decisions, and makes ordinary backoffice work feel heavier than it should. For a Filipino business owner trying to build with discipline, that kind of confusion quietly becomes an operational tax every single week. Yesterday's work focused on reducing that tax by making knowledge, structure, and operational visibility much easier to trust inside YAHSHUA One.",
+      "In plain language, we shipped a big new Compass experience inside the platform. Teams are getting a cleaner place for company policies, handbook content, documented processes, team pages, people directory views, profile details, and a recent-changes feed so important information does not stay scattered across side chats and memory. We also added an 'Ask Compass' capability, which moves YAHSHUA One closer to giving teams direct answers from their own internal knowledge instead of making them hunt manually. At the same time, we tightened employee visibility across reports, payroll, leave, attendance, timesheets, and employee pickers so people are much closer to seeing only the records they are actually supposed to handle. On top of that, biometric device work kept moving forward too, which strengthens the foundation for registering attendance hardware more cleanly as the product grows deeper into real operations.",
+      "What this means for you is a backoffice that keeps becoming more usable not just for payroll output, but for daily decision-making. Your team gets closer to a setup where company knowledge is easier to find, operational rules are easier to follow, and sensitive employee information is better protected by default. That reduces avoidable back-and-forth, lowers the risk of the wrong people seeing the wrong records, and makes it easier for growing teams to stay aligned without adding more admin chaos. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because real business software has to help people understand the company as well as run it. We are building toward a platform Filipino businesses can rely on for both execution and clarity, and this is a strong step in that direction."
+    ]
+  },
+  {
     "date": "2026-07-05",
     "badge": "Progress Update",
     "title": "Biometric Attendance Gets Much More Reliable",
