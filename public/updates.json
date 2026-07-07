@@ -2,6 +2,17 @@
   {
     "date": "2026-07-07",
     "badge": "Progress Update",
+    "title": "Company Knowledge Gets Safer and Easier to Act On",
+    "description": "We improved how teams read internal docs, protected sensitive profile history, added clearer stage timing, made org charts more useful, and expanded salary-rate exports.",
+    "body": [
+      "Yesterday's work focused on a simple but important part of running a serious backoffice: people need company knowledge that is easy to read, employee information that stays appropriately protected, and clearer signals around what needs follow-through next. If internal docs are awkward to browse, profile details spill too far, or pipeline work has no visible sense of urgency, teams lose time to chasing context instead of acting on it.",
+      "In plain language, YAHSHUA One now makes Compass content easier to read and review, including better handling for formatted write-ups and linked reference documents. We also tightened profile privacy so sensitive employment history does not show up where it should not. On top of that, teams can now see how long a client or opportunity has been sitting in each stage, along with clearer countdown-style guidance on what needs attention next. We also made org charts more informative by showing directly placed team members more clearly, and we expanded salary-rate status exports so payroll teams can review that information more cleanly in Excel.",
+      "What this means for you is a product that keeps getting more useful in the real day-to-day work behind payroll and HR. Your team gets a clearer place to read company knowledge, better protection around sensitive employee details, stronger visibility into follow-through and bottlenecks, and cleaner people and payroll reporting when reviews need to happen fast. It is practical product work, but it is exactly the kind that helps YAHSHUA One feel more trustworthy and more ready for growing businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "badge": "Progress Update",
     "title": "Compass Makes Company Knowledge Usable",
     "description": "We built a major new Compass workspace for policies, processes, team context, and company answers while also tightening employee-data visibility and expanding practical payroll controls.",
     "body": [
