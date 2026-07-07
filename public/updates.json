@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-07",
+    "badge": "Progress Update",
+    "title": "Compass Makes Company Knowledge Usable",
+    "description": "We built a major new Compass workspace for policies, processes, team context, and company answers while also tightening employee-data visibility and expanding practical payroll controls.",
+    "body": [
+      "As a business grows, one of the first things that starts slowing people down is not effort, but scattered knowledge. Policies end up in one place, process notes live somewhere else, and people waste time asking around for answers they should be able to find on their own. For a Filipino business owner, that kind of confusion quietly creates delay, weakens accountability, and makes even simple backoffice work feel heavier than it should. A serious payroll and HR platform cannot just process records after the fact. It also has to help the team understand how the company works while protecting sensitive employee information at the same time.",
+      "Yesterday's work pushed that vision forward in a big way. In plain language, YAHSHUA One now has a much stronger Compass experience, with a dedicated space for company policies, handbook content, documented processes, team pages, people directory views, profile details, and a recent-changes feed so important knowledge does not stay buried in side chats or memory. We also added an Ask Compass capability, which moves the product closer to giving teams direct answers from their own internal company information instead of forcing them to hunt manually. At the same time, we tightened employee visibility across payroll, leave, schedules, attendance, employee history, and payslip-related workflows so people are much closer to seeing only the records they are actually supposed to handle. We also shipped a practical salary and rate status export, which gives teams one more clean way to review compensation information when they need it.",
+      "What this means for you is a backoffice that keeps becoming more useful for everyday execution, not just final payroll output. Your team gets closer to a setup where company knowledge is easier to find, sensitive records are better protected by default, and important people information is easier to review without creating unnecessary exposure. That reduces avoidable back-and-forth, lowers the risk of the wrong person seeing the wrong data, and helps managers move faster with more confidence. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because real businesses need both operational clarity and disciplined access control in the same system. We are building toward a platform Filipino businesses can rely on not just to run payroll, but to run the company with more structure, trust, and less chaos."
+    ]
+  },
+  {
     "date": "2026-07-06",
     "badge": "Fix",
     "title": "Partner Onboarding and Billing Feel More Trustworthy",
