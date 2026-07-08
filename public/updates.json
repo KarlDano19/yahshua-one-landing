@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-07-08",
+    "badge": "Progress Update",
+    "title": "Salary Rate Reviews Export Cleanly",
+    "description": "We added a cleaner Excel export for salary and rate status reviews, making compensation checks easier to share, audit, and act on.",
+    "body": [
+      "For many Filipino business owners, payroll work does not get stressful only when it is time to release pay. It also gets stressful during the review stage, when someone needs to confirm salary and rate details across a growing team and the information is still awkward to pull out of the system. If compensation reviews are hard to export, leaders end up copying data by hand, passing around screenshots, or rebuilding the same report in spreadsheets just to answer simple questions. That wastes time and quietly increases the risk of mistakes before payroll decisions are even finalized. This update matters because clear compensation visibility is one of the foundations of a trustworthy payroll and HR backoffice.",
+      "Yesterday's work shipped a practical but important improvement inside YAHSHUA One. In plain language, teams can now export the salary and rate status list directly into Excel in a cleaner, more usable format. That means payroll, HR, and operations teams have a simpler way to review compensation-related records outside the screen when they need to sort, share, reconcile, or prepare discussions internally. Instead of getting stuck inside the app or relying on clumsy manual copying, the information can move into a familiar file format people already use for review and coordination. It is a straightforward feature, but it removes friction from a very real part of running payroll operations.",
+      "What this means for you is faster and more confident compensation review. Your team can now pull salary and rate status information into Excel more easily, share it with the right decision-makers, and work through audits or internal checks without as much manual patchwork. That makes it easier to prepare for payroll changes, validate employee pay setups, and keep important compensation conversations grounded in cleaner data. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because serious businesses need not only the right records inside the system but also practical ways to review and act on them. We are continuing to build toward a platform Filipino businesses can rely on when payroll work needs to be accurate, explainable, and easy to move forward."
+    ]
+  },
+  {
     "date": "2026-07-07",
     "badge": "Progress Update",
     "title": "Company Knowledge Gets Safer and Easier to Act On",
