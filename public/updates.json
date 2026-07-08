@@ -2,6 +2,17 @@
   {
     "date": "2026-07-08",
     "badge": "Progress Update",
+    "title": "Payroll Guardrails and Team Privacy Get Stronger",
+    "description": "We added stronger payroll protection rules, tighter employee visibility controls, and cleaner review details so sensitive work is safer and easier to manage.",
+    "body": [
+      "Yesterday's work focused on a very real backoffice problem: payroll and employee data are only trustworthy if the right people can see the right records and sensitive deductions do not behave unpredictably when payroll gets messy. As teams grow, those two things start mattering a lot more. A serious payroll platform has to protect both the money side and the people side at the same time, otherwise operators end up relying on side checks, manual corrections, and unnecessary access just to keep work moving.",
+      "In plain language, YAHSHUA One now gives teams stronger protection around sensitive payroll deductions and adjustments, including better handling for edge cases where deductions, carry-forwards, or payroll corrections need more disciplined rules. We also added more configurable employee visibility controls, which means companies can be more specific about who gets to view which employee records instead of exposing more information than necessary. On top of that, we cleaned up a few review details so statuses read more clearly, employee lists sort more naturally, and payment follow-through behaves more safely under heavy load.",
+      "What this means for you is a backoffice that keeps becoming safer without becoming harder to use. Your team gets closer to a setup where payroll can handle sensitive situations with clearer guardrails, employee information is easier to protect by role, and everyday review work feels cleaner and easier to trust. That reduces avoidable confusion, lowers privacy risk, and helps YAHSHUA One feel more ready for real businesses in the Philippines where payroll accuracy and disciplined access both matter every single day."
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "badge": "Progress Update",
     "title": "Salary Rate Reviews Export Cleanly",
     "description": "We added a cleaner Excel export for salary and rate status reviews, making compensation checks easier to share, audit, and act on.",
     "body": [
