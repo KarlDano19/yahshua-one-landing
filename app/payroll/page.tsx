@@ -691,7 +691,7 @@ export default function PayrollPage() {
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, maxWidth: 900, margin: "0 auto" }}>
+          <div className="grid-badges" style={{ maxWidth: 900, margin: "0 auto" }}>
             {[
               { src: "/BIR%20Registration%20Seal%20Badge_1.png", label: "BIR Registration Seal Badge 1" },
               { src: "/BIR%20Registration%20Seal%20Badge_%202.png", label: "BIR Registration Seal Badge 2" },
