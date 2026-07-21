@@ -203,7 +203,7 @@ export default function PricingPage() {
       </div>
 
       {/* ── HERO ── */}
-      <section style={{ padding: "96px 0 80px", textAlign: "center", borderBottom: "1px solid var(--line)" }}>
+      <section className="section-pad-lg" style={{ textAlign: "center", borderBottom: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{
@@ -236,7 +236,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── QUOTE PROCESS ── */}
-      <section style={{ padding: "80px 0", borderBottom: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderBottom: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-2col-hero">
             <Reveal>
@@ -282,7 +282,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: "80px 0", background: "var(--surface)", borderBottom: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ background: "var(--surface)", borderBottom: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <h2 style={{ fontSize: "clamp(26px, 3vw, 38px)", letterSpacing: "-0.03em", fontWeight: 500, margin: "0 0 40px", textAlign: "center" }}>
@@ -313,7 +313,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section style={{ padding: "80px 0" }}>
+      <section className="section-pad">
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal direction="scale">
             <div className="cta-card" style={{

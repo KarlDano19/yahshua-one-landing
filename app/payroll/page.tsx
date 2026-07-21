@@ -612,7 +612,7 @@ export default function PayrollPage() {
       </div>
 
       {/* ── COMPLIANCE ── */}
-      <section id="compliance" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section id="compliance" className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div className="grid-ai" style={{ background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)", position: "relative", overflow: "hidden" }}>
@@ -675,7 +675,7 @@ export default function PayrollPage() {
       </section>
 
       {/* ── BIR REGISTRATION ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 52 }}>
@@ -840,7 +840,7 @@ export default function PayrollPage() {
 
       {/* ── CTA ── */}
       <section id="waitlist" style={{ borderTop: "1px solid var(--line)" }}>
-        <div style={{ background: "var(--ink)", padding: "100px 28px", position: "relative", overflow: "hidden" }}>
+        <div style={{ background: "var(--ink)", paddingTop: "clamp(56px, 8vw, 100px)", paddingBottom: "clamp(56px, 8vw, 100px)", paddingLeft: 28, paddingRight: 28, position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(60% 80% at 50% 110%, oklch(0.78 0.13 215 / 0.22), transparent 60%)" }} />
           <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
             <Reveal direction="scale">

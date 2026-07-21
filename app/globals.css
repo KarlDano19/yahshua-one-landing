@@ -346,6 +346,10 @@ button { font: inherit; cursor: pointer; }
   gap: 16px;
 }
 
+/* ── Section padding (responsive) ── */
+.section-pad    { padding: 80px 0; }
+.section-pad-lg { padding: 96px 0; }
+
 /* ── CTA card (responsive padding) ── */
 .cta-card { padding: 72px; }
 
@@ -400,6 +404,8 @@ button { font: inherit; cursor: pointer; }
   .grid-spotlight { grid-template-columns: 1fr; gap: 28px; }
   .grid-badges { grid-template-columns: repeat(2, 1fr); }
   .cta-card { padding: 36px 24px; }
+  .section-pad    { padding: 48px 0; }
+  .section-pad-lg { padding: 56px 0; }
 }
 
 /* ── Small mobile (< 480px) ── */
