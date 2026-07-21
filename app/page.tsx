@@ -1193,7 +1193,7 @@ export default function Home() {
             ))}
           </div>
           <div className="footer-bottom">
-            <span>© 2026 YAHSHUA One, Inc.</span>
+            <span>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
           </div>
         </div>
       </footer>

@@ -117,7 +117,7 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
             <Image src="/logo.jpg" alt="YAHSHUA One" width={22} height={22} style={{ borderRadius: 6, objectFit: "cover", flexShrink: 0 }} />
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
-          <span style={{ fontSize: 13, color: "var(--soft)" }}>Built in the Philippines 🇵🇭 · © 2026 ABBA Initiative</span>
+          <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
         </div>
       </footer>
     </div>

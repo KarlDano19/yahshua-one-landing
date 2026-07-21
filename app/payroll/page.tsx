@@ -887,7 +887,7 @@ export default function PayrollPage() {
               </a>
             ))}
           </nav>
-          <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 YAHSHUA One · Built in the Philippines 🇵🇭</span>
+          <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
         </div>
       </footer>
 
