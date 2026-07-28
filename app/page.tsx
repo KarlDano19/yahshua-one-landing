@@ -187,8 +187,7 @@ export default function Home() {
 
             <nav className="nav-links" aria-label="Primary">
               {[
-                { label: "Platform",     href: "#platform" },
-                { label: "Modules",      href: "#modules" },
+                { label: "Blog",         href: "/blog" },
                 { label: "Intelligence", href: "#intelligence" },
                 { label: "Pricing",      href: "/pricing" },
                 { label: "What's New",   href: "/updates" },
@@ -259,8 +258,7 @@ export default function Home() {
           </div>
           <div className={`mobile-menu${mobileNavOpen ? " open" : ""}`}>
             {[
-              { label: "Platform",     href: "#platform" },
-              { label: "Modules",      href: "#modules" },
+              { label: "Blog",         href: "/blog" },
               { label: "Intelligence", href: "#intelligence" },
               { label: "Pricing",      href: "/pricing" },
               { label: "What's New",   href: "/updates" },
