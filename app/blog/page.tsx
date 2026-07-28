@@ -55,7 +55,7 @@ export default function BlogPage() {
       <header style={{ maxWidth: 860, margin: "0 auto", padding: "72px 28px 48px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "5px 12px 5px 8px", border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999, fontSize: 12, color: "var(--ink-2)", marginBottom: 20 }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 0 4px var(--accent-glow)" }} />
-          Payroll & HR knowledge base
+          Articles & Guides
         </div>
         <h1 style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.25rem)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px", color: "var(--ink)" }}>
           Guides for Filipino businesses
