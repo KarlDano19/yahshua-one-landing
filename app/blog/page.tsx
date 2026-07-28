@@ -83,26 +83,7 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 style={{ display: "block", textDecoration: "none" }}
               >
-                <article style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--line)",
-                  borderRadius: 16,
-                  padding: "28px",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 12,
-                  transition: "border-color 0.15s ease, box-shadow 0.15s ease",
-                }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "oklch(0.88 0.06 215)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--line)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                  }}
-                >
+                <article className="blog-card">
                   <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                     <CategoryBadge label={post.category} />
                     {post.readTime && (
