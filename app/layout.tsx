@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       "Stop doing payroll manually. YAHSHUA One automates your payroll, BIR filings, SSS/PhilHealth/Pag-IBIG, HR onboarding, and accounting — built specifically for Filipino businesses.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "YAHSHUA One — AI-Powered Backoffice for Filipino Businesses",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "YAHSHUA One — Automated Payroll & BIR Compliance for Filipino SMBs",
     description:
       "Automated payroll, BIR compliance, HR onboarding & offboarding, and accounting — all in one AI-powered platform built for Filipino businesses.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -101,12 +101,8 @@ export default function RootLayout({
   return (
     <html lang="en-PH" className={`${geist.variable} ${geistMono.variable}`}>
       <head>
-        <link rel="canonical" href={BASE_URL} />
         <meta name="geo.region" content="PH" />
         <meta name="geo.placename" content="Philippines" />
-        <meta name="language" content="English" />
-        <meta name="target" content="all" />
-        <meta name="audience" content="business owners, HR managers, accountants, employees" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -178,14 +174,6 @@ export default function RootLayout({
                     "AI-powered payroll, BIR compliance, HR, and accounting system for Filipino businesses",
                   publisher: { "@id": `${BASE_URL}/#org` },
                   inLanguage: "en-PH",
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate: `${BASE_URL}/?q={search_term_string}`,
-                    },
-                    "query-input": "required name=search_term_string",
-                  },
                 },
                 {
                   "@type": "FAQPage",
