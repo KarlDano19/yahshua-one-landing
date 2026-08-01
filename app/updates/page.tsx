@@ -11,6 +11,17 @@ interface Update {
   body?: string[];
 }
 
+function slugifyTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function updateSlug(update: Update) {
+  return `${update.date}-${slugifyTitle(update.title)}`;
+}
+
 function useInView<T extends Element = HTMLDivElement>(threshold = 0.1) {
   const ref = useRef<T>(null);
   const [visible, setVisible] = useState(false);
@@ -187,7 +198,7 @@ export default function UpdatesPage() {
                       </p>
 
                       {update.body && (
-                        <a href={`/updates/${update.date}`} style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)", marginTop: 14 }}>
+                        <a href={`/updates/${updateSlug(update)}`} style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)", marginTop: 14 }}>
                           Read full update →
                         </a>
                       )}

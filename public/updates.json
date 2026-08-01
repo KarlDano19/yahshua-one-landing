@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-01",
+    "badge": "Release",
+    "title": "Payroll Gets a Major Upgrade",
+    "description": "We just shipped a major round of improvements across payroll, attendance, employee self-service, approvals, and reporting. YAHSHUA One now feels safer, clearer, and more reliable — with stronger controls, smoother workflows, and fewer frustrating dead ends for teams doing real back-office work every day.",
+    "body": [
+      "This release brings together a broad round of product improvements that make YAHSHUA One feel more dependable across the workflows businesses rely on most. Instead of one isolated feature, this is a meaningful step forward across payroll, attendance, employee self-service, approvals, and reporting — the practical areas that shape whether back-office software feels calm and trustworthy in real use.",
+      "In plain language, YAHSHUA One is now better at helping teams process payroll with stronger controls, handle attendance and employee data with more clarity, move approvals forward with less friction, and review important information with cleaner reporting and visibility. We also smoothed out day-to-day product behavior so fewer things feel patchy, confusing, or easy to mis-handle under pressure.",
+      "What this means for you is a platform that feels more ready for real business operations in the Philippines. Teams get safer workflows, clearer guidance, stronger permissions, and a smoother path through the everyday admin work that usually creates the most friction. It is a major upgrade in the experience of using YAHSHUA One — not just a longer feature list."
+    ]
+  },
+  {
     "date": "2026-07-08",
     "badge": "Progress Update",
     "title": "Payroll Guardrails and Team Privacy Get Stronger",

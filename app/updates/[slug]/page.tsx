@@ -12,8 +12,19 @@ interface Update {
 
 const updates: Update[] = updatesData as Update[];
 
+function slugifyTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function updateSlug(update: Update) {
+  return `${update.date}-${slugifyTitle(update.title)}`;
+}
+
 export async function generateStaticParams() {
-  return updates.map((u) => ({ slug: u.date }));
+  return updates.map((u) => ({ slug: updateSlug(u) }));
 }
 
 function formatDate(dateStr: string) {
@@ -37,7 +48,7 @@ function Badge({ label }: { label: string }) {
 
 export default async function UpdateDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const update = updates.find((u) => u.date === slug);
+  const update = updates.find((u) => updateSlug(u) === slug);
   if (!update) notFound();
 
   const paragraphs = update.body ?? [update.description];
