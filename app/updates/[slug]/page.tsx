@@ -48,7 +48,8 @@ function Badge({ label }: { label: string }) {
 
 export default async function UpdateDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const update = updates.find((u) => updateSlug(u) === slug);
+  const update = updates.find((u) => updateSlug(u) === slug)
+    ?? updates.find((u) => u.date === slug);
   if (!update) notFound();
 
   const paragraphs = update.body ?? [update.description];
