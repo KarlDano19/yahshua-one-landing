@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-03",
+    "badge": "Progress Update",
+    "title": "Integrations and Payroll Grow Up",
+    "description": "We strengthened integrations, made contribution review and settlement more practical, pushed biometric attendance deeper into real operations, and moved custom payslips closer to a polished reality.",
+    "body": [
+      "Running a business in the Philippines gets messy fast when payroll, attendance, and system integrations all depend on scattered workarounds. A founder should not have to wonder whether a biometric device will behave, whether contribution gaps can be settled cleanly, or whether one connected tool is silently breaking another. That kind of uncertainty creates extra admin work long before payroll day even arrives. Yesterday's work focused on removing that fragility and making YAHSHUA One feel more like a serious operating system instead of a loose collection of features. The goal is simple: help business owners trust that the product can carry real operational weight without forcing them back into spreadsheets and side processes.",
+      "In plain language, we shipped a big round of progress across several important areas at once. YAHSHUA One now has a much stronger integrations foundation, with cleaner routes, clearer controls, and a more disciplined handoff between the core product and connected developer-facing capabilities. We also improved how teams handle contribution-related problems by making shortfalls, overdue bills, settlements, and payroll month tracking easier to review and act on. On the attendance side, biometric device support kept moving deeper into real-world readiness, including device connection, punch intake, diagnosis, recovery, and employee assignment flows that help messy time data become usable instead of painful. We also pushed custom payslips further forward, which means companies are getting closer to payslip outputs that look and feel like something they would actually want to send to their people.",
+      "What this means for you is a backoffice that keeps becoming more complete, more flexible, and more trustworthy under real pressure. Your team gets closer to a world where integrations are not a risky side project, attendance hardware is not a constant cleanup headache, and contribution follow-through is easier to manage before it turns into payroll confusion. It also means YAHSHUA One is getting better at delivering the polished outputs and operational depth serious businesses expect, from cleaner payslips to stronger employee and payroll workflows behind the scenes. Each of these improvements matters on its own, but together they point in the same direction: a platform that can genuinely support the daily reality of running a business in the Philippines. We are still building fast, and this round of progress pushes YAHSHUA One another big step closer to being the complete payroll and HR backoffice we want it to become."
+    ]
+  },
+  {
     "date": "2026-08-01",
     "badge": "Release",
     "title": "Payroll Gets a Major Upgrade",
