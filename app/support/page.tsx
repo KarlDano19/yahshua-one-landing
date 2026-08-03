@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const BASE_URL = "https://www.yahshua.one";
-const SUPPORT_EMAIL = "clientrelations@abba.owkrs";
+const SUPPORT_EMAIL = "clientrelations@abba.works";
 
 export const metadata: Metadata = {
   title: "YAHSHUA One Support",
