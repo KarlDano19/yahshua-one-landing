@@ -191,6 +191,7 @@ export default function Home() {
                 { label: "Modules",      href: "#modules" },
                 { label: "Intelligence", href: "#intelligence" },
                 { label: "Pricing",      href: "/pricing" },
+                { label: "Support",      href: "/support" },
                 { label: "What's New",   href: "/updates" },
               ].map((link) => (
                 <a key={link.label} href={link.href} style={{
@@ -263,6 +264,7 @@ export default function Home() {
               { label: "Modules",      href: "#modules" },
               { label: "Intelligence", href: "#intelligence" },
               { label: "Pricing",      href: "/pricing" },
+              { label: "Support",      href: "/support" },
               { label: "What's New",   href: "/updates" },
               { label: "Payroll",      href: "/payroll" },
             ].map((link) => (
@@ -1173,8 +1175,8 @@ export default function Home() {
             {[
               { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
               { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }, { label: "Press kit", href: "#" }] },
-              { title: "Resources", links: [{ label: "Docs", href: "#" }, { label: "Changelog", href: "/updates" }, { label: "Security", href: "#" }, { label: "Status", href: "#" }] },
-              { title: "Legal",     links: [{ label: "Terms", href: "#" }, { label: "Privacy", href: "#" }, { label: "DPA", href: "#" }, { label: "Cookies", href: "#" }] },
+              { title: "Resources", links: [{ label: "Support", href: "/support" }, { label: "Changelog", href: "/updates" }, { label: "Security", href: "#" }, { label: "Status", href: "#" }] },
+              { title: "Legal",     links: [{ label: "Terms", href: "/terms" }, { label: "Privacy", href: "/privacy" }, { label: "DPA", href: "#" }, { label: "Cookies", href: "#" }] },
             ].map((col) => (
               <div key={col.title}>
                 <h5 style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-2)", margin: "0 0 14px", fontWeight: 500 }}>{col.title}</h5>

@@ -234,11 +234,18 @@ export default function UpdatesPage() {
 
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--line)", padding: "32px 28px" }}>
-        <div style={{ maxWidth: 768, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ maxWidth: 768, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <Image src="/logo.jpg" alt="YAHSHUA One" width={22} height={22} style={{ borderRadius: 6, objectFit: "cover", flexShrink: 0 }} />
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
+          <nav style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+            {[{ label: "Home", href: "/" }, { label: "Support", href: "/support" }, { label: "Pricing", href: "/pricing" }].map((link) => (
+              <a key={link.label} href={link.href} style={{ fontSize: 13, color: "var(--muted)" }}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
           <span style={{ fontSize: 13, color: "var(--soft)" }}>Built in the Philippines 🇵🇭 · © 2026 ABBA Initiative</span>
         </div>
       </footer>

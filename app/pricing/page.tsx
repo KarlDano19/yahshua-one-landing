@@ -154,6 +154,7 @@ export default function PricingPage() {
                 { label: "Modules",      href: "/#modules" },
                 { label: "Intelligence", href: "/#intelligence" },
                 { label: "Pricing",      href: "/pricing" },
+                { label: "Support",      href: "/support" },
                 { label: "What's New",   href: "/updates" },
               ].map((link) => (
                 <a key={link.label} href={link.href} style={{
@@ -188,6 +189,7 @@ export default function PricingPage() {
               { label: "Modules",      href: "/#modules" },
               { label: "Intelligence", href: "/#intelligence" },
               { label: "Pricing",      href: "/pricing" },
+              { label: "Support",      href: "/support" },
               { label: "What's New",   href: "/updates" },
               { label: "Payroll",      href: "/payroll" },
             ].map((link) => (
@@ -351,6 +353,7 @@ export default function PricingPage() {
             {[
               { label: "Home",     href: "/" },
               { label: "Payroll",  href: "/payroll" },
+              { label: "Support",  href: "/support" },
               { label: "Updates",  href: "/updates" },
               { label: "Pricing",  href: "/pricing" },
             ].map((link) => (
