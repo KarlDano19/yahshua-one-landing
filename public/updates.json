@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-04",
+    "badge": "Progress Update",
+    "title": "Bank Disbursements Get Real",
+    "description": "We turned bank disbursement from a fragile side process into a much more secure, guided, and integration-ready part of payroll operations.",
+    "body": [
+      "For many Filipino business owners, payroll does not end when the amounts are correct. The stressful part often comes right after, when salaries still need to move safely into the right bank formats and the team has to trust that nothing will break between payroll approval and actual disbursement. If that step feels manual, inconsistent, or hard to review, the whole payroll experience still feels fragile no matter how good the computations are. That matters even more for companies handling multiple banks, multiple file standards, and growing compliance expectations around who can prepare or access payment artifacts. Yesterday's work focused on making that last-mile payroll handoff feel much more serious, much more secure, and much more ready for real business operations in the Philippines.",
+      "In plain language, we built a stronger bank disbursement foundation inside YAHSHUA One. Teams are getting guided setup for bank disbursement, support for more real bank output formats, safer storage of company bank details, and a cleaner way to prepare exports from finalized payroll runs without relying on awkward side processes. We also added preflight checks, audit coverage, dedicated access controls, immutable run snapshots, and versioned formatter support so exported payroll files are easier to trust and easier to trace later. On top of that, the broader integrations experience kept maturing, with cleaner routing, clearer terminology, and stronger Host-first handling that helps connected capabilities feel more unified instead of patched together. Put simply, YAHSHUA One is becoming far better at turning payroll completion into an operationally safe bank-ready workflow instead of leaving that critical step hanging outside the system.",
+      "What this means for you is a much more complete path from approved payroll to actual payout. Your team gets closer to a workflow where preparing bank disbursements is safer, more structured, and less dependent on memory, manual formatting, or hidden know-how sitting with one operator. That reduces avoidable release-day stress, lowers the risk of export mistakes, and makes it easier to trust that payroll can move from calculation to cash movement with proper discipline behind it. It also pushes YAHSHUA One closer to being the complete payroll and HR backoffice we want it to become, because a serious payroll product cannot stop at computation alone. We are still building fast, and this update brings the platform a lot closer to handling the real operational finish line businesses actually care about."
+    ]
+  },
+  {
     "date": "2026-08-03",
     "badge": "Progress Update",
     "title": "Integrations and Payroll Grow Up",
