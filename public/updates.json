@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-05",
+    "badge": "Progress Update",
+    "title": "More Banks, Less Payroll Friction",
+    "description": "We expanded YAHSHUA One's bank disbursement coverage so more Philippine payroll teams can move from approved payroll to bank-ready payout files with less manual patchwork.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not end once the numbers are correct. The real headache usually shows up in the handoff from approved payroll to actual salary release, especially when each bank expects a different file format and the team has to rely on side processes just to get money out safely. That gap creates risk, delay, and too much dependence on whoever happens to know the formatting tricks by memory. It matters because a payroll system is not truly complete if it stops right before disbursement becomes real. Yesterday's progress focused on closing that gap so YAHSHUA One can support the practical last-mile work businesses actually have to finish.",
+      "In plain language, we expanded YAHSHUA One's ability to prepare payroll disbursement files for more banks and more format requirements. That includes stronger support for BDO, BPI, Metrobank, RCBC, and the remaining legacy bank formats that still matter in real operations. Instead of treating each bank as a messy exception, the product is becoming much better at turning finalized payroll into bank-ready output that fits the way Philippine businesses actually release salaries. This is the kind of work users may not call flashy, but it removes a huge amount of operational awkwardness behind the scenes. Put simply, YAHSHUA One keeps getting better at helping payroll teams move from computation to payout without falling back into spreadsheet theater and manual file gymnastics.",
+      "What this means for you is a cleaner path from payroll approval to actual employee payout. Your team gets closer to a workflow where more of your real banking reality is supported inside the product instead of being handled through fragile side steps and last-minute fixes. That reduces release-day stress, lowers the chance of export mistakes, and makes it easier to trust that payroll can move all the way to completion with proper discipline. It also pushes YAHSHUA One closer to being the complete payroll and HR backoffice we are building, because serious payroll software has to care about the money movement finish line too. We are still building fast, and this update brings the platform a lot closer to handling real Philippine payroll operations end to end."
+    ]
+  },
+  {
     "date": "2026-08-04",
     "badge": "Progress Update",
     "title": "Bank Disbursements Get Real",
