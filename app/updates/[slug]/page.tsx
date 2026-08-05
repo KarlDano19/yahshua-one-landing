@@ -136,7 +136,7 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
               </a>
             ))}
           </nav>
-          <span style={{ fontSize: 13, color: "var(--soft)" }}>Built in the Philippines 🇵🇭 · © 2026 ABBA Initiative</span>
+          <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
         </div>
       </footer>
     </div>

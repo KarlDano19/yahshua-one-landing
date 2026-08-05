@@ -141,7 +141,7 @@ export default function UpdatesPage() {
         )}
 
         {updates !== null && updates.length === 0 && (
-          <div style={{ textAlign: "center", padding: "96px 0" }}>
+          <div className="section-pad-lg" style={{ textAlign: "center" }}>
             <p style={{ fontSize: 18, color: "var(--muted)" }}>No updates yet. We&apos;re building!</p>
           </div>
         )}
@@ -246,7 +246,7 @@ export default function UpdatesPage() {
               </a>
             ))}
           </nav>
-          <span style={{ fontSize: 13, color: "var(--soft)" }}>Built in the Philippines 🇵🇭 · © 2026 ABBA Initiative</span>
+          <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
         </div>
       </footer>
     </div>

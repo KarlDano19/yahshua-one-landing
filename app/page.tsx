@@ -187,8 +187,7 @@ export default function Home() {
 
             <nav className="nav-links" aria-label="Primary">
               {[
-                { label: "Platform",     href: "#platform" },
-                { label: "Modules",      href: "#modules" },
+                { label: "Blog",         href: "/blog" },
                 { label: "Intelligence", href: "#intelligence" },
                 { label: "Pricing",      href: "/pricing" },
                 { label: "Support",      href: "/support" },
@@ -260,8 +259,7 @@ export default function Home() {
           </div>
           <div className={`mobile-menu${mobileNavOpen ? " open" : ""}`}>
             {[
-              { label: "Platform",     href: "#platform" },
-              { label: "Modules",      href: "#modules" },
+              { label: "Blog",         href: "/blog" },
               { label: "Intelligence", href: "#intelligence" },
               { label: "Pricing",      href: "/pricing" },
               { label: "Support",      href: "/support" },
@@ -412,7 +410,7 @@ export default function Home() {
       </header>
 
       {/* ── MODULES HEADER ── */}
-      <div id="modules" style={{ maxWidth: 1200, margin: "0 auto", padding: "110px 28px 64px" }}>
+      <div id="modules" style={{ maxWidth: 1200, margin: "0 auto", paddingTop: "clamp(56px, 9vw, 110px)", paddingBottom: "clamp(36px, 5vw, 64px)", paddingLeft: 28, paddingRight: 28 }}>
         <Reveal>
           <div style={{ textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
@@ -429,7 +427,7 @@ export default function Home() {
       </div>
 
       {/* ── FEATURE: PEOPLE & PAYROLL ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-feature">
             <Reveal>
@@ -488,7 +486,7 @@ export default function Home() {
       </section>
 
       {/* ── FEATURE: TAX & COMPLIANCE ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-feature">
             <Reveal direction="right">
@@ -554,7 +552,7 @@ export default function Home() {
       </section>
 
       {/* ── FEATURE: AI ── */}
-      <section id="intelligence" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section id="intelligence" className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-ai" style={{
             background: "var(--ink)", color: "#F7F6F1", borderRadius: "var(--radius-xl)",
@@ -667,7 +665,7 @@ export default function Home() {
       </section>
 
       {/* ── FEATURE: ERP ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)", background: "var(--surface)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-feature">
             <Reveal direction="right">
@@ -729,7 +727,7 @@ export default function Home() {
       </section>
 
       {/* ── STATS ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div className="grid-figures">
@@ -821,7 +819,7 @@ export default function Home() {
       </section>
 
       {/* ── YAHSHUA ONE PAYROLL SPOTLIGHT ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-spotlight">
             <Reveal>
@@ -910,7 +908,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
           <Reveal direction="scale">
             <div className="cta-card" style={{
@@ -936,7 +934,7 @@ export default function Home() {
       </section>
 
       {/* ── WAITLIST ── */}
-      <section id="waitlist" style={{ padding: "96px 0", borderTop: "1px solid var(--line)", scrollMarginTop: "80px" }}>
+      <section id="waitlist" className="section-pad-lg" style={{ borderTop: "1px solid var(--line)", scrollMarginTop: "80px" }}>
         <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -1038,7 +1036,7 @@ export default function Home() {
       </section>
 
       {/* ── BUILD LOG ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
@@ -1102,7 +1100,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
+      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
@@ -1174,9 +1172,9 @@ export default function Home() {
             </div>
             {[
               { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
-              { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }, { label: "Press kit", href: "#" }] },
-              { title: "Resources", links: [{ label: "Support", href: "/support" }, { label: "Changelog", href: "/updates" }, { label: "Security", href: "#" }, { label: "Status", href: "#" }] },
-              { title: "Legal",     links: [{ label: "Terms", href: "/terms" }, { label: "Privacy", href: "/privacy" }, { label: "DPA", href: "#" }, { label: "Cookies", href: "#" }] },
+              { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }] },
+              { title: "Resources", links: [{ label: "Support", href: "/support" }, { label: "Blog", href: "/blog" }, { label: "Changelog", href: "/updates" }] },
+              { title: "Legal",     links: [{ label: "Terms", href: "/terms" }, { label: "Privacy", href: "/privacy" }, { label: "DPA", href: "#" }] },
             ].map((col) => (
               <div key={col.title}>
                 <h5 style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-2)", margin: "0 0 14px", fontWeight: 500 }}>{col.title}</h5>
@@ -1195,7 +1193,7 @@ export default function Home() {
             ))}
           </div>
           <div className="footer-bottom">
-            <span>© 2026 YAHSHUA One, Inc.</span>
+            <span>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
           </div>
         </div>
       </footer>
