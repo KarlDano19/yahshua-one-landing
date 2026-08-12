@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-12",
+    "badge": "Progress Update",
+    "title": "Approvals Get Faster and Safer",
+    "description": "We strengthened payroll approvals so decisions stay consistent, traceable, and responsive even when teams are reviewing many requests at once.",
+    "body": [
+      "For Filipino business owners, approvals are where good payroll processes either become dependable or start to wobble. A request may need several people to review it, and every person needs to know what has already happened before they act. When that history is slow to load or two decisions collide, teams lose time and confidence at exactly the moment they need control. Those problems become more important as a company grows and more managers share responsibility for payroll and HR decisions. This update focuses on making approval work calmer, safer, and better suited to the pace of a real Philippine business.",
+      "In plain language, we improved how YAHSHUA One keeps approval decisions organized behind the scenes. The system now gathers the right decision-maker details more efficiently when showing a page of requests, instead of repeatedly searching for the same information one row at a time. We also moved important approval follow-through out of the moment when someone is simply viewing a list, so screens can load more smoothly while the system continues keeping records aligned. Most importantly, the platform now protects an approval record while a decision is being applied, which helps prevent conflicting actions from overwriting one another. The result is a more disciplined approval experience that feels faster to use and easier to trust.",
+      "What this means for you is that payroll and HR approvals can keep moving with less waiting and less uncertainty. Your team gets clearer ownership, more reliable status information, and stronger protection against two people making competing changes at the same time. That reduces the chance of confusing records, repeated work, or last-minute questions about which decision actually took effect. It also gives YAHSHUA One a stronger foundation for the complete payroll and HR backoffice we are building, where every important action should be both efficient and auditable. We are continuing to strengthen the workflows around the work, so the platform can support growing teams with confidence as more capabilities come online."
+    ]
+  },
+  {
     "date": "2026-08-05",
     "badge": "Progress Update",
     "title": "More Banks, Less Payroll Friction",
