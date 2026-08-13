@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-13",
+    "badge": "Progress Update",
+    "title": "A Safer Foundation for Growth",
+    "description": "We strengthened approvals, integrations, permissions, and platform reliability so YAHSHUA One can handle sensitive payroll and HR work with greater control and confidence.",
+    "body": [
+      "For Filipino business owners, a backoffice platform has to do more than show the right numbers on a screen. It needs to protect sensitive employee information, make every important action understandable, and stay dependable as more people and workflows are added. Those expectations matter because payroll and HR decisions affect real families, real deadlines, and the trust employees place in their employers. A small gap in permissions or an unclear approval history can create a surprisingly large operational problem. This round of progress focused on strengthening the foundations that let growing businesses run important work with confidence.",
+      "In plain language, we improved how YAHSHUA One handles approvals, connected tools, access rights, and the underlying environment that keeps the product running. Approval records are now better protected when decisions happen at the same time, while review information can be prepared more efficiently for teams managing many requests. We also tightened how integrations communicate with the platform, including clearer boundaries around what connected services can do and stronger safeguards for credentials and data. The product is gaining more reliable checks around its database and deployment setup, and we continued shaping how printed payroll outputs can fit different business needs. Much of this work is quiet by design, but it makes the system sturdier, clearer, and safer to build on.",
+      "What this means for you is a payroll and HR backoffice that is becoming more trustworthy as your business grows. Your team can look forward to clearer accountability around approvals, fewer hidden assumptions between connected systems, and stronger protection for the information your company should control. These improvements also make it easier for YAHSHUA One to support larger teams without sacrificing the discipline that payroll work demands. They bring us closer to a complete platform where calculations, people operations, approvals, and integrations work together as one dependable system. We are laying the groundwork now so the next wave of user-facing capabilities can arrive on a foundation built to last."
+    ]
+  },
+  {
     "date": "2026-08-12",
     "badge": "Progress Update",
     "title": "Approvals Get Faster and Safer",
