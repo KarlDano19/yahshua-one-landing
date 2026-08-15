@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-15",
+    "badge": "Progress Update",
+    "title": "A More Disciplined Backoffice",
+    "description": "We strengthened customization boundaries, approval roles, workspace separation, account hierarchies, and ledger accountability so growing Filipino businesses can operate with greater control.",
+    "body": [
+      "As a Filipino business grows, the backoffice has to handle more than payroll calculations and employee records. Different clients need different choices, different people need different responsibilities, and financial activity needs to remain traceable from start to finish. Without clear boundaries, a small shortcut can create confusion about whose data is being handled or who was allowed to make an important change. That risk is especially serious when payroll, HR, and accounting work are connected in one operating environment. This round of progress focused on making YAHSHUA One more disciplined underneath, so business owners can build on it with confidence.",
+      "In plain language, we made it clearer where business customizations belong and how they should be handled. We strengthened approval workflows so each step knows its proper role instead of relying on guesswork or labels that can be misunderstood later. We also tightened the separation between workspaces, improved how accounts can be organized inside a financial hierarchy, and required every ledger action to have a known person behind it. These improvements help the platform keep company information in the right place and make important financial activity easier to understand. Much of this work happens behind the scenes, but it gives the people using YAHSHUA One a sturdier and more dependable foundation.",
+      "What this means for you is greater confidence that your payroll and HR backoffice will behave consistently as your company, team, and financial operations grow. Your people can work within clearer responsibilities, while sensitive records and accounting actions remain better separated and easier to trace. That reduces the chance of accidental cross-company access, unclear approvals, or financial changes that nobody can explain later. It also moves YAHSHUA One closer to a complete backoffice where payroll, HR, approvals, and accounting work together without blurring important lines. We are continuing to build the safeguards and workflows that make everyday business operations feel simpler, safer, and ready for the next stage of growth."
+    ]
+  },
+  {
     "date": "2026-08-14",
     "badge": "Progress Update",
     "title": "The Backoffice Gets More Connected",
