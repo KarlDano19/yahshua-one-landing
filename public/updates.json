@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-16",
+    "badge": "Progress Update",
+    "title": "Permissions That Fit Your Business",
+    "description": "We made access control more precise by letting permissions work at the individual module level, giving growing Filipino businesses clearer control over who can see and do what.",
+    "body": [
+      "As a Filipino business grows, not everyone needs access to every part of the backoffice. A payroll lead may need to work with salary runs, while an HR teammate may only need employee records and leave requests. When permissions are too broad, businesses either expose sensitive information or slow everyone down with unnecessary restrictions. That balance matters even more when payroll and HR work together, because the right people need to move quickly without giving every user the keys to the whole system. This update focuses on making that balance easier to manage as your team and operations expand.",
+      "We improved YAHSHUA One so access can be defined around individual modules instead of applying the same rule across the entire product. In plain language, your business can now give someone access to the areas they actually need, while keeping unrelated parts of the backoffice out of reach. That makes permission setup clearer for the people responsible for managing users and safer for the company as a whole. It also creates a more flexible foundation for organizing responsibilities across payroll, HR, accounting, and other business workflows. The work is designed to feel straightforward in practice, even though it solves an important problem underneath the surface.",
+      "What this means for you is better control without forcing your team into one-size-fits-all access. You can build responsibilities that match how your business really works, protect sensitive payroll information, and help each person focus on the work that belongs to them. That reduces accidental access, limits confusion, and makes it easier to grow your operations with confidence. It also moves YAHSHUA One closer to a complete payroll and HR backoffice where security and usability support each other instead of competing. We are continuing to refine the controls that help Filipino businesses operate with clarity as more capabilities come together."
+    ]
+  },
+  {
     "date": "2026-08-15",
     "badge": "Progress Update",
     "title": "A More Disciplined Backoffice",
