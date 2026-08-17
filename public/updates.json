@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-17",
+    "badge": "Progress Update",
+    "title": "Accounts With Clearer Control",
+    "description": "We made account setup, financial hierarchies, module access, and ledger accountability more precise for growing Filipino businesses.",
+    "body": [
+      "As a Filipino business grows, managing people, permissions, and financial records becomes more complex than simply adding another user. An owner needs to know where each account belongs, which parts of the backoffice each person can use, and who is responsible when a financial change is made. Without that clarity, teams spend time checking work manually and sensitive information can travel farther than it should. Those problems become more important when payroll, HR, and accounting operations are connected in one platform. This update addresses the need for a backoffice that can grow with a business while keeping responsibility and access easy to understand.",
+      "We improved YAHSHUA One so businesses can create accounts through the product and place them inside the right financial hierarchy. Access can also be shaped around individual modules, so a team member can work in the areas they need without automatically opening the rest of the system. On the accounting side, ledger changes now require a known person behind them, making important activity easier to trace and review. In plain language, the platform is getting better at matching people, permissions, and financial records to the way your business is actually organized. These improvements create clearer guardrails without making everyday setup feel like a maze.",
+      "What this means for you is more confidence when adding users, organizing accounts, and protecting sensitive payroll or financial work. Your team can receive access that fits its responsibilities, while accounting activity remains connected to a clear human actor. That reduces accidental overreach, makes reviews less mysterious, and gives growing businesses a stronger operating rhythm. It also moves YAHSHUA One closer to a complete payroll and HR backoffice where people operations, permissions, and accounting foundations work together cleanly. We are continuing to build the practical controls that help Filipino businesses grow without losing visibility or trust."
+    ]
+  },
+  {
     "date": "2026-08-16",
     "badge": "Progress Update",
     "title": "Permissions That Fit Your Business",
