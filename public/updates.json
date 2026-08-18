@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-18",
+    "badge": "Progress Update",
+    "title": "A Stronger Ledger Foundation",
+    "description": "We made financial setup, period controls, permissions, approvals, and ledger traceability more dependable for growing Filipino businesses.",
+    "body": [
+      "As a Filipino business grows, payroll and HR operations eventually depend on financial records that are organized, current, and easy to trust. Business owners need to know which accounts belong in the right place, which periods are open for work, and who is responsible for each important change. Without those guardrails, a small setup mistake can become a reconciliation problem or a difficult month-end investigation. The same is true for approvals, because sensitive requests need to reach the right people and remain clear even when teams are busy. This update focuses on the foundations that help a growing business operate with confidence instead of relying on memory and manual checking.",
+      "We shipped a broad set of improvements that make the backoffice more disciplined and easier to manage. Businesses can create and organize accounts through the product, use chart templates when starting a new client, and set the attributes that determine whether a financial line is accepted. Period controls are clearer too, including opening periods, resolving dates to the correct period, and soft-closing a period so only approved adjustments can continue. We also strengthened module-level access, protected administrative overrides with their own permission and a required reason, and made approval routing and large approver lists work more reliably. Behind the scenes, ledger actions now require a known actor, workspace data is better isolated, and each period's figures can be tied to the engine version that produced them.",
+      "What this means for you is more confidence when setting up accounts, managing periods, assigning responsibilities, and reviewing financial activity. Your team can work with clearer boundaries, while important actions remain easier to trace back to the person and process behind them. That reduces avoidable mistakes, makes approvals less mysterious, and gives business owners a stronger basis for trusting the records that support payroll and HR decisions. It also moves YAHSHUA One closer to a complete payroll and HR backoffice where people operations, accounting, permissions, and auditability fit together as one dependable system. We are continuing to build the practical workflows that help Filipino businesses grow with less friction and more control."
+    ]
+  },
+  {
     "date": "2026-08-17",
     "badge": "Progress Update",
     "title": "Accounts With Clearer Control",
