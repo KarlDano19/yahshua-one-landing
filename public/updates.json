@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-19",
+    "badge": "Progress Update",
+    "title": "A Backoffice You Can Trust",
+    "description": "We connected navigation, accounting setup, fiscal controls, audit trails, and approvals into a clearer foundation for Filipino businesses.",
+    "body": [
+      "Running a Filipino business means making dozens of important decisions across people, money, and time. Owners need to know which financial records are active, which periods are ready for work, and who is allowed to make a consequential change. When those answers are scattered across screens or hidden in manual processes, payroll and HR teams lose time and confidence. That uncertainty is especially painful during month-end, approvals, and the everyday setup work that keeps a company moving. This update is about making the backoffice feel more connected, understandable, and dependable as your business grows.",
+      "We shipped a wide set of improvements that bring those expectations into the product. You can move between the parts of the backoffice more naturally, manage branches and company details from dedicated screens, and set the accounting basis your business uses. Fiscal calendars now show period status clearly, support controlled closing, and keep each module's status where it belongs. Account and chart management is more complete, while important entries can explain problems at the field where they happen instead of waiting until Save. We also strengthened approval routing, pending-work visibility, large-team handling, workspace separation, and the permanent record of who did what.",
+      "For you, this means less guesswork when setting up a company, organizing its books, controlling periods, and moving work through approval. Your team can find the right place to act, receive clearer guidance when something needs attention, and trust that important changes remain visible afterward. That creates a stronger operating rhythm for payroll, HR, accounting, and the people supporting all three. It moves YAHSHUA One closer to being a complete payroll and HR backoffice rather than a collection of separate tools. We are continuing to turn these foundations into practical workflows that help Filipino businesses operate with confidence every day."
+    ]
+  },
+  {
     "date": "2026-08-18",
     "badge": "Progress Update",
     "title": "A Stronger Ledger Foundation",
