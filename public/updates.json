@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-20",
+    "badge": "Progress Update",
+    "title": "A Clearer Path Through Work",
+    "description": "We connected company setup, fiscal periods, permissions, approvals, and audit history into a more dependable foundation for Filipino businesses.",
+    "body": [
+      "Running a Filipino business means making important decisions across people, money, and time every day. Owners need to know which company records are active, which financial periods are ready, and who is allowed to make a consequential change. When those answers are scattered or unclear, teams spend valuable hours checking details instead of moving the business forward. That uncertainty becomes especially painful during month-end, approvals, and the setup work that keeps payroll and HR running smoothly. This update addresses the need for a backoffice that gives growing businesses a clearer path from setup to confident action.",
+      "We shipped improvements that make the backoffice easier to move through and easier to trust. Businesses can now move between Numbers screens without manually typing their way around, land with the right books already selected, and see company registration and accounting choices in the interface. Fiscal years and periods can be created, previewed, reviewed, and moved toward closing with clearer status information. We also strengthened permissions, approval decisions, draft journals, posting checks, and the permanent trail that records important activity. In plain language, the product now gives your team better guidance about where work belongs, who can do it, and what happened afterward.",
+      "For you, this means less guesswork when setting up a company, organizing its books, controlling periods, and moving financial work through approval. Your team can work with clearer responsibilities while sensitive actions remain easier to review and explain. That creates a stronger operating rhythm for payroll, HR, accounting, and the people supporting all three. It moves YAHSHUA One closer to being a complete payroll and HR backoffice where everyday workflows and financial control fit together naturally. We are continuing to turn these foundations into practical tools that help Filipino businesses operate with confidence as they grow."
+    ]
+  },
+  {
     "date": "2026-08-19",
     "badge": "Progress Update",
     "title": "A Backoffice You Can Trust",
