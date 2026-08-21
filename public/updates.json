@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-21",
+    "badge": "Progress Update",
+    "title": "Fiscal Period Controls Are Live",
+    "description": "Teams can now review fiscal-period status, predict whether a period can close, and move a period through a controlled soft-close workflow.",
+    "body": [
+      "What changed: The fiscal calendar now shows the status of every period, while the close workflow can answer whether a period is ready to close. Teams can also request a period close and soft-close a period when the workflow allows it.",
+      "Where to find it: These improvements appear in the accounting fiscal calendar and period-close workflow. The available evidence confirms those screens and workflows, but not a more specific menu path.",
+      "Why it helps: Payroll and accounting teams get a clearer view of which periods are ready for work and which need attention before closing. That makes month-end decisions easier to review and reduces avoidable uncertainty around period status.",
+      "Who benefits / next step: Payroll Admins, accounting teams, and Approvers benefit most from the clearer status and close decision. Open the fiscal calendar, review the current period status, and use the close workflow when the period is ready."
+    ]
+  },
+  {
     "date": "2026-08-20",
     "badge": "Progress Update",
     "title": "A Clearer Path Through Work",
