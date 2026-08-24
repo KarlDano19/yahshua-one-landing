@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-24",
+    "badge": "Progress Update",
+    "title": "Inventory and Audit Trails Get Safer",
+    "description": "We added the foundation for inventory items and strengthened audit trails so records remain easier to review and gaps or conflicting writes are easier to detect.",
+    "body": [
+      "What changed: The inventory app now has a foundation built around an item table. We also strengthened audit trails so a missing link can be detected and two users cannot split the same chain at once.",
+      "Where to find it: These improvements appear in the inventory area and the audit-trail record system. The available evidence confirms those areas, but it does not confirm a more specific in-app navigation path.",
+      "Why it helps: Inventory records have a clearer structure, while audit history becomes more dependable when teams need to check what happened. That makes record review safer and helps surface incomplete or conflicting activity sooner.",
+      "Who benefits / next step: Teams working with inventory and audit records benefit most from this foundation. Review the relevant inventory and audit-trail views in the app as these capabilities become available."
+    ]
+  },
+  {
     "date": "2026-08-21",
     "badge": "Progress Update",
     "title": "Fiscal Period Controls Are Live",
