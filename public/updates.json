@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-25",
+    "badge": "Progress Update",
+    "title": "Safer Setup, Records, and Audit Trails",
+    "description": "We made first-run setup more dependable, strengthened employee name confidentiality, and added foundations for inventory and tamper-evident audit records.",
+    "body": [
+      "What changed: First-run setup now enforces leave waiting periods and converts hourly leave credits into the day-based balances used by the ledger. Core setup can also recover an interrupted approval through an authorized action, employee last-name masking now preserves confidentiality correctly, and the product gained foundations for inventory items plus audit trails that detect gaps and prevent conflicting chain writes.",
+      "Where to find it: The setup improvements appear in the first-run Policy Setup and Core Setup flows, while the confidentiality fix affects employee name displays. The inventory and audit-trail work appears in their respective product areas, but the available evidence does not confirm a more specific in-app navigation path.",
+      "Why it helps: Businesses are less likely to allow leave filing before an employee is eligible or count hours as days by mistake. Recovery avoids a stalled setup without creating a duplicate write, and stronger masking, inventory structure, and audit-chain controls make sensitive records safer and operational history easier to review.",
+      "Who benefits / next step: Payroll Admins and setup owners benefit most from the leave and recovery improvements, while teams managing employee, inventory, or audit records gain stronger safeguards. Review the first-run setup answers and the relevant employee, inventory, and audit-trail areas in the app as these capabilities become available."
+    ]
+  },
+  {
     "date": "2026-08-24",
     "badge": "Progress Update",
     "title": "Inventory and Audit Trails Get Safer",
