@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-26",
+    "badge": "Progress Update",
+    "title": "Stock Control Is Now Taking Shape",
+    "description": "We added the core Stock area for tracking items, locations, movements, receiving, and inventory value with landed costs.",
+    "body": [
+      "What changed: YAHSHUA One now has a Stock area with an item master, stocking attributes, locations, stock movements, and inventory counts. Teams can also record receiving reports against purchase orders, read what stock is worth, and allocate landed costs on a screen.",
+      "Where to find it: Start from the main navigation and open Stock. The confirmed work covers dedicated screens for locations, stock movements, receiving reports, inventory value, and landed-cost allocation, but it does not confirm a more specific menu path.",
+      "Why it helps: Teams get a clearer record of what they hold, where it is, how it moved, and what it costs. That makes receiving and inventory review easier to follow and gives purchasing and operations better information for decisions.",
+      "Who benefits / next step: Inventory, purchasing, and operations teams benefit most from this foundation. Open Stock, add or review an item and location, and record the next movement or receipt as your workflow requires."
+    ]
+  },
+  {
     "date": "2026-08-25",
     "badge": "Progress Update",
     "title": "Safer Setup, Records, and Audit Trails",
