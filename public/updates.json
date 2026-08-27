@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-27",
+    "badge": "Progress Update",
+    "title": "Accounts Configuration Gets More Useful",
+    "description": "We expanded Accounts configuration with captions, analysis rules, starting-chart setup, clearer account review, and safer chart changes.",
+    "body": [
+      "What changed: The Accounts area now gives teams a clearer way to maintain statement captions, set analysis requirements, and review account classes in a long chart. Companies without an existing chart can start with a chart or create their first account, while balances and imports are connected to the ledger and unsafe hierarchy moves are refused.",
+      "Where to find it: Open Configuration and choose Accounts. The work confirms Captions and Analysis rules within that branch, along with the account list and its setup states, but it does not confirm a more specific navigation path.",
+      "Why it helps: Accounting teams can organize how accounts roll into statements and how analysis requirements are resolved without relying on disconnected setup work. Clearer filtering and linked balances make review faster, while guarded hierarchy changes reduce the risk of damaging the chart structure.",
+      "Who benefits / next step: Accounting teams and company setup owners benefit most from these improvements. Open Configuration → Accounts to review captions, analysis rules, and the chart setup for your company."
+    ]
+  },
+  {
     "date": "2026-08-26",
     "badge": "Progress Update",
     "title": "Stock Control Is Now Taking Shape",
