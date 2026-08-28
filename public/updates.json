@@ -2,6 +2,18 @@
   {
     "date": "2026-08-27",
     "badge": "Progress Update",
+    "title": "Year-End Close Gets More Controlled",
+    "description": "Teams can now work through a named close checklist, review the closing entry, and post the year-end close without zeroing account balances.",
+    "body": [
+      "What changed: The year-end close workflow now shows its checklist, owners, and day counter, then lets you read the entry that will be posted before completing the close. Closing the year now creates a proper accounting entry instead of simply zeroing balances.",
+      "Where to find it: These improvements appear in the year-end close screen and its close cockpit workflow. The available product evidence confirms those screens, but it does not confirm a more specific navigation path.",
+      "Why it helps: Finance teams can see which close tasks still need attention and understand the accounting effect before it is posted. That makes year-end review clearer and preserves a more traceable record of how the closing balances were produced.",
+      "Who benefits / next step: Accounting teams and close owners benefit most from this workflow. Open the year-end close area, review the checklist and proposed entry, and proceed when the close conditions are satisfied."
+    ]
+  },
+  {
+    "date": "2026-08-27",
+    "badge": "Progress Update",
     "title": "Accounts Configuration Gets More Useful",
     "description": "We expanded Accounts configuration with captions, analysis rules, starting-chart setup, clearer account review, and safer chart changes.",
     "body": [
