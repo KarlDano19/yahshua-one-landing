@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-29",
+    "badge": "Progress Update",
+    "title": "Posted Journal Reversals Are Clearer",
+    "description": "Teams can now review the reversal date, destination period, and mirror entry before reversing a posted journal entry.",
+    "body": [
+      "What changed: Reversing a posted journal entry now exposes the date and period where the reversal will land, along with the mirror entry it will create. The reversal control is connected to the resulting transition so the action and its accounting effect stay together.",
+      "Where to find it: This improvement appears in the posted journal-entry reversal workflow. The available product evidence confirms the reversal screen and its preview details, but it does not confirm a more specific navigation path.",
+      "Why it helps: Finance teams can check the timing and counterpart of a reversal before posting it. That makes corrections easier to review and reduces the risk of sending an adjustment into the wrong period or losing track of the linked entry.",
+      "Who benefits / next step: Accounting teams and approvers benefit most from the clearer control. Open a posted journal entry, start its reversal, and review the date, period, and mirror entry before completing the action."
+    ]
+  },
+  {
     "date": "2026-08-27",
     "badge": "Progress Update",
     "title": "Year-End Close Gets More Controlled",
