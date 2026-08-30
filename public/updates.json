@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-30",
+    "badge": "Progress Update",
+    "title": "Supplier Price Matching Takes Shape",
+    "description": "Supplier commitments now have groundwork for recording an agreed supplier price that can be matched against later activity.",
+    "body": [
+      "What changed: We advanced the supplier commitment workflow so a supplier and an agreed price can be recorded together for matching. This gives the product a clearer foundation for connecting supplier commitments to the price they should be checked against.",
+      "Where to find it: The available evidence places this work in the supplier commitment workflow. It does not confirm a specific in-app navigation path or a named screen, so use the supplier commitment area when this workflow is available in your product environment.",
+      "Why it helps: Purchasing and operations teams can work from a clearer reference price when reviewing supplier-related activity. That makes price checks easier to understand and can reduce uncertainty when commitments need to be compared with subsequent records.",
+      "Who benefits / next step: Purchasing teams and supplier-relationship owners benefit most from this progress. Review the supplier commitment workflow and confirm the supplier and agreed price details as the matching capability becomes available."
+    ]
+  },
+  {
     "date": "2026-08-29",
     "badge": "Progress Update",
     "title": "Posted Journal Reversals Are Clearer",
