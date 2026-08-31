@@ -1,4 +1,15 @@
-[
+[{
+    "date": "2026-08-31",
+    "badge": "Progress Update",
+    "title": "Approval Settings Now Control Movement Posting",
+    "description": "Client approval settings now determine when inventory movements can be posted, including companies that operate without approval requirements.",
+    "body": [
+      "What changed: Inventory movement posting now follows each client's approval setting. Companies with approval turned off can post eligible movements directly, while approved movements continue through the required approval state.",
+      "Where to find it: The improvement appears in the client approval settings and the Movements screen. The available evidence confirms those areas but does not confirm a more specific in-app navigation path.",
+      "Why it helps: Teams no longer have to work around a posting flow that assumes every company needs approval. This makes inventory operations faster for single-user or approval-off companies and keeps posting behavior aligned with the policy the client selected.",
+      "Who benefits / next step: Inventory and operations users benefit most, while approvers retain the appropriate review step when approval is enabled. Review the client's approval setting and then use the Movements screen to post the next eligible movement."
+    ]
+  },
   {
     "date": "2026-08-30",
     "badge": "Progress Update",
