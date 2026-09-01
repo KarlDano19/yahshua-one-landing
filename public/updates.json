@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-01",
+    "badge": "Progress Update",
+    "title": "Inventory Posting Rules Are More Reliable",
+    "description": "Inventory movements now respect each company’s approval policy while stronger stock and workspace controls protect posting and record integrity.",
+    "body": [
+      "What changed: Inventory movement posting now follows the approval requirement configured for each client, including companies that have approval turned off. The inventory workflow also gained approval handling for assemblies, a guard against movements that would create negative stock, and safer reversal behavior.",
+      "Where to find it: The confirmed product areas are the client approval settings and the Movements screen, with related behavior in inventory assembly and reversal workflows. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams can post eligible movements without an unnecessary approval step when their company policy allows it, while approval-enabled workflows retain their review control. Negative-stock and reversal safeguards make inventory records safer and reduce the risk of posting activity that conflicts with the company’s stock rules.",
+      "Who benefits / next step: Inventory and operations users benefit most, while approvers continue to review movements when approval is enabled. Review the client’s approval setting, then use the Movements screen to process the next eligible inventory action."
+    ]
+  },
+  {
     "date": "2026-08-31",
     "badge": "Progress Update",
     "title": "Approval Settings Now Control Movement Posting",
