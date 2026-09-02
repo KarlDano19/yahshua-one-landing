@@ -1170,7 +1170,7 @@ export default function Home() {
             </div>
             {[
               { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
-              { title: "Company",   links: [{ label: "About", href: "#" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }] },
+              { title: "Company",   links: [{ label: "About", href: "/about" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }] },
               { title: "Resources", links: [{ label: "Docs", href: "#" }, { label: "Changelog", href: "/updates" }] },
               { title: "Legal",     links: [{ label: "Terms", href: "#" }, { label: "Privacy", href: "#" }, { label: "DPA", href: "#" }] },
             ].map((col) => (

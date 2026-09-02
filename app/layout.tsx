@@ -155,15 +155,23 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "@id": `${BASE_URL}/#org`,
-                  name: "ABBA Initiative",
-                  url: BASE_URL,
+                  name: "The ABBA Initiative (OPC)",
+                  alternateName: ["ABBA Initiative"],
+                  url: `${BASE_URL}/about`,
                   logo: `${BASE_URL}/logo.jpg`,
                   foundingLocation: {
                     "@type": "Country",
                     name: "Philippines",
                   },
                   description:
-                    "Building AI-powered software for Filipino businesses under the YAHSHUA One platform.",
+                    "Philippine parent company building payroll, HR, accounting, and tax compliance software and services for Filipino businesses.",
+                  sameAs: [
+                    "https://www.yahshuapayroll.com",
+                    "https://www.yahshuahris.com",
+                  ],
+                  subOrganization: {
+                    "@id": "https://www.yahshua-abba.com/#organization",
+                  },
                 },
                 {
                   "@type": "WebSite",
