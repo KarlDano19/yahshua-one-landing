@@ -1,4 +1,531 @@
-[
+[{
+    "date": "2026-09-02",
+    "badge": "Progress Update",
+    "title": "Sales Document Voids Are Safer",
+    "description": "Posted sales documents can now move through a dedicated void approval flow that creates a reversal instead of deleting the original record.",
+    "body": [
+      "What changed: Posted sales documents can now be submitted to a dedicated void queue, where a void can be approved or rejected. When approved, the document is reversed rather than deleted, preserving the original record and its accounting history.",
+      "Where to find it: The confirmed product areas are the sales invoicing workflow and its void queue. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance and operations teams can correct posted documents without erasing the evidence of what happened. Approval control and reversal-based processing make voids easier to review and keep the document and ledger history more traceable.",
+      "Who benefits / next step: Finance teams, sales administrators, and approvers benefit most from this controlled correction flow. Open the sales invoicing area, submit a posted document for voiding, and review it through the void queue."
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "badge": "Progress Update",
+    "title": "Inventory Posting Rules Are More Reliable",
+    "description": "Inventory movements now respect each company’s approval policy while stronger stock and workspace controls protect posting and record integrity.",
+    "body": [
+      "What changed: Inventory movement posting now follows the approval requirement configured for each client, including companies that have approval turned off. The inventory workflow also gained approval handling for assemblies, a guard against movements that would create negative stock, and safer reversal behavior.",
+      "Where to find it: The confirmed product areas are the client approval settings and the Movements screen, with related behavior in inventory assembly and reversal workflows. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams can post eligible movements without an unnecessary approval step when their company policy allows it, while approval-enabled workflows retain their review control. Negative-stock and reversal safeguards make inventory records safer and reduce the risk of posting activity that conflicts with the company’s stock rules.",
+      "Who benefits / next step: Inventory and operations users benefit most, while approvers continue to review movements when approval is enabled. Review the client’s approval setting, then use the Movements screen to process the next eligible inventory action."
+    ]
+  },
+  {
+    "date": "2026-08-31",
+    "badge": "Progress Update",
+    "title": "Approval Settings Now Control Movement Posting",
+    "description": "Client approval settings now determine when inventory movements can be posted, including companies that operate without approval requirements.",
+    "body": [
+      "What changed: Inventory movement posting now follows each client's approval setting. Companies with approval turned off can post eligible movements directly, while approved movements continue through the required approval state.",
+      "Where to find it: The improvement appears in the client approval settings and the Movements screen. The available evidence confirms those areas but does not confirm a more specific in-app navigation path.",
+      "Why it helps: Teams no longer have to work around a posting flow that assumes every company needs approval. This makes inventory operations faster for single-user or approval-off companies and keeps posting behavior aligned with the policy the client selected.",
+      "Who benefits / next step: Inventory and operations users benefit most, while approvers retain the appropriate review step when approval is enabled. Review the client's approval setting and then use the Movements screen to post the next eligible movement."
+    ]
+  },
+  {
+    "date": "2026-08-30",
+    "badge": "Progress Update",
+    "title": "Supplier Price Matching Takes Shape",
+    "description": "Supplier commitments now have groundwork for recording an agreed supplier price that can be matched against later activity.",
+    "body": [
+      "What changed: We advanced the supplier commitment workflow so a supplier and an agreed price can be recorded together for matching. This gives the product a clearer foundation for connecting supplier commitments to the price they should be checked against.",
+      "Where to find it: The available evidence places this work in the supplier commitment workflow. It does not confirm a specific in-app navigation path or a named screen, so use the supplier commitment area when this workflow is available in your product environment.",
+      "Why it helps: Purchasing and operations teams can work from a clearer reference price when reviewing supplier-related activity. That makes price checks easier to understand and can reduce uncertainty when commitments need to be compared with subsequent records.",
+      "Who benefits / next step: Purchasing teams and supplier-relationship owners benefit most from this progress. Review the supplier commitment workflow and confirm the supplier and agreed price details as the matching capability becomes available."
+    ]
+  },
+  {
+    "date": "2026-08-29",
+    "badge": "Progress Update",
+    "title": "Posted Journal Reversals Are Clearer",
+    "description": "Teams can now review the reversal date, destination period, and mirror entry before reversing a posted journal entry.",
+    "body": [
+      "What changed: Reversing a posted journal entry now exposes the date and period where the reversal will land, along with the mirror entry it will create. The reversal control is connected to the resulting transition so the action and its accounting effect stay together.",
+      "Where to find it: This improvement appears in the posted journal-entry reversal workflow. The available product evidence confirms the reversal screen and its preview details, but it does not confirm a more specific navigation path.",
+      "Why it helps: Finance teams can check the timing and counterpart of a reversal before posting it. That makes corrections easier to review and reduces the risk of sending an adjustment into the wrong period or losing track of the linked entry.",
+      "Who benefits / next step: Accounting teams and approvers benefit most from the clearer control. Open a posted journal entry, start its reversal, and review the date, period, and mirror entry before completing the action."
+    ]
+  },
+  {
+    "date": "2026-08-27",
+    "badge": "Progress Update",
+    "title": "Year-End Close Gets More Controlled",
+    "description": "Teams can now work through a named close checklist, review the closing entry, and post the year-end close without zeroing account balances.",
+    "body": [
+      "What changed: The year-end close workflow now shows its checklist, owners, and day counter, then lets you read the entry that will be posted before completing the close. Closing the year now creates a proper accounting entry instead of simply zeroing balances.",
+      "Where to find it: These improvements appear in the year-end close screen and its close cockpit workflow. The available product evidence confirms those screens, but it does not confirm a more specific navigation path.",
+      "Why it helps: Finance teams can see which close tasks still need attention and understand the accounting effect before it is posted. That makes year-end review clearer and preserves a more traceable record of how the closing balances were produced.",
+      "Who benefits / next step: Accounting teams and close owners benefit most from this workflow. Open the year-end close area, review the checklist and proposed entry, and proceed when the close conditions are satisfied."
+    ]
+  },
+  {
+    "date": "2026-08-27",
+    "badge": "Progress Update",
+    "title": "Accounts Configuration Gets More Useful",
+    "description": "We expanded Accounts configuration with captions, analysis rules, starting-chart setup, clearer account review, and safer chart changes.",
+    "body": [
+      "What changed: The Accounts area now gives teams a clearer way to maintain statement captions, set analysis requirements, and review account classes in a long chart. Companies without an existing chart can start with a chart or create their first account, while balances and imports are connected to the ledger and unsafe hierarchy moves are refused.",
+      "Where to find it: Open Configuration and choose Accounts. The work confirms Captions and Analysis rules within that branch, along with the account list and its setup states, but it does not confirm a more specific navigation path.",
+      "Why it helps: Accounting teams can organize how accounts roll into statements and how analysis requirements are resolved without relying on disconnected setup work. Clearer filtering and linked balances make review faster, while guarded hierarchy changes reduce the risk of damaging the chart structure.",
+      "Who benefits / next step: Accounting teams and company setup owners benefit most from these improvements. Open Configuration → Accounts to review captions, analysis rules, and the chart setup for your company."
+    ]
+  },
+  {
+    "date": "2026-08-26",
+    "badge": "Progress Update",
+    "title": "Stock Control Is Now Taking Shape",
+    "description": "We added the core Stock area for tracking items, locations, movements, receiving, and inventory value with landed costs.",
+    "body": [
+      "What changed: YAHSHUA One now has a Stock area with an item master, stocking attributes, locations, stock movements, and inventory counts. Teams can also record receiving reports against purchase orders, read what stock is worth, and allocate landed costs on a screen.",
+      "Where to find it: Start from the main navigation and open Stock. The confirmed work covers dedicated screens for locations, stock movements, receiving reports, inventory value, and landed-cost allocation, but it does not confirm a more specific menu path.",
+      "Why it helps: Teams get a clearer record of what they hold, where it is, how it moved, and what it costs. That makes receiving and inventory review easier to follow and gives purchasing and operations better information for decisions.",
+      "Who benefits / next step: Inventory, purchasing, and operations teams benefit most from this foundation. Open Stock, add or review an item and location, and record the next movement or receipt as your workflow requires."
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "badge": "Progress Update",
+    "title": "Safer Setup, Records, and Audit Trails",
+    "description": "We made first-run setup more dependable, strengthened employee name confidentiality, and added foundations for inventory and tamper-evident audit records.",
+    "body": [
+      "What changed: First-run setup now enforces leave waiting periods and converts hourly leave credits into the day-based balances used by the ledger. Core setup can also recover an interrupted approval through an authorized action, employee last-name masking now preserves confidentiality correctly, and the product gained foundations for inventory items plus audit trails that detect gaps and prevent conflicting chain writes.",
+      "Where to find it: The setup improvements appear in the first-run Policy Setup and Core Setup flows, while the confidentiality fix affects employee name displays. The inventory and audit-trail work appears in their respective product areas, but the available evidence does not confirm a more specific in-app navigation path.",
+      "Why it helps: Businesses are less likely to allow leave filing before an employee is eligible or count hours as days by mistake. Recovery avoids a stalled setup without creating a duplicate write, and stronger masking, inventory structure, and audit-chain controls make sensitive records safer and operational history easier to review.",
+      "Who benefits / next step: Payroll Admins and setup owners benefit most from the leave and recovery improvements, while teams managing employee, inventory, or audit records gain stronger safeguards. Review the first-run setup answers and the relevant employee, inventory, and audit-trail areas in the app as these capabilities become available."
+    ]
+  },
+  {
+    "date": "2026-08-24",
+    "badge": "Progress Update",
+    "title": "Inventory and Audit Trails Get Safer",
+    "description": "We added the foundation for inventory items and strengthened audit trails so records remain easier to review and gaps or conflicting writes are easier to detect.",
+    "body": [
+      "What changed: The inventory app now has a foundation built around an item table. We also strengthened audit trails so a missing link can be detected and two users cannot split the same chain at once.",
+      "Where to find it: These improvements appear in the inventory area and the audit-trail record system. The available evidence confirms those areas, but it does not confirm a more specific in-app navigation path.",
+      "Why it helps: Inventory records have a clearer structure, while audit history becomes more dependable when teams need to check what happened. That makes record review safer and helps surface incomplete or conflicting activity sooner.",
+      "Who benefits / next step: Teams working with inventory and audit records benefit most from this foundation. Review the relevant inventory and audit-trail views in the app as these capabilities become available."
+    ]
+  },
+  {
+    "date": "2026-08-21",
+    "badge": "Progress Update",
+    "title": "Fiscal Period Controls Are Live",
+    "description": "Teams can now review fiscal-period status, predict whether a period can close, and move a period through a controlled soft-close workflow.",
+    "body": [
+      "What changed: The fiscal calendar now shows the status of every period, while the close workflow can answer whether a period is ready to close. Teams can also request a period close and soft-close a period when the workflow allows it.",
+      "Where to find it: These improvements appear in the accounting fiscal calendar and period-close workflow. The available evidence confirms those screens and workflows, but not a more specific menu path.",
+      "Why it helps: Payroll and accounting teams get a clearer view of which periods are ready for work and which need attention before closing. That makes month-end decisions easier to review and reduces avoidable uncertainty around period status.",
+      "Who benefits / next step: Payroll Admins, accounting teams, and Approvers benefit most from the clearer status and close decision. Open the fiscal calendar, review the current period status, and use the close workflow when the period is ready."
+    ]
+  },
+  {
+    "date": "2026-08-20",
+    "badge": "Progress Update",
+    "title": "A Clearer Path Through Work",
+    "description": "We connected company setup, fiscal periods, permissions, approvals, and audit history into a more dependable foundation for Filipino businesses.",
+    "body": [
+      "Running a Filipino business means making important decisions across people, money, and time every day. Owners need to know which company records are active, which financial periods are ready, and who is allowed to make a consequential change. When those answers are scattered or unclear, teams spend valuable hours checking details instead of moving the business forward. That uncertainty becomes especially painful during month-end, approvals, and the setup work that keeps payroll and HR running smoothly. This update addresses the need for a backoffice that gives growing businesses a clearer path from setup to confident action.",
+      "We shipped improvements that make the backoffice easier to move through and easier to trust. Businesses can now move between Numbers screens without manually typing their way around, land with the right books already selected, and see company registration and accounting choices in the interface. Fiscal years and periods can be created, previewed, reviewed, and moved toward closing with clearer status information. We also strengthened permissions, approval decisions, draft journals, posting checks, and the permanent trail that records important activity. In plain language, the product now gives your team better guidance about where work belongs, who can do it, and what happened afterward.",
+      "For you, this means less guesswork when setting up a company, organizing its books, controlling periods, and moving financial work through approval. Your team can work with clearer responsibilities while sensitive actions remain easier to review and explain. That creates a stronger operating rhythm for payroll, HR, accounting, and the people supporting all three. It moves YAHSHUA One closer to being a complete payroll and HR backoffice where everyday workflows and financial control fit together naturally. We are continuing to turn these foundations into practical tools that help Filipino businesses operate with confidence as they grow."
+    ]
+  },
+  {
+    "date": "2026-08-19",
+    "badge": "Progress Update",
+    "title": "A Backoffice You Can Trust",
+    "description": "We connected navigation, accounting setup, fiscal controls, audit trails, and approvals into a clearer foundation for Filipino businesses.",
+    "body": [
+      "Running a Filipino business means making dozens of important decisions across people, money, and time. Owners need to know which financial records are active, which periods are ready for work, and who is allowed to make a consequential change. When those answers are scattered across screens or hidden in manual processes, payroll and HR teams lose time and confidence. That uncertainty is especially painful during month-end, approvals, and the everyday setup work that keeps a company moving. This update is about making the backoffice feel more connected, understandable, and dependable as your business grows.",
+      "We shipped a wide set of improvements that bring those expectations into the product. You can move between the parts of the backoffice more naturally, manage branches and company details from dedicated screens, and set the accounting basis your business uses. Fiscal calendars now show period status clearly, support controlled closing, and keep each module's status where it belongs. Account and chart management is more complete, while important entries can explain problems at the field where they happen instead of waiting until Save. We also strengthened approval routing, pending-work visibility, large-team handling, workspace separation, and the permanent record of who did what.",
+      "For you, this means less guesswork when setting up a company, organizing its books, controlling periods, and moving work through approval. Your team can find the right place to act, receive clearer guidance when something needs attention, and trust that important changes remain visible afterward. That creates a stronger operating rhythm for payroll, HR, accounting, and the people supporting all three. It moves YAHSHUA One closer to being a complete payroll and HR backoffice rather than a collection of separate tools. We are continuing to turn these foundations into practical workflows that help Filipino businesses operate with confidence every day."
+    ]
+  },
+  {
+    "date": "2026-08-18",
+    "badge": "Progress Update",
+    "title": "A Stronger Ledger Foundation",
+    "description": "We made financial setup, period controls, permissions, approvals, and ledger traceability more dependable for growing Filipino businesses.",
+    "body": [
+      "As a Filipino business grows, payroll and HR operations eventually depend on financial records that are organized, current, and easy to trust. Business owners need to know which accounts belong in the right place, which periods are open for work, and who is responsible for each important change. Without those guardrails, a small setup mistake can become a reconciliation problem or a difficult month-end investigation. The same is true for approvals, because sensitive requests need to reach the right people and remain clear even when teams are busy. This update focuses on the foundations that help a growing business operate with confidence instead of relying on memory and manual checking.",
+      "We shipped a broad set of improvements that make the backoffice more disciplined and easier to manage. Businesses can create and organize accounts through the product, use chart templates when starting a new client, and set the attributes that determine whether a financial line is accepted. Period controls are clearer too, including opening periods, resolving dates to the correct period, and soft-closing a period so only approved adjustments can continue. We also strengthened module-level access, protected administrative overrides with their own permission and a required reason, and made approval routing and large approver lists work more reliably. Behind the scenes, ledger actions now require a known actor, workspace data is better isolated, and each period's figures can be tied to the engine version that produced them.",
+      "What this means for you is more confidence when setting up accounts, managing periods, assigning responsibilities, and reviewing financial activity. Your team can work with clearer boundaries, while important actions remain easier to trace back to the person and process behind them. That reduces avoidable mistakes, makes approvals less mysterious, and gives business owners a stronger basis for trusting the records that support payroll and HR decisions. It also moves YAHSHUA One closer to a complete payroll and HR backoffice where people operations, accounting, permissions, and auditability fit together as one dependable system. We are continuing to build the practical workflows that help Filipino businesses grow with less friction and more control."
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "badge": "Progress Update",
+    "title": "Accounts With Clearer Control",
+    "description": "We made account setup, financial hierarchies, module access, and ledger accountability more precise for growing Filipino businesses.",
+    "body": [
+      "As a Filipino business grows, managing people, permissions, and financial records becomes more complex than simply adding another user. An owner needs to know where each account belongs, which parts of the backoffice each person can use, and who is responsible when a financial change is made. Without that clarity, teams spend time checking work manually and sensitive information can travel farther than it should. Those problems become more important when payroll, HR, and accounting operations are connected in one platform. This update addresses the need for a backoffice that can grow with a business while keeping responsibility and access easy to understand.",
+      "We improved YAHSHUA One so businesses can create accounts through the product and place them inside the right financial hierarchy. Access can also be shaped around individual modules, so a team member can work in the areas they need without automatically opening the rest of the system. On the accounting side, ledger changes now require a known person behind them, making important activity easier to trace and review. In plain language, the platform is getting better at matching people, permissions, and financial records to the way your business is actually organized. These improvements create clearer guardrails without making everyday setup feel like a maze.",
+      "What this means for you is more confidence when adding users, organizing accounts, and protecting sensitive payroll or financial work. Your team can receive access that fits its responsibilities, while accounting activity remains connected to a clear human actor. That reduces accidental overreach, makes reviews less mysterious, and gives growing businesses a stronger operating rhythm. It also moves YAHSHUA One closer to a complete payroll and HR backoffice where people operations, permissions, and accounting foundations work together cleanly. We are continuing to build the practical controls that help Filipino businesses grow without losing visibility or trust."
+    ]
+  },
+  {
+    "date": "2026-08-16",
+    "badge": "Progress Update",
+    "title": "Permissions That Fit Your Business",
+    "description": "We made access control more precise by letting permissions work at the individual module level, giving growing Filipino businesses clearer control over who can see and do what.",
+    "body": [
+      "As a Filipino business grows, not everyone needs access to every part of the backoffice. A payroll lead may need to work with salary runs, while an HR teammate may only need employee records and leave requests. When permissions are too broad, businesses either expose sensitive information or slow everyone down with unnecessary restrictions. That balance matters even more when payroll and HR work together, because the right people need to move quickly without giving every user the keys to the whole system. This update focuses on making that balance easier to manage as your team and operations expand.",
+      "We improved YAHSHUA One so access can be defined around individual modules instead of applying the same rule across the entire product. In plain language, your business can now give someone access to the areas they actually need, while keeping unrelated parts of the backoffice out of reach. That makes permission setup clearer for the people responsible for managing users and safer for the company as a whole. It also creates a more flexible foundation for organizing responsibilities across payroll, HR, accounting, and other business workflows. The work is designed to feel straightforward in practice, even though it solves an important problem underneath the surface.",
+      "What this means for you is better control without forcing your team into one-size-fits-all access. You can build responsibilities that match how your business really works, protect sensitive payroll information, and help each person focus on the work that belongs to them. That reduces accidental access, limits confusion, and makes it easier to grow your operations with confidence. It also moves YAHSHUA One closer to a complete payroll and HR backoffice where security and usability support each other instead of competing. We are continuing to refine the controls that help Filipino businesses operate with clarity as more capabilities come together."
+    ]
+  },
+  {
+    "date": "2026-08-15",
+    "badge": "Progress Update",
+    "title": "A More Disciplined Backoffice",
+    "description": "We strengthened customization boundaries, approval roles, workspace separation, account hierarchies, and ledger accountability so growing Filipino businesses can operate with greater control.",
+    "body": [
+      "As a Filipino business grows, the backoffice has to handle more than payroll calculations and employee records. Different clients need different choices, different people need different responsibilities, and financial activity needs to remain traceable from start to finish. Without clear boundaries, a small shortcut can create confusion about whose data is being handled or who was allowed to make an important change. That risk is especially serious when payroll, HR, and accounting work are connected in one operating environment. This round of progress focused on making YAHSHUA One more disciplined underneath, so business owners can build on it with confidence.",
+      "In plain language, we made it clearer where business customizations belong and how they should be handled. We strengthened approval workflows so each step knows its proper role instead of relying on guesswork or labels that can be misunderstood later. We also tightened the separation between workspaces, improved how accounts can be organized inside a financial hierarchy, and required every ledger action to have a known person behind it. These improvements help the platform keep company information in the right place and make important financial activity easier to understand. Much of this work happens behind the scenes, but it gives the people using YAHSHUA One a sturdier and more dependable foundation.",
+      "What this means for you is greater confidence that your payroll and HR backoffice will behave consistently as your company, team, and financial operations grow. Your people can work within clearer responsibilities, while sensitive records and accounting actions remain better separated and easier to trace. That reduces the chance of accidental cross-company access, unclear approvals, or financial changes that nobody can explain later. It also moves YAHSHUA One closer to a complete backoffice where payroll, HR, approvals, and accounting work together without blurring important lines. We are continuing to build the safeguards and workflows that make everyday business operations feel simpler, safer, and ready for the next stage of growth."
+    ]
+  },
+  {
+    "date": "2026-08-14",
+    "badge": "Progress Update",
+    "title": "The Backoffice Gets More Connected",
+    "description": "We strengthened staff operations, approvals, and accounting foundations so growing Filipino businesses can manage sensitive work with greater clarity and control.",
+    "body": [
+      "For a Filipino business owner, the backoffice has to stay dependable as more employees, approvals, payments, and financial records move through it. The challenge is not only getting payroll numbers right, but also knowing who can act, what has changed, and where every business record belongs. When those details live in disconnected processes, small questions turn into delays and manual checking. That friction is especially costly for growing teams that need to move quickly without losing accountability. This round of progress focused on making the operating foundation behind payroll and HR more connected, controlled, and ready for real business complexity.",
+      "In plain language, we improved the tools that help YAHSHUA One staff manage companies, people, subscriptions, and connected services from one secure workflow. We also made approval lists and pending counts more responsive, while protecting approval decisions when several people act at the same time. On the accounting side, the platform now has stronger foundations for keeping each client's books separate, organizing accounts and locations, and recording who is responsible for a ledger action. We continued expanding guided staff workflows for onboarding and product access, so important actions can be handled with clearer steps and better traceability. Much of this work happens behind the scenes, but it makes the product more disciplined and dependable where it matters.",
+      "What this means for you is a payroll and HR backoffice that can support growth without letting complexity become chaos. Your team can look forward to clearer approval progress, stronger separation between client records, and more confidence that sensitive operational actions are properly controlled. It also gives the people supporting your business a better way to manage accounts, access, and financial foundations without stitching together disconnected tools. These improvements bring YAHSHUA One closer to a complete platform where payroll, HR, accounting, and operations reinforce one another. We are building the connective tissue now so the next wave of user-facing workflows feels faster, safer, and more complete."
+    ]
+  },
+  {
+    "date": "2026-08-13",
+    "badge": "Progress Update",
+    "title": "A Safer Foundation for Growth",
+    "description": "We strengthened approvals, integrations, permissions, and platform reliability so YAHSHUA One can handle sensitive payroll and HR work with greater control and confidence.",
+    "body": [
+      "For Filipino business owners, a backoffice platform has to do more than show the right numbers on a screen. It needs to protect sensitive employee information, make every important action understandable, and stay dependable as more people and workflows are added. Those expectations matter because payroll and HR decisions affect real families, real deadlines, and the trust employees place in their employers. A small gap in permissions or an unclear approval history can create a surprisingly large operational problem. This round of progress focused on strengthening the foundations that let growing businesses run important work with confidence.",
+      "In plain language, we improved how YAHSHUA One handles approvals, connected tools, access rights, and the underlying environment that keeps the product running. Approval records are now better protected when decisions happen at the same time, while review information can be prepared more efficiently for teams managing many requests. We also tightened how integrations communicate with the platform, including clearer boundaries around what connected services can do and stronger safeguards for credentials and data. The product is gaining more reliable checks around its database and deployment setup, and we continued shaping how printed payroll outputs can fit different business needs. Much of this work is quiet by design, but it makes the system sturdier, clearer, and safer to build on.",
+      "What this means for you is a payroll and HR backoffice that is becoming more trustworthy as your business grows. Your team can look forward to clearer accountability around approvals, fewer hidden assumptions between connected systems, and stronger protection for the information your company should control. These improvements also make it easier for YAHSHUA One to support larger teams without sacrificing the discipline that payroll work demands. They bring us closer to a complete platform where calculations, people operations, approvals, and integrations work together as one dependable system. We are laying the groundwork now so the next wave of user-facing capabilities can arrive on a foundation built to last."
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "badge": "Progress Update",
+    "title": "Approvals Get Faster and Safer",
+    "description": "We strengthened payroll approvals so decisions stay consistent, traceable, and responsive even when teams are reviewing many requests at once.",
+    "body": [
+      "For Filipino business owners, approvals are where good payroll processes either become dependable or start to wobble. A request may need several people to review it, and every person needs to know what has already happened before they act. When that history is slow to load or two decisions collide, teams lose time and confidence at exactly the moment they need control. Those problems become more important as a company grows and more managers share responsibility for payroll and HR decisions. This update focuses on making approval work calmer, safer, and better suited to the pace of a real Philippine business.",
+      "In plain language, we improved how YAHSHUA One keeps approval decisions organized behind the scenes. The system now gathers the right decision-maker details more efficiently when showing a page of requests, instead of repeatedly searching for the same information one row at a time. We also moved important approval follow-through out of the moment when someone is simply viewing a list, so screens can load more smoothly while the system continues keeping records aligned. Most importantly, the platform now protects an approval record while a decision is being applied, which helps prevent conflicting actions from overwriting one another. The result is a more disciplined approval experience that feels faster to use and easier to trust.",
+      "What this means for you is that payroll and HR approvals can keep moving with less waiting and less uncertainty. Your team gets clearer ownership, more reliable status information, and stronger protection against two people making competing changes at the same time. That reduces the chance of confusing records, repeated work, or last-minute questions about which decision actually took effect. It also gives YAHSHUA One a stronger foundation for the complete payroll and HR backoffice we are building, where every important action should be both efficient and auditable. We are continuing to strengthen the workflows around the work, so the platform can support growing teams with confidence as more capabilities come online."
+    ]
+  },
+  {
+    "date": "2026-08-05",
+    "badge": "Progress Update",
+    "title": "More Banks, Less Payroll Friction",
+    "description": "We expanded YAHSHUA One's bank disbursement coverage so more Philippine payroll teams can move from approved payroll to bank-ready payout files with less manual patchwork.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not end once the numbers are correct. The real headache usually shows up in the handoff from approved payroll to actual salary release, especially when each bank expects a different file format and the team has to rely on side processes just to get money out safely. That gap creates risk, delay, and too much dependence on whoever happens to know the formatting tricks by memory. It matters because a payroll system is not truly complete if it stops right before disbursement becomes real. Yesterday's progress focused on closing that gap so YAHSHUA One can support the practical last-mile work businesses actually have to finish.",
+      "In plain language, we expanded YAHSHUA One's ability to prepare payroll disbursement files for more banks and more format requirements. That includes stronger support for BDO, BPI, Metrobank, RCBC, and the remaining legacy bank formats that still matter in real operations. Instead of treating each bank as a messy exception, the product is becoming much better at turning finalized payroll into bank-ready output that fits the way Philippine businesses actually release salaries. This is the kind of work users may not call flashy, but it removes a huge amount of operational awkwardness behind the scenes. Put simply, YAHSHUA One keeps getting better at helping payroll teams move from computation to payout without falling back into spreadsheet theater and manual file gymnastics.",
+      "What this means for you is a cleaner path from payroll approval to actual employee payout. Your team gets closer to a workflow where more of your real banking reality is supported inside the product instead of being handled through fragile side steps and last-minute fixes. That reduces release-day stress, lowers the chance of export mistakes, and makes it easier to trust that payroll can move all the way to completion with proper discipline. It also pushes YAHSHUA One closer to being the complete payroll and HR backoffice we are building, because serious payroll software has to care about the money movement finish line too. We are still building fast, and this update brings the platform a lot closer to handling real Philippine payroll operations end to end."
+    ]
+  },
+  {
+    "date": "2026-08-04",
+    "badge": "Progress Update",
+    "title": "Bank Disbursements Get Real",
+    "description": "We turned bank disbursement from a fragile side process into a much more secure, guided, and integration-ready part of payroll operations.",
+    "body": [
+      "For many Filipino business owners, payroll does not end when the amounts are correct. The stressful part often comes right after, when salaries still need to move safely into the right bank formats and the team has to trust that nothing will break between payroll approval and actual disbursement. If that step feels manual, inconsistent, or hard to review, the whole payroll experience still feels fragile no matter how good the computations are. That matters even more for companies handling multiple banks, multiple file standards, and growing compliance expectations around who can prepare or access payment artifacts. Yesterday's work focused on making that last-mile payroll handoff feel much more serious, much more secure, and much more ready for real business operations in the Philippines.",
+      "In plain language, we built a stronger bank disbursement foundation inside YAHSHUA One. Teams are getting guided setup for bank disbursement, support for more real bank output formats, safer storage of company bank details, and a cleaner way to prepare exports from finalized payroll runs without relying on awkward side processes. We also added preflight checks, audit coverage, dedicated access controls, immutable run snapshots, and versioned formatter support so exported payroll files are easier to trust and easier to trace later. On top of that, the broader integrations experience kept maturing, with cleaner routing, clearer terminology, and stronger Host-first handling that helps connected capabilities feel more unified instead of patched together. Put simply, YAHSHUA One is becoming far better at turning payroll completion into an operationally safe bank-ready workflow instead of leaving that critical step hanging outside the system.",
+      "What this means for you is a much more complete path from approved payroll to actual payout. Your team gets closer to a workflow where preparing bank disbursements is safer, more structured, and less dependent on memory, manual formatting, or hidden know-how sitting with one operator. That reduces avoidable release-day stress, lowers the risk of export mistakes, and makes it easier to trust that payroll can move from calculation to cash movement with proper discipline behind it. It also pushes YAHSHUA One closer to being the complete payroll and HR backoffice we want it to become, because a serious payroll product cannot stop at computation alone. We are still building fast, and this update brings the platform a lot closer to handling the real operational finish line businesses actually care about."
+    ]
+  },
+  {
+    "date": "2026-08-03",
+    "badge": "Progress Update",
+    "title": "Integrations and Payroll Grow Up",
+    "description": "We strengthened integrations, made contribution review and settlement more practical, pushed biometric attendance deeper into real operations, and moved custom payslips closer to a polished reality.",
+    "body": [
+      "Running a business in the Philippines gets messy fast when payroll, attendance, and system integrations all depend on scattered workarounds. A founder should not have to wonder whether a biometric device will behave, whether contribution gaps can be settled cleanly, or whether one connected tool is silently breaking another. That kind of uncertainty creates extra admin work long before payroll day even arrives. Yesterday's work focused on removing that fragility and making YAHSHUA One feel more like a serious operating system instead of a loose collection of features. The goal is simple: help business owners trust that the product can carry real operational weight without forcing them back into spreadsheets and side processes.",
+      "In plain language, we shipped a big round of progress across several important areas at once. YAHSHUA One now has a much stronger integrations foundation, with cleaner routes, clearer controls, and a more disciplined handoff between the core product and connected developer-facing capabilities. We also improved how teams handle contribution-related problems by making shortfalls, overdue bills, settlements, and payroll month tracking easier to review and act on. On the attendance side, biometric device support kept moving deeper into real-world readiness, including device connection, punch intake, diagnosis, recovery, and employee assignment flows that help messy time data become usable instead of painful. We also pushed custom payslips further forward, which means companies are getting closer to payslip outputs that look and feel like something they would actually want to send to their people.",
+      "What this means for you is a backoffice that keeps becoming more complete, more flexible, and more trustworthy under real pressure. Your team gets closer to a world where integrations are not a risky side project, attendance hardware is not a constant cleanup headache, and contribution follow-through is easier to manage before it turns into payroll confusion. It also means YAHSHUA One is getting better at delivering the polished outputs and operational depth serious businesses expect, from cleaner payslips to stronger employee and payroll workflows behind the scenes. Each of these improvements matters on its own, but together they point in the same direction: a platform that can genuinely support the daily reality of running a business in the Philippines. We are still building fast, and this round of progress pushes YAHSHUA One another big step closer to being the complete payroll and HR backoffice we want it to become."
+    ]
+  },
+  {
+    "date": "2026-08-01",
+    "badge": "Release",
+    "title": "Payroll Gets a Major Upgrade",
+    "description": "We just shipped a major round of improvements across payroll, attendance, employee self-service, approvals, and reporting. YAHSHUA One now feels safer, clearer, and more reliable — with stronger controls, smoother workflows, and fewer frustrating dead ends for teams doing real back-office work every day.",
+    "body": [
+      "This release brings together a broad round of product improvements that make YAHSHUA One feel more dependable across the workflows businesses rely on most. Instead of one isolated feature, this is a meaningful step forward across payroll, attendance, employee self-service, approvals, and reporting — the practical areas that shape whether back-office software feels calm and trustworthy in real use.",
+      "In plain language, YAHSHUA One is now better at helping teams process payroll with stronger controls, handle attendance and employee data with more clarity, move approvals forward with less friction, and review important information with cleaner reporting and visibility. We also smoothed out day-to-day product behavior so fewer things feel patchy, confusing, or easy to mis-handle under pressure.",
+      "What this means for you is a platform that feels more ready for real business operations in the Philippines. Teams get safer workflows, clearer guidance, stronger permissions, and a smoother path through the everyday admin work that usually creates the most friction. It is a major upgrade in the experience of using YAHSHUA One — not just a longer feature list."
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "badge": "Progress Update",
+    "title": "Payroll Guardrails and Team Privacy Get Stronger",
+    "description": "We added stronger payroll protection rules, tighter employee visibility controls, and cleaner review details so sensitive work is safer and easier to manage.",
+    "body": [
+      "Yesterday's work focused on a very real backoffice problem: payroll and employee data are only trustworthy if the right people can see the right records and sensitive deductions do not behave unpredictably when payroll gets messy. As teams grow, those two things start mattering a lot more. A serious payroll platform has to protect both the money side and the people side at the same time, otherwise operators end up relying on side checks, manual corrections, and unnecessary access just to keep work moving.",
+      "In plain language, YAHSHUA One now gives teams stronger protection around sensitive payroll deductions and adjustments, including better handling for edge cases where deductions, carry-forwards, or payroll corrections need more disciplined rules. We also added more configurable employee visibility controls, which means companies can be more specific about who gets to view which employee records instead of exposing more information than necessary. On top of that, we cleaned up a few review details so statuses read more clearly, employee lists sort more naturally, and payment follow-through behaves more safely under heavy load.",
+      "What this means for you is a backoffice that keeps becoming safer without becoming harder to use. Your team gets closer to a setup where payroll can handle sensitive situations with clearer guardrails, employee information is easier to protect by role, and everyday review work feels cleaner and easier to trust. That reduces avoidable confusion, lowers privacy risk, and helps YAHSHUA One feel more ready for real businesses in the Philippines where payroll accuracy and disciplined access both matter every single day."
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "badge": "Progress Update",
+    "title": "Salary Rate Reviews Export Cleanly",
+    "description": "We added a cleaner Excel export for salary and rate status reviews, making compensation checks easier to share, audit, and act on.",
+    "body": [
+      "For many Filipino business owners, payroll work does not get stressful only when it is time to release pay. It also gets stressful during the review stage, when someone needs to confirm salary and rate details across a growing team and the information is still awkward to pull out of the system. If compensation reviews are hard to export, leaders end up copying data by hand, passing around screenshots, or rebuilding the same report in spreadsheets just to answer simple questions. That wastes time and quietly increases the risk of mistakes before payroll decisions are even finalized. This update matters because clear compensation visibility is one of the foundations of a trustworthy payroll and HR backoffice.",
+      "Yesterday's work shipped a practical but important improvement inside YAHSHUA One. In plain language, teams can now export the salary and rate status list directly into Excel in a cleaner, more usable format. That means payroll, HR, and operations teams have a simpler way to review compensation-related records outside the screen when they need to sort, share, reconcile, or prepare discussions internally. Instead of getting stuck inside the app or relying on clumsy manual copying, the information can move into a familiar file format people already use for review and coordination. It is a straightforward feature, but it removes friction from a very real part of running payroll operations.",
+      "What this means for you is faster and more confident compensation review. Your team can now pull salary and rate status information into Excel more easily, share it with the right decision-makers, and work through audits or internal checks without as much manual patchwork. That makes it easier to prepare for payroll changes, validate employee pay setups, and keep important compensation conversations grounded in cleaner data. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because serious businesses need not only the right records inside the system but also practical ways to review and act on them. We are continuing to build toward a platform Filipino businesses can rely on when payroll work needs to be accurate, explainable, and easy to move forward."
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "badge": "Progress Update",
+    "title": "Company Knowledge Gets Safer and Easier to Act On",
+    "description": "We improved how teams read internal docs, protected sensitive profile history, added clearer stage timing, made org charts more useful, and expanded salary-rate exports.",
+    "body": [
+      "Yesterday's work focused on a simple but important part of running a serious backoffice: people need company knowledge that is easy to read, employee information that stays appropriately protected, and clearer signals around what needs follow-through next. If internal docs are awkward to browse, profile details spill too far, or pipeline work has no visible sense of urgency, teams lose time to chasing context instead of acting on it.",
+      "In plain language, YAHSHUA One now makes Compass content easier to read and review, including better handling for formatted write-ups and linked reference documents. We also tightened profile privacy so sensitive employment history does not show up where it should not. On top of that, teams can now see how long a client or opportunity has been sitting in each stage, along with clearer countdown-style guidance on what needs attention next. We also made org charts more informative by showing directly placed team members more clearly, and we expanded salary-rate status exports so payroll teams can review that information more cleanly in Excel.",
+      "What this means for you is a product that keeps getting more useful in the real day-to-day work behind payroll and HR. Your team gets a clearer place to read company knowledge, better protection around sensitive employee details, stronger visibility into follow-through and bottlenecks, and cleaner people and payroll reporting when reviews need to happen fast. It is practical product work, but it is exactly the kind that helps YAHSHUA One feel more trustworthy and more ready for growing businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "badge": "Progress Update",
+    "title": "Compass Makes Company Knowledge Usable",
+    "description": "We built a major new Compass workspace for policies, processes, team context, and company answers while also tightening employee-data visibility and expanding practical payroll controls.",
+    "body": [
+      "As a business grows, one of the first things that starts slowing people down is not effort, but scattered knowledge. Policies end up in one place, process notes live somewhere else, and people waste time asking around for answers they should be able to find on their own. For a Filipino business owner, that kind of confusion quietly creates delay, weakens accountability, and makes even simple backoffice work feel heavier than it should. A serious payroll and HR platform cannot just process records after the fact. It also has to help the team understand how the company works while protecting sensitive employee information at the same time.",
+      "Yesterday's work pushed that vision forward in a big way. In plain language, YAHSHUA One now has a much stronger Compass experience, with a dedicated space for company policies, handbook content, documented processes, team pages, people directory views, profile details, and a recent-changes feed so important knowledge does not stay buried in side chats or memory. We also added an Ask Compass capability, which moves the product closer to giving teams direct answers from their own internal company information instead of forcing them to hunt manually. At the same time, we tightened employee visibility across payroll, leave, schedules, attendance, employee history, and payslip-related workflows so people are much closer to seeing only the records they are actually supposed to handle. We also shipped a practical salary and rate status export, which gives teams one more clean way to review compensation information when they need it.",
+      "What this means for you is a backoffice that keeps becoming more useful for everyday execution, not just final payroll output. Your team gets closer to a setup where company knowledge is easier to find, sensitive records are better protected by default, and important people information is easier to review without creating unnecessary exposure. That reduces avoidable back-and-forth, lowers the risk of the wrong person seeing the wrong data, and helps managers move faster with more confidence. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because real businesses need both operational clarity and disciplined access control in the same system. We are building toward a platform Filipino businesses can rely on not just to run payroll, but to run the company with more structure, trust, and less chaos."
+    ]
+  },
+  {
+    "date": "2026-07-06",
+    "badge": "Fix",
+    "title": "Partner Onboarding and Billing Feel More Trustworthy",
+    "description": "We fixed partner-side welcome emails, cleared up a confusing sign-in issue, and made partner-managed billing much easier for client companies to understand.",
+    "body": [
+      "Yesterday's work focused on a part of backoffice software people notice quickly when something feels off: getting welcomed properly, understanding what kind of session they are in, and knowing who is actually handling billing. For partner-managed companies especially, trust drops fast if the first email feels generic, if a normal login looks suspicious, or if billing details are hidden behind guesswork. This update matters because YAHSHUA One is getting clearer and more dependable in those moments that shape first impressions and everyday confidence.",
+      "In plain language, new client companies set up through partners should now receive the right welcome email more consistently, so the onboarding experience feels branded and intentional instead of patchy. We also fixed a confusing sign-in issue that could make a normal client login look like staff impersonation when it really was not. On top of that, client companies can now see partner-managed billing details more clearly, including who manages the billing, what usage is being counted, the estimated charge for the current period, and the current payment status. When billing is handled by a partner, self-serve pay and cancel actions are also hidden so the screen matches the real relationship instead of implying the wrong controls.",
+      "What this means for you is a calmer and more trustworthy experience for companies coming into YAHSHUA One through partner channels. New users should get a cleaner welcome, everyday sign-in should feel less confusing, and billing conversations should involve fewer back-and-forth clarifications because the essentials are easier to see at a glance. It is practical product work, but it is exactly the kind that helps the platform feel more ready for real partner rollouts and real business relationships in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-06",
+    "badge": "Progress Update",
+    "title": "Compass Turns Company Knowledge Into Action",
+    "description": "We built a new Compass workspace for policies, team context, processes, and answers, while also tightening who can see employee data and laying stronger groundwork for biometric device operations.",
+    "body": [
+      "As a business grows, one of the first things that starts breaking is not effort, but clarity. Policies live in one place, process notes live somewhere else, and the people who need answers are often forced to ask around instead of simply getting what they need. That slows teams down, creates inconsistent decisions, and makes ordinary backoffice work feel heavier than it should. For a Filipino business owner trying to build with discipline, that kind of confusion quietly becomes an operational tax every single week. Yesterday's work focused on reducing that tax by making knowledge, structure, and operational visibility much easier to trust inside YAHSHUA One.",
+      "In plain language, we shipped a big new Compass experience inside the platform. Teams are getting a cleaner place for company policies, handbook content, documented processes, team pages, people directory views, profile details, and a recent-changes feed so important information does not stay scattered across side chats and memory. We also added an 'Ask Compass' capability, which moves YAHSHUA One closer to giving teams direct answers from their own internal knowledge instead of making them hunt manually. At the same time, we tightened employee visibility across reports, payroll, leave, attendance, timesheets, and employee pickers so people are much closer to seeing only the records they are actually supposed to handle. On top of that, biometric device work kept moving forward too, which strengthens the foundation for registering attendance hardware more cleanly as the product grows deeper into real operations.",
+      "What this means for you is a backoffice that keeps becoming more usable not just for payroll output, but for daily decision-making. Your team gets closer to a setup where company knowledge is easier to find, operational rules are easier to follow, and sensitive employee information is better protected by default. That reduces avoidable back-and-forth, lowers the risk of the wrong people seeing the wrong records, and makes it easier for growing teams to stay aligned without adding more admin chaos. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because real business software has to help people understand the company as well as run it. We are building toward a platform Filipino businesses can rely on for both execution and clarity, and this is a strong step in that direction."
+    ]
+  },
+  {
+    "date": "2026-07-05",
+    "badge": "Progress Update",
+    "title": "Biometric Attendance Gets Much More Reliable",
+    "description": "We made it easier to connect biometric devices, match them to the right employees, catch unknown devices early, and clean up messy time logs before they turn into payroll headaches.",
+    "body": [
+      "Yesterday's work focused on one of the messiest parts of running payroll in the real world: getting trustworthy attendance data out of biometric devices and into the system without a ton of manual cleanup. When device records come in half-broken, duplicated, or tied to the wrong people, payroll teams end up wasting hours just trying to reconstruct what actually happened. That is exactly the kind of operational mess YAHSHUA One is being built to remove.",
+      "In plain language, YAHSHUA One is getting much better at the full biometric attendance flow. Teams can register devices more cleanly, assign employees to the right device, spot unknown or suspicious devices earlier, send commands back to devices, and use diagnosis views when something looks off. We also improved how the system handles unmatched punches and duplicate logs, so messy attendance records can be recovered and corrected instead of quietly becoming bigger problems later.",
+      "What this means for you is a backoffice that is getting closer to handling real biometric attendance like a dependable part of operations instead of a fragile side process. Your team gets a cleaner path from device activity to usable attendance data, faster recovery when logs do not line up perfectly, and more confidence that payroll is starting from records that reflect what actually happened on the ground. It is steady progress, but it is exactly the kind that makes YAHSHUA One feel more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-05",
+    "badge": "Progress Update",
+    "title": "Payroll Visibility Meets Biometric Reality",
+    "description": "We pushed YAHSHUA One closer to real-world rollout by tightening who can see employee records across payroll workflows and by building the bridge from biometric devices straight into attendance.",
+    "body": [
+      "For many Filipino business owners, payroll breaks down long before payday if the wrong people can see the wrong employee records or if attendance still depends on manual cleanup from scattered devices. A serious backoffice has to do two things at once: protect sensitive employee information and capture time data in a way that reflects what really happened on the ground. That matters even more once a company grows across locations, departments, and teams with different levels of authority. If visibility is too loose, privacy becomes risky and reports become harder to trust. If time capture is too fragile, payroll teams end up spending hours repairing inputs before they can even begin reviewing pay.",
+      "Yesterday's work pushed both of those foundations forward in a big way. In plain language, YAHSHUA One now applies employee visibility more consistently across payroll runs, payslips, leave, attendance, timesheets, reports, exports, and even employee selectors, so people are much closer to seeing only the records they are actually supposed to handle. At the same time, we moved the biometric device sync system forward from multiple angles, including device registration, live online and offline status, punch uploads, duplicate handling, unmatched log recovery, server-to-device command delivery, diagnosis views, and employee-to-device assignment. That means the platform is learning how to accept raw time data directly from biometric hardware, organize it more safely, and help teams resolve messy edge cases instead of hiding them. We also tightened cross-module test coverage so these rules are less likely to feel patchy from one part of the product to another.",
+      "What this means for you is a backoffice that keeps becoming more trustworthy at the exact points where real operations usually get messy. Your team gets closer to a setup where managers, payroll staff, and reviewers only see the employee information they genuinely need, while attendance records can start flowing in from biometric devices with far less manual stitching behind the scenes. That reduces privacy risk, cuts down avoidable payroll cleanup, and makes it easier to trust both the data entering the system and the people allowed to work with it. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, because secure visibility and dependable attendance capture are two of the biggest foundations a real company needs. We are still building fast, but this is exactly the kind of progress that makes the platform feel more serious, more operational, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-04",
+    "badge": "Progress Update",
+    "title": "Partner Workflows and Attendance Recovery Get More Practical",
+    "description": "We made it easier to manage partner-side client setup and billing, while also giving teams a cleaner way to restore deleted attendance logs and spot pending work faster.",
+    "body": [
+      "Yesterday's work focused on two very practical sides of running a serious backoffice platform: helping partners manage growing client operations more cleanly, and helping internal teams recover when attendance records need to be fixed instead of manually pieced back together. As YAHSHUA One expands, that kind of operational support matters just as much as headline payroll features. Partners need better tools to onboard and support client companies, and business teams need confidence that mistakes or deleted records do not turn into permanent cleanup headaches.",
+      "In plain language, YAHSHUA One is getting stronger partner-side tools for managing client companies, billing activity, and CRM-related follow-through, which helps the people supporting businesses stay more organized as partner operations grow. We also added a cleaner way to restore deleted attendance logs, improved the attendance upload flow, and made pending counts in the sidebar update live so teams can spot waiting work faster instead of refreshing or second-guessing what still needs attention. On top of that, several behind-the-scenes fixes and review cleanups landed to make these workflows feel steadier in real use.",
+      "What this means for you is a backoffice that keeps getting more resilient and more operationally useful. Teams get a better path for handling partner and client coordination, a safer way to recover attendance records when something needs to be undone, and quicker visibility into what still needs action across the product. That reduces manual follow-up, lowers the risk of losing track of important work, and helps YAHSHUA One feel more like a dependable operating system for real businesses in the Philippines instead of a fragile collection of screens."
+    ]
+  },
+  {
+    "date": "2026-07-03",
+    "badge": "Progress Update",
+    "title": "Payslips and Permissions Get Real",
+    "description": "We pushed YAHSHUA One much closer to real-world rollout by making payslips customizable, tightening who can see employee data, and expanding practical payroll and employee-management tools.",
+    "body": [
+      "For many Filipino business owners, payroll trust is not only about computing the right amount. It is also about whether the right people can see the right employee information, whether payslips look like something you would actually want to send out, and whether everyday payroll setup can keep up with how a real company operates. If visibility is too loose, private information becomes risky. If payslips are too rigid, the product feels unfinished the moment a business wants something that matches its brand or reporting style. This update matters because YAHSHUA One is getting much closer to handling those real-world expectations like a serious backoffice should.",
+      "In plain language, we moved payslips forward in a big way. Teams are getting a stronger payslip engine, a classic print foundation, support for generating PDF batches and email-ready output, and a custom builder with live preview so companies can shape how payslips actually look instead of settling for a one-size-fits-all template. We also added the ability to view the actual payslip more directly and pushed work toward AI-assisted custom payslip generation, including support for using reference files when shaping a design. At the same time, we tightened employee visibility across payroll, reports, leave, attendance, timesheets, and employee selectors so people only see the records they are supposed to see. On top of that, several practical payroll and employee tools moved forward too, including compressed workweek support, bulk period-based schedule assignment, bank-account management improvements, tax beginning-balance safeguards, and deeper salary and rate-status handling.",
+      "What this means for you is a backoffice that keeps feeling more usable, more private, and more rollout-ready. Your team gets closer to a world where payslips can match the business more naturally, sensitive employee data is protected more carefully, and payroll operations can support the messier real cases that growing companies actually face. That reduces awkward workarounds, lowers the risk of oversharing information internally, and makes the product easier to trust when payroll is no longer just a simple demo flow. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where design flexibility, permission discipline, and payroll depth all reinforce each other in one system. We are still building fast, but this is exactly the kind of progress that makes the platform feel more serious and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "badge": "Progress Update",
+    "title": "Staff Tools, Payroll Runs, and Reminders Get More Practical",
+    "description": "We made it easier for teams to manage staff records, keep payroll runs moving more reliably, follow personal reminders inside the product, and review leave requests from mobile with less friction.",
+    "body": [
+      "Yesterday's work focused on the everyday operational details that make a backoffice product feel genuinely usable once real teams start depending on it. YAHSHUA One keeps getting better at helping people manage staff information directly, stay on top of recurring follow-through, and trust that payroll runs will behave more cleanly when it is time to post and move work forward. These are not just behind-the-scenes tweaks. They are the kinds of improvements that make the product feel calmer and more dependable in the middle of a busy workweek.",
+      "In plain language, teams can now manage staff members more directly from the Staff Portal instead of treating that information like something buried elsewhere in the system. We also added a stronger reminders foundation, which moves YAHSHUA One closer to helping people remember important follow-through inside the product instead of relying on memory or scattered side notes. On top of that, we fixed issues around payroll posting and monthly payroll run creation so important payroll work is less likely to hit awkward friction when a team is trying to move forward. Mobile leave-request reading also moved ahead, which helps people check request details more easily from their phones.",
+      "What this means for you is a backoffice that keeps becoming more practical in the places teams feel every day. Staff information is easier to work with, reminders are getting more built-in and useful, payroll runs are becoming more reliable when it counts, and mobile access to request details keeps improving. It is steady product work, but it is exactly the kind that helps YAHSHUA One feel more ready for real businesses in the Philippines instead of just looking promising on paper."
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "badge": "Progress Update",
+    "title": "Reminders and Payroll Get Sharper",
+    "description": "We added built-in payroll reminders and fixed important payroll run issues so teams can follow through on recurring work with less guesswork and more confidence.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not only come from computing numbers correctly. It also comes from remembering the follow-through around those numbers, like what needs attention next, what needs to happen on schedule, and whether the system will surface issues before they turn into payroll cleanup. When reminders live in someone's memory or inside scattered chat messages, important work becomes fragile fast. The same is true when payroll runs do not clearly show what is wrong or when a monthly run behaves in an unexpected way. This update matters because YAHSHUA One is getting better at carrying both the discipline of recurring follow-through and the reliability of the payroll run itself.",
+      "In plain language, we built a new reminders experience directly into YAHSHUA One so teams can create, view, edit, and manage recurring reminders from inside the product instead of depending on outside tools or memory. These reminders are now backed by a stronger automation engine, which gives the platform a more serious way to trigger timely notifications and support repeatable operational habits. We also improved how reminders appear in the product experience, including the surrounding notification flow, so they feel like part of the backoffice instead of a bolt-on extra. On the payroll side, we fixed important issues around monthly payroll run creation and posting behavior so teams are less likely to hit confusing dead ends when starting or reviewing a run. We also surfaced payroll run issues more clearly and tightened supporting checks so operators can understand problems earlier instead of discovering them too late.",
+      "What this means for you is a backoffice that keeps getting better at both memory and execution. Your team can now rely more on YAHSHUA One to help remember recurring payroll and admin follow-through, while also trusting payroll runs to behave more consistently when monthly processing begins. That reduces the mental load on founders, payroll staff, and operators who are already juggling too many moving parts across the week. It also helps the product feel more complete, because a serious payroll and HR backoffice should not only process work after you remember it, it should help make sure the right work happens on time in the first place. Every step like this moves YAHSHUA One closer to being the kind of operating system Filipino businesses can depend on for both daily discipline and real payroll reliability."
+    ]
+  },
+  {
+    "date": "2026-06-30",
+    "badge": "Progress Update",
+    "title": "Legal Agreements, Payroll Reporting, and Navigation Get Clearer",
+    "description": "We made YAHSHUA One easier to trust in everyday use by adding clearer legal agreement handling, a new overtime summary report, smoother company switching, and cleaner billing and payroll details.",
+    "body": [
+      "Yesterday's work focused on the parts of a serious backoffice product that people feel in everyday operations: knowing what employees still need to agree to, seeing payroll details more clearly, and moving around the system without unnecessary friction. When legal requirements, reporting, and navigation feel patchy, teams waste time double-checking simple things that should already be obvious.",
+      "In plain language, companies can now manage legal agreements more clearly inside YAHSHUA One, while staff get a cleaner first-login flow for reviewing required documents and a more obvious file-upload experience when something needs to be submitted. We also added a new overtime summary report, tightened several payroll and payroll-setting behaviors, and made it easier to move between companies with a searchable company switcher. On top of that, billing and account screens got a cleaner pass so everyday admin work feels less awkward.",
+      "What this means for you is a product that keeps getting easier to trust in the small but important moments. Your team gets better visibility into compliance-related tasks, clearer payroll reporting, and a smoother way to move through the system when handling multiple companies or day-to-day admin work. It is steady progress, but it is exactly the kind that makes YAHSHUA One feel more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-30",
+    "badge": "Progress Update",
+    "title": "Payroll Rules Become Truly Flexible",
+    "description": "We made statutory contributions and tax rules configurable, while also adding a clearer safeguard so teams know when a government formula needs manual handling before payroll goes live.",
+    "body": [
+      "For many Filipino business owners, payroll trust breaks the moment the system feels too rigid for how their company actually works. Government contributions and tax rules are not just technical details hiding in the background. They affect how confident a team feels when handling special cases, company-specific policies, and payroll decisions that do not fit a one-size-fits-all flow. If the system cannot adapt cleanly, operators end up relying on side notes, manual checks, and anxious double-checking before each run. This update matters because YAHSHUA One is getting better at giving businesses flexibility without throwing discipline out the window.",
+      "Yesterday's work focused on making the payroll engine more practical in plain language. We moved statutory contributions and tax behavior toward a configurable setup, which means businesses get a stronger path for shaping how these core payroll rules behave instead of treating them like a sealed black box. We also tightened the review flow around those settings by adding a clear warning when a government formula has been unlocked and should now follow a manual path before publishing. On top of that, the latest product work in review is building legal-document controls for the app itself, including branded agreement pages, first-login acceptance gates, and internal visibility into who accepted what. Put simply, YAHSHUA One is becoming better at handling both payroll accountability and platform trust in a way that feels more serious and more usable.",
+      "What this means for you is more control without losing clarity. Your team gets closer to a payroll setup where statutory rules can reflect real business needs, while still giving clear signals when something requires extra care before it affects live payroll. That reduces hidden surprises, lowers the risk of avoidable setup mistakes, and makes payroll reviews feel more explainable when sensitive rules need attention. It also helps YAHSHUA One grow into a more complete payroll and HR backoffice, where compliance, approvals, employee trust, and platform governance all reinforce each other in one place. We are still building fast, but this is exactly the kind of progress that makes the system feel more flexible, more disciplined, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-29",
+    "badge": "Progress Update",
+    "title": "Leave Requests and Attendance Details Get Much Clearer",
+    "description": "We made time-related requests easier to understand and safer to process by showing leave credits more clearly, requiring better request details, labeling special versus regular holidays, and fixing a couple of frustrating interface behaviors.",
+    "body": [
+      "Yesterday's work focused on a simple but important part of payroll and HR: helping teams understand requests and attendance details before they turn into confusion. When leave balances are hard to see, request reasons are vague, or holiday treatment is easy to misread, small questions can quickly turn into manual follow-up and second-guessing. This update matters because YAHSHUA One is getting better at making those everyday decisions clearer before they become cleanup work.",
+      "In plain language, teams can now see leave credits more clearly when reviewing requests, which helps people understand what is still available before filing or approving something. We also tightened request requirements so time-related filings need clearer reasons and duration details, reducing the chance of half-complete requests bouncing around for clarification. On top of that, attendance breakdowns now label special holidays versus regular holidays more clearly, and we fixed a couple of frustrating interface behaviors so controls do not trigger the wrong row actions and billing-related actions behave more reliably for staff.",
+      "What this means for you is a backoffice that keeps getting easier to trust in the messy daily moments. Your team gets better visibility into leave balances, clearer context around submitted requests, and more understandable attendance records when holiday rules come into play. That reduces guesswork, shortens review time, and helps the product feel calmer and more dependable in real day-to-day use."
+    ]
+  },
+  {
+    "date": "2026-06-28",
+    "badge": "Progress Update",
+    "title": "Setup, Billing, and Daily Navigation Got Much Smoother",
+    "description": "We made YAHSHUA One easier to get into, easier to move around, and less frustrating in everyday use by improving onboarding for existing companies, cleaning up billing, fixing saved cards, and polishing key screens across the product.",
+    "body": [
+      "Yesterday's work focused on a simple but important goal: making YAHSHUA One feel smoother in the ordinary moments teams deal with every day. A serious backoffice does not only need big payroll features. It also needs cleaner setup, simpler billing, and pages that help people get where they need to go without extra friction.",
+      "In plain language, existing companies can now move through subscription setup more easily during onboarding instead of hitting awkward dead ends. We also redesigned the company detail page so it works more like a practical launch point, removed a confusing change-plan path from billing, and fixed saved card behavior so payment details are more dependable when businesses need them. On top of that, we added better homepage shortcuts and polished the look and feel of key settings and theme changes so the product feels more coherent across the day.",
+      "What this means for you is a backoffice that keeps getting easier to trust in real use. Teams should have a cleaner path into the product, fewer billing headaches, and a faster way to move through common tasks without the interface feeling patchy. It is steady progress, but it is exactly the kind that helps YAHSHUA One feel more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-28",
+    "badge": "Progress Update",
+    "title": "Everyday Workflows Feel Faster and Cleaner",
+    "description": "We improved how teams move through onboarding, company pages, subscriptions, saved cards, and everyday settings so YAHSHUA One feels smoother, clearer, and easier to act on in real daily use.",
+    "body": [
+      "For many Filipino business owners, the biggest backoffice pain is not always one dramatic payroll failure. More often, it is the slow buildup of small annoyances that waste attention across the day. A confusing company page, an awkward onboarding step, or a settings area that feels harder to scan than it should can all create friction that adds up fast. When those rough edges pile together, managers lose momentum and teams start relying on memory, side chats, and extra clicks just to keep work moving. This update matters because YAHSHUA One keeps getting better at the ordinary product moments that quietly shape whether a system feels stressful or smooth.",
+      "Yesterday's work focused on making the platform feel cleaner and more natural to use in plain language. We redesigned the company detail experience so it behaves more like a practical launch point for the work a team actually needs to do. We also made onboarding stronger by helping existing companies move through subscription setup more smoothly instead of hitting awkward dead ends. On top of that, saved card behavior was improved so payment information is more dependable when businesses need it, and the billing area became less cluttered by removing a confusing change-plan path. Even smaller polish work, like clearer homepage shortcuts, smoother light-and-dark theme transitions, and more distinct settings colors, helps the product feel less patchy and easier to navigate at a glance.",
+      "What this means for you is a backoffice that keeps getting easier to trust in the middle of a busy workday. Your team gets closer to a setup where important actions are easier to find, subscription and billing moments feel less awkward, and the overall interface supports faster decisions instead of slowing them down. That may sound like polish on the surface, but this kind of polish is exactly what helps a serious payroll and HR product feel ready for real companies, not just demos. It reduces hesitation, lowers the chance of avoidable admin mistakes, and makes the system feel more coherent from one screen to the next. Every improvement like this moves YAHSHUA One closer to being a complete payroll and HR backoffice that Filipino businesses can confidently run on as daily operations keep getting more complex."
+    ]
+  },
+  {
+    "date": "2026-06-27",
+    "badge": "Progress Update",
+    "title": "Payroll Gets Faster, Clearer, and Easier to Act On",
+    "description": "We shipped a big round of payroll and workflow improvements so teams can generate payroll without getting stuck, catch attendance issues more clearly, manage leave settings more easily, and move approvals forward with less back-and-forth.",
+    "body": [
+      "This latest round of work focused on the kind of product details that make a payroll and HR system feel usable in real life, not just technically complete on paper. For growing teams, the pain usually is not one dramatic failure. It is the accumulation of smaller frictions: payroll taking too long to finish, attendance issues being hard to interpret, approvals getting buried, or settings being scattered in ways that slow down already busy managers. The goal of this update was to reduce those daily interruptions so work feels smoother, faster, and easier to trust.",
+      "In plain language, YAHSHUA One can now handle payroll generation in a more scalable background flow, which means teams are moving closer to a setup where heavy payroll work does not feel like it freezes everything around it. We also improved payroll breakdowns and break reports so people can understand time and payroll details with less guesswork. On the attendance side, duplicate manual attendance entries are now explained more clearly instead of leaving users to wonder what went wrong. We also added better controls for leave types, including the ability to edit and deactivate them more cleanly, while payroll settings and work schedule views are becoming easier to navigate and manage.",
+      "Another important part of this update is workflow clarity. Approval actions now support deeper linking and safer governed edits, which helps people get straight to what needs attention instead of hunting through the product. Breadcrumbs and navigation were also cleaned up so settings pages feel less stitched together. What this means for early supporters is simple: YAHSHUA One keeps becoming more practical for real operating teams. Payroll work is getting faster, approvals are becoming easier to act on, and the product is steadily feeling more like a serious backoffice system built for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-27",
+    "badge": "Progress Update",
+    "title": "Approvals and Schedules Get Sharper",
+    "description": "We made approval flows more actionable and dependable while improving work schedule visibility, safer schedule changes, and payroll clarity so real teams can move faster with less guesswork.",
+    "body": [
+      "For many Filipino business owners, payroll friction rarely starts with one big dramatic mistake. It usually starts with smaller operational gaps that pile up over time, like approvals that are hard to act on, schedules that are harder to read than they should be, or payroll details that need extra explaining before a team feels safe moving forward. When those daily edges stay rough, managers end up relying on side chats, memory, and manual follow-up just to keep work flowing. That slows down decisions and makes even correct payroll work feel more stressful than it needs to be. This update matters because YAHSHUA One is getting better at handling those practical day-to-day moments with more clarity and discipline.",
+      "Yesterday's work pushed several connected improvements forward in plain language. Approval flows are becoming more usable, with clearer action paths, deeper links that take people straight where they need to go, and stronger support for governed edits even after something has already been approved. We also expanded the approval structure itself so reviewer and recommender workflows are seeded more cleanly, which helps real organizations reflect how decisions actually move before final approval happens. On the scheduling side, YAHSHUA One now gives a clearer table view of work schedules, improves how schedule hours are explained, and supports safer date-range assignment changes without breaking ongoing employee setups. We also tightened payroll behavior behind the scenes with better lateness policy refresh handling, stronger recurring allowance quality checks, and more reliable recurring deduction setup, which helps the product feel less fragile when real payroll conditions start getting messy.",
+      "What this means for you is a backoffice that keeps getting easier to trust once real operations start involving more people, more schedules, and more approvals. Your team gets closer to a workflow where requests are easier to act on, schedule information is easier to review, and payroll decisions are supported by cleaner guardrails instead of awkward workarounds. That reduces avoidable follow-up, shortens review time, and makes the system feel calmer under real business pressure. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where approvals, schedule management, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of practical product depth that makes the platform feel more serious, more usable, and more ready for growing businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-26",
+    "badge": "Progress Update",
+    "title": "Payroll Gets More Flexible for Real-World Teams",
+    "description": "We expanded support for recurring earnings, flexible break windows, hire-date-aware payroll runs, cleaner attendance imports, and more complete timesheets so everyday payroll work holds up better when real schedules get messy.",
+    "body": [
+      "For many Filipino businesses, payroll stops feeling simple the moment employees, schedules, and pay rules no longer fit a neat template. Someone may start mid-period, earn recurring add-ons, work under a more flexible break setup, or show up in attendance files that were exported in awkward date and time formats. When a system cannot absorb those realities cleanly, payroll teams end up doing extra checking, cleanup, and side adjustments just to feel safe before releasing pay. This update matters because YAHSHUA One is getting better at handling those normal-but-messy situations inside the product instead of pushing the burden back onto your team.",
+      "Yesterday's work pushed several connected improvements forward in plain language. YAHSHUA One now has stronger support for recurring earnings, more flexibility around break-window payroll coverage, and better checks to make sure a payroll period actually fits the employees and schedules it is supposed to cover. We also made salary and rate information easier to see, improved attendance imports so more Excel-style date and time formats are accepted cleanly, and removed extra friction from employee import setup. On the timekeeping side, timesheets can now be generated more completely even for absent days, which helps the system reflect a fuller picture of what actually happened instead of leaving awkward gaps behind.",
+      "What this means for you is a payroll workflow that keeps getting more dependable once real business conditions start showing up. Your team gets closer to a setup where recurring pay items, mid-period realities, flexible schedule rules, and messy attendance files can be handled with less manual patchwork. That reduces avoidable corrections, shortens review time, and makes the platform feel more trustworthy when payroll stops being clean and predictable. We are still building fast, but this is exactly the kind of product depth that helps YAHSHUA One feel more serious, more usable, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "badge": "Progress Update",
+    "title": "Payroll Edge Cases Start Behaving",
+    "description": "We expanded payroll support for multi-assignment employees, recurring earnings, hire-date-aware runs, and stricter schedule checks so more real-world payroll cases work correctly without extra cleanup.",
+    "body": [
+      "For many Filipino business owners, payroll starts getting stressful the moment an employee no longer fits a simple single-role setup. Someone may work across multiple assignments, start in the middle of a payroll period, receive recurring earnings on top of base pay, or follow schedules that need tighter checks before payroll can be trusted. When a system cannot handle those realities cleanly, teams fall back to spreadsheets, side notes, and manual corrections just to feel safe before releasing pay. That creates delay, confusion, and unnecessary second-guessing in the exact part of operations that should feel disciplined. This update matters because YAHSHUA One is getting much better at handling the messy but normal payroll situations real businesses in the Philippines deal with every cycle.",
+      "Yesterday's work pushed several connected payroll improvements forward in plain language. YAHSHUA One can now better support payroll generation for employees with multiple assignments, which matters for businesses where one person may wear more than one operational hat. We also added stronger support for recurring earnings, making it easier for regular extra pay items to behave more consistently instead of feeling like awkward exceptions. On top of that, payroll runs are now being scoped more carefully based on hire date, while schedule fit checks and lateness policy handling are becoming stricter and more dependable behind the scenes. Even smaller fixes, like preventing certain employee import crashes and tightening assignment updates, help the whole payroll flow feel less fragile in real use.",
+      "What this means for you is more confidence that YAHSHUA One can keep up once payroll stops being neat and predictable. Your team gets closer to a workflow where multi-role employees, recurring pay items, and mid-period employment changes can be handled inside the system with less manual patchwork. That reduces avoidable corrections, lowers the risk of payroll disputes, and helps managers trust the outputs before they turn into follow-up work. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where schedules, employee assignments, pay rules, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of depth that makes the platform feel more serious, more resilient, and more ready for real businesses."
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "badge": "Progress Update",
+    "title": "Attendance and Payroll Decisions Get Clearer",
+    "description": "We made attendance reviews easier to understand, improved how leave balances and allowances behave, and added clearer payroll approval outcomes so teams can trust more of the messy day-to-day cases without extra guesswork.",
+    "body": [
+      "For many Filipino businesses, payroll stops feeling simple the moment attendance gets messy. A missing log, an unusual work schedule, a leave balance that changes over time, or a request that gets rejected can all create confusion if the system does not explain what is happening clearly. When that clarity is missing, teams fall back to spreadsheets, side notes, and repeated double-checking just to feel safe. This update matters because YAHSHUA One is getting much better at making those tricky payroll and attendance moments easier to review and easier to trust.",
+      "Yesterday's work pushed several connected improvements forward in plain language. Attendance screens now show more of the schedule context behind each day, make day-level edits easier, and help teams review records in a more natural order. We also improved how leave credits and balances build up over time, while expanding how payroll allowances can be applied in more real business situations, including hybrid setups and final pay scenarios. On top of that, approval flows now show disapproved outcomes more clearly and mobile request handling kept moving forward, which helps teams understand what happened instead of getting stuck in vague status updates.",
+      "What this means for you is more confidence when payroll and attendance stop fitting into neat, simple cases. Your team gets closer to a workflow where attendance issues are easier to interpret, leave balances are easier to trust, and payroll decisions are easier to explain before they turn into follow-up or correction work. That reduces guesswork, lowers the chance of avoidable disputes, and makes the platform feel more dependable under real operating pressure. We are still building fast, but this is exactly the kind of depth that makes YAHSHUA One feel more serious, more usable, and more ready for real businesses in the Philippines."
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "badge": "Progress Update",
+    "title": "Payroll Trust Gets a Serious Upgrade",
+    "description": "We strengthened attendance classification, leave balance logic, and payroll compliance checks so YAHSHUA One can handle more of the messy real-world rules Filipino businesses face before payroll goes out.",
+    "body": [
+      "For many Filipino business owners, payroll gets stressful the moment work stops fitting into neat categories. A normal day can quickly become messy when schedules, overtime, rest days, holidays, and leave balances all start interacting at once. If the system cannot interpret those situations clearly, teams end up double-checking everything in spreadsheets and side notes just to feel safe. That wastes time and makes even correct payroll runs feel fragile. This update matters because YAHSHUA One is getting much better at understanding the real conditions behind payroll before errors and confusion have a chance to spread.",
+      "Yesterday's work pushed several connected improvements forward across attendance logic, leave balances, and payroll compliance. In plain language, the product is getting a clearer way to define how different attendance situations should be classified, including safer defaults and a smoother path for teams to shape those rules without the setup feeling like a black box. We also improved how leave credits and balances are granted, initialized, replenished, and tracked over time, which helps businesses manage leave entitlements with less manual patchwork. On top of that, more compliance checks were completed for critical payroll situations like hourly wage handling, overtime premiums, excess hours, rest days, holidays, and minimum take-home protection. Put simply, YAHSHUA One is becoming better at turning complicated policy rules into something structured, visible, and much easier to trust.",
+      "What this means for you is more confidence that the system can keep up when real payroll conditions get complicated. Your team gets closer to a workflow where attendance outcomes are easier to interpret, leave balances are easier to trust, and payroll warnings surface before a problem turns into a correction. That reduces guesswork, lowers the chance of avoidable payroll disputes, and makes the product feel far more dependable under real operating pressure. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where attendance, leave, compliance, and payroll execution all reinforce each other in one place. We are still building fast, but this is exactly the kind of depth that makes the platform feel more serious, more mature, and more ready for real businesses in the Philippines."
+    ]
+  },
   {
     "date": "2026-06-20",
     "badge": "Progress Update",

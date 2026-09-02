@@ -326,6 +326,7 @@ export default function PayrollPage() {
                 { label: "Features",       href: "#features"   },
                 { label: "Compliance",     href: "#compliance" },
                 { label: "FAQ",            href: "#faq"        },
+                { label: "Support",        href: "/support"    },
                 { label: "← All modules", href: "/#modules"   },
               ].map((link) => (
                 <a key={link.label} href={link.href}
@@ -392,6 +393,7 @@ export default function PayrollPage() {
               { label: "Features",       href: "#features"   },
               { label: "Compliance",     href: "#compliance" },
               { label: "FAQ",            href: "#faq"        },
+              { label: "Support",        href: "/support"    },
               { label: "← All modules", href: "/#modules"   },
             ].map((link) => (
               <a key={link.label} href={link.href} className="mobile-menu__link" onClick={() => setMobileNavOpen(false)}>{link.label}</a>
@@ -878,7 +880,7 @@ export default function PayrollPage() {
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
           <nav style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            {[{ label: "Home", href: "/" }, { label: "Modules", href: "/#modules" }, { label: "Updates", href: "/updates" }, { label: "Waitlist", href: "/#waitlist" }].map((link) => (
+            {[{ label: "Home", href: "/" }, { label: "Modules", href: "/#modules" }, { label: "Support", href: "/support" }, { label: "Updates", href: "/updates" }, { label: "Waitlist", href: "/#waitlist" }].map((link) => (
               <a key={link.label} href={link.href}
                 style={{ color: "var(--muted)", transition: "color .15s ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}

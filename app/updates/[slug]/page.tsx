@@ -12,8 +12,19 @@ interface Update {
 
 const updates: Update[] = updatesData as Update[];
 
+function slugifyTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function updateSlug(update: Update) {
+  return `${update.date}-${slugifyTitle(update.title)}`;
+}
+
 export async function generateStaticParams() {
-  return updates.map((u) => ({ slug: u.date }));
+  return updates.map((u) => ({ slug: updateSlug(u) }));
 }
 
 function formatDate(dateStr: string) {
@@ -37,7 +48,8 @@ function Badge({ label }: { label: string }) {
 
 export default async function UpdateDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const update = updates.find((u) => u.date === slug);
+  const update = updates.find((u) => updateSlug(u) === slug)
+    ?? updates.find((u) => u.date === slug);
   if (!update) notFound();
 
   const paragraphs = update.body ?? [update.description];
@@ -112,11 +124,18 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
 
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--line)", padding: "32px 28px" }}>
-        <div style={{ maxWidth: 768, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ maxWidth: 768, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <Image src="/logo.jpg" alt="YAHSHUA One" width={22} height={22} style={{ borderRadius: 6, objectFit: "cover", flexShrink: 0 }} />
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
+          <nav style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+            {[{ label: "Home", href: "/" }, { label: "Support", href: "/support" }, { label: "Updates", href: "/updates" }].map((link) => (
+              <a key={link.label} href={link.href} style={{ fontSize: 13, color: "var(--muted)" }}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
           <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
         </div>
       </footer>

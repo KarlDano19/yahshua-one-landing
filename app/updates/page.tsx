@@ -11,6 +11,17 @@ interface Update {
   body?: string[];
 }
 
+function slugifyTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function updateSlug(update: Update) {
+  return `${update.date}-${slugifyTitle(update.title)}`;
+}
+
 function useInView<T extends Element = HTMLDivElement>(threshold = 0.1) {
   const ref = useRef<T>(null);
   const [visible, setVisible] = useState(false);
@@ -187,7 +198,7 @@ export default function UpdatesPage() {
                       </p>
 
                       {update.body && (
-                        <a href={`/updates/${update.date}`} style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)", marginTop: 14 }}>
+                        <a href={`/updates/${updateSlug(update)}`} style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)", marginTop: 14 }}>
                           Read full update →
                         </a>
                       )}
@@ -223,11 +234,18 @@ export default function UpdatesPage() {
 
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--line)", padding: "32px 28px" }}>
-        <div style={{ maxWidth: 768, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ maxWidth: 768, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <Image src="/logo.jpg" alt="YAHSHUA One" width={22} height={22} style={{ borderRadius: 6, objectFit: "cover", flexShrink: 0 }} />
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
+          <nav style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+            {[{ label: "Home", href: "/" }, { label: "Support", href: "/support" }, { label: "Pricing", href: "/pricing" }].map((link) => (
+              <a key={link.label} href={link.href} style={{ fontSize: 13, color: "var(--muted)" }}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
           <span style={{ fontSize: 13, color: "var(--soft)" }}>© 2026 The ABBA Initiative (OPC). All rights reserved.</span>
         </div>
       </footer>

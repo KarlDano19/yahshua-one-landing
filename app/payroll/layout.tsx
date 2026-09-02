@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const BASE_URL = "https://www.yahshua.one";
 
 export const metadata: Metadata = {
-  title: "YAHSHUA One Payroll — Automated Payroll & Statutory Contributions for Filipino Businesses",
+  title: "YAHSHUA One Payroll — Automated Payroll & Statutory Contributions for Filipino Businesses ",
   description:
     "Automate payroll computation, SSS, PhilHealth, Pag-IBIG, and BIR 1601-C for every employee. YAHSHUA One Payroll is built for Philippine Labor Code compliance — runs itself every cutoff.",
   keywords: [
