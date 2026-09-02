@@ -1,4 +1,15 @@
 [{
+    "date": "2026-09-02",
+    "badge": "Progress Update",
+    "title": "Sales Document Voids Are Safer",
+    "description": "Posted sales documents can now move through a dedicated void approval flow that creates a reversal instead of deleting the original record.",
+    "body": [
+      "What changed: Posted sales documents can now be submitted to a dedicated void queue, where a void can be approved or rejected. When approved, the document is reversed rather than deleted, preserving the original record and its accounting history.",
+      "Where to find it: The confirmed product areas are the sales invoicing workflow and its void queue. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance and operations teams can correct posted documents without erasing the evidence of what happened. Approval control and reversal-based processing make voids easier to review and keep the document and ledger history more traceable.",
+      "Who benefits / next step: Finance teams, sales administrators, and approvers benefit most from this controlled correction flow. Open the sales invoicing area, submit a posted document for voiding, and review it through the void queue."
+    ]
+  },
     "date": "2026-09-01",
     "badge": "Progress Update",
     "title": "Inventory Posting Rules Are More Reliable",
