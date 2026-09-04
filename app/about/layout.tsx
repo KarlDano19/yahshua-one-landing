@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.yahshua.one";
-const PARENT_ORG_ID = "https://www.theabbainitiative.com/#organization";
 
 export const metadata: Metadata = {
   title: "About — YAHSHUA One",
@@ -45,9 +44,18 @@ const aboutSchema = {
       url: `${BASE_URL}/about`,
       name: "About — YAHSHUA One",
       isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": PARENT_ORG_ID },
-      description: "YAHSHUA One is a product of The ABBA Initiative.",
+      about: { "@id": `${BASE_URL}/#software` },
+      description:
+        "YAHSHUA One is an AI-native back-office platform for Filipino businesses, part of The ABBA Initiative, the company that also builds YAHSHUA Payroll and YAHSHUA HRIS.",
       inLanguage: "en-PH",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${BASE_URL}/about#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "About", item: `${BASE_URL}/about` },
+      ],
     },
   ],
 };

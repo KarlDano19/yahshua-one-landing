@@ -62,6 +62,19 @@ export default function AboutPage() {
   };
   const btnSm: React.CSSProperties = { height: 36, padding: "0 14px", fontSize: 13.5 };
 
+  const eyebrow: React.CSSProperties = {
+    fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11,
+    letterSpacing: "0.12em", textTransform: "uppercase",
+    color: "var(--soft)", marginBottom: 16,
+  };
+  const sectionH2: React.CSSProperties = {
+    fontSize: "clamp(24px, 3vw, 32px)", letterSpacing: "-0.03em",
+    fontWeight: 500, lineHeight: 1.2, margin: "0 0 16px",
+  };
+  const linkStyle: React.CSSProperties = {
+    color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3,
+  };
+
   const navLinks = [
     { label: "Platform",     href: "/#platform" },
     { label: "Modules",      href: "/#modules" },
@@ -132,27 +145,110 @@ export default function AboutPage() {
 
       {/* ── ABOUT ── */}
       <section className="section-pad-lg" style={{ textAlign: "center" }}>
-        <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 28px" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
+            <p style={eyebrow}>About</p>
             <h1 style={{
               fontSize: "clamp(32px, 4.5vw, 48px)", letterSpacing: "-0.04em",
-              fontWeight: 500, lineHeight: 1.1, margin: "0 0 20px",
+              fontWeight: 500, lineHeight: 1.15, margin: "0 0 20px",
             }}>
-              About YAHSHUA One
+              Built by a team that has done this for 17 years.
             </h1>
-            <p style={{ fontSize: "clamp(16px, 1.6vw, 19px)", lineHeight: 1.6, color: "var(--muted)", margin: "0 0 16px" }}>
-              YAHSHUA One is built by{" "}
-              <a href="https://www.theabbainitiative.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3 }}>
-                The ABBA Initiative
+            <p style={{ fontSize: "clamp(16px, 1.6vw, 19px)", lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
+              YAHSHUA One is an AI-native back-office platform for Filipino businesses: ERP, HR, payroll, accounting, and tax compliance unified in one workspace, built specifically for how Philippine businesses actually operate.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── WHAT WE DO ── */}
+      <section className="section-pad-lg" style={{ borderTop: "1px solid var(--line)", background: "var(--bg-tint)" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <p style={eyebrow}>What we do</p>
+            <h2 style={sectionH2}>Everything back-office, in one system.</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: "0 0 12px" }}>
+              From day-to-day operations to year-end filings, YAHSHUA One keeps every transaction, employee record, and tax form in one schema: inventory and sales orders, payroll and statutory contributions, real-time accounting, and BIR-ready compliance reporting.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
+              An AI assistant reads your actual data directly, so its answers come from your books, not the internet.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── SECURITY & COMPLIANCE ── */}
+      <section className="section-pad-lg" style={{ borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <p style={eyebrow}>Security & compliance</p>
+            <h2 style={sectionH2}>Compliance is never an afterthought.</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
+              YAHSHUA One is BIR-registered and independently audited for security, data privacy, and information security management.
+            </p>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="grid-badges" style={{ marginTop: 32 }}>
+              {[
+                { src: "/BIR%20Registration%20Seal%20Badge_1.png",   alt: "BIR Registration Seal Badge 1" },
+                { src: "/SOC2%20TYPE%202.png",                       alt: "SOC 2 Type II certified" },
+                { src: "/EU%20GDPR.png",                             alt: "GDPR compliant" },
+                { src: "/ISO27001-certificate-logo-4%20%281%29.png", alt: "ISO 27001 certified" },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
+                  background: "var(--surface)", boxShadow: "var(--shadow-sm)",
+                }}>
+                  <img src={item.src} alt={item.alt} loading="lazy" decoding="async"
+                    style={{ width: "100%", height: "auto", display: "block" }} />
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── WHO WE ARE ── */}
+      <section className="section-pad-lg" style={{ borderTop: "1px solid var(--line)", background: "var(--bg-tint)" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <p style={eyebrow}>Who we are</p>
+            <h2 style={sectionH2}>Part of a bigger back-office effort.</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: "0 0 12px" }}>
+              YAHSHUA One is part of{" "}
+              <a href="https://www.theabbainitiative.com/" target="_blank" rel="noopener noreferrer" style={linkStyle}>The ABBA Initiative</a>
+              , the Philippine company behind the YAHSHUA name. Based in Cagayan de Oro, we&apos;ve been building payroll, HR, and compliance software for Filipino businesses for over 17 years.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
+              The ABBA Initiative also builds{" "}
+              <a href="https://www.yahshuapayroll.com" target="_blank" rel="noopener noreferrer" style={linkStyle}>YAHSHUA Payroll</a>
+              {" "}and{" "}
+              <a href="https://www.yahshuahris.com" target="_blank" rel="noopener noreferrer" style={linkStyle}>YAHSHUA HRIS</a>
+              , our earlier products, still fully supported for existing customers. Prefer a done-for-you service instead?{" "}
+              <a href="https://www.yahshua-abba.com/" target="_blank" rel="noopener noreferrer" style={linkStyle}>YAHSHUA Outsourcing Worldwide</a>
+              {" "}runs it for you.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="section-pad-lg" style={{ borderTop: "1px solid var(--line)", textAlign: "center" }}>
+        <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <h2 style={{ ...sectionH2, margin: "0 0 8px" }}>See it for yourself.</h2>
+            <p style={{ fontSize: 15, color: "var(--muted)", margin: "0 0 24px" }}>
+              Join the waitlist. No credit card required.
+            </p>
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+              <a href="/#waitlist" style={btnPrimary}>Get Started <Arrow /></a>
+              <a
+                href="https://calendly.com/clientrelations-abba/presentation?utm_source=about&utm_medium=web&utm_campaign=yahshuaone"
+                target="_blank" rel="noopener noreferrer" style={btnGhost}
+              >
+                Book a Demo
               </a>
-              , the company behind the YAHSHUA product suite.
-            </p>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
-              Already using YAHSHUA Payroll or YAHSHUA HRIS? They&apos;re still fully supported. Prefer a done-for-you service instead?{" "}
-              <a href="https://www.yahshua-abba.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3 }}>
-                Visit YAHSHUA Outsourcing Worldwide
-              </a>.
-            </p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -171,8 +267,11 @@ export default function AboutPage() {
               { label: "Payroll",  href: "/payroll" },
               { label: "Updates",  href: "/updates" },
               { label: "Pricing",  href: "/pricing" },
+              { label: "The ABBA Initiative", href: "https://www.theabbainitiative.com/", external: true },
             ].map((link) => (
               <a key={link.label} href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 style={{ color: link.href === "/about" ? "var(--ink)" : "var(--muted)", transition: "color .15s ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = link.href === "/about" ? "var(--ink)" : "var(--muted)")}>
