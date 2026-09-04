@@ -65,15 +65,21 @@ export default function AboutPage() {
   const eyebrow: React.CSSProperties = {
     fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11,
     letterSpacing: "0.12em", textTransform: "uppercase",
-    color: "var(--soft)", marginBottom: 16,
+    color: "var(--accent-2)", marginBottom: 16,
   };
   const sectionH2: React.CSSProperties = {
     fontSize: "clamp(24px, 3vw, 32px)", letterSpacing: "-0.03em",
     fontWeight: 500, lineHeight: 1.2, margin: "0 0 16px",
   };
   const linkStyle: React.CSSProperties = {
-    color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3,
+    color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 3,
   };
+  const gradientText: React.CSSProperties = {
+    fontStyle: "normal",
+    background: "linear-gradient(110deg, var(--accent-2) 5%, var(--accent) 50%, var(--accent-3) 95%)",
+    WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
+  };
+  const accentWord: React.CSSProperties = { fontStyle: "normal", color: "var(--accent-2)" };
 
   const navLinks = [
     { label: "Platform",     href: "/#platform" },
@@ -152,7 +158,8 @@ export default function AboutPage() {
               fontSize: "clamp(32px, 4.5vw, 48px)", letterSpacing: "-0.04em",
               fontWeight: 500, lineHeight: 1.15, margin: "0 0 20px",
             }}>
-              Built by a team that has done this for 17 years.
+              Built by a team that has done this for{" "}
+              <em style={gradientText}>17 years.</em>
             </h1>
             <p style={{ fontSize: "clamp(16px, 1.6vw, 19px)", lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
               YAHSHUA One is an AI-native back-office platform for Filipino businesses: ERP, HR, payroll, accounting, and tax compliance unified in one workspace, built specifically for how Philippine businesses actually operate.
@@ -166,7 +173,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <p style={eyebrow}>What we do</p>
-            <h2 style={sectionH2}>Everything back-office, in one system.</h2>
+            <h2 style={sectionH2}>Everything back-office, in <em style={accentWord}>one system.</em></h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: "0 0 12px" }}>
               From day-to-day operations to year-end filings, YAHSHUA One keeps every transaction, employee record, and tax form in one schema: inventory and sales orders, payroll and statutory contributions, real-time accounting, and BIR-ready compliance reporting.
             </p>
@@ -182,15 +189,44 @@ export default function AboutPage() {
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <p style={eyebrow}>Security & compliance</p>
-            <h2 style={sectionH2}>Compliance is never an afterthought.</h2>
+            <h2 style={sectionH2}>Compliance is <em style={accentWord}>never an afterthought.</em></h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
               YAHSHUA One is BIR-registered and independently audited for security, data privacy, and information security management.
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <div className="grid-badges" style={{ marginTop: 32 }}>
+            <p style={{
+              fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10,
+              letterSpacing: "0.10em", textTransform: "uppercase",
+              color: "var(--soft)", margin: "32px 0 12px",
+            }}>
+              Bureau of Internal Revenue
+            </p>
+            <div className="grid-badges" style={{ marginBottom: 28 }}>
               {[
-                { src: "/BIR%20Registration%20Seal%20Badge_1.png",   alt: "BIR Registration Seal Badge 1" },
+                { src: "/BIR%20Registration%20Seal%20Badge_1.png",  alt: "BIR Registration Seal Badge 1" },
+                { src: "/BIR%20Registration%20Seal%20Badge_%202.png", alt: "BIR Registration Seal Badge 2" },
+                { src: "/BIR%20Registration%20Seal%20Badge_3.png",  alt: "BIR Registration Seal Badge 3" },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
+                  background: "var(--surface)", boxShadow: "var(--shadow-sm)",
+                }}>
+                  <img src={item.src} alt={item.alt} loading="lazy" decoding="async"
+                    style={{ width: "100%", height: "auto", display: "block" }} />
+                </div>
+              ))}
+            </div>
+
+            <p style={{
+              fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10,
+              letterSpacing: "0.10em", textTransform: "uppercase",
+              color: "var(--soft)", marginBottom: 12,
+            }}>
+              Security & privacy
+            </p>
+            <div className="grid-badges">
+              {[
                 { src: "/SOC2%20TYPE%202.png",                       alt: "SOC 2 Type II certified" },
                 { src: "/EU%20GDPR.png",                             alt: "GDPR compliant" },
                 { src: "/ISO27001-certificate-logo-4%20%281%29.png", alt: "ISO 27001 certified" },
@@ -213,7 +249,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <p style={eyebrow}>Who we are</p>
-            <h2 style={sectionH2}>Part of a bigger back-office effort.</h2>
+            <h2 style={sectionH2}>Part of a bigger <em style={accentWord}>back-office effort.</em></h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: "0 0 12px" }}>
               YAHSHUA One is part of{" "}
               <a href="https://www.theabbainitiative.com/" target="_blank" rel="noopener noreferrer" style={linkStyle}>The ABBA Initiative</a>
@@ -236,7 +272,7 @@ export default function AboutPage() {
       <section className="section-pad-lg" style={{ borderTop: "1px solid var(--line)", textAlign: "center" }}>
         <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <h2 style={{ ...sectionH2, margin: "0 0 8px" }}>See it for yourself.</h2>
+            <h2 style={{ ...sectionH2, margin: "0 0 8px" }}>See it for <em style={accentWord}>yourself.</em></h2>
             <p style={{ fontSize: 15, color: "var(--muted)", margin: "0 0 24px" }}>
               Join the waitlist. No credit card required.
             </p>
