@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.yahshua.one";
+const PARENT_ORG_ID = "https://www.theabbainitiative.com/#organization";
 
 export const metadata: Metadata = {
   title: "About — YAHSHUA One",
   description:
-    "The ABBA Initiative (OPC) is the Philippine parent company behind YAHSHUA One, YAHSHUA Payroll, YAHSHUA HRIS, and YAHSHUA Outsourcing Worldwide Inc.",
+    "YAHSHUA One is built by The ABBA Initiative, the company behind the YAHSHUA product suite.",
   alternates: {
     canonical: `${BASE_URL}/about`,
   },
@@ -16,13 +17,13 @@ export const metadata: Metadata = {
     siteName: "YAHSHUA One",
     title: "About — YAHSHUA One",
     description:
-      "The ABBA Initiative (OPC) is the Philippine parent company behind YAHSHUA One, YAHSHUA Payroll, YAHSHUA HRIS, and YAHSHUA Outsourcing Worldwide Inc.",
+      "YAHSHUA One is built by The ABBA Initiative, the company behind the YAHSHUA product suite.",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "About YAHSHUA — The ABBA Initiative (OPC)",
+        alt: "About YAHSHUA One",
       },
     ],
   },
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About — YAHSHUA One",
     description:
-      "The ABBA Initiative (OPC) is the Philippine parent company behind YAHSHUA One, YAHSHUA Payroll, YAHSHUA HRIS, and YAHSHUA Outsourcing Worldwide Inc.",
+      "YAHSHUA One is built by The ABBA Initiative, the company behind the YAHSHUA product suite.",
     images: ["/opengraph-image"],
   },
 };
@@ -44,9 +45,8 @@ const aboutSchema = {
       url: `${BASE_URL}/about`,
       name: "About — YAHSHUA One",
       isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${BASE_URL}/#org` },
-      description:
-        "How YAHSHUA One, YAHSHUA Payroll, YAHSHUA HRIS, and YAHSHUA Outsourcing Worldwide Inc. relate to The ABBA Initiative (OPC).",
+      about: { "@id": PARENT_ORG_ID },
+      description: "YAHSHUA One is a product of The ABBA Initiative.",
       inLanguage: "en-PH",
     },
   ],

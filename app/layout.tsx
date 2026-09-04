@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 const BASE_URL = "https://www.yahshua.one";
+const PARENT_ORG_ID = "https://www.theabbainitiative.com/#organization";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -151,27 +152,7 @@ export default function RootLayout({
                   inLanguage: "en-PH",
                   isAccessibleForFree: true,
                   screenshot: `${BASE_URL}/og-image.jpg`,
-                },
-                {
-                  "@type": "Organization",
-                  "@id": `${BASE_URL}/#org`,
-                  name: "The ABBA Initiative (OPC)",
-                  alternateName: ["ABBA Initiative"],
-                  url: `${BASE_URL}/about`,
-                  logo: `${BASE_URL}/logo.jpg`,
-                  foundingLocation: {
-                    "@type": "Country",
-                    name: "Philippines",
-                  },
-                  description:
-                    "Philippine parent company building payroll, HR, accounting, and tax compliance software and services for Filipino businesses.",
-                  sameAs: [
-                    "https://www.yahshuapayroll.com",
-                    "https://www.yahshuahris.com",
-                  ],
-                  subOrganization: {
-                    "@id": "https://www.yahshua-abba.com/#organization",
-                  },
+                  publisher: { "@id": PARENT_ORG_ID },
                 },
                 {
                   "@type": "WebSite",
@@ -180,7 +161,7 @@ export default function RootLayout({
                   name: "YAHSHUA One",
                   description:
                     "AI-powered payroll, BIR compliance, HR, and accounting system for Filipino businesses",
-                  publisher: { "@id": `${BASE_URL}/#org` },
+                  publisher: { "@id": PARENT_ORG_ID },
                   inLanguage: "en-PH",
                 },
                 {

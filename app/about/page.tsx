@@ -70,33 +70,6 @@ export default function AboutPage() {
     { label: "What's New",   href: "/updates" },
   ];
 
-  const paths = [
-    {
-      label: "Run it yourself",
-      heading: "Prefer to run it yourself?",
-      body: (
-        <>
-          <strong style={{ color: "var(--ink)", fontWeight: 500 }}>YAHSHUA One</strong> is our AI-native software platform: payroll, HR, accounting, and tax compliance in one workspace, currently in early access.{" "}
-          <a href="https://www.yahshuapayroll.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3 }}>YAHSHUA Payroll</a>{" "}
-          and{" "}
-          <a href="https://www.yahshuahris.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3 }}>YAHSHUA HRIS</a>{" "}
-          are our earlier software products, still fully supported for existing customers.
-        </>
-      ),
-      cta: { label: "Explore YAHSHUA One", href: "/" },
-    },
-    {
-      label: "Run it for you",
-      heading: "Prefer someone to run it for you?",
-      body: (
-        <>
-          <strong style={{ color: "var(--ink)", fontWeight: 500 }}>YAHSHUA Outsourcing Worldwide Inc.</strong> is our outsourcing services company, a subsidiary of The ABBA Initiative, handling payroll, HR, and compliance work directly for client businesses, powered by our own YAHSHUA software.
-        </>
-      ),
-      cta: { label: "Visit YAHSHUA Outsourcing Worldwide", href: "https://www.yahshua-abba.com/", external: true },
-    },
-  ];
-
   return (
     <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh" }}>
 
@@ -157,73 +130,28 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── HERO ── */}
-      <section className="section-pad-lg" style={{ textAlign: "center", borderBottom: "1px solid var(--line)" }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 28px" }}>
+      {/* ── ABOUT ── */}
+      <section className="section-pad-lg" style={{ textAlign: "center" }}>
+        <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <h1 style={{
-              fontSize: "clamp(36px, 5.5vw, 60px)", letterSpacing: "-0.04em",
-              fontWeight: 500, lineHeight: 1.05, margin: "0 0 20px",
+              fontSize: "clamp(32px, 4.5vw, 48px)", letterSpacing: "-0.04em",
+              fontWeight: 500, lineHeight: 1.1, margin: "0 0 20px",
             }}>
-              Who&apos;s behind YAHSHUA
+              About YAHSHUA One
             </h1>
-            <p style={{ fontSize: "clamp(16px, 1.6vw, 19px)", lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
-              The ABBA Initiative (OPC) is the parent company behind the YAHSHUA name. Based in Cagayan de Oro, Philippines, we&apos;ve been building payroll, HR, and compliance software and services for Filipino businesses for over 17 years.
+            <p style={{ fontSize: "clamp(16px, 1.6vw, 19px)", lineHeight: 1.6, color: "var(--muted)", margin: "0 0 16px" }}>
+              YAHSHUA One is built by{" "}
+              <a href="https://www.theabbainitiative.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3 }}>
+                The ABBA Initiative
+              </a>
+              , the company behind the YAHSHUA product suite.
             </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── TWO PATHS ── */}
-      <section className="section-pad-lg">
-        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <p style={{
-              textAlign: "center", fontSize: 15, color: "var(--muted)",
-              margin: "0 0 40px", fontWeight: 500,
-            }}>
-              There are two ways to work with us.
-            </p>
-          </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32 }}>
-            {paths.map((path, i) => (
-              <Reveal key={path.label} delay={i * 80}>
-                <div style={{
-                  height: "100%", padding: 32, borderRadius: 16,
-                  border: "1px solid var(--line)", background: "var(--surface)",
-                  display: "flex", flexDirection: "column", gap: 14,
-                }}>
-                  <div style={{
-                    fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11,
-                    letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted)",
-                  }}>
-                    {path.label}
-                  </div>
-                  <h2 style={{ fontSize: 21, fontWeight: 500, letterSpacing: "-0.02em", margin: 0 }}>
-                    {path.heading}
-                  </h2>
-                  <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--muted)", margin: 0, flexGrow: 1 }}>
-                    {path.body}
-                  </p>
-                  <a
-                    href={path.cta.href}
-                    target={path.cta.external ? "_blank" : undefined}
-                    rel={path.cta.external ? "noopener noreferrer" : undefined}
-                    style={{
-                      display: "inline-flex", alignItems: "center", gap: 6,
-                      fontSize: 14.5, fontWeight: 500, color: "var(--ink)",
-                      textDecoration: "none", marginTop: 4,
-                    }}
-                  >
-                    {path.cta.label} <Arrow />
-                  </a>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal>
-            <p style={{ textAlign: "center", fontSize: 14, color: "var(--muted)", margin: "40px 0 0" }}>
-              If you&apos;re already a customer of any of these products or services, nothing changes for you today.
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
+              Already using YAHSHUA Payroll or YAHSHUA HRIS? They&apos;re still fully supported. Prefer a done-for-you service instead?{" "}
+              <a href="https://www.yahshua-abba.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline", textUnderlineOffset: 3 }}>
+                Visit YAHSHUA Outsourcing Worldwide
+              </a>.
             </p>
           </Reveal>
         </div>
