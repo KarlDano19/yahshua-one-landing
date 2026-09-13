@@ -1,6 +1,18 @@
 [{
     "date": "2026-09-12",
     "badge": "Progress Update",
+    "title": "Core Finance Screens Get Refreshed",
+    "description": "Ten core Money, Buy, Journals, Configuration, Stock, and Sell screens now have redesigned interfaces for everyday finance and operations work.",
+    "body": [
+      "What changed: YAHSHUA One now has redesigned screens for Money’s Void Requests queue and decision screen, Buy’s Purchase Order page, Journals’ Import Journals page, and Configuration’s Company page. Stock also has refreshed Charge Types, Receiving, Locations, and Landed Cost pages, while Sell has a redesigned Sales Invoices page and Customers page.",
+      "Where to find it: The confirmed locations are the Void Requests area in Money, Purchase Orders in Buy, Import Journals in Journals, Company in Configuration, Charge Types, Receiving, Locations, and Landed Cost in Stock, and Sales Invoices and Customers in Sell. The available evidence confirms these module and page names but not deeper navigation paths.",
+      "Why it helps: Teams working across finance, purchasing, inventory, and sales get clearer, more consistent interfaces in the screens they use for requests, orders, journals, company settings, stock operations, invoices, and customer records. That makes routine review and data entry easier to follow across these core workflows.",
+      "Who benefits / next step: Payroll and finance administrators, purchasing users, inventory teams, sales teams, and company configuration owners benefit most from this progress. Open the relevant module and review the refreshed page for your next operational task."
+    ]
+  },
+  {
+    "date": "2026-09-12",
+    "badge": "Progress Update",
     "title": "Stock Screens and Configuration Are Clearer",
     "description": "The Stock workspace has refreshed screens for core inventory work, while Configuration now groups register and settings screens more clearly.",
     "body": [
