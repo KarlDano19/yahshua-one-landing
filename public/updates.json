@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-14",
+    "badge": "Progress Update",
+    "title": "Permissions for Numbers Are Now Manageable",
+    "description": "Administrators can now open a dedicated Permissions screen to see and change which roles may use Numbers.",
+    "body": [
+      "What changed: YAHSHUA One now connects the Permissions screen to live roles, so administrators can see which roles may use Numbers and change that access. The Permissions area also has a clear entry within Configuration.",
+      "Where to find it: Open Configuration → Permissions to review the live role access for Numbers and make a change. The available evidence confirms this path and the Numbers permission scope.",
+      "Why it helps: Teams can keep access to accounting work aligned with each role instead of relying on stale or disconnected settings. That makes permission reviews clearer and reduces the risk of the wrong role having access to Numbers.",
+      "Who benefits / next step: Company administrators and access-control owners benefit most from this improvement. Open Configuration → Permissions and review the roles that should be allowed to use Numbers."
+    ]
+  },
+  {
     "date": "2026-09-12",
     "badge": "Progress Update",
     "title": "Core Finance Screens Get Refreshed",
