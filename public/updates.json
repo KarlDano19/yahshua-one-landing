@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-15",
+    "badge": "Progress Update",
+    "title": "Bank Accounts Are Ready to Maintain",
+    "description": "Teams can now maintain company bank accounts in a dedicated Banking area, with each account tied to its ledger account and its book balance visible.",
+    "body": [
+      "What changed: YAHSHUA One now provides a dedicated place to maintain the bank accounts a company uses. Each bank account is bound to one ledger account, and the screen shows the balance recorded in the books.",
+      "Where to find it: Open Money → Banking to access the bank-account area. The confirmed work places Banking under Money and connects the screen to the bank-account register.",
+      "Why it helps: Finance teams can keep banking records and their corresponding ledger accounts aligned in one workflow. Seeing the book balance alongside the account makes review clearer and helps users spot mismatches sooner.",
+      "Who benefits / next step: Finance administrators and users responsible for company banking setup benefit most from this improvement. Open Money → Banking and review the company’s bank-account records."
+    ]
+  },
+  {
     "date": "2026-09-14",
     "badge": "Progress Update",
     "title": "Permissions for Numbers Are Now Manageable",
