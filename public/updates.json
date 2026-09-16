@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-16",
+    "badge": "Progress Update",
+    "title": "Bank Reconciliation and Purchasing Controls",
+    "description": "Teams can now import and review normalized bank statements while gaining stronger controls for duplicate invoices, received goods, and damaged deliveries.",
+    "body": [
+      "What changed: YAHSHUA One now supports importing bank statements and normalizing their lines as they enter the system, then reviewing unmatched lines against rules and moving accepted matches toward posted journal entries. Purchasing workflows also record what arrived and in what condition, show received-but-not-yet-billed goods with their age, and refuse the same invoice number twice from one supplier.",
+      "Where to find it: The confirmed evidence places these improvements in the bank-statement import, matching review, journal-posting, receiving, goods-received, and supplier-invoice workflows. It does not confirm a specific in-app menu path, so no deeper navigation path is provided.",
+      "Why it helps: Finance teams can bring statement data into a consistent shape and focus attention on lines that need review, while accounting reviewers get a clearer route from accepted match to journal entry. Purchasing and receiving teams can spot unbilled obligations, document delivery condition, and reduce duplicate-invoice risk before it affects the books.",
+      "Who benefits / next step: Finance users, accounting reviewers, purchasing teams, and receiving staff benefit most from this progress. Open the relevant bank or purchasing workflow to import a statement, review a match, or check received goods and supplier invoices."
+    ]
+  },
+  {
     "date": "2026-09-15",
     "badge": "Progress Update",
     "title": "Bank Accounts Are Ready to Maintain",
