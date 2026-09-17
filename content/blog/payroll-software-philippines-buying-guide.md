@@ -49,8 +49,8 @@ Published pricing for Philippine payroll and HRIS platforms currently ranges fro
 | Vendor | Published starting price | What it covers | Source |
 |---|---|---|---|
 | GreatDay HR | PHP 77 / employee / month (50-license minimum) | HRIS core, attendance, leave, payroll-side compliance | greatdayhr.ph/price |
-| Sprout Payroll (outsourced Starter) | PHP 7,900 / month flat, up to 10 employees | Fully outsourced payroll processing; software-only tiers are quote-based | sprout.ph |
 | PayrollHero | ~$3.50 / employee / month (HRIS, timekeeping, scheduling) + $3.00 / employee / month payroll add-on | Facial-recognition attendance first, payroll as an add-on | payrollhero.com/pricing |
+| Sprout Payroll (outsourced Starter) | PHP 7,900 / month flat, up to 10 employees | Fully outsourced payroll processing; software-only tiers are quote-based | sprout.ph |
 | YAHSHUA One Payroll | Custom quote, delivered on a single 30-minute call | Payroll, statutory contributions, and an AI assistant grounded in your data | yahshua.one/pricing |
 
 A quote-based model is not automatically worse than a published rate. It is worse only if getting that quote takes weeks instead of one call.
