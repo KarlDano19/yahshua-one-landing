@@ -238,7 +238,7 @@ export default async function BlogPostPage({
             background: "var(--ink)", color: "#fff", borderRadius: 999,
             fontWeight: 500, fontSize: 14,
           }}>
-            Join the waitlist →
+            Book a Free Demo →
           </a>
         </div>
 
