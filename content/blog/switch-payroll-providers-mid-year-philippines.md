@@ -5,6 +5,8 @@ description: "A practical guide to switching payroll providers mid-year in the P
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+ctaHeading: "Switching doesn't have to be risky."
+ctaBody: "YAHSHUA One's team migrates your year-to-date payroll data, SSS, PhilHealth, and Pag-IBIG history included, so your first payroll on the new system starts from the right numbers."
 faq:
   - question: "Can I switch payroll providers mid-year in the Philippines?"
     answer: "Yes. Switching mid-year is routine as long as your new provider has accurate year-to-date figures for every employee before your first live payroll on the new system. The risk isn't the calendar timing, it's incomplete data."

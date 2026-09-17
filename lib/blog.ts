@@ -21,6 +21,8 @@ export interface BlogPost {
   author?: string;
   readTime?: string;
   coverImage?: string;
+  ctaHeading?: string;
+  ctaBody?: string;
   faq?: FaqItem[];
   sources?: string[];
   content?: string;
@@ -43,6 +45,8 @@ export function getAllPosts(): BlogPost[] {
         author: data.author,
         readTime: data.readTime,
         coverImage: data.coverImage,
+        ctaHeading: data.ctaHeading,
+        ctaBody: data.ctaBody,
         faq: data.faq,
         sources: data.sources,
       } as BlogPost;
@@ -68,6 +72,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     author: data.author,
     readTime: data.readTime,
     coverImage: data.coverImage,
+    ctaHeading: data.ctaHeading,
+    ctaBody: data.ctaBody,
     faq: data.faq,
     sources: data.sources,
     content: processed.toString(),

@@ -228,10 +228,10 @@ export default async function BlogPostPage({
           background: "radial-gradient(70% 140% at 0% 100%, var(--accent-glow), transparent 60%), var(--surface)",
         }}>
           <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 18, margin: "0 0 8px" }}>
-            Stop computing this by hand.
+            {post.ctaHeading ?? "Stop computing this by hand."}
           </p>
           <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6, margin: "0 0 20px", maxWidth: 440 }}>
-            YAHSHUA One automatically computes SSS, PhilHealth, Pag-IBIG, and BIR withholding tax for every employee — every cutoff, zero manual work.
+            {post.ctaBody ?? "YAHSHUA One automatically computes SSS, PhilHealth, Pag-IBIG, and BIR withholding tax for every employee, every cutoff, zero manual work."}
           </p>
           <a href="/#waitlist" style={{
             display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 24px",
