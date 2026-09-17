@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import CertificationsSection from "./components/CertificationsSection";
+import OneHero from "./components/OneHero";
 
 /* ── Types ── */
 interface Update {
@@ -278,93 +280,17 @@ export default function Home() {
       </div>
 
       {/* ── HERO ── */}
-      <header style={{ padding: "84px 0 0", position: "relative", overflow: "hidden" }}>
-        {/* Aurora glow */}
-        <div style={{
-          position: "absolute", top: -200, left: "50%", transform: "translateX(-50%)",
-          width: 1100, height: 700, pointerEvents: "none", zIndex: 0, filter: "blur(20px)",
-          background: "radial-gradient(45% 55% at 50% 30%, var(--accent-glow), transparent 70%), radial-gradient(35% 45% at 30% 50%, oklch(0.9 0.06 215 / 0.4), transparent 70%)",
-        }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1, textAlign: "center" }}>
-
-          <Reveal>
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 12px 6px 8px",
-              border: "1px solid var(--line)", background: "var(--surface)", borderRadius: 999,
-              fontSize: 12.5, color: "var(--ink-2)", boxShadow: "var(--shadow-sm)", marginBottom: 22,
-            }}>
-              <span style={{
-                background: "var(--accent-50)", color: "var(--accent-2)",
-                padding: "2px 8px", borderRadius: 999,
-                fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10.5,
-                letterSpacing: "0.04em", textTransform: "uppercase",
-              }}>v1.0</span>
-              <span>Now open for early access</span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={60}>
-            <h1 style={{
-              margin: "0 auto 18px",
-              fontSize: "clamp(44px, 6.4vw, 88px)",
-              lineHeight: 1.02, letterSpacing: "-0.035em", fontWeight: 500,
-              maxWidth: 900, color: "var(--ink)", textWrap: "balance" as React.CSSProperties["textWrap"],
-            }}>
-              The operating system<br />your business{" "}
-              <em style={{
-                fontStyle: "normal",
-                background: "linear-gradient(110deg, var(--accent-2) 5%, var(--accent) 50%, var(--accent-3) 95%)",
-                WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
-              }}>runs on.</em>
-            </h1>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <p style={{
-              fontSize: 19, lineHeight: 1.55, color: "var(--muted)",
-              maxWidth: 580, margin: "0 auto 32px",
-            }}>
-              ERP, HR, accounting, tax, and personal finance: unified in one workspace, automated end-to-end, and answered by an AI that understands your books.
-            </p>
-          </Reveal>
-
-          <Reveal delay={180}>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-              <button onClick={() => setCtaOpen(true)} style={btnPrimary}>
-                Get Started <Arrow />
-              </button>
-            </div>
-          </Reveal>
-
-          <Reveal delay={230}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 28, color: "var(--soft)", fontSize: 13, justifyContent: "center" }}>
-              <div style={{ display: "inline-flex" }}>
-                {[
-                  "linear-gradient(135deg, #F2C879, #E89B5A)",
-                  "linear-gradient(135deg, #B9D9C4, #6FA989)",
-                  "linear-gradient(135deg, #C5C0E8, #8076C7)",
-                  "linear-gradient(135deg, var(--accent-3), var(--accent-2))",
-                ].map((bg, i) => (
-                  <span key={i} aria-hidden style={{
-                    width: 26, height: 26, borderRadius: "50%",
-                    border: "2px solid var(--bg)", marginLeft: i === 0 ? 0 : -8, background: bg,
-                  }} />
-                ))}
-              </div>
-              <span><strong style={{ color: "var(--ink-2)", fontWeight: 500 }}>1,200+ founders</strong> on the waitlist · No credit card required</span>
-            </div>
-          </Reveal>
-        </div>
+      <header id="home" style={{ padding: "clamp(60px, 7vw, 100px) 0 0", background: "#fcfcfa" }}>
+        <OneHero />
 
         {/* ── HERO VIDEO ── */}
-        <div style={{ maxWidth: 1200, margin: "56px auto 0", padding: "0 28px", position: "relative", zIndex: 1 }} id="platform">
+        <div style={{ maxWidth: 1200, margin: "64px auto 0", padding: "0 20px", position: "relative", zIndex: 1, scrollMarginTop: 88 }} id="platform" tabIndex={-1} aria-label="YAHSHUA One platform video" >
           <Reveal delay={280}>
             <div
               ref={heroVideoRef}
               style={{
-                borderRadius: 16, overflow: "hidden",
-                border: "1px solid var(--line)",
-                boxShadow: "0 32px 100px rgba(0,0,0,0.12)",
+                borderRadius: 24, overflow: "hidden", padding: 8, background: "#fff",
+                boxShadow: "0 0 0 1px #153c4210, -35px 25px 100px -45px #8bd8ee77, 35px 25px 100px -45px #ecd59e77",
                 position: "relative",
               }}
             >
@@ -382,8 +308,8 @@ export default function Home() {
               {/* Video */}
               <video
                 ref={heroVideoElRef}
-                autoPlay muted loop playsInline
-                style={{ width: "100%", display: "block" }}
+                controls playsInline preload="metadata" poster="/one-hero-poster.jpg"
+                style={{ width: "100%", display: "block", borderRadius: 16 }}
               >
                 <source src="/y1-intro.mp4" type="video/mp4" />
               </video>
@@ -726,97 +652,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <div className="grid-figures">
-              {[
-                { num: "40+",    lbl: "Hours of admin returned to founders every month." },
-                { num: "99.97%", lbl: "Filing accuracy across BIR, SSS, PhilHealth, Pag-IBIG." },
-                { num: "1 day",  lbl: "Average onboarding from sign-up to first reconciled month." },
-                { num: "0",      lbl: "Spreadsheets emailed at 2am between you and your accountant." },
-              ].map((fig) => (
-                <div key={fig.num} className="fig-item" style={{ padding: "36px 28px" }}>
-                  <div style={{ fontSize: "clamp(32px, 3.6vw, 48px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1, marginBottom: 8 }}>
-                    <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{fig.num}</em>
-                  </div>
-                  <div style={{ color: "var(--muted)", fontSize: 14 }}>{fig.lbl}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── COMPLIANCE BADGES ── */}
-      <section style={{ padding: "56px 0", borderTop: "1px solid var(--line)" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <p style={{
-              textAlign: "center", fontFamily: "var(--font-geist-mono, monospace)",
-              fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase",
-              color: "var(--soft)", marginBottom: 8,
-            }}>
-              Registered & certified
-            </p>
-            <p style={{
-              textAlign: "center", fontSize: 14, color: "var(--muted)",
-              marginBottom: 32, maxWidth: 480, margin: "0 auto 32px",
-            }}>
-              BIR-registered and independently audited for security, data privacy, and information security management.
-            </p>
-
-            {/* BIR registration images */}
-            <p style={{
-              fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10,
-              letterSpacing: "0.10em", textTransform: "uppercase",
-              color: "var(--soft)", marginBottom: 12,
-            }}>
-              Bureau of Internal Revenue
-            </p>
-            <div className="grid-badges" style={{ marginBottom: 28 }}>
-              {[
-                { src: "/BIR%20Registration%20Seal%20Badge_1.png",  alt: "BIR Registration Seal Badge 1" },
-                { src: "/BIR%20Registration%20Seal%20Badge_%202.png", alt: "BIR Registration Seal Badge 2" },
-                { src: "/BIR%20Registration%20Seal%20Badge_3.png",  alt: "BIR Registration Seal Badge 3" },
-              ].map((item, i) => (
-                <div key={i} style={{
-                  border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
-                  background: "var(--surface)", boxShadow: "var(--shadow-sm)",
-                }}>
-                  <img src={item.src} alt={item.alt} loading="lazy" decoding="async"
-                    style={{ width: "100%", height: "auto", display: "block" }} />
-                </div>
-              ))}
-            </div>
-
-            {/* Security & privacy certifications */}
-            <p style={{
-              fontFamily: "var(--font-geist-mono, monospace)", fontSize: 10,
-              letterSpacing: "0.10em", textTransform: "uppercase",
-              color: "var(--soft)", marginBottom: 12,
-            }}>
-              Security & privacy
-            </p>
-            <div className="grid-badges">
-              {[
-                { src: "/SOC2%20TYPE%202.png",                          alt: "SOC 2 Type II certified" },
-                { src: "/EU%20GDPR.png",                                alt: "GDPR compliant" },
-                { src: "/ISO27001-certificate-logo-4%20%281%29.png",     alt: "ISO 27001 certified" },
-              ].map((item, i) => (
-                <div key={i} style={{
-                  border: "1px solid var(--line)", borderRadius: 10, overflow: "hidden",
-                  background: "var(--surface)", boxShadow: "var(--shadow-sm)",
-                }}>
-                  <img src={item.src} alt={item.alt} loading="lazy" decoding="async"
-                    style={{ width: "100%", height: "auto", display: "block" }} />
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <CertificationsSection />
 
       {/* ── YAHSHUA ONE PAYROLL SPOTLIGHT ── */}
       <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>

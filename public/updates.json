@@ -1,4 +1,172 @@
 [{
+    "date": "2026-09-16",
+    "badge": "Progress Update",
+    "title": "Bank Reconciliation and Purchasing Controls",
+    "description": "Teams can now import and review normalized bank statements while gaining stronger controls for duplicate invoices, received goods, and damaged deliveries.",
+    "body": [
+      "What changed: YAHSHUA One now supports importing bank statements and normalizing their lines as they enter the system, then reviewing unmatched lines against rules and moving accepted matches toward posted journal entries. Purchasing workflows also record what arrived and in what condition, show received-but-not-yet-billed goods with their age, and refuse the same invoice number twice from one supplier.",
+      "Where to find it: The confirmed evidence places these improvements in the bank-statement import, matching review, journal-posting, receiving, goods-received, and supplier-invoice workflows. It does not confirm a specific in-app menu path, so no deeper navigation path is provided.",
+      "Why it helps: Finance teams can bring statement data into a consistent shape and focus attention on lines that need review, while accounting reviewers get a clearer route from accepted match to journal entry. Purchasing and receiving teams can spot unbilled obligations, document delivery condition, and reduce duplicate-invoice risk before it affects the books.",
+      "Who benefits / next step: Finance users, accounting reviewers, purchasing teams, and receiving staff benefit most from this progress. Open the relevant bank or purchasing workflow to import a statement, review a match, or check received goods and supplier invoices."
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "badge": "Progress Update",
+    "title": "Bank Accounts Are Ready to Maintain",
+    "description": "Teams can now maintain company bank accounts in a dedicated Banking area, with each account tied to its ledger account and its book balance visible.",
+    "body": [
+      "What changed: YAHSHUA One now provides a dedicated place to maintain the bank accounts a company uses. Each bank account is bound to one ledger account, and the screen shows the balance recorded in the books.",
+      "Where to find it: Open Money → Banking to access the bank-account area. The confirmed work places Banking under Money and connects the screen to the bank-account register.",
+      "Why it helps: Finance teams can keep banking records and their corresponding ledger accounts aligned in one workflow. Seeing the book balance alongside the account makes review clearer and helps users spot mismatches sooner.",
+      "Who benefits / next step: Finance administrators and users responsible for company banking setup benefit most from this improvement. Open Money → Banking and review the company’s bank-account records."
+    ]
+  },
+  {
+    "date": "2026-09-14",
+    "badge": "Progress Update",
+    "title": "Permissions for Numbers Are Now Manageable",
+    "description": "Administrators can now open a dedicated Permissions screen to see and change which roles may use Numbers.",
+    "body": [
+      "What changed: YAHSHUA One now connects the Permissions screen to live roles, so administrators can see which roles may use Numbers and change that access. The Permissions area also has a clear entry within Configuration.",
+      "Where to find it: Open Configuration → Permissions to review the live role access for Numbers and make a change. The available evidence confirms this path and the Numbers permission scope.",
+      "Why it helps: Teams can keep access to accounting work aligned with each role instead of relying on stale or disconnected settings. That makes permission reviews clearer and reduces the risk of the wrong role having access to Numbers.",
+      "Who benefits / next step: Company administrators and access-control owners benefit most from this improvement. Open Configuration → Permissions and review the roles that should be allowed to use Numbers."
+    ]
+  },
+  {
+    "date": "2026-09-12",
+    "badge": "Progress Update",
+    "title": "Core Finance Screens Get Refreshed",
+    "description": "Ten core Money, Buy, Journals, Configuration, Stock, and Sell screens now have redesigned interfaces for everyday finance and operations work.",
+    "body": [
+      "What changed: YAHSHUA One now has redesigned screens for Money’s Void Requests queue and decision screen, Buy’s Purchase Order page, Journals’ Import Journals page, and Configuration’s Company page. Stock also has refreshed Charge Types, Receiving, Locations, and Landed Cost pages, while Sell has a redesigned Sales Invoices page and Customers page.",
+      "Where to find it: The confirmed locations are the Void Requests area in Money, Purchase Orders in Buy, Import Journals in Journals, Company in Configuration, Charge Types, Receiving, Locations, and Landed Cost in Stock, and Sales Invoices and Customers in Sell. The available evidence confirms these module and page names but not deeper navigation paths.",
+      "Why it helps: Teams working across finance, purchasing, inventory, and sales get clearer, more consistent interfaces in the screens they use for requests, orders, journals, company settings, stock operations, invoices, and customer records. That makes routine review and data entry easier to follow across these core workflows.",
+      "Who benefits / next step: Payroll and finance administrators, purchasing users, inventory teams, sales teams, and company configuration owners benefit most from this progress. Open the relevant module and review the refreshed page for your next operational task."
+    ]
+  },
+  {
+    "date": "2026-09-12",
+    "badge": "Progress Update",
+    "title": "Stock Screens and Configuration Are Clearer",
+    "description": "The Stock workspace has refreshed screens for core inventory work, while Configuration now groups register and settings screens more clearly.",
+    "body": [
+      "What changed: The Stock workspace now has redesigned Items, Expired Stock, Movements, Assemblies, and Counts pages. Configuration also groups the register and settings screens together, and the collections worklist is connected to the promises it records.",
+      "Where to find it: The confirmed areas are Stock’s Items, Expired Stock, Movements, Assemblies, and Counts pages, plus the Configuration group for register and settings screens. The collections improvement appears in the collections worklist; the available evidence does not confirm a more specific navigation path.",
+      "Why it helps: Inventory teams get a more consistent way to review stock records and movements, while setup users can find related configuration screens together. Collections users can keep the worklist connected to the promises being tracked, making follow-up clearer.",
+      "Who benefits / next step: Inventory, operations, configuration, and collections users benefit most from this progress. Open the relevant Stock, Configuration, or collections area to review the refreshed screens and connected worklist."
+    ]
+  },
+  {
+    "date": "2026-09-11",
+    "badge": "Progress Update",
+    "title": "Audit Review Gets More Direct",
+    "description": "A dedicated Audit area now gives teams a clearer way to review the company audit trail and trace decisions on individual documents.",
+    "body": [
+      "What changed: YAHSHUA One now gives Audit its own area for reviewing a company's audit trail. Teams can also see who decided an individual document, making document-level accountability easier to follow.",
+      "Where to find it: Open Enquiry → Audit to review the audit trail. The document decision detail appears within the audit-trail workflow, and the available evidence does not confirm a more specific path.",
+      "Why it helps: Audit and operations teams can investigate activity from a central place and connect a document to the decision recorded against it. This makes reviews clearer and reduces the need to piece together evidence from disconnected records.",
+      "Who benefits / next step: Audit reviewers, finance and operations users, and document approvers benefit most from this improvement. Open Enquiry → Audit when you need to review the trail or verify who decided a document."
+    ]
+  },
+  {
+    "date": "2026-09-10",
+    "badge": "Progress Update",
+    "title": "Numbers Workspaces Get a Unified Redesign",
+    "description": "The Numbers module now has a more consistent workspace experience across navigation, search, dashboards, ledger, chart of accounts, and company setup.",
+    "body": [
+      "What changed: YAHSHUA One redesigned core Numbers workspaces, including the navigation and header search, the General Ledger, the Numbers Today dashboard, Chart of Accounts, statement captions, fiscal calendar, branches, and company setup. These areas now share a more consistent interface and clearer workspace structure.",
+      "Where to find it: The improvements appear across the Numbers module, including its navigation, dashboard, General Ledger, Chart of Accounts, captions, fiscal calendar, branches, and company setup screens. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance teams can move between essential accounting workspaces with less visual and interaction friction. Clearer navigation, search, and consistent data views make setup and ledger review easier to understand and maintain.",
+      "Who benefits / next step: Accounting users and company setup owners benefit most from this redesign. Open the Numbers module and review the workspace that supports your next accounting or configuration task."
+    ]
+  },
+  {
+    "date": "2026-09-09",
+    "badge": "Progress Update",
+    "title": "Receivables Workflows Gain More Control",
+    "description": "Customer tax details, ageing, statements, collection promises, and connected ledger accounts now give receivables teams clearer control over customer balances.",
+    "body": [
+      "What changed: Receivables work now includes customer tax identity fields, ageing views tied to the ledger, customer statements as at a chosen date, and collection worklists for promises and follow-up notes. The workflow also connects collection postings to the accounts they affect, giving customer-balance work a more complete operational record.",
+      "Where to find it: The improvements appear in the customer records, receivables ageing and statement areas, collections worklist, and related account setup screens. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance and collections teams can see why a customer balance exists, how overdue amounts are grouped, and what follow-up commitments have been recorded. This makes customer review more consistent and reduces the need to reconcile separate notes, reports, and ledger references.",
+      "Who benefits / next step: Accounts receivable teams, collectors, finance managers, and approvers benefit most from this progress. Open the relevant customer or receivables area to review ageing, generate a dated statement, or record the next promise and collection note."
+    ]
+  },
+  {
+    "date": "2026-09-08",
+    "badge": "Progress Update",
+    "title": "Audit Trail Traceability Improves",
+    "description": "The audit area now lets teams review a company-wide trail and trace an individual document back to who decided it.",
+    "body": [
+      "What changed: YAHSHUA One now provides a dedicated audit area for reading a company’s audit trail. Teams can also open a document’s trace and see the decision associated with that document.",
+      "Where to find it: Open Enquiry → Audit to review the audit trail. The document trace appears in the audit-trail workflow, while the available evidence does not confirm a deeper navigation path.",
+      "Why it helps: Finance and operations teams can investigate important activity from a central trail and connect a document to the decision recorded against it. That makes review clearer and helps teams understand what happened without relying on disconnected notes.",
+      "Who benefits / next step: Finance teams, operations users, and approvers benefit most from this traceability. Open the Audit area in Enquiry and review the trail or a document’s trace when you need to verify an action."
+    ]
+  },
+  {
+    "date": "2026-09-07",
+    "badge": "Progress Update",
+    "title": "Commercial Document Controls Expand",
+    "description": "Proposal, agreement, approval, and document-chain workflows now cover more of the path from pricing and requests to controlled records.",
+    "body": [
+      "What changed: Commercial workflows now cover proposal drafts with priced lines, sending and acceptance, agreements, document revisions, and lifecycle signals. The product also advances purchase requests and approvals, document conversion, delivery, returns, sales invoicing, and credit or debit corrections while keeping related records connected.",
+      "Where to find it: The confirmed areas are the proposal and agreement workflows, purchase-request approval flow, document-chain screens, delivery and return workflows, and sales-invoicing area. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams can move commercial work through clearer stages while preserving the relationship between requests, documents, deliveries, returns, invoices, and corrections. Approval limits, reversal behavior, and connected records make consequential finance and operations activity easier to review.",
+      "Who benefits / next step: Sales, purchasing, finance, operations, and approval users benefit most from this progress. Review the relevant proposal, agreement, document-chain, purchasing, or invoicing workflow in the app when available and follow the next supported step for the record you are handling."
+    ]
+  },
+  {
+    "date": "2026-09-06",
+    "badge": "Progress Update",
+    "title": "Proposals and Agreements Move Forward",
+    "description": "Proposal and agreement workflows now cover drafting, sending, acceptance, signed-document handling, revisions, and lifecycle signals.",
+    "body": [
+      "What changed: The proposal and agreement work now covers proposal drafts with priced lines from billing, a Documents tab, sending and freezing, PDF output, and a public accept or decline page. It also adds agreement creation from an accepted proposal, signature capture or signed-document upload, revisions, expiry and supersede handling, plus timeline and owner notifications.",
+      "Where to find it: The confirmed areas are the proposal draft workflow, its Documents tab, the send and public accept or decline pages, and the agreement workflow. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams get a clearer path from preparing a priced proposal through acceptance and agreement management. Revision, expiry, ownership, and timeline signals make the status of an active commercial document easier to follow.",
+      "Who benefits / next step: Sales, commercial, and approval users benefit most from this workflow progress. Review the proposal and agreement areas when available, then use the confirmed send, acceptance, signature, or signed-upload step that matches your process."
+    ]
+  },
+  {
+    "date": "2026-09-05",
+    "badge": "Progress Update",
+    "title": "Customer and Void Context Is Clearer",
+    "description": "Customer records now show their price group and sales channel, while void processing keeps the source sales document connected to the correction.",
+    "body": [
+      "What changed: Customer records now identify the price group and sales channel they belong to. Sales-document void processing also closes the loop back to the source document, keeping the correction connected to the record it affects.",
+      "Where to find it: The pricing and channel details appear on customer records, while the void improvement appears in the sales-document void workflow. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams can understand a customer’s commercial context more quickly and keep void activity tied to the sales document under review. That makes customer review and document correction clearer to follow.",
+      "Who benefits / next step: Customer-management, sales, finance, and approval users benefit most from these improvements. Open a customer record to review its price group and sales channel, or use the sales-document void workflow when a correction is needed."
+    ]
+  },
+  {
+    "date": "2026-09-04",
+    "badge": "Progress Update",
+    "title": "Customer Pricing and Channels Are Clearer",
+    "description": "Customer records now show the price group and sales channel they belong to, making commercial context easier to identify.",
+    "body": [
+      "What changed: Customer records now include the price group and sales channel associated with each customer. This gives teams a clearer view of the commercial context attached to a customer when working with customer data.",
+      "Where to find it: The improvement appears on customer records and their related customer-management view. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Sales and finance teams can identify which pricing and channel context applies without relying on separate notes or manual lookups. That makes customer review clearer and supports more consistent handling of customer-related work.",
+      "Who benefits / next step: Customer-management, sales, and finance users benefit most from this added context. Open a customer record and review its assigned price group and sales channel."
+    ]
+  },
+    {
+    "date": "2026-09-03",
+    "badge": "Progress Update",
+    "title": "Sales Invoices and Memos Now Connect",
+    "description": "Sales invoices can now be posted with a visible posting outcome, while credit and debit memos can be raised against the document they correct.",
+    "body": [
+      "What changed: The sales invoicing workflow now supports raising an invoice and seeing what it will post, with the invoice screen connected to the posting service. Credit and debit memos can also be issued and tied to the document they correct, giving corrections a clearer place in the sales document chain.",
+      "Where to find it: The confirmed product areas are the sales invoice screen, its posting workflow, and the credit and debit memo screens. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance teams can review the accounting effect of an invoice and keep corrective memos connected to the source document. That makes posting and correction work easier to follow and reduces ambiguity when reviewing sales records.",
+      "Who benefits / next step: Accounts receivable and finance users benefit most from this connected workflow. Open the sales invoicing area, review an invoice’s posting outcome, or raise a memo against the document it corrects."
+    ]
+  },
+  {
     "date": "2026-09-02",
     "badge": "Progress Update",
     "title": "Sales Document Voids Are Safer",
