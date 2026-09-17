@@ -1,5 +1,43 @@
 import Image from "next/image";
+import { Newspaper } from "lucide-react";
 import { getAllPosts, formatDate } from "@/lib/blog";
+
+function CoverThumbnail({ src }: { src?: string }) {
+  if (src) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={src}
+        alt=""
+        style={{
+          width: "100%",
+          aspectRatio: "16 / 9",
+          objectFit: "cover",
+          borderRadius: 12,
+          display: "block",
+        }}
+      />
+    );
+  }
+  return (
+    <div
+      aria-hidden
+      style={{
+        width: "100%",
+        aspectRatio: "16 / 9",
+        borderRadius: 12,
+        border: "1px solid var(--line)",
+        background:
+          "radial-gradient(120% 140% at 12% 15%, var(--accent-glow), transparent 60%), var(--surface)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Newspaper size={26} strokeWidth={1.5} color="var(--soft)" />
+    </div>
+  );
+}
 
 function CategoryBadge({ label }: { label: string }) {
   return (
@@ -80,6 +118,7 @@ export default function BlogPage() {
                 style={{ display: "block", textDecoration: "none" }}
               >
                 <article className="blog-card">
+                  <CoverThumbnail src={post.coverImage} />
                   <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                     <CategoryBadge label={post.category} />
                     {post.readTime && (

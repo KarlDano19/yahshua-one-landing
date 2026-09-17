@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { Newspaper } from "lucide-react";
 import type { Metadata } from "next";
 import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 
@@ -134,6 +135,41 @@ export default async function BlogPostPage({
 
       {/* Article */}
       <article style={{ maxWidth: 720, margin: "0 auto", padding: "60px 28px 80px" }}>
+
+        {/* Cover */}
+        {post.coverImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={post.coverImage}
+            alt=""
+            style={{
+              width: "100%",
+              aspectRatio: "21 / 9",
+              objectFit: "cover",
+              borderRadius: 18,
+              display: "block",
+              marginBottom: 40,
+            }}
+          />
+        ) : (
+          <div
+            aria-hidden
+            style={{
+              width: "100%",
+              aspectRatio: "21 / 9",
+              borderRadius: 18,
+              border: "1px solid var(--line)",
+              background:
+                "radial-gradient(90% 140% at 10% 20%, var(--accent-glow), transparent 60%), var(--surface)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: 40,
+            }}
+          >
+            <Newspaper size={36} strokeWidth={1.5} color="var(--soft)" />
+          </div>
+        )}
 
         {/* Meta */}
         <header style={{ marginBottom: 40 }}>

@@ -24,7 +24,7 @@ sources:
   - "BIR Revenue Regulations No. 29-2025, amending de minimis benefit ceilings, effective January 6, 2026"
 ---
 
-Payroll software in the Philippines is not one product category. It is compliance software, HR software, and now AI software, sold under one label. Before comparing vendors, decide what you are actually buying: statutory compliance depth, data privacy handling, a real cost at your headcount, and whether any "AI" feature reads your actual payroll data or just talks about payroll in general.
+Payroll software in the Philippines is not one product category. It is compliance software, HR software, and AI software sold under one label. Before comparing vendors, decide what you are buying: compliance depth, data privacy handling, real cost at your headcount, and whether any "AI" feature reads your payroll data or just talks about payroll.
 
 ## How to Choose Payroll Software in the Philippines
 
@@ -61,7 +61,7 @@ PayrollHero sits in a different niche worth naming directly: it is built around 
 
 ## Is Your Payroll Software's AI Reading Your Data, or Just Guessing?
 
-Most "AI" in Philippine payroll software today is a support chatbot answering general questions, not a system reading your company's actual configured payroll setup. The distinction matters because a generic answer about SSS rates is available from any search engine. What is not available anywhere else is an answer grounded in your specific pay components, your specific employees, and your specific configuration.
+Most "AI" in Philippine payroll software today is a support chatbot answering general questions, not a system reading your company's actual configured setup. A generic answer about SSS rates is available from any search engine. What is not available elsewhere is an answer grounded in your specific pay components, employees, and configuration.
 
 YAHSHUA One's assistant, Theo, is built to read the company's actual payroll data directly, not a generic knowledge base. That means it can answer a question like "does our current meal allowance count against our de minimis cap" using your real numbers, not a textbook example. It is also permission-aware: a user with timesheet-only access cannot ask Theo to change a salary, because the same access controls that govern the rest of the platform govern what Theo can see and do. Theo can also generate a payroll formula in plain language for a user who does not know formula syntax.
 

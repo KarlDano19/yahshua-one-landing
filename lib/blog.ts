@@ -20,6 +20,7 @@ export interface BlogPost {
   category: string;
   author?: string;
   readTime?: string;
+  coverImage?: string;
   faq?: FaqItem[];
   sources?: string[];
   content?: string;
@@ -41,6 +42,7 @@ export function getAllPosts(): BlogPost[] {
         category: data.category ?? "Article",
         author: data.author,
         readTime: data.readTime,
+        coverImage: data.coverImage,
         faq: data.faq,
         sources: data.sources,
       } as BlogPost;
@@ -65,6 +67,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     category: data.category ?? "Article",
     author: data.author,
     readTime: data.readTime,
+    coverImage: data.coverImage,
     faq: data.faq,
     sources: data.sources,
     content: processed.toString(),
