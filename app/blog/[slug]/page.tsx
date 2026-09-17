@@ -71,12 +71,42 @@ export default async function BlogPostPage({
     inLanguage: "en-PH",
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${BASE_URL}/blog/${slug}` },
+    ],
+  };
+
+  const faqSchema = post.faq && post.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  } : null;
+
   return (
     <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh", fontFamily: "var(--font-geist, sans-serif)" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Nav */}
       <nav style={{
@@ -175,6 +205,26 @@ export default async function BlogPostPage({
             Join the waitlist →
           </a>
         </div>
+
+        {/* Sources */}
+        {post.sources && post.sources.length > 0 && (
+          <div style={{ marginTop: 40, paddingTop: 24, borderTop: "1px solid var(--line)" }}>
+            <p style={{ fontSize: 13, fontWeight: 600, color: "var(--muted)", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+              Sources
+            </p>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 6 }}>
+              {post.sources.map((source, i) => (
+                <li key={i} style={{ fontSize: 13, color: "var(--soft)", lineHeight: 1.6 }}>
+                  {source}
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 12.5, color: "var(--soft)", marginTop: 14 }}>
+              Written and reviewed by the YAHSHUA One editorial team, part of The ABBA Initiative (OPC).
+              Published {formatDate(post.date)}.
+            </p>
+          </div>
+        )}
       </article>
 
       {/* Footer */}

@@ -2,9 +2,15 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import html from "remark-html";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
 
 export interface BlogPost {
   slug: string;
@@ -14,6 +20,8 @@ export interface BlogPost {
   category: string;
   author?: string;
   readTime?: string;
+  faq?: FaqItem[];
+  sources?: string[];
   content?: string;
 }
 
@@ -33,6 +41,8 @@ export function getAllPosts(): BlogPost[] {
         category: data.category ?? "Article",
         author: data.author,
         readTime: data.readTime,
+        faq: data.faq,
+        sources: data.sources,
       } as BlogPost;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -44,6 +54,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const source = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(source);
   const processed = await remark()
+    .use(remarkGfm)
     .use(html, { allowDangerousHtml: true })
     .process(content);
   return {
@@ -54,6 +65,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     category: data.category ?? "Article",
     author: data.author,
     readTime: data.readTime,
+    faq: data.faq,
+    sources: data.sources,
     content: processed.toString(),
   };
 }
