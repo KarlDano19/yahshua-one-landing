@@ -11,7 +11,7 @@ function CoverThumbnail({ src }: { src?: string }) {
         alt=""
         style={{
           width: "100%",
-          aspectRatio: "16 / 9",
+          aspectRatio: "1200 / 628",
           objectFit: "cover",
           borderRadius: 12,
           display: "block",
@@ -24,7 +24,7 @@ function CoverThumbnail({ src }: { src?: string }) {
       aria-hidden
       style={{
         width: "100%",
-        aspectRatio: "16 / 9",
+        aspectRatio: "1200 / 628",
         borderRadius: 12,
         border: "1px solid var(--line)",
         background:

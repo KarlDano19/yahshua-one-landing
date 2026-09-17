@@ -5,6 +5,7 @@ description: "A practical guide to switching payroll providers mid-year in the P
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+coverImage: "/Blog/How%20to%20Switch%20Payroll%20Providers.png"
 ctaHeading: "Switching doesn't have to be risky."
 ctaBody: "YAHSHUA One's team migrates your year-to-date payroll data, SSS, PhilHealth, and Pag-IBIG history included, so your first payroll on the new system starts from the right numbers."
 faq:

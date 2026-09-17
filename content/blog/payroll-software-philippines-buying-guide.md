@@ -5,6 +5,7 @@ description: "A buying guide to payroll software in the Philippines: real publis
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "7 min read"
+coverImage: "/Blog/Payroll%20Software%20in%20the%20Philippines.png"
 faq:
   - question: "How much does payroll software cost in the Philippines?"
     answer: "Published rates range from about PHP 77 per employee per month (GreatDay HR, 50-license minimum) to roughly $6.50 per employee per month for PayrollHero's combined HRIS and payroll tiers. Sprout's outsourced Payroll Starter plan is a flat PHP 7,900 per month for up to 10 employees, with its software-only tiers quoted per business. YAHSHUA One Payroll also prices by quote, not a public list."

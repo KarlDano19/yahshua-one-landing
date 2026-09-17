@@ -144,7 +144,7 @@ export default async function BlogPostPage({
             alt=""
             style={{
               width: "100%",
-              aspectRatio: "21 / 9",
+              aspectRatio: "1200 / 628",
               objectFit: "cover",
               borderRadius: 18,
               display: "block",
@@ -156,7 +156,7 @@ export default async function BlogPostPage({
             aria-hidden
             style={{
               width: "100%",
-              aspectRatio: "21 / 9",
+              aspectRatio: "1200 / 628",
               borderRadius: 18,
               border: "1px solid var(--line)",
               background:
