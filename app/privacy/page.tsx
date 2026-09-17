@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Learn how YAHSHUA One collects, uses, stores, and protects personal and business information.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "YAHSHUA One Privacy Policy",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "YAHSHUA One Privacy Policy",
     description:
       "Learn how YAHSHUA One collects, uses, stores, and protects personal and business information.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 

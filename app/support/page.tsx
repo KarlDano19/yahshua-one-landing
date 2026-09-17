@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Need help with the YAHSHUA One app? Contact our support team and we’ll usually respond within 1–2 business days.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "YAHSHUA One Support",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "YAHSHUA One Support",
     description:
       "Need help with the YAHSHUA One app? Contact our support team and we’ll usually respond within 1–2 business days.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 

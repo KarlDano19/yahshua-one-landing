@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Review the terms that govern use of the YAHSHUA One website, app, and related services.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "YAHSHUA One Terms of Service",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "YAHSHUA One Terms of Service",
     description:
       "Review the terms that govern use of the YAHSHUA One website, app, and related services.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
