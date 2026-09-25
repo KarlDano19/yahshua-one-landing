@@ -373,6 +373,28 @@ export default function PayrollPage() {
                         <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 1 }}>Automated payroll & compliance</div>
                       </div>
                     </a>
+                    <div style={{ borderTop: "1px solid var(--line)", margin: "6px 4px 2px", paddingTop: 6 }}>
+                      <div style={{ fontSize: 10.5, fontWeight: 500, color: "var(--soft)", padding: "2px 10px 4px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                        Existing customer? Sign in
+                      </div>
+                      {[
+                        { label: "YAHSHUA Payroll", href: "https://www.yahshuapayroll.com" },
+                        { label: "YAHSHUA HRIS", href: "https://www.yahshuahris.com" },
+                        { label: "YAHSHUA Books", href: "https://yahshuabooksonline.com" },
+                        { label: "YAHSHUA Tax", href: "https://www.yahshuataxonline.com" },
+                      ].map((legacyApp) => (
+                        <a key={legacyApp.label} href={legacyApp.href} target="_blank" rel="noopener noreferrer" style={{
+                          display: "block",
+                          padding: "7px 12px", borderRadius: 8,
+                          color: "var(--muted)", textDecoration: "none", fontSize: 13,
+                          transition: "background .15s ease",
+                        }}
+                          onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-tint)")}
+                          onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
+                          {legacyApp.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -837,6 +859,13 @@ export default function PayrollPage() {
             <FaqItem delay={840} q="How will Y1P feature requests be evaluated?"
               a="Feature requests for Y1P are reviewed based on: business need, client value, alignment with the product roadmap, technical feasibility, and priority relative to ongoing development. Requests can be submitted through your account manager." />
           </div>
+          <p style={{ marginTop: 32, fontSize: 14, color: "var(--muted)" }}>
+            Still comparing your options? Read our{" "}
+            <a href="/blog/payroll-software-philippines-buying-guide" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>
+              guide to choosing payroll software in the Philippines
+            </a>
+            , including real published pricing from other vendors.
+          </p>
         </div>
       </section>
 

@@ -241,6 +241,28 @@ export default function Home() {
                         <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 1 }}>Automated payroll & compliance</div>
                       </div>
                     </a>
+                    <div style={{ borderTop: "1px solid var(--line)", margin: "6px 4px 2px", paddingTop: 6 }}>
+                      <div style={{ fontSize: 10.5, fontWeight: 500, color: "var(--soft)", padding: "2px 10px 4px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                        Existing customer? Sign in
+                      </div>
+                      {[
+                        { label: "YAHSHUA Payroll", href: "https://www.yahshuapayroll.com" },
+                        { label: "YAHSHUA HRIS", href: "https://www.yahshuahris.com" },
+                        { label: "YAHSHUA Books", href: "https://yahshuabooksonline.com" },
+                        { label: "YAHSHUA Tax", href: "https://www.yahshuataxonline.com" },
+                      ].map((legacyApp) => (
+                        <a key={legacyApp.label} href={legacyApp.href} target="_blank" rel="noopener noreferrer" style={{
+                          display: "block",
+                          padding: "7px 12px", borderRadius: 8,
+                          color: "var(--muted)", textDecoration: "none", fontSize: 13,
+                          transition: "background .15s ease",
+                        }}
+                          onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-tint)")}
+                          onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
+                          {legacyApp.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -987,6 +1009,13 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+          <p style={{ marginTop: 32, fontSize: 14, color: "var(--muted)" }}>
+            Comparing YAHSHUA One against other payroll software? Read our{" "}
+            <a href="/blog/payroll-software-philippines-buying-guide" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>
+              buying guide
+            </a>
+            , with real published pricing from GreatDay HR, PayrollHero, and Sprout.
+          </p>
         </div>
       </section>
 
