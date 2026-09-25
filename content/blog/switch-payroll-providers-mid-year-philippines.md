@@ -69,6 +69,7 @@ A clean mid-year cutover comes down to four things: verifying your data, testing
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines), how to test any vendor's AI claim
+- [YAHSHUA One vs. PayrollHero: Which One Actually Fits Your Business](/blog/yahshua-one-vs-payrollhero), a factual side-by-side comparison
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 - [YAHSHUA One pricing](/pricing), including how the quote call works
 
