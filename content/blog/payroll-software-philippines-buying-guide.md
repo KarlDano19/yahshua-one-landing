@@ -71,6 +71,7 @@ This is a genuinely useful test to run on any vendor demo, not just ours: ask th
 ## Related reading
 
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines), what to check before you migrate
+- [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines), how to test any vendor's AI claim
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 - [YAHSHUA One pricing](/pricing), including how the quote call works
 - [YAHSHUA HRIS vs Sprout Solutions](https://yahshuahris.com/vs-sprout), a full feature and pricing comparison
