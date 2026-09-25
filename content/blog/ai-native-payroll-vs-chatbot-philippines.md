@@ -5,6 +5,7 @@ description: "AI-native payroll software reads your company's actual configured 
 category: "AI & Compliance"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+coverImage: "/Blog/AI%20payroll.png"
 ctaHeading: "See what grounded AI actually looks like."
 ctaBody: "Ask Theo a specific question about your own payroll setup during a demo. If the answer uses your real numbers, not a generic example, that is the test passing in real time."
 faq:

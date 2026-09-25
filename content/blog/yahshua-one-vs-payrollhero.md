@@ -5,6 +5,7 @@ description: "PayrollHero is built for biometric attendance across shift-based, 
 category: "Comparisons"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+coverImage: "/Blog/Y1%20VS%20PAYROLLHERO.png"
 ctaHeading: "See if YAHSHUA One actually fits your setup."
 ctaBody: "Book a 30-minute call and get a straight answer, including a real quote, not a sales pitch disguised as one."
 faq:
