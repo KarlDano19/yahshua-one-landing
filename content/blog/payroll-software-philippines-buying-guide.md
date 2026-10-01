@@ -70,6 +70,7 @@ This is a genuinely useful test to run on any vendor demo, not just ours: ask th
 
 ## Related reading
 
+- [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines), the real cost of staying on spreadsheets
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines), what to check before you migrate
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines), how to test any vendor's AI claim
 - [YAHSHUA One vs. PayrollHero: Which One Actually Fits Your Business](/blog/yahshua-one-vs-payrollhero), a factual side-by-side comparison
