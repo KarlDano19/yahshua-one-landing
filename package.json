@@ -10,6 +10,7 @@
     "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.0",
     "geist": "^1.7.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.577.0",
