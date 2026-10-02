@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import ConversionTracker from "./components/ConversionTracker";
 import "./globals.css";
 
 const geist = Geist({
@@ -219,6 +220,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
+        {process.env.NODE_ENV === "production" && <ConversionTracker />}
       </body>
       {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BASE_URL = "https://www.yahshua.one";
 const SUPPORT_EMAIL = "clientrelations@abba.works";
-const EFFECTIVE_DATE = "August 3, 2026";
+const EFFECTIVE_DATE = "October 2, 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -211,13 +211,25 @@ export default function PrivacyPage() {
               </p>
             </Section>
 
-            <Section title="12. Changes to this policy">
+            <Section title="12. Cookies and website analytics">
+              <p>
+                Our public website uses Google Analytics, a web analytics service provided by Google, to understand how visitors find and use it. Google Analytics uses cookies and similar technologies to collect information such as the pages you view, links you click (including links to book a demo or sign up), your approximate location, your device and browser type, and the page that referred you.
+              </p>
+              <p>
+                We use this information in aggregate to improve our content and website. It applies to our public website only and does not read any data inside customer workspaces. Google processes this information on our behalf; you can read more in <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)", fontWeight: 500 }}>how Google uses information from sites that use its services</a>.
+              </p>
+              <p>
+                You can block or delete cookies in your browser settings, or install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)", fontWeight: 500 }}>Google Analytics opt-out browser add-on</a> to stop Google Analytics from collecting data about your visits on any website.
+              </p>
+            </Section>
+
+            <Section title="13. Changes to this policy">
               <p>
                 We may update this Privacy Policy from time to time. When we do, we will update the effective date above and may provide additional notice when changes are material.
               </p>
             </Section>
 
-            <Section title="13. Contact us">
+            <Section title="14. Contact us">
               <p>
                 If you have questions about this Privacy Policy or want to submit a privacy-related request, contact us at <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: "var(--accent-2)", fontWeight: 500 }}>{SUPPORT_EMAIL}</a>.
               </p>

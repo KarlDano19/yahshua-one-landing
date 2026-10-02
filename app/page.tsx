@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import CertificationsSection from "./components/CertificationsSection";
 import OneHero from "./components/OneHero";
+import { trackEvent } from "@/lib/analytics";
 
 /* ── Types ── */
 interface Update {
@@ -134,7 +135,7 @@ export default function Home() {
         body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (data.success) { setFormState("success"); setFormMsg(data.message); }
+      if (data.success) { setFormState("success"); setFormMsg(data.message); trackEvent("generate_lead", { method: "waitlist_form" }); }
       else { setFormState("error"); setFormMsg(data.message || "Something went wrong."); }
     } catch {
       setFormState("error");
