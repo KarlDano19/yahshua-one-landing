@@ -26,6 +26,7 @@ export interface BlogPost {
   faq?: FaqItem[];
   sources?: string[];
   content?: string;
+  featured?: boolean;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -49,6 +50,7 @@ export function getAllPosts(): BlogPost[] {
         ctaBody: data.ctaBody,
         faq: data.faq,
         sources: data.sources,
+        featured: data.featured ?? false,
       } as BlogPost;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
