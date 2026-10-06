@@ -73,8 +73,8 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <a href="/updates" style={{ fontSize: 14, color: "var(--muted)" }}>← What&apos;s New</a>
-            <a href="https://app.yahshua.one/" style={{ fontSize: 13.5, fontWeight: 500, color: "#fff", padding: "8px 16px", background: "var(--ink)", borderRadius: 999 }}>
-              Start free
+            <a href="https://calendly.com/clientrelations-abba/presentation?utm_source=updates&utm_medium=web&utm_campaign=yahshuaone" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13.5, fontWeight: 500, color: "#fff", padding: "8px 16px", background: "var(--ink)", borderRadius: 999 }}>
+              Book a Free Demo
             </a>
           </div>
         </div>
@@ -114,10 +114,10 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
           border: "1px solid var(--line)",
           background: "radial-gradient(70% 100% at 0% 100%, var(--accent-glow), transparent 60%), radial-gradient(60% 100% at 100% 0%, oklch(0.95 0.03 215 / 0.5), transparent 60%), var(--surface)",
         }}>
-          <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 19, margin: "0 0 8px" }}>Want to be first when we launch?</p>
-          <p style={{ color: "var(--muted)", fontSize: 14, margin: "0 0 22px" }}>Join the waitlist — no spam, no credit card.</p>
-          <a href="/#waitlist" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 26px", background: "var(--ink)", color: "#fff", borderRadius: 999, fontWeight: 500, fontSize: 14 }}>
-            Claim My Spot →
+          <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 19, margin: "0 0 8px" }}>See this update in action.</p>
+          <p style={{ color: "var(--muted)", fontSize: 14, margin: "0 0 22px" }}>Book a free 30-minute walkthrough with our team.</p>
+          <a href="https://calendly.com/clientrelations-abba/presentation?utm_source=updates&utm_medium=web&utm_campaign=yahshuaone" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 26px", background: "var(--ink)", color: "#fff", borderRadius: 999, fontWeight: 500, fontSize: 14 }}>
+            Book a Free Demo →
           </a>
         </div>
       </section>

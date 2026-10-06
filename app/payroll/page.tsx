@@ -428,7 +428,7 @@ export default function PayrollPage() {
             </nav>
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
+              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Book a Demo <Arrow /></button>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
               {mobileNavOpen
@@ -450,7 +450,7 @@ export default function PayrollPage() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
+              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Book a Free Demo <Arrow /></button>
             </div>
           </div>
         </div>
@@ -488,7 +488,7 @@ export default function PayrollPage() {
                 </Reveal>
                 <Reveal delay={180}>
                   <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                    <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Get Started <Arrow /></button>
+                    <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Book a Free Demo <Arrow /></button>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
                   </div>
                 </Reveal>
@@ -636,7 +636,7 @@ export default function PayrollPage() {
                           </li>
                         ))}
                       </ul>
-                      <button onClick={() => setCtaOpen(true)} style={d ? btnDarkCta : btnPrimary}>Get Started <Arrow /></button>
+                      <button onClick={() => setCtaOpen(true)} style={d ? btnDarkCta : btnPrimary}>Book a Free Demo <Arrow /></button>
                     </div>
                   </Reveal>
 
@@ -980,7 +980,7 @@ export default function PayrollPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section id="waitlist" style={{ borderTop: "1px solid var(--line)" }}>
+      <section id="book-demo" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ background: "var(--ink)", paddingTop: "clamp(56px, 8vw, 100px)", paddingBottom: "clamp(56px, 8vw, 100px)", paddingLeft: 28, paddingRight: 28, position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(60% 80% at 50% 110%, oklch(0.78 0.13 215 / 0.22), transparent 60%)" }} />
           <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
@@ -989,11 +989,11 @@ export default function PayrollPage() {
                 Stop doing payroll<br />manually.
               </h2>
               <p style={{ color: "oklch(0.65 0.01 250)", fontSize: 18, maxWidth: 460, margin: "0 auto 36px", lineHeight: 1.6 }}>
-                Join 1,200+ Filipino business owners on the YAHSHUA One waitlist. No credit card required.
+                See YAHSHUA One Payroll in action. Book a free 30-minute demo with our team.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <button onClick={() => setCtaOpen(true)} style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
-                  Get Started <Arrow />
+                  Book a Free Demo <Arrow />
                 </button>
                 <a href="/" style={{ ...btnBase, background: "transparent", color: "#fff", borderColor: "oklch(0.35 0.02 250)" }}>
                   See all modules
@@ -1019,7 +1019,7 @@ export default function PayrollPage() {
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
           <nav style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            {[{ label: "Home", href: "/" }, { label: "Modules", href: "/#modules" }, { label: "Support", href: "/support" }, { label: "Updates", href: "/updates" }, { label: "Waitlist", href: "/#waitlist" }].map((link) => (
+            {[{ label: "Home", href: "/" }, { label: "Modules", href: "/#modules" }, { label: "Support", href: "/support" }, { label: "Updates", href: "/updates" }, { label: "Pricing", href: "/pricing" }].map((link) => (
               <a key={link.label} href={link.href}
                 style={{ color: "var(--muted)", transition: "color .15s ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
@@ -1101,7 +1101,7 @@ export default function PayrollPage() {
       {ctaOpen && (
         <div
           onClick={() => setCtaOpen(false)}
-          role="dialog" aria-modal="true" aria-label="Get started"
+          role="dialog" aria-modal="true" aria-label="Book a free demo"
           style={{
             position: "fixed", inset: 0, zIndex: 300,
             background: "rgba(10,14,20,0.72)", backdropFilter: "blur(8px)",
@@ -1151,23 +1151,21 @@ export default function PayrollPage() {
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA</span>
-                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free presentation with our team</span>
+                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free demo with our team</span>
               </a>
 
-              <button
-                onClick={() => {
-                  setCtaOpen(false);
-                  window.location.href = "/#waitlist";
-                }}
+              <a
+                href="/support"
+                onClick={() => setCtaOpen(false)}
                 style={{
                   display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
                   borderRadius: 12, background: "var(--surface)", border: "1px solid var(--line)",
-                  textAlign: "left", cursor: "pointer", fontFamily: "inherit",
+                  textDecoration: "none",
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "var(--ink)" }}>Yes, I&apos;m an existing client</span>
-                <span style={{ fontSize: 13, color: "var(--muted)" }}>Join the waitlist for early platform access</span>
-              </button>
+                <span style={{ fontSize: 13, color: "var(--muted)" }}>Get help from support or your account manager</span>
+              </a>
             </div>
           </div>
         </div>

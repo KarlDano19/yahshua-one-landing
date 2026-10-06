@@ -173,7 +173,7 @@ export default function PricingPage() {
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>
-                Get Started <Arrow />
+                Book a Demo <Arrow />
               </button>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
@@ -198,7 +198,7 @@ export default function PricingPage() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => { setCtaOpen(true); setMobileNavOpen(false); }} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
+              <button onClick={() => { setCtaOpen(true); setMobileNavOpen(false); }} style={{ ...btnPrimary, ...btnSm }}>Book a Free Demo <Arrow /></button>
             </div>
           </div>
         </div>
@@ -228,9 +228,6 @@ export default function PricingPage() {
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
                 Book a call <Arrow />
-              </a>
-              <a href="/#waitlist" style={btnGhost}>
-                Join the waitlist
               </a>
             </div>
           </Reveal>
@@ -333,9 +330,6 @@ export default function PricingPage() {
                 <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
                   Book a call <Arrow />
                 </a>
-                <a href="/#waitlist" style={btnGhost}>
-                  Join the waitlist
-                </a>
               </div>
             </div>
           </Reveal>
@@ -373,7 +367,7 @@ export default function PricingPage() {
       {ctaOpen && (
         <div
           onClick={() => setCtaOpen(false)}
-          role="dialog" aria-modal="true" aria-label="Get started"
+          role="dialog" aria-modal="true" aria-label="Book a free demo"
           style={{
             position: "fixed", inset: 0, zIndex: 300,
             background: "rgba(10,14,20,0.72)", backdropFilter: "blur(8px)",
@@ -421,19 +415,20 @@ export default function PricingPage() {
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA</span>
-                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free presentation with our team</span>
+                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free demo with our team</span>
               </a>
-              <button
-                onClick={() => { setCtaOpen(false); window.location.href = "/#waitlist"; }}
+              <a
+                href="/support"
+                onClick={() => setCtaOpen(false)}
                 style={{
                   display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
                   borderRadius: 12, background: "var(--surface)", border: "1px solid var(--line)",
-                  textAlign: "left", cursor: "pointer", fontFamily: "inherit",
+                  textDecoration: "none",
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "var(--ink)" }}>Yes, I&apos;m an existing client</span>
-                <span style={{ fontSize: 13, color: "var(--muted)" }}>Join the waitlist for early platform access</span>
-              </button>
+                <span style={{ fontSize: 13, color: "var(--muted)" }}>Get help from support or your account manager</span>
+              </a>
             </div>
           </div>
         </div>

@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Check } from "lucide-react";
 import Image from "next/image";
 import CertificationsSection from "./components/CertificationsSection";
 import OneHero from "./components/OneHero";
-import { trackEvent } from "@/lib/analytics";
 
 /* ── Types ── */
 interface Update {
@@ -84,9 +82,6 @@ function Arrow({ size = 14 }: { size?: number }) {
 ══════════════════════════════════════════════════════════ */
 export default function Home() {
   const [updates, setUpdates] = useState<Update[] | null>(null);
-  const [form, setForm] = useState({ name: "", email: "", company: "", size: "" });
-  const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [formMsg, setFormMsg] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
   const [ctaOpen, setCtaOpen] = useState(false);
   const [appsOpen, setAppsOpen] = useState(false);
@@ -124,24 +119,6 @@ export default function Home() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setFormState("loading");
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (data.success) { setFormState("success"); setFormMsg(data.message); trackEvent("generate_lead", { method: "waitlist_form" }); }
-      else { setFormState("error"); setFormMsg(data.message || "Something went wrong."); }
-    } catch {
-      setFormState("error");
-      setFormMsg("Something went wrong. Please try again.");
-    }
-  }
 
   /* ── Shared btn styles ── */
   const btnBase: React.CSSProperties = {
@@ -250,7 +227,7 @@ export default function Home() {
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
               <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>
-                Get Started <Arrow />
+                Book a Demo <Arrow />
               </button>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
@@ -274,7 +251,7 @@ export default function Home() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => { setCtaOpen(true); setMobileNavOpen(false); }} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
+              <button onClick={() => { setCtaOpen(true); setMobileNavOpen(false); }} style={{ ...btnPrimary, ...btnSm }}>Book a Free Demo <Arrow /></button>
             </div>
           </div>
         </div>
@@ -373,7 +350,7 @@ export default function Home() {
                     <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
-                <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary }}>Get Started <Arrow /></button>
+                <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary }}>Book a Free Demo <Arrow /></button>
               </div>
             </Reveal>
 
@@ -471,7 +448,7 @@ export default function Home() {
                     <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
-                <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary }}>Get Started <Arrow /></button>
+                <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary }}>Book a Free Demo <Arrow /></button>
               </div>
             </Reveal>
           </div>
@@ -521,7 +498,7 @@ export default function Home() {
                   fontWeight: 500, fontSize: 14.5, background: "transparent",
                   cursor: "pointer", fontFamily: "inherit",
                 }}>
-                  Get Started <Arrow />
+                  Book a Free Demo <Arrow />
                 </button>
               </div>
             </Reveal>
@@ -646,7 +623,7 @@ export default function Home() {
                     <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
-                <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary }}>Get Started <Arrow /></button>
+                <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary }}>Book a Free Demo <Arrow /></button>
               </div>
             </Reveal>
           </div>
@@ -763,111 +740,9 @@ export default function Home() {
                 Bring your whole back office over, or just one module. We&apos;ll meet you where you are.
               </p>
               <button onClick={() => setCtaOpen(true)} style={btnPrimary}>
-                Get Started <Arrow />
+                Book a Free Demo <Arrow />
               </button>
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── WAITLIST ── */}
-      <section id="waitlist" className="section-pad-lg" style={{ borderTop: "1px solid var(--line)", scrollMarginTop: "80px" }}>
-        <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 28px" }}>
-          <Reveal>
-            <div style={{ textAlign: "center", marginBottom: 40 }}>
-              <h2 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", letterSpacing: "-0.03em", fontWeight: 500, margin: "0 0 14px" }}>
-                Get in early.
-              </h2>
-              <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.6 }}>
-                Join the waitlist. Be among the first Filipino businesses on YAHSHUA One.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={100} direction="scale">
-            <div style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-xl)", padding: 32, boxShadow: "var(--shadow)" }}>
-              {formState === "success" ? (
-                <div style={{ textAlign: "center", padding: "24px 0" }}>
-                  <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--accent-50)", display: "grid", placeItems: "center", margin: "0 auto 16px" }}>
-                    <Check style={{ color: "var(--accent-2)" }} size={24} strokeWidth={2.5} />
-                  </div>
-                  <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 18, margin: "0 0 8px" }}>You&apos;re on the list!</p>
-                  <p style={{ color: "var(--muted)", fontSize: 14 }}>{formMsg}</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                  {[
-                    { label: "Full Name", key: "name",    type: "text",  placeholder: "Juan dela Cruz",      required: true },
-                    { label: "Email",     key: "email",   type: "email", placeholder: "juan@company.com.ph", required: true },
-                    { label: "Company",   key: "company", type: "text",  placeholder: "Dela Cruz Trading",   required: false },
-                  ].map((field) => (
-                    <div key={field.key}>
-                      <label style={{ display: "block", fontSize: 13, fontWeight: 500, marginBottom: 6, color: "var(--ink-2)" }}>
-                        {field.label}{" "}
-                        {field.required
-                          ? <span style={{ color: "#B45B4E" }}>*</span>
-                          : <span style={{ color: "var(--soft)", fontWeight: 400 }}>(optional)</span>}
-                      </label>
-                      <input
-                        required={field.required}
-                        type={field.type}
-                        value={form[field.key as keyof typeof form]}
-                        onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                        placeholder={field.placeholder}
-                        style={{
-                          width: "100%", padding: "10px 14px", borderRadius: "var(--radius)",
-                          fontSize: 14, color: "var(--ink)", background: "var(--bg)", border: "1px solid var(--line)",
-                          outline: "none", fontFamily: "inherit", transition: "border-color .15s ease, box-shadow .15s ease",
-                        }}
-                        onFocus={(e) => { e.target.style.borderColor = "var(--accent)"; e.target.style.boxShadow = "0 0 0 3px var(--accent-glow)"; }}
-                        onBlur={(e) => { e.target.style.borderColor = "var(--line)"; e.target.style.boxShadow = "none"; }}
-                      />
-                    </div>
-                  ))}
-
-                  <div>
-                    <label style={{ display: "block", fontSize: 13, fontWeight: 500, marginBottom: 6, color: "var(--ink-2)" }}>
-                      Company Size <span style={{ color: "var(--soft)", fontWeight: 400 }}>(optional)</span>
-                    </label>
-                    <select
-                      value={form.size}
-                      onChange={(e) => setForm({ ...form, size: e.target.value })}
-                      style={{
-                        width: "100%", padding: "10px 14px", borderRadius: "var(--radius)",
-                        fontSize: 14, background: "var(--bg)", border: "1px solid var(--line)",
-                        color: form.size ? "var(--ink)" : "var(--soft)", outline: "none", fontFamily: "inherit",
-                      }}
-                    >
-                      <option value="">Select size...</option>
-                      <option value="1-10">1–10 employees</option>
-                      <option value="11-50">11–50 employees</option>
-                      <option value="51-200">51–200 employees</option>
-                      <option value="200+">200+ employees</option>
-                    </select>
-                  </div>
-
-                  {formState === "error" && (
-                    <p style={{ fontSize: 14, borderRadius: "var(--radius)", padding: "10px 14px", color: "#B45B4E", background: "oklch(0.97 0.02 30)", border: "1px solid oklch(0.88 0.06 30)", margin: 0 }}>
-                      {formMsg}
-                    </p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={formState === "loading"}
-                    style={{
-                      ...btnPrimary, width: "100%", justifyContent: "center", height: 48, fontSize: 15,
-                      borderRadius: "var(--radius)", opacity: formState === "loading" ? 0.6 : 1,
-                    }}
-                  >
-                    {formState === "loading" ? "Sending…" : "Claim My Spot →"}
-                  </button>
-                </form>
-              )}
-            </div>
-            <p style={{ textAlign: "center", fontSize: 12, color: "var(--soft)", marginTop: 16 }}>
-              No spam. No credit card. Just early access.
-            </p>
           </Reveal>
         </div>
       </section>
@@ -1015,7 +890,7 @@ export default function Home() {
               <p style={{ marginTop: 12, fontSize: 13 }}>Built in the Philippines 🇵🇭</p>
             </div>
             {[
-              { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "#waitlist" }] },
+              { title: "Product",   links: [{ label: "Modules", href: "#modules" }, { label: "Intelligence", href: "#intelligence" }, { label: "Integrations", href: "#" }, { label: "Pricing", href: "/pricing" }] },
               { title: "Company",   links: [{ label: "About", href: "/about" }, { label: "Customers", href: "#" }, { label: "Careers", href: "#" }] },
               { title: "Resources", links: [{ label: "Support", href: "/support" }, { label: "Blog", href: "/blog" }, { label: "Changelog", href: "/updates" }] },
               { title: "Legal",     links: [{ label: "Terms", href: "/terms" }, { label: "Privacy", href: "/privacy" }, { label: "DPA", href: "#" }] },
@@ -1046,7 +921,7 @@ export default function Home() {
       {ctaOpen && (
         <div
           onClick={() => setCtaOpen(false)}
-          role="dialog" aria-modal="true" aria-label="Get started"
+          role="dialog" aria-modal="true" aria-label="Book a free demo"
           style={{
             position: "fixed", inset: 0, zIndex: 300,
             background: "rgba(10,14,20,0.72)", backdropFilter: "blur(8px)",
@@ -1096,23 +971,21 @@ export default function Home() {
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA</span>
-                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free presentation with our team</span>
+                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free demo with our team</span>
               </a>
 
-              <button
-                onClick={() => {
-                  setCtaOpen(false);
-                  document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <a
+                href="/support"
+                onClick={() => setCtaOpen(false)}
                 style={{
                   display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
                   borderRadius: 12, background: "var(--surface)", border: "1px solid var(--line)",
-                  textAlign: "left", cursor: "pointer", fontFamily: "inherit",
+                  textDecoration: "none",
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "var(--ink)" }}>Yes, I&apos;m an existing client</span>
-                <span style={{ fontSize: 13, color: "var(--muted)" }}>Join the waitlist for early platform access</span>
-              </button>
+                <span style={{ fontSize: 13, color: "var(--muted)" }}>Get help from support or your account manager</span>
+              </a>
             </div>
           </div>
         </div>

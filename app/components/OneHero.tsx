@@ -7,10 +7,15 @@ export default function OneHero() {
       <h1>Your whole business.<br className={styles.mobileBreak} /> <span>One place.</span></h1>
       <p className={styles.intro}>Bring your people, finances, and operations together.<br className={styles.desktopBreak} /> Use AI to turn business questions into your next move.</p>
       <div className={styles.actions}>
-        <a href="#waitlist" className={styles.primary}>Join the waitlist <span aria-hidden="true">↗</span></a>
+        <a
+          href="https://calendly.com/clientrelations-abba/presentation?utm_source=website&utm_medium=web&utm_campaign=yahshuaone"
+          target="_blank" rel="noopener noreferrer" className={styles.primary}
+        >
+          Book a Free Demo <span aria-hidden="true">↗</span>
+        </a>
         <a href="#platform" className={styles.secondary}>See One in action <span aria-hidden="true">↓</span></a>
       </div>
-      <p className={styles.note}>Be first to hear when early access opens.</p>
+      <p className={styles.note}>30 minutes with our team. No prep required.</p>
     </div>
   );
 }

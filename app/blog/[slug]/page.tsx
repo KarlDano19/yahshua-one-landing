@@ -125,10 +125,10 @@ export default async function BlogPostPage({
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <a href="/blog" style={{ fontSize: 14, color: "var(--muted)", display: "flex", alignItems: "center", gap: 6 }}>← Blog</a>
-            <a href="https://app.yahshua.one/" style={{
+            <a href="https://calendly.com/clientrelations-abba/presentation?utm_source=blog&utm_medium=web&utm_campaign=yahshuaone" target="_blank" rel="noopener noreferrer" style={{
               fontSize: 13.5, fontWeight: 500, color: "#fff", padding: "8px 16px",
               background: "var(--ink)", borderRadius: 999,
-            }}>Start free</a>
+            }}>Book a Free Demo</a>
           </div>
         </div>
       </nav>
@@ -233,7 +233,7 @@ export default async function BlogPostPage({
           <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6, margin: "0 0 20px", maxWidth: 440 }}>
             {post.ctaBody ?? "YAHSHUA One automatically computes SSS, PhilHealth, Pag-IBIG, and BIR withholding tax for every employee, every cutoff, zero manual work."}
           </p>
-          <a href="/#waitlist" style={{
+          <a href="https://calendly.com/clientrelations-abba/presentation?utm_source=blog&utm_medium=web&utm_campaign=yahshuaone" target="_blank" rel="noopener noreferrer" style={{
             display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 24px",
             background: "var(--ink)", color: "#fff", borderRadius: 999,
             fontWeight: 500, fontSize: 14,

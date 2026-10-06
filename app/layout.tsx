@@ -125,9 +125,8 @@ export default function RootLayout({
                   operatingSystem: "Web",
                   offers: {
                     "@type": "Offer",
-                    price: "0",
                     priceCurrency: "PHP",
-                    description: "Free early access — join the waitlist",
+                    description: "Custom quote after a short discovery call. Book a free demo.",
                   },
                   featureList: [
                     "Automated payroll generation",
@@ -153,7 +152,6 @@ export default function RootLayout({
                     },
                   },
                   inLanguage: "en-PH",
-                  isAccessibleForFree: true,
                   screenshot: `${BASE_URL}/opengraph-image`,
                   publisher: { "@id": PARENT_ORG_ID },
                 },

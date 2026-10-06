@@ -35,6 +35,8 @@ function Arrow() {
   );
 }
 
+const CALENDLY = "https://calendly.com/clientrelations-abba/presentation?utm_source=about&utm_medium=web&utm_campaign=yahshuaone";
+
 export default function AboutPage() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
@@ -125,8 +127,8 @@ export default function AboutPage() {
 
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <a href="/#waitlist" style={{ ...btnPrimary, ...btnSm }}>
-                Get Started <Arrow />
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={{ ...btnPrimary, ...btnSm }}>
+                Book a Demo <Arrow />
               </a>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
@@ -143,7 +145,7 @@ export default function AboutPage() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <a href="/#waitlist" style={{ ...btnPrimary, ...btnSm }} onClick={() => setMobileNavOpen(false)}>Get Started <Arrow /></a>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={{ ...btnPrimary, ...btnSm }} onClick={() => setMobileNavOpen(false)}>Book a Free Demo <Arrow /></a>
             </div>
           </div>
         </div>
@@ -274,16 +276,11 @@ export default function AboutPage() {
           <Reveal>
             <h2 style={{ ...sectionH2, margin: "0 0 8px" }}>See it for <em style={accentWord}>yourself.</em></h2>
             <p style={{ fontSize: 15, color: "var(--muted)", margin: "0 0 24px" }}>
-              Join the waitlist. No credit card required.
+              Book a free 30-minute demo with our team.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="/#waitlist" style={btnPrimary}>Get Started <Arrow /></a>
-              <a
-                href="https://calendly.com/clientrelations-abba/presentation?utm_source=about&utm_medium=web&utm_campaign=yahshuaone"
-                target="_blank" rel="noopener noreferrer" style={btnGhost}
-              >
-                Book a Demo
-              </a>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>Book a Free Demo <Arrow /></a>
+              <a href="/payroll" style={btnGhost}>See YAHSHUA One Payroll</a>
             </div>
           </Reveal>
         </div>

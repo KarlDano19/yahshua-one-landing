@@ -5,7 +5,7 @@ const BASE_URL = "https://www.yahshua.one";
 export const metadata: Metadata = {
   title: "Pricing — YAHSHUA One",
   description:
-    "Simple, transparent pricing for YAHSHUA One — automated payroll, BIR compliance, HR, and accounting for Filipino SMBs. Join the early access waitlist today.",
+    "Simple, transparent pricing for YAHSHUA One — automated payroll, BIR compliance, HR, and accounting for Filipino SMBs. Book a free demo to get your quote.",
   alternates: {
     canonical: `${BASE_URL}/pricing`,
   },

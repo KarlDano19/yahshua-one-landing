@@ -78,9 +78,8 @@ const payrollSchema = {
       ],
       offers: {
         "@type": "Offer",
-        price: "0",
         priceCurrency: "PHP",
-        description: "Free early access — join the waitlist",
+        description: "Custom quote after a short discovery call. Book a free demo.",
       },
       audience: {
         "@type": "Audience",
