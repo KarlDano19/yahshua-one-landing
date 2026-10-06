@@ -125,6 +125,30 @@ const payrollSchema = {
             text: "Yes. YAHSHUA One Payroll is built for the Philippine Labor Code — including semi-monthly cutoff schedules, 13th month pay, overtime, holiday pay, and night differential computation.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Does Theo read my actual payroll data?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can Theo change my payroll?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who can see what Theo shows?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden.",
+          },
+        },
       ],
     },
   ],

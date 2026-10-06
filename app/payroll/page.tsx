@@ -242,6 +242,55 @@ const SHOWCASE = [
 ] as const;
 
 /* ══════════════════════════════════════════════════════════
+   ASK THEO DATA
+══════════════════════════════════════════════════════════ */
+const THEO_QUESTIONS = [
+  {
+    q: "Why is Maria's net pay lower this cutoff?",
+    a: "Theo traces her entry line by line and shows what changed. If your role can't view calculation details, you get a shorter answer with the formulas hidden.",
+  },
+  {
+    q: "What's the attendance coverage for this run?",
+    a: "You get a coverage figure for the pay period, like \"Coverage for run 42: 87%,\" so you know whether time logs are complete before you process.",
+  },
+  {
+    q: "Summarize recent payroll runs.",
+    a: "Period, status and totals for your last five runs, in one reply.",
+  },
+  {
+    q: "How many pending leave requests do I have?",
+    a: "The total, how many are still pending, and up to five recent ones with employee, status and dates.",
+  },
+  {
+    q: "What's Pedro's current rate?",
+    a: "The rate type (daily, monthly or supervisor) and the amount. If no rate is on file, Theo says so.",
+  },
+  {
+    q: "What department and schedule is Juan dela Cruz on?",
+    a: "Department, position, location, employment type and the schedule that applies today.",
+  },
+] as const;
+
+const THEO_DATA_RULES = [
+  {
+    label: "Same permissions as the app.",
+    text: "Each lookup checks the same permission as the matching screen. If your role doesn't have it, the lookup is refused and Theo tells you.",
+  },
+  {
+    label: "One company at a time.",
+    text: "Every lookup is limited to your company, and a conversation belongs to the user who started it.",
+  },
+  {
+    label: "No changes without your yes.",
+    text: "A change needs a role that's allowed to make it, plus your explicit confirmation.",
+  },
+  {
+    label: "Switched on deliberately.",
+    text: "Theo is enabled per company, and only for the roles on its allowed list.",
+  },
+] as const;
+
+/* ══════════════════════════════════════════════════════════
    PAGE
 ══════════════════════════════════════════════════════════ */
 export default function PayrollPage() {
@@ -613,6 +662,83 @@ export default function PayrollPage() {
         })}
       </div>
 
+      {/* ── ASK THEO ── */}
+      <section id="ask-theo" className="section-pad" aria-labelledby="ask-theo-heading">
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <h2 id="ask-theo-heading" style={{
+                fontSize: "clamp(1.75rem, 4vw, 2.75rem)", letterSpacing: "-0.03em",
+                fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px",
+                textWrap: "balance" as React.CSSProperties["textWrap"],
+              }}>
+                Why did net pay change?{" "}
+                <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Ask Theo.</em>
+              </h2>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>
+                Every answer comes from your own payroll records, not the internet.
+              </p>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 }}>
+            {THEO_QUESTIONS.map((item, i) => (
+              <Reveal key={item.q} delay={i * 50}>
+                <div style={{
+                  height: "100%", padding: "24px 24px 26px", borderRadius: "var(--radius)",
+                  background: "var(--surface)", border: "1px solid var(--line)",
+                }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.35, margin: "0 0 10px", color: "var(--ink)" }}>
+                    &ldquo;{item.q}&rdquo;
+                  </h3>
+                  <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)", margin: 0 }}>{item.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <p style={{ textAlign: "center", fontSize: 13, color: "var(--soft)", margin: "20px 0 0" }}>
+            Example questions. Employee names are placeholders.
+          </p>
+
+          <Reveal>
+            <div style={{ marginTop: 72 }}>
+              <h3 style={{ fontSize: "clamp(1.25rem, 2.6vw, 1.625rem)", fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
+                How Theo handles your data
+              </h3>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px", maxWidth: 560 }}>
+                Theo only sees what the person asking is allowed to see, and only inside their own company.
+              </p>
+              <ul style={{
+                listStyle: "none", padding: 0, margin: 0,
+                display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px 32px",
+              }}>
+                {THEO_DATA_RULES.map((rule) => (
+                  <li key={rule.label} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <span style={{
+                      width: 20, height: 20, borderRadius: 6, background: "var(--accent-50)",
+                      display: "grid", placeItems: "center", flexShrink: 0, marginTop: 2,
+                    }}>
+                      <Check size={11} />
+                    </span>
+                    <span style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)" }}>
+                      <strong style={{ color: "var(--ink)", fontWeight: 500 }}>{rule.label}</strong>{" "}{rule.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div style={{ marginTop: 40 }}>
+                <a
+                  href="https://calendly.com/clientrelations-abba/presentation?utm_source=payroll&utm_medium=web&utm_campaign=yahshuaone_theo"
+                  target="_blank" rel="noopener noreferrer" style={btnPrimary}
+                >
+                  Book a Free Demo <Arrow />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── COMPLIANCE ── */}
       <section id="compliance" className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
@@ -770,6 +896,12 @@ export default function PayrollPage() {
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
               a="Y1P includes an AI copilot accessible from within the app. It helps you understand payroll computations, surface discrepancies, and answer questions about your payroll data in plain language — without needing to dig through reports manually. It works on top of your actual company data, not generic templates." />
+            <FaqItem delay={360} q="Does Theo read my actual payroll data?"
+              a="Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds." />
+            <FaqItem delay={400} q="Can Theo change my payroll?"
+              a="Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation." />
+            <FaqItem delay={440} q="Who can see what Theo shows?"
+              a="Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden." />
             <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
               a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and all statutory compliance reports. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
             <FaqItem delay={400} q="What pay frequencies does Y1P support?"
