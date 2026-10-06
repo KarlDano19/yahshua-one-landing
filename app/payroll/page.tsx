@@ -291,6 +291,30 @@ const THEO_DATA_RULES = [
 ] as const;
 
 /* ══════════════════════════════════════════════════════════
+   MOBILE APP DATA
+══════════════════════════════════════════════════════════ */
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.abba.yahshuaone.mobile";
+
+const MOBILE_FEATURES = [
+  {
+    title: "Clock in with a face or an ID.",
+    text: "Employees pick their company in Kiosk, then time in and out with facial recognition or their system ID. Geo-fencing validates where each clock-in happens.",
+  },
+  {
+    title: "File requests from the phone.",
+    text: "Employees file requests such as leave under Self-service and see what's still pending.",
+  },
+  {
+    title: "Approve from anywhere.",
+    text: "Managers approve requests from any device, and the same requests appear in the web app's approval workspace.",
+  },
+  {
+    title: "Syncs on its own.",
+    text: "Logs and requests sync to the cloud as soon as the device is online. Clock-ins show up under Timesheets, then Attendance, in the web app.",
+  },
+] as const;
+
+/* ══════════════════════════════════════════════════════════
    PAGE
 ══════════════════════════════════════════════════════════ */
 export default function PayrollPage() {
@@ -739,6 +763,51 @@ export default function PayrollPage() {
         </div>
       </section>
 
+      {/* ── MOBILE APP ── */}
+      <section id="mobile-app" className="section-pad" aria-labelledby="mobile-app-heading" style={{ borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <h2 id="mobile-app-heading" style={{
+                fontSize: "clamp(1.75rem, 4vw, 2.75rem)", letterSpacing: "-0.03em",
+                fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px",
+                textWrap: "balance" as React.CSSProperties["textWrap"],
+              }}>
+                Clock in from the phone.{" "}
+                <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Approve from the dashboard.</em>
+              </h2>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>
+                The YAHSHUA One mobile app is where your team clocks in and files requests. It&apos;s currently available on Google Play for Android only, and everything syncs to the payroll web app under one account.
+              </p>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))", gap: 16 }}>
+            {MOBILE_FEATURES.map((item, i) => (
+              <Reveal key={item.title} delay={i * 50}>
+                <div style={{
+                  height: "100%", padding: "24px 24px 26px", borderRadius: "var(--radius)",
+                  background: "var(--surface)", border: "1px solid var(--line)",
+                }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.35, margin: "0 0 10px", color: "var(--ink)" }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)", margin: 0 }}>{item.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={200}>
+            <div style={{ marginTop: 32, textAlign: "center" }}>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
+                Get it on Google Play <Arrow />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── COMPLIANCE ── */}
       <section id="compliance" className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px" }}>
@@ -902,6 +971,10 @@ export default function PayrollPage() {
               a="Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation." />
             <FaqItem delay={440} q="Who can see what Theo shows?"
               a="Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden." />
+            <FaqItem delay={440} q="Does YAHSHUA One have a mobile app?"
+              a="Yes. The YAHSHUA One mobile app is currently available on Google Play for Android only. Employees clock in and out with facial recognition or their system ID, with geo-fencing for location validation, and file requests such as leave. Managers can approve requests from any device, and everything syncs to the payroll web app." />
+            <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"
+              a="No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device." />
             <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
               a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and all statutory compliance reports. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
             <FaqItem delay={400} q="What pay frequencies does Y1P support?"

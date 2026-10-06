@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.yahshua.one";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.abba.yahshuaone.mobile";
 
 export const metadata: Metadata = {
   title: "YAHSHUA One Payroll — Automated Payroll & Statutory Contributions for Filipino Businesses ",
@@ -89,6 +90,19 @@ const payrollSchema = {
       inLanguage: "en-PH",
     },
     {
+      "@type": "MobileApplication",
+      "@id": `${BASE_URL}/payroll#mobile-app`,
+      name: "YAHSHUA One",
+      operatingSystem: "ANDROID",
+      applicationCategory: "BusinessApplication",
+      downloadUrl: PLAY_STORE_URL,
+      installUrl: PLAY_STORE_URL,
+      url: `${BASE_URL}/payroll#mobile-app`,
+      description:
+        "Employee mobile app for YAHSHUA One Payroll. Clock in and out with facial recognition or a system ID with geo-fencing, file requests such as leave, and approve requests from any device. Syncs to the payroll web app.",
+      inLanguage: "en-PH",
+    },
+    {
       "@type": "FAQPage",
       "@id": `${BASE_URL}/payroll#faq`,
       mainEntity: [
@@ -146,6 +160,22 @@ const payrollSchema = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does YAHSHUA One have a mobile app?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. The YAHSHUA One mobile app is currently available on Google Play for Android only. Employees clock in and out with facial recognition or their system ID, with geo-fencing for location validation, and file requests such as leave. Managers can approve requests from any device, and everything syncs to the payroll web app.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is there an iPhone or iOS version of the YAHSHUA One app?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device.",
           },
         },
       ],
