@@ -50,8 +50,8 @@ The two products solve different starting problems, which shows clearly once you
 | Core focus | Unified payroll, HR, and accounting | Biometric attendance for shift-based teams |
 | Best fit | SMBs prioritizing payroll accuracy and compliance | Multi-branch retail and F&B with hourly staff |
 | AI assistant | Theo, reads your actual configured data | Not documented on their product pages |
-| Pricing model | Flat monthly rate: PHP 7,000 for up to 100 employees, PHP 60 per additional employee, PHP 35,000 one-time setup (VAT excluded) | $3.50/employee/month base, add-ons priced separately in USD |
-| Full payroll setup cost | The same flat rate, with YAHSHUA HRIS included; Theo AI credits are optional, from PHP 100 | About $6.50/employee/month (base + payroll add-on) |
+| Pricing model | Flat monthly rate: PHP 7,000 for up to 100 employees, PHP 60 per additional employee, no setup fee (VAT excluded) | $3.50/employee/month base, add-ons priced separately in USD |
+| Full payroll setup cost | The same flat rate, with YAHSHUA HRIS included; Theo AI credits are optional and priced separately | About $6.50/employee/month (base + payroll add-on) |
 | Statutory compliance (SSS, PhilHealth, Pag-IBIG, BIR) | Core product function | Supported, secondary to attendance |
 
 ## Which One Fits Your Business

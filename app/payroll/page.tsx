@@ -724,7 +724,7 @@ export default function PayrollPage() {
             Example questions. Employee names are placeholders.
           </p>
           <p style={{ textAlign: "center", fontSize: 14, color: "var(--muted)", margin: "12px 0 0" }}>
-            Theo is optional and runs on pay-as-you-go credits, from ₱100.{" "}
+            Theo is optional and runs on pay-as-you-go credits, priced separately.{" "}
             <a href="/pricing#theo-credits" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>See how credits work</a>.
           </p>
 
@@ -976,7 +976,7 @@ export default function PayrollPage() {
             <FaqItem delay={440} q="Who can see what Theo shows?"
               a="Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden." />
             <FaqItem delay={440} q="How much does YAHSHUA One Payroll cost?"
-              a={<>₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, plus a one-time ₱35,000 setup fee. Plan prices exclude VAT, and the trial is 30 days. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan. <a href="/pricing" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>See the full pricing</a>.</>} />
+              a={<>₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, with no setup fee. Plan prices exclude VAT, and the trial is 30 days. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized. <a href="/pricing" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>See the full pricing</a>.</>} />
             <FaqItem delay={440} q="Does YAHSHUA One have a mobile app?"
               a="Yes. The YAHSHUA One mobile app is currently available on Google Play for Android only. Employees clock in and out with facial recognition or their system ID, with geo-fencing for location validation, and file requests such as leave. Managers can approve requests from any device, and everything syncs to the payroll web app." />
             <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"

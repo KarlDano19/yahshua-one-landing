@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const BASE_URL = "https://www.yahshua.one";
 
 const DESCRIPTION =
-  "YAHSHUA One Payroll with YAHSHUA HRIS included: ₱7,000 per month for up to 100 employees, ₱60 per additional employee, and a one-time ₱35,000 setup. VAT excluded. Book a free demo.";
+  "YAHSHUA One Payroll with YAHSHUA HRIS included: ₱7,000 per month for up to 100 employees, ₱60 per additional employee, and no setup fee. VAT excluded. Book a free demo.";
 
 export const metadata: Metadata = {
   title: "Pricing — YAHSHUA One",
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "How much does YAHSHUA One Payroll cost?",
-    a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. Plan prices exclude VAT. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan.",
+    a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
   },
   {
     q: "Does the plan include Theo AI credits?",
-    a: "No. Theo AI is optional and runs on pay-as-you-go credits: 100 credits for ₱100, 500 for ₱450, or 2,000 for ₱1,600, VAT included. No credits are included in the plan, and Theo needs a credit balance above zero to answer.",
+    a: "Not at the moment. Theo AI is optional and runs on pay-as-you-go credits. Credit pricing is still being finalized, so ask us for current rates. Theo needs a credit balance above zero to answer.",
   },
   {
     q: "Do I need a subscription to use Theo?",
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "Is there a setup fee?",
-    a: "Yes. There is a one-time setup fee of ₱35,000, which covers full implementation, data migration, and dedicated onboarding training.",
+    a: "No. There is no setup fee.",
   },
   {
     q: "Does YAHSHUA One Payroll come with YAHSHUA HRIS?",
@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: "Is VAT included in the plan price?",
-    a: "No. Plan prices are VAT excluded. The 12% VAT is added to your invoice. Theo credit prices already include VAT.",
+    a: "No. Plan prices are VAT excluded. The 12% VAT is added to your invoice.",
   },
   {
     q: "I'm an existing YAHSHUA client. Does my pricing change?",
