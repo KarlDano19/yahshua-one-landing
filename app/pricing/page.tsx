@@ -68,13 +68,19 @@ const INCLUDED_EMPLOYEES = 100;
 const PER_EXTRA_EMPLOYEE = 60;
 const SETUP_FEE = 35000;
 const VAT_RATE = 0.12;
+const num = new Intl.NumberFormat("en-PH");
+
+const THEO_PACKS = [
+  { credits: 100, price: 100 },
+  { credits: 500, price: 450 },
+  { credits: 2000, price: 1600 },
+];
 const peso = new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP", minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
 const PAYROLL_INCLUDES = [
   "Automated payroll computation every cutoff",
   "SSS, PhilHealth, Pag-IBIG and BIR withholding tax",
   "Payslips and bank disbursement files",
-  "Theo, the AI assistant that reads your payroll data",
 ];
 
 const HRIS_INCLUDES = [
@@ -148,7 +154,15 @@ export default function PricingPage() {
   const faqs = [
     {
       q: "How much does YAHSHUA One Payroll cost?",
-      a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. All prices exclude VAT.",
+      a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. Plan prices exclude VAT. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan.",
+    },
+    {
+      q: "Does the plan include Theo AI credits?",
+      a: "No. Theo AI is optional and runs on pay-as-you-go credits: 100 credits for ₱100, 500 for ₱450, or 2,000 for ₱1,600, VAT included. No credits are included in the plan, and Theo needs a credit balance above zero to answer.",
+    },
+    {
+      q: "Do I need a subscription to use Theo?",
+      a: "No. You can buy credits whenever you need them, and Theo works as long as your balance is above zero.",
     },
     {
       q: "Which YAHSHUA One modules can I buy today?",
@@ -171,8 +185,8 @@ export default function PricingPage() {
       a: "Yes. The trial is 30 days, long enough to run your first payroll cycle before you commit.",
     },
     {
-      q: "Is VAT included in the prices?",
-      a: "No. All prices are VAT excluded. The 12% VAT is added to your invoice.",
+      q: "Is VAT included in the plan price?",
+      a: "No. Plan prices are VAT excluded. The 12% VAT is added to your invoice. Theo credit prices already include VAT.",
     },
     {
       q: "I'm an existing YAHSHUA client. Does my pricing change?",
@@ -435,6 +449,29 @@ export default function PricingPage() {
                     ))}
                   </ul>
                 </div>
+                <div id="theo-credits" style={{ scrollMarginTop: 90 }}>
+                  <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 14px" }}>
+                    Theo AI, optional
+                  </h2>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10, fontSize: 15, lineHeight: 1.6, color: "var(--muted)" }}>
+                    <li style={{ color: "var(--ink-2)", fontWeight: 500 }}>
+                      Pay-as-you-go credits, VAT included. Bigger packs include extra credits.
+                      <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 6, fontWeight: 400, fontSize: 14.5 }}>
+                        {THEO_PACKS.map((pack) => (
+                          <div key={pack.credits} style={{ display: "flex", justifyContent: "space-between", gap: 16, padding: "8px 14px", borderRadius: "var(--radius)", background: "var(--bg-tint)" }}>
+                            <span>{num.format(pack.credits)} credits</span>
+                            <span style={{ fontWeight: 500 }}>{peso.format(pack.price)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </li>
+                    <li>No credits are included in the plan.</li>
+                    <li>
+                      Credits power Theo chat, payslip design, AI-generated reports, and handbook polish. Each AI call uses credits based on how much it costs to run. Theo&apos;s onboarding setup and our human support don&apos;t use credits.
+                    </li>
+                    <li>Theo needs a credit balance above zero to answer.</li>
+                  </ul>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -470,7 +507,7 @@ export default function PricingPage() {
             ))}
           </div>
           <p style={{ textAlign: "center", color: "var(--muted)", fontSize: 13, margin: "24px 0 0" }}>
-            All prices are VAT excluded. Prices verified: October 2026.
+            Plan prices are VAT excluded. Prices verified: October 2026.
           </p>
         </div>
       </section>

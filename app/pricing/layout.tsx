@@ -38,7 +38,15 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "How much does YAHSHUA One Payroll cost?",
-    a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. All prices exclude VAT.",
+    a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. Plan prices exclude VAT. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan.",
+  },
+  {
+    q: "Does the plan include Theo AI credits?",
+    a: "No. Theo AI is optional and runs on pay-as-you-go credits: 100 credits for ₱100, 500 for ₱450, or 2,000 for ₱1,600, VAT included. No credits are included in the plan, and Theo needs a credit balance above zero to answer.",
+  },
+  {
+    q: "Do I need a subscription to use Theo?",
+    a: "No. You can buy credits whenever you need them, and Theo works as long as your balance is above zero.",
   },
   {
     q: "Which YAHSHUA One modules can I buy today?",
@@ -61,8 +69,8 @@ const faqs = [
     a: "Yes. The trial is 30 days, long enough to run your first payroll cycle before you commit.",
   },
   {
-    q: "Is VAT included in the prices?",
-    a: "No. All prices are VAT excluded. The 12% VAT is added to your invoice.",
+    q: "Is VAT included in the plan price?",
+    a: "No. Plan prices are VAT excluded. The 12% VAT is added to your invoice. Theo credit prices already include VAT.",
   },
   {
     q: "I'm an existing YAHSHUA client. Does my pricing change?",

@@ -88,7 +88,7 @@ const payrollSchema = {
           unitText: "month",
           valueAddedTaxIncluded: false,
         },
-        description: "PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus PHP 60 per additional employee per month and a one-time PHP 35,000 setup fee. VAT excluded. 30-day trial.",
+        description: "PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus PHP 60 per additional employee per month and a one-time PHP 35,000 setup fee. Plan prices exclude VAT. 30-day trial. Theo AI is optional: pay-as-you-go credits from PHP 100, none included in the plan.",
         url: `${BASE_URL}/pricing`,
       },
       audience: {
@@ -176,7 +176,7 @@ const payrollSchema = {
           name: "How much does YAHSHUA One Payroll cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, plus a one-time ₱35,000 setup fee. All prices exclude VAT, and the trial is 30 days. See the full pricing.",
+            text: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, plus a one-time ₱35,000 setup fee. Plan prices exclude VAT, and the trial is 30 days. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan. See the full pricing.",
           },
         },
         {
