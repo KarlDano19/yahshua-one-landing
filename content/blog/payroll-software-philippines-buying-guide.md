@@ -57,6 +57,8 @@ Published pricing for Philippine payroll and HRIS platforms currently ranges fro
 
 A quote-based model is not automatically worse than a published rate. It is worse only if getting that quote takes weeks instead of one call.
 
+Per-employee and flat pricing cross over at different headcounts, so the cheapest option at 10 employees is rarely the cheapest at 100. We ran each published price at 10, 50, 100 and 150 employees in [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines).
+
 If you are specifically comparing YAHSHUA against Sprout Solutions or GreatDay HR feature by feature, including a step-by-step switching plan, our sibling product YAHSHUA HRIS has already built that comparison in detail: see [YAHSHUA HRIS vs Sprout Solutions](https://yahshuahris.com/vs-sprout) and [YAHSHUA HRIS vs GreatDay HR](https://yahshuahris.com/vs-greatday). This guide focuses on payroll-specific buying criteria instead of repeating that ground.
 
 PayrollHero sits in a different niche worth naming directly: it is built around biometric and selfie clock-in for shift-based, multi-branch teams (retail, F&B, BPO), with payroll as a secondary add-on rather than the core product. If your main problem is attendance across many locations, that is a real reason to look at it. If your main problem is payroll accuracy and compliance, it is solving a different problem than the one you have.
@@ -78,6 +80,7 @@ This is a genuinely useful test to run on any vendor demo, not just ours: ask th
 - [Can AI Replace a Payroll Officer in the Philippines?](/blog/can-ai-replace-payroll-officer-philippines), where a person should stay in the loop
 - [YAHSHUA One vs. PayrollHero: Which One Actually Fits Your Business](/blog/yahshua-one-vs-payrollhero), a factual side-by-side comparison
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
+- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), the cost math by headcount
 - [YAHSHUA One pricing](/pricing), including the flat rate and what is included
 - [YAHSHUA HRIS vs Sprout Solutions](https://yahshuahris.com/vs-sprout), a full feature and pricing comparison
 - [YAHSHUA HRIS vs GreatDay HR](https://yahshuahris.com/vs-greatday), including a step-by-step switching guide

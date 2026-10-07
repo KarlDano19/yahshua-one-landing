@@ -68,6 +68,7 @@ A clean mid-year cutover comes down to four things: verifying your data, testing
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
+- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), what each vendor's price looks like at your headcount
 - [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines), what spreadsheets miss that a mid-year switch depends on
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines)
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines), how to test any vendor's AI claim

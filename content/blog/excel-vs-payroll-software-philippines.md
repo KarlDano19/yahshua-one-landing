@@ -86,6 +86,7 @@ Theo can answer a specific question about your own numbers, flag an employee who
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
+- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), what payroll software costs once you outgrow the spreadsheet
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines)
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines)
