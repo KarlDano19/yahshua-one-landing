@@ -75,6 +75,7 @@ This is a genuinely useful test to run on any vendor demo, not just ours: ask th
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines), the build-vs-buy-vs-outsource decision
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines), what to check before you migrate
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines), how to test any vendor's AI claim
+- [Can AI Replace a Payroll Officer in the Philippines?](/blog/can-ai-replace-payroll-officer-philippines), where a person should stay in the loop
 - [YAHSHUA One vs. PayrollHero: Which One Actually Fits Your Business](/blog/yahshua-one-vs-payrollhero), a factual side-by-side comparison
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 - [YAHSHUA One pricing](/pricing), including the flat rate and what is included

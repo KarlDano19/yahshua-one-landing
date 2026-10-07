@@ -81,6 +81,7 @@ Most businesses outgrow pure outsourcing before they're ready to hire a dedicate
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
 - [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines)
+- [Can AI Replace a Payroll Officer in the Philippines?](/blog/can-ai-replace-payroll-officer-philippines), what to hand to AI and what to keep human
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 
