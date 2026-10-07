@@ -41,6 +41,10 @@ const faqs = [
     a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. All prices exclude VAT.",
   },
   {
+    q: "Which YAHSHUA One modules can I buy today?",
+    a: "YAHSHUA One Payroll is available today, with YAHSHUA HRIS included. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
+  },
+  {
     q: "What happens when I go over 100 employees?",
     a: "An additional ₱60 per employee per month is added on top of the ₱7,000 base rate. The calculator above shows your exact monthly cost for any headcount.",
   },

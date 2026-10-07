@@ -85,11 +85,28 @@ const HRIS_INCLUDES = [
   "Performance management",
 ];
 
+interface PricingModule {
+  id: string;
+  name: string;
+  sub: string;
+  live: boolean;
+  text?: string;
+}
+
+const MODULES: PricingModule[] = [
+  { id: "payroll", name: "Payroll", sub: "HRIS included", live: true },
+  { id: "accounting", name: "Accounting", sub: "Books and reports", live: false, text: "Real-time bookkeeping and profit and loss reports." },
+  { id: "tax", name: "Tax and compliance", sub: "BIR filings", live: false, text: "BIR deadlines tracked and returns drafted from your books." },
+  { id: "erp", name: "ERP", sub: "Inventory, sales, purchasing", live: false, text: "Inventory, sales orders, purchasing, and vendors on one ledger." },
+];
+
 export default function PricingPage() {
   const [ctaOpen, setCtaOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const [employees, setEmployees] = useState("25");
+  const [moduleId, setModuleId] = useState("payroll");
+  const activeModule = MODULES.find((m) => m.id === moduleId) ?? MODULES[0];
 
   const headcount = Math.max(1, Math.floor(Number(employees) || 0));
   const extraEmployees = Math.max(0, headcount - INCLUDED_EMPLOYEES);
@@ -132,6 +149,10 @@ export default function PricingPage() {
     {
       q: "How much does YAHSHUA One Payroll cost?",
       a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. All prices exclude VAT.",
+    },
+    {
+      q: "Which YAHSHUA One modules can I buy today?",
+      a: "YAHSHUA One Payroll is available today, with YAHSHUA HRIS included. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
     },
     {
       q: "What happens when I go over 100 employees?",
@@ -252,22 +273,55 @@ export default function PricingPage() {
               fontWeight: 500, lineHeight: 1.0, margin: "0 0 20px",
               textWrap: "balance" as React.CSSProperties["textWrap"],
             }}>
-              One flat price.{" "}
-              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Payroll and HRIS included.</em>
+              Pricing by{" "}
+              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>module.</em>
             </h1>
-            <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.65, maxWidth: 520, margin: "0 auto 36px" }}>
-              YAHSHUA One Payroll with YAHSHUA HRIS at no extra charge. {peso.format(BASE_PRICE)} a month covers up to {INCLUDED_EMPLOYEES} employees.
+            <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.65, maxWidth: 520, margin: "0 auto" }}>
+              Payroll is available today. More modules are on the way.
             </p>
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
-                Book a Free Demo <Arrow />
-              </a>
-              <a href="#plan" style={btnGhost}>See what&apos;s included</a>
-            </div>
           </Reveal>
         </div>
       </section>
 
+      {/* ── MODULE SELECTOR ── */}
+      <section aria-label="Choose a module" style={{ padding: "48px 0 0" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px" }}>
+          <div className="module-grid">
+            {MODULES.map((m, i) => {
+              const active = m.id === moduleId;
+              return (
+                <Reveal key={m.id} delay={i * 50}>
+                  <button
+                    type="button"
+                    onClick={() => setModuleId(m.id)}
+                    aria-pressed={active}
+                    style={{
+                      display: "block", textAlign: "left", width: "100%", height: "100%", cursor: "pointer",
+                      fontFamily: "inherit", color: "var(--ink)", background: "var(--surface)",
+                      borderRadius: "var(--radius)",
+                      border: active ? "2px solid var(--accent)" : "1px solid var(--line)",
+                      padding: active ? "17px 19px" : "18px 20px",
+                    }}
+                  >
+                    <span style={{ display: "block", fontSize: 16, fontWeight: 500, letterSpacing: "-0.01em", marginBottom: 2 }}>{m.name}</span>
+                    <span style={{ display: "block", fontSize: 13, color: "var(--muted)", marginBottom: 12 }}>{m.sub}</span>
+                    <span style={{
+                      display: "inline-block", fontSize: 12, padding: "2px 10px", borderRadius: 999,
+                      background: m.live ? "var(--accent-50)" : "var(--bg-tint)",
+                      color: m.live ? "var(--accent-2)" : "var(--muted)",
+                    }}>
+                      {m.live ? "Available now" : "Coming soon"}
+                    </span>
+                  </button>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {activeModule.live ? (
+      <>
       {/* ── PLAN ── */}
       <section id="plan" className="section-pad" style={{ borderBottom: "1px solid var(--line)", scrollMarginTop: 80 }}>
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px" }}>
@@ -420,6 +474,28 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+      </>
+      ) : (
+      <section className="section-pad" style={{ borderBottom: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-xl)", padding: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 12 }}>
+                <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: 0 }}>{activeModule.name}</h2>
+                <span style={{ fontSize: 12, padding: "2px 10px", borderRadius: 999, background: "var(--bg-tint)", color: "var(--muted)" }}>
+                  Coming soon
+                </span>
+              </div>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, margin: "0 0 8px" }}>{activeModule.text}</p>
+              <p style={{ fontSize: 16, lineHeight: 1.6, margin: "0 0 24px" }}>Pricing for this module is not published yet.</p>
+              <a href={`${CALENDLY}&utm_content=${activeModule.id}`} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
+                Ask about {activeModule.name} <Arrow />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+      )}
 
       {/* ── FAQ ── */}
       <section className="section-pad" style={{ background: "var(--surface)", borderBottom: "1px solid var(--line)" }}>
