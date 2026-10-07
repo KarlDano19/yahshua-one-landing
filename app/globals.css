@@ -760,6 +760,7 @@ button { font: inherit; cursor: pointer; }
   white-space: nowrap;
   border-right: 1px solid var(--line);
 }
+
 .marquee-dot {
   width: 4px;
   height: 4px;
