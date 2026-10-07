@@ -100,3 +100,4 @@ According to JobStreet Philippines, the average monthly salary for Payroll Offic
 
 **Can a small business do payroll in-house without hiring a dedicated payroll officer?**
 Yes, this is what payroll software is built for. A business owner, HR generalist, or bookkeeper can run payroll in-house using software that automates the computation and statutory filing, without needing a dedicated payroll specialist on staff.
+
