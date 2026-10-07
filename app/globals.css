@@ -304,6 +304,9 @@ button { font: inherit; cursor: pointer; }
   color: var(--ink-2);
 }
 .prose tr:last-child td { border-bottom: none; }
+@media (max-width: 640px) {
+  .prose table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
