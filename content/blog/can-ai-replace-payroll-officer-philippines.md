@@ -5,6 +5,7 @@ description: "AI can answer payroll questions, draft formulas and explain a net 
 category: "AI & Compliance"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+coverImage: "/Blog/Can%20AI%20Replace%20a%20Payroll%20Officer.png"
 ctaHeading: "See where Theo stops and your team starts."
 ctaBody: "Book a 30-minute demo, ask Theo about your own payroll setup, and see what it takes for it to change anything."
 faq:

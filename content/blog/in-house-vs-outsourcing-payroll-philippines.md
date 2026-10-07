@@ -5,6 +5,7 @@ description: "In-house payroll run on software costs roughly one payroll officer
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+coverImage: "/Blog/In-House%20Payroll.png"
 ctaHeading: "Keep payroll in-house without the manual burden."
 ctaBody: "Book a 30-minute call and see what running payroll with real AI support actually looks like, no third party holding your employee data."
 faq:
