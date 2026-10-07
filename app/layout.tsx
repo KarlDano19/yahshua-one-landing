@@ -126,7 +126,8 @@ export default function RootLayout({
                   offers: {
                     "@type": "Offer",
                     priceCurrency: "PHP",
-                    description: "Custom quote after a short discovery call. Book a free demo.",
+                    description: "YAHSHUA One Payroll with YAHSHUA HRIS included: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, plus a one-time PHP 35,000 setup fee. VAT excluded.",
+                    url: `${BASE_URL}/pricing`,
                   },
                   featureList: [
                     "Automated payroll generation",

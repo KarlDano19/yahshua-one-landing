@@ -63,10 +63,39 @@ function CheckIcon({ color = "var(--accent-2)" }: { color?: string }) {
 
 const CALENDLY = "https://calendly.com/clientrelations-abba/presentation?utm_source=pricing&utm_medium=web&utm_campaign=yahshuaone";
 
+const BASE_PRICE = 7000;
+const INCLUDED_EMPLOYEES = 100;
+const PER_EXTRA_EMPLOYEE = 60;
+const SETUP_FEE = 35000;
+const VAT_RATE = 0.12;
+const peso = new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP", minimumFractionDigits: 0, maximumFractionDigits: 0 });
+
+const PAYROLL_INCLUDES = [
+  "Automated payroll computation every cutoff",
+  "SSS, PhilHealth, Pag-IBIG and BIR withholding tax",
+  "Payslips and bank disbursement files",
+  "Theo, the AI assistant that reads your payroll data",
+];
+
+const HRIS_INCLUDES = [
+  "Employee management and 201 files",
+  "Job posting and recruitment",
+  "Leave, attendance, and time tracking",
+  "DOLE compliance reports",
+  "Performance management",
+];
+
 export default function PricingPage() {
   const [ctaOpen, setCtaOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
+  const [employees, setEmployees] = useState("25");
+
+  const headcount = Math.max(1, Math.floor(Number(employees) || 0));
+  const extraEmployees = Math.max(0, headcount - INCLUDED_EMPLOYEES);
+  const subtotal = BASE_PRICE + extraEmployees * PER_EXTRA_EMPLOYEE;
+  const vat = Math.round(subtotal * VAT_RATE);
+  const total = subtotal + vat;
 
   useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 8);
@@ -99,24 +128,34 @@ export default function PricingPage() {
   };
   const btnSm: React.CSSProperties = { height: 36, padding: "0 14px", fontSize: 13.5 };
 
-  const quoteSteps = [
-    { n: "1", title: "Book a 30-minute call", desc: "Pick any open slot in our calendar. No prep required." },
-    { n: "2", title: "We map your setup", desc: "Modules, team size, migration from existing YAHSHUA products, your current compliance pain points." },
-    { n: "3", title: "You get a number", desc: "A clear ₱ figure, what's included, and a timeline to go live. Same call." },
-  ];
-
   const faqs = [
     {
-      q: "Is there a public price list?",
-      a: "Not yet — we're in early access. Pricing is confirmed after a short discovery call where we understand your setup: team size, modules needed, and whether you're migrating from existing YAHSHUA products. Most clients get a number in one meeting.",
+      q: "How much does YAHSHUA One Payroll cost?",
+      a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is a one-time ₱35,000 setup fee. All prices exclude VAT.",
+    },
+    {
+      q: "What happens when I go over 100 employees?",
+      a: "An additional ₱60 per employee per month is added on top of the ₱7,000 base rate. The calculator above shows your exact monthly cost for any headcount.",
+    },
+    {
+      q: "Is there a setup fee?",
+      a: "Yes. There is a one-time setup fee of ₱35,000, which covers full implementation, data migration, and dedicated onboarding training.",
+    },
+    {
+      q: "Does YAHSHUA One Payroll come with YAHSHUA HRIS?",
+      a: "Yes. Every plan includes YAHSHUA HRIS at no extra charge: employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management.",
     },
     {
       q: "Is there a free trial?",
-      a: "Early access partners get a structured onboarding session and a 30-day period to run their first payroll cycle before committing to a subscription.",
+      a: "Yes. The trial is 30 days, long enough to run your first payroll cycle before you commit.",
+    },
+    {
+      q: "Is VAT included in the prices?",
+      a: "No. All prices are VAT excluded. The 12% VAT is added to your invoice.",
     },
     {
       q: "I'm an existing YAHSHUA client. Does my pricing change?",
-      a: "No. Existing clients transition to YAHSHUA One with their current pricing intact. YAHSHUA One is the new platform foundation — not a rebrand with new fees.",
+      a: "No. Existing clients transition to YAHSHUA One with their current pricing intact. YAHSHUA One is the new platform foundation, not a rebrand with new fees.",
     },
     {
       q: "Is pricing in pesos?",
@@ -124,7 +163,7 @@ export default function PricingPage() {
     },
     {
       q: "What if I only need payroll?",
-      a: "YAHSHUA One Payroll is available as a standalone product. You get the full payroll engine, Theo AI, and BIR compliance tools without the broader ERP and accounting modules.",
+      a: "YAHSHUA One Payroll runs as a standalone product, without the broader ERP and accounting modules. YAHSHUA HRIS is included, so you can use as much or as little of it as you need.",
     },
   ];
 
@@ -208,75 +247,177 @@ export default function PricingPage() {
       <section className="section-pad-lg" style={{ textAlign: "center", borderBottom: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <div style={{
-              fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11,
-              letterSpacing: "0.12em", textTransform: "uppercase",
-              color: "var(--muted)", marginBottom: 20,
-            }}>
-              Pricing
-            </div>
             <h1 style={{
               fontSize: "clamp(36px, 5.5vw, 68px)", letterSpacing: "-0.04em",
               fontWeight: 500, lineHeight: 1.0, margin: "0 0 20px",
+              textWrap: "balance" as React.CSSProperties["textWrap"],
             }}>
-              A fair price for the work{" "}
-              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>you&apos;re actually doing.</em>
+              One flat price.{" "}
+              <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Payroll and HRIS included.</em>
             </h1>
             <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.65, maxWidth: 520, margin: "0 auto 36px" }}>
-              We&apos;d rather understand your setup than send you a price list. Talk to us — we&apos;ll find what makes sense.
+              YAHSHUA One Payroll with YAHSHUA HRIS at no extra charge. {peso.format(BASE_PRICE)} a month covers up to {INCLUDED_EMPLOYEES} employees.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
-                Book a call <Arrow />
+                Book a Free Demo <Arrow />
               </a>
+              <a href="#plan" style={btnGhost}>See what&apos;s included</a>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── QUOTE PROCESS ── */}
-      <section className="section-pad" style={{ borderBottom: "1px solid var(--line)" }}>
+      {/* ── PLAN ── */}
+      <section id="plan" className="section-pad" style={{ borderBottom: "1px solid var(--line)", scrollMarginTop: 80 }}>
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px" }}>
           <div className="grid-2col-hero">
             <Reveal>
-              <div>
-                <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
-                  Getting a quote
+              <div style={{
+                background: "var(--surface)", border: "1px solid var(--line)",
+                borderRadius: "var(--radius-xl)", padding: 32, boxShadow: "var(--shadow)",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 20 }}>
+                  <span style={{ fontWeight: 600, fontSize: 17, letterSpacing: "-0.01em" }}>YAHSHUA One Payroll</span>
+                  <span style={{
+                    fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 10px",
+                    borderRadius: 999, background: "var(--accent-50)", color: "var(--accent-2)",
+                  }}>
+                    HRIS included
+                  </span>
                 </div>
-                <h2 style={{ fontSize: "clamp(26px, 3.2vw, 40px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
-                  One call.<br />One number.
-                </h2>
-                <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.65, margin: "0 0 28px" }}>
-                  No RFP, no enterprise sales theater. Book a 30-minute call. We understand your setup — team size, modules, whether you&apos;re coming from existing YAHSHUA products. You leave with a ₱ figure.
-                </p>
-                <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
-                  Schedule a call <Arrow />
+
+                <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
+                  <span style={{ fontSize: "clamp(40px, 5vw, 56px)", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 1 }}>
+                    {peso.format(BASE_PRICE)}
+                  </span>
+                  <span style={{ color: "var(--muted)", fontSize: 16 }}>/month</span>
+                </div>
+                <div style={{ color: "var(--muted)", fontSize: 13, marginBottom: 28 }}>
+                  Up to {INCLUDED_EMPLOYEES} employees. VAT excluded.
+                </div>
+
+                <label htmlFor="headcount" style={{ display: "block", fontSize: 13, fontWeight: 500, marginBottom: 8, color: "var(--ink-2)" }}>
+                  How many employees?
+                </label>
+                <input
+                  id="headcount"
+                  type="number"
+                  inputMode="numeric"
+                  min={1}
+                  max={10000}
+                  value={employees}
+                  onChange={(e) => setEmployees(e.target.value)}
+                  style={{
+                    width: "100%", padding: "10px 14px", borderRadius: "var(--radius)",
+                    fontSize: 15, color: "var(--ink)", background: "var(--bg)", border: "1px solid var(--line)",
+                    outline: "none", fontFamily: "inherit",
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = "var(--accent)"; e.target.style.boxShadow = "0 0 0 3px var(--accent-glow)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "var(--line)"; e.target.style.boxShadow = "none"; }}
+                />
+
+                <div style={{ marginTop: 24, fontSize: 14 }} aria-live="polite">
+                  <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 10 }}>
+                    Monthly breakdown
+                  </div>
+                  {[
+                    { label: `Base (up to ${INCLUDED_EMPLOYEES} employees)`, value: peso.format(BASE_PRICE), show: true },
+                    { label: `${extraEmployees} additional ${extraEmployees === 1 ? "employee" : "employees"} × ${peso.format(PER_EXTRA_EMPLOYEE)}`, value: peso.format(extraEmployees * PER_EXTRA_EMPLOYEE), show: extraEmployees > 0 },
+                    { label: "Subtotal (VAT excl.)", value: peso.format(subtotal), show: true },
+                    { label: "VAT (12%)", value: peso.format(vat), show: true },
+                  ].filter((row) => row.show).map((row) => (
+                    <div key={row.label} style={{ display: "flex", justifyContent: "space-between", gap: 16, padding: "7px 0", color: "var(--muted)", borderBottom: "1px solid var(--line-2)" }}>
+                      <span>{row.label}</span><span style={{ color: "var(--ink-2)" }}>{row.value}</span>
+                    </div>
+                  ))}
+                  <div style={{ display: "flex", justifyContent: "space-between", gap: 16, padding: "12px 0 0", fontWeight: 600, fontSize: 16 }}>
+                    <span>Total with VAT</span><span>{peso.format(total)}</span>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: 24, padding: "16px 18px", borderRadius: "var(--radius)", background: "var(--bg-tint)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", gap: 16, fontWeight: 500, fontSize: 15 }}>
+                    <span>One-time setup</span><span>{peso.format(SETUP_FEE)}</span>
+                  </div>
+                  <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.55, marginTop: 6 }}>
+                    Includes full implementation, data migration, and dedicated onboarding training.
+                  </div>
+                </div>
+
+                <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+                  style={{ ...btnPrimary, width: "100%", justifyContent: "center", marginTop: 24 }}>
+                  Book a Free Demo <Arrow />
                 </a>
+                <div style={{ textAlign: "center", color: "var(--muted)", fontSize: 13, marginTop: 12 }}>
+                  The trial is 30 days.
+                </div>
               </div>
             </Reveal>
 
             <Reveal direction="left">
-              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                {quoteSteps.map((item) => (
-                  <div key={item.n} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                    <span style={{
-                      width: 32, height: 32, borderRadius: 8,
-                      background: "var(--accent-50)", color: "var(--accent-2)",
-                      display: "grid", placeItems: "center",
-                      fontSize: 13, fontWeight: 600, flexShrink: 0,
-                      fontFamily: "var(--font-geist-mono, monospace)",
-                    }}>
-                      {item.n}
-                    </span>
-                    <div>
-                      <div style={{ fontWeight: 500, fontSize: 15, marginBottom: 4 }}>{item.title}</div>
-                      <div style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.55 }}>{item.desc}</div>
-                    </div>
-                  </div>
-                ))}
+              <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+                <div>
+                  <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 14px" }}>
+                    YAHSHUA One Payroll
+                  </h2>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                    {PAYROLL_INCLUDES.map((item) => (
+                      <li key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 15, color: "var(--ink-2)", lineHeight: 1.5 }}>
+                        <span style={{ marginTop: 4 }}><CheckIcon /></span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 14px" }}>
+                    YAHSHUA HRIS, included
+                  </h2>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                    {HRIS_INCLUDES.map((item) => (
+                      <li key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 15, color: "var(--ink-2)", lineHeight: 1.5 }}>
+                        <span style={{ marginTop: 4 }}><CheckIcon /></span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* ── HOW PRICING SCALES ── */}
+      <section className="section-pad" style={{ borderBottom: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+              <h2 style={{ fontSize: "clamp(26px, 3.2vw, 40px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.1, margin: "0 0 12px" }}>
+                Flat up to {INCLUDED_EMPLOYEES} employees.{" "}
+                <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>A simple per-head fee after that.</em>
+              </h2>
+            </div>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", gap: 16 }}>
+            {[
+              { label: `Up to ${INCLUDED_EMPLOYEES} employees`, value: peso.format(BASE_PRICE), note: "flat monthly rate" },
+              { label: `${INCLUDED_EMPLOYEES + 1}+ employees`, value: peso.format(PER_EXTRA_EMPLOYEE), note: "per additional employee, per month" },
+              { label: "One-time setup", value: peso.format(SETUP_FEE), note: "implementation, migration and training" },
+            ].map((box, i) => (
+              <Reveal key={box.label} delay={i * 60}>
+                <div style={{ height: "100%", padding: "24px 24px 26px", borderRadius: "var(--radius)", background: "var(--surface)", border: "1px solid var(--line)" }}>
+                  <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
+                    {box.label}
+                  </div>
+                  <div style={{ fontSize: 36, fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 8 }}>{box.value}</div>
+                  <div style={{ color: "var(--muted)", fontSize: 14 }}>{box.note}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <p style={{ textAlign: "center", color: "var(--muted)", fontSize: 13, margin: "24px 0 0" }}>
+            All prices are VAT excluded. Prices verified: October 2026.
+          </p>
         </div>
       </section>
 
@@ -321,14 +462,14 @@ export default function PricingPage() {
               borderRadius: "var(--radius-xl)", textAlign: "center", position: "relative", overflow: "hidden",
             }}>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 52px)", letterSpacing: "-0.035em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 14px" }}>
-                Ready to talk numbers?
+                Ready to see it run?
               </h2>
               <p style={{ color: "var(--muted)", fontSize: 17, maxWidth: 460, margin: "0 auto 28px", lineHeight: 1.6 }}>
-                Book a call with our team. 30 minutes, one outcome: a clear ₱ figure for your business.
+                Book a free 30-minute demo with our team. No prep required.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
-                  Book a call <Arrow />
+                  Book a Free Demo <Arrow />
                 </a>
               </div>
             </div>

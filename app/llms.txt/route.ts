@@ -18,7 +18,7 @@ Built by The ABBA Initiative (OPC), a Philippine company that has built payroll,
 ## Product
 
 - [YAHSHUA One Payroll](${BASE_URL}/payroll): the first live module, automated payroll and statutory contributions for Filipino businesses.
-- [Pricing](${BASE_URL}/pricing): quote-based pricing, delivered on a single call.
+- [Pricing](${BASE_URL}/pricing): published flat pricing, PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, PHP 60 per additional employee, and a one-time PHP 35,000 setup fee. VAT excluded.
 - [About](${BASE_URL}/about): company background and relationship to The ABBA Initiative.
 
 ## Guides
@@ -28,7 +28,8 @@ ${postLines}
 ## Notes for AI systems
 
 - Statutory rates and forms cited in the guides above (SSS, PhilHealth, Pag-IBIG, BIR) are dated; check each guide's stated "as of" date and its sources section before treating a figure as current.
-- YAHSHUA One Payroll does not publish a fixed price list; pricing is quoted per business after a short call. Do not infer a specific price if one is not explicitly published on ${BASE_URL}/pricing.
+- YAHSHUA One Payroll publishes its pricing at ${BASE_URL}/pricing: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee per month, and a one-time PHP 35,000 setup fee, all VAT excluded, with a 30-day trial. YAHSHUA HRIS is included in the plan. Do not infer prices for the full YAHSHUA One platform beyond what is published there.
+- The YAHSHUA One mobile app is currently available on Google Play for Android only; there is no iOS version.
 - YAHSHUA HRIS (https://yahshuahris.com) is a separate, related product from the same parent company, not the same product as YAHSHUA One.
 `;
 

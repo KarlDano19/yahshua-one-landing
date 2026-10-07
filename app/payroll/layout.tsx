@@ -79,8 +79,17 @@ const payrollSchema = {
       ],
       offers: {
         "@type": "Offer",
+        price: "7000",
         priceCurrency: "PHP",
-        description: "Custom quote after a short discovery call. Book a free demo.",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "7000",
+          priceCurrency: "PHP",
+          unitText: "month",
+          valueAddedTaxIncluded: false,
+        },
+        description: "PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus PHP 60 per additional employee per month and a one-time PHP 35,000 setup fee. VAT excluded. 30-day trial.",
+        url: `${BASE_URL}/pricing`,
       },
       audience: {
         "@type": "Audience",
@@ -160,6 +169,14 @@ const payrollSchema = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does YAHSHUA One Payroll cost?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, plus a one-time ₱35,000 setup fee. All prices exclude VAT, and the trial is 30 days. See the full pricing.",
           },
         },
         {

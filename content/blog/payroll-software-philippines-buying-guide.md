@@ -9,7 +9,7 @@ coverImage: "/Blog/Payroll%20Software%20in%20the%20Philippines.png"
 featured: true
 faq:
   - question: "How much does payroll software cost in the Philippines?"
-    answer: "Published rates range from about PHP 77 per employee per month (GreatDay HR, 50-license minimum) to roughly $6.50 per employee per month for PayrollHero's combined HRIS and payroll tiers. Sprout's outsourced Payroll Starter plan is a flat PHP 7,900 per month for up to 10 employees, with its software-only tiers quoted per business. YAHSHUA One Payroll also prices by quote, not a public list."
+    answer: "Published rates range from about PHP 77 per employee per month (GreatDay HR, 50-license minimum) to roughly $6.50 per employee per month for PayrollHero's combined HRIS and payroll tiers. Sprout's outsourced Payroll Starter plan is a flat PHP 7,900 per month for up to 10 employees, with its software-only tiers quoted per business. YAHSHUA One Payroll publishes a flat PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus PHP 60 per additional employee and a one-time PHP 35,000 setup fee, all VAT excluded."
   - question: "Why don't some payroll vendors publish their prices?"
     answer: "Because payroll pricing depends on headcount, modules, and how much statutory complexity a business actually has. A quote-based model is not automatically a red flag. What matters is whether the vendor gives you a firm number quickly (one call) or drags the process out with sales gatekeeping."
   - question: "Does payroll software in the Philippines handle SSS, PhilHealth, Pag-IBIG, and BIR automatically?"
@@ -22,7 +22,7 @@ sources:
   - "Sprout Solutions, published payroll pricing, sprout.ph/articles/philippine-payroll-playbook-2026-smes-enterprises (accessed September 2026)"
   - "GreatDay HR, official Philippines pricing page, greatdayhr.ph/price (accessed September 2026)"
   - "PayrollHero, official pricing page, payrollhero.com/pricing (accessed September 2026)"
-  - "YAHSHUA One, official pricing page, yahshua.one/pricing (accessed September 2026)"
+  - "YAHSHUA One, official pricing page, yahshua.one/pricing (accessed October 2026)"
   - "BIR Revenue Regulations No. 29-2025, amending de minimis benefit ceilings, effective January 6, 2026"
 ---
 
@@ -44,16 +44,16 @@ The right choice depends on five checks, in this order: statutory compliance dep
 
 ## What Payroll Software Actually Costs in the Philippines
 
-Published pricing for Philippine payroll and HRIS platforms currently ranges from about PHP 77 per employee per month to a flat PHP 7,900 per month for a small outsourced plan, and several vendors, including YAHSHUA One, price by quote instead of a public list.
+Published pricing for Philippine payroll and HRIS platforms currently ranges from about PHP 77 per employee per month to a flat PHP 7,900 per month for a small outsourced plan, and several vendors price by quote instead of a public list.
 
-**Table: Published payroll and HRIS pricing for Philippine businesses, as of September 2026**
+**Table: Published payroll and HRIS pricing for Philippine businesses, as of September 2026 (YAHSHUA One as of October 2026)**
 
 | Vendor | Published starting price | What it covers | Source |
 |---|---|---|---|
 | GreatDay HR | PHP 77 / employee / month (50-license minimum) | HRIS core, attendance, leave, payroll-side compliance | greatdayhr.ph/price |
 | PayrollHero | ~$3.50 / employee / month (HRIS, timekeeping, scheduling) + $3.00 / employee / month payroll add-on | Facial-recognition attendance first, payroll as an add-on | payrollhero.com/pricing |
 | Sprout Payroll (outsourced Starter) | PHP 7,900 / month flat, up to 10 employees | Fully outsourced payroll processing; software-only tiers are quote-based | sprout.ph |
-| YAHSHUA One Payroll | Custom quote, delivered on a single 30-minute call | Payroll, statutory contributions, and an AI assistant grounded in your data | yahshua.one/pricing |
+| YAHSHUA One Payroll | PHP 7,000 / month flat for up to 100 employees, PHP 60 per additional employee, PHP 35,000 one-time setup (VAT excluded) | Payroll, statutory contributions, an AI assistant grounded in your data, and YAHSHUA HRIS included | yahshua.one/pricing |
 
 A quote-based model is not automatically worse than a published rate. It is worse only if getting that quote takes weeks instead of one call.
 
@@ -77,14 +77,14 @@ This is a genuinely useful test to run on any vendor demo, not just ours: ask th
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines), how to test any vendor's AI claim
 - [YAHSHUA One vs. PayrollHero: Which One Actually Fits Your Business](/blog/yahshua-one-vs-payrollhero), a factual side-by-side comparison
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
-- [YAHSHUA One pricing](/pricing), including how the quote call works
+- [YAHSHUA One pricing](/pricing), including the flat rate and what is included
 - [YAHSHUA HRIS vs Sprout Solutions](https://yahshuahris.com/vs-sprout), a full feature and pricing comparison
 - [YAHSHUA HRIS vs GreatDay HR](https://yahshuahris.com/vs-greatday), including a step-by-step switching guide
 
 ## Frequently Asked Questions
 
 **How much does payroll software cost in the Philippines?**
-Published rates range from about PHP 77 per employee per month (GreatDay HR, 50-license minimum) to roughly $6.50 per employee per month for PayrollHero's combined HRIS and payroll tiers. Sprout's outsourced Payroll Starter plan is a flat PHP 7,900 per month for up to 10 employees, with its software-only tiers quoted per business. YAHSHUA One Payroll also prices by quote, not a public list.
+Published rates range from about PHP 77 per employee per month (GreatDay HR, 50-license minimum) to roughly $6.50 per employee per month for PayrollHero's combined HRIS and payroll tiers. Sprout's outsourced Payroll Starter plan is a flat PHP 7,900 per month for up to 10 employees, with its software-only tiers quoted per business. YAHSHUA One Payroll publishes a flat PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus PHP 60 per additional employee and a one-time PHP 35,000 setup fee, all VAT excluded.
 
 **Why don't some payroll vendors publish their prices?**
 Because payroll pricing depends on headcount, modules, and how much statutory complexity a business actually has. A quote-based model is not automatically a red flag. What matters is whether the vendor gives you a firm number quickly, in one call, or drags the process out with sales gatekeeping.

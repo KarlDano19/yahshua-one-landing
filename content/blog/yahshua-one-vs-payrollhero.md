@@ -7,7 +7,7 @@ author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
 coverImage: "/Blog/Y1%20VS%20PAYROLLHERO.png"
 ctaHeading: "See if YAHSHUA One actually fits your setup."
-ctaBody: "Book a 30-minute call and get a straight answer, including a real quote, not a sales pitch disguised as one."
+ctaBody: "Book a free 30-minute demo and get a straight answer, not a sales pitch disguised as one."
 faq:
   - question: "What is PayrollHero actually built for?"
     answer: "Biometric and selfie-based attendance verification for shift-based, multi-branch teams, mainly retail and food and beverage chains with hourly staff across many locations. Payroll is an add-on module on top of that core attendance product, not the starting point."
@@ -22,7 +22,7 @@ faq:
 sources:
   - "PayrollHero, official pricing page, payrollhero.com/pricing (accessed September 2026)"
   - "PayrollHero, official product and customer pages, payrollhero.com/payroll, payrollhero.com/customers, payrollhero.com/restaurants (accessed September 2026)"
-  - "YAHSHUA One, official pricing page, yahshua.one/pricing (accessed September 2026)"
+  - "YAHSHUA One, official pricing page, yahshua.one/pricing (accessed October 2026)"
 ---
 
 PayrollHero is built for biometric attendance verification across shift-based, multi-branch teams, mostly retail and food and beverage chains. YAHSHUA One is built for unified payroll, HR, and compliance, with AI that reads your actual company data. Which one fits depends on what your real bottleneck is, not which one has more features.
@@ -50,8 +50,8 @@ The two products solve different starting problems, which shows clearly once you
 | Core focus | Unified payroll, HR, and accounting | Biometric attendance for shift-based teams |
 | Best fit | SMBs prioritizing payroll accuracy and compliance | Multi-branch retail and F&B with hourly staff |
 | AI assistant | Theo, reads your actual configured data | Not documented on their product pages |
-| Pricing model | Custom quote, delivered on a single call | $3.50/employee/month base, add-ons priced separately in USD |
-| Full payroll setup cost | Quote-based | About $6.50/employee/month (base + payroll add-on) |
+| Pricing model | Flat monthly rate: PHP 7,000 for up to 100 employees, PHP 60 per additional employee, PHP 35,000 one-time setup (VAT excluded) | $3.50/employee/month base, add-ons priced separately in USD |
+| Full payroll setup cost | The same flat rate, with YAHSHUA HRIS included | About $6.50/employee/month (base + payroll add-on) |
 | Statutory compliance (SSS, PhilHealth, Pag-IBIG, BIR) | Core product function | Supported, secondary to attendance |
 
 ## Which One Fits Your Business
