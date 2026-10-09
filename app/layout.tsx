@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import ConversionTracker from "./components/ConversionTracker";
+import Analytics from "./components/Analytics";
 import "./globals.css";
 
 const geist = Geist({
@@ -17,7 +16,6 @@ const geistMono = Geist_Mono({
 });
 
 const BASE_URL = "https://www.yahshua.one";
-const GA_MEASUREMENT_ID = "G-RCH2HNM48V";
 const PARENT_ORG_ID = "https://www.theabbainitiative.com/#organization";
 
 export const metadata: Metadata = {
@@ -219,9 +217,8 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
-        {process.env.NODE_ENV === "production" && <ConversionTracker />}
+        <Analytics />
       </body>
-      {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }
