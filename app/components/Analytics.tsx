@@ -1,3 +1,4 @@
+// Analytics tracking component
 "use client";
 
 import { useSyncExternalStore } from "react";
