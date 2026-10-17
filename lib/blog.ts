@@ -15,6 +15,8 @@ export interface FaqItem {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Optional full <title> tag (skips the site title template); falls back to title. */
+  seoTitle?: string;
   date: string;
   description: string;
   category: string;
@@ -68,6 +70,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   return {
     slug,
     title: data.title ?? "",
+    seoTitle: data.seoTitle,
     date: data.date ?? "",
     description: data.description ?? "",
     category: data.category ?? "Article",

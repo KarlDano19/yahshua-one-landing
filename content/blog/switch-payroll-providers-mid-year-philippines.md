@@ -1,7 +1,8 @@
 ---
 title: "How to Switch Payroll Providers Mid-Year in the Philippines"
+seoTitle: "Switch Payroll Providers Mid-Year Without Breaking BIR 2316"
 date: "2026-09-17"
-description: "A practical guide to switching payroll providers mid-year in the Philippines without breaking your BIR annualization, SSS/PhilHealth/Pag-IBIG continuity, or a single pay cycle."
+description: "You don't re-register with SSS, PhilHealth or Pag-IBIG. What must move: YTD pay and tax, remittance history, 13th month and de minimis, plus 4 cutover rules."
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
