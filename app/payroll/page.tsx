@@ -973,60 +973,36 @@ export default function PayrollPage() {
 
       {/* ── LOGIN HELP ── */}
       <section id="login" className="section-pad" aria-labelledby="login-heading" style={{ borderTop: "1px solid var(--line)" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))", gap: "32px 48px", alignItems: "center" }}>
           <Reveal>
-            <div style={{ marginBottom: 32 }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>
-                <Dot /> Sign in
-              </div>
-              <h2 id="login-heading" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", letterSpacing: "-0.025em", fontWeight: 500, lineHeight: 1.15, margin: "0 0 12px" }}>
-                Looking for your YAHSHUA login?
-              </h2>
-              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 560, margin: 0 }}>
-                YAHSHUA One Payroll, the product on this page, signs in at app.yahshua.one. Other YAHSHUA products have their own websites.
-              </p>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>
+              <Dot /> Sign in
             </div>
+            <h2 id="login-heading" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", letterSpacing: "-0.025em", fontWeight: 500, lineHeight: 1.15, margin: "0 0 12px" }}>
+              Looking for your YAHSHUA login?
+            </h2>
+            <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 560, margin: 0 }}>
+              YAHSHUA One Payroll, the product on this page, signs in at app.yahshua.one.
+            </p>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))", gap: 16 }}>
-            <Reveal>
-              <a href="https://app.yahshua.one/" style={{
-                height: "100%", display: "flex", flexDirection: "column", gap: 10,
-                padding: "24px 24px 26px", borderRadius: "var(--radius)",
-                background: "var(--ink)", color: "#F7F6F1", border: "1px solid var(--ink)",
-              }}>
-                <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "oklch(0.65 0.01 250)" }}>YAHSHUA One</span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 20, fontWeight: 500, letterSpacing: "-0.015em" }}>
-                  Sign in to YAHSHUA One <Arrow size={16} />
-                </span>
-                <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 13.5, color: "var(--accent-3)" }}>app.yahshua.one</span>
-              </a>
-            </Reveal>
-
-            <Reveal delay={60}>
-              <div style={{
-                height: "100%", display: "flex", flexDirection: "column", gap: 10,
-                padding: "24px 24px 26px", borderRadius: "var(--radius)",
-                background: "var(--surface)", border: "1px solid var(--line)",
-              }}>
-                <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>Product websites, not login pages</span>
-                <h3 style={{ fontSize: 16, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.35, margin: 0, color: "var(--ink)" }}>
-                  Using YAHSHUA Payroll or YAHSHUA HRIS?
-                </h3>
-                <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)", margin: 0 }}>
-                  They are separate YAHSHUA products. Visit{" "}
-                  <a href="https://www.yahshuapayroll.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>yahshuapayroll.com</a>
-                  {" "}or{" "}
-                  <a href="https://www.yahshuahris.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>yahshuahris.com</a>.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-
-          <p style={{ marginTop: 24, fontSize: 14, lineHeight: 1.6, color: "var(--muted)", maxWidth: 640 }}>
-            Looking for your payslip or can&apos;t sign in? Employees should ask their company&apos;s HR or payroll admin first. For account access problems, visit{" "}
-            <a href="/support" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>YAHSHUA One Support</a>.
-          </p>
+          <Reveal delay={60}>
+            <a href="https://app.yahshua.one/" style={{
+              display: "flex", flexDirection: "column", gap: 10,
+              padding: "24px 24px 26px", borderRadius: "var(--radius)",
+              background: "var(--ink)", color: "#F7F6F1", border: "1px solid var(--ink)",
+            }}>
+              <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "oklch(0.65 0.01 250)" }}>YAHSHUA One</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 20, fontWeight: 500, letterSpacing: "-0.015em" }}>
+                Sign in to YAHSHUA One <Arrow size={16} />
+              </span>
+              <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 13.5, color: "var(--accent-3)" }}>app.yahshua.one</span>
+            </a>
+            <p style={{ margin: "16px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--muted)" }}>
+              Looking for your payslip or can&apos;t sign in? Employees should ask their company&apos;s HR or payroll admin first. For account access problems, visit{" "}
+              <a href="/support" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>YAHSHUA One Support</a>.
+            </p>
+          </Reveal>
         </div>
       </section>
 
