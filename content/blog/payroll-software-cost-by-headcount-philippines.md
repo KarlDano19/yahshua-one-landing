@@ -1,7 +1,8 @@
 ---
 title: "What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees"
+seoTitle: "Payroll Software Cost in the Philippines, 10–150 Employees"
 date: "2026-10-07"
-description: "Per-employee payroll pricing wins at small headcounts and flat pricing wins as you grow. Here is the math at 10, 50, 100 and 150 employees."
+description: "GreatDay HR at ₱77 per employee, PayrollHero at about ₱408, YAHSHUA One at a flat ₱7,000: published prices compared at 10, 50, 100 and 150 employees."
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "7 min read"

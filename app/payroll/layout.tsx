@@ -3,10 +3,14 @@ import type { Metadata } from "next";
 const BASE_URL = "https://www.yahshua.one";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.abba.yahshuaone.mobile";
 
+const TITLE = "YAHSHUA Payroll Software for Philippine Companies | Free Demo";
+const DESCRIPTION =
+  "YAHSHUA Payroll software for Philippine companies: SSS, PhilHealth, Pag-IBIG and BIR withholding tax computed every cutoff. Book a free 30-minute demo.";
+
 export const metadata: Metadata = {
-  title: "YAHSHUA One Payroll — Automated Payroll & Statutory Contributions for Filipino Businesses ",
-  description:
-    "Automate payroll computation, SSS, PhilHealth, Pag-IBIG, and BIR 1601-C for every employee. YAHSHUA One Payroll is built for Philippine Labor Code compliance — runs itself every cutoff.",
+  // absolute: skip the root "%s | YAHSHUA One" template so the title stays ~60 chars
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   keywords: [
     "payroll system Philippines",
     "automated payroll Philippines",
@@ -32,9 +36,8 @@ export const metadata: Metadata = {
     locale: "en_PH",
     url: `${BASE_URL}/payroll`,
     siteName: "YAHSHUA One",
-    title: "YAHSHUA One Payroll — Payroll That Runs Itself",
-    description:
-      "Auto-compute payroll, SSS, PhilHealth, Pag-IBIG, and withholding tax for every employee. Built for Philippine Labor Code. Runs every cutoff with zero manual work.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
         url: "/opengraph-image",
@@ -46,9 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YAHSHUA One Payroll — Payroll That Runs Itself",
-    description:
-      "Auto-compute payroll, SSS, PhilHealth, Pag-IBIG, and BIR 1601-C for every employee. Built for Filipino businesses.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/opengraph-image"],
   },
 };

@@ -18,8 +18,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return {};
+  const metaTitle = post.seoTitle ?? post.title;
   return {
-    title: post.title,
+    title: post.seoTitle ? { absolute: post.seoTitle } : post.title,
     description: post.description,
     alternates: { canonical: `${BASE_URL}/blog/${slug}` },
     openGraph: {
@@ -27,14 +28,14 @@ export async function generateMetadata({
       locale: "en_PH",
       url: `${BASE_URL}/blog/${slug}`,
       siteName: "YAHSHUA One",
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       images: [{ url: post.coverImage ?? "/opengraph-image", width: 1200, height: 630, alt: post.title }],
       publishedTime: post.date,
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       images: [post.coverImage ?? "/opengraph-image"],
     },
