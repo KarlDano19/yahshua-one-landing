@@ -92,7 +92,7 @@ interface PricingModule {
 }
 
 const MODULES: PricingModule[] = [
-  { id: "payroll", name: "Payroll", sub: "HRIS included", live: true },
+  { id: "payroll", name: "Payroll", sub: "HRIS app launching soon", live: true },
   { id: "accounting", name: "Accounting", sub: "Books and reports", live: false, text: "Real-time bookkeeping and profit and loss reports." },
   { id: "tax", name: "Tax and compliance", sub: "BIR filings", live: false, text: "BIR deadlines tracked and returns drafted from your books." },
   { id: "erp", name: "ERP", sub: "Inventory, sales, purchasing", live: false, text: "Inventory, sales orders, purchasing, and vendors on one ledger." },
@@ -146,7 +146,7 @@ export default function PricingPage() {
   const faqs = [
     {
       q: "How much does YAHSHUA One Payroll cost?",
-      a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
+      a: "₱7,000 per month for up to 100 employees. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
     },
     {
       q: "Does the plan include Theo AI credits?",
@@ -158,7 +158,7 @@ export default function PricingPage() {
     },
     {
       q: "Which YAHSHUA One modules can I buy today?",
-      a: "YAHSHUA One Payroll is available today, with YAHSHUA HRIS included. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
+      a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
     },
     {
       q: "What happens when I go over 100 employees?",
@@ -170,7 +170,7 @@ export default function PricingPage() {
     },
     {
       q: "Does YAHSHUA One Payroll come with YAHSHUA HRIS?",
-      a: "Yes. Every plan includes YAHSHUA HRIS at no extra charge: employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management.",
+      a: "It will. The YAHSHUA HRIS app is launching soon, and every plan will include it at no extra charge. It is planned to cover employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management. It is not available yet.",
     },
     {
       q: "Is there a free trial?",
@@ -190,7 +190,7 @@ export default function PricingPage() {
     },
     {
       q: "What if I only need payroll?",
-      a: "YAHSHUA One Payroll runs as a standalone product, without the broader ERP and accounting modules. YAHSHUA HRIS is included, so you can use as much or as little of it as you need.",
+      a: "YAHSHUA One Payroll runs as a standalone product, without the broader ERP and accounting modules. The YAHSHUA HRIS app will be included when it launches, so you can use as much or as little of it as you need.",
     },
   ];
 
@@ -343,7 +343,7 @@ export default function PricingPage() {
                     fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 10px",
                     borderRadius: 999, background: "var(--accent-50)", color: "var(--accent-2)",
                   }}>
-                    HRIS included
+                    HRIS app launching soon
                   </span>
                 </div>
 
@@ -428,7 +428,7 @@ export default function PricingPage() {
                 </div>
                 <div>
                   <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 14px" }}>
-                    YAHSHUA HRIS, included
+                    YAHSHUA HRIS app, launching soon
                   </h2>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                     {HRIS_INCLUDES.map((item) => (

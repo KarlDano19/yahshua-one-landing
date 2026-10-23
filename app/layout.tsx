@@ -124,7 +124,7 @@ export default function RootLayout({
                   offers: {
                     "@type": "Offer",
                     priceCurrency: "PHP",
-                    description: "YAHSHUA One Payroll with YAHSHUA HRIS included: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, with no setup fee. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately.",
+                    description: "YAHSHUA One Payroll: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, with no setup fee. The YAHSHUA HRIS app is included at no extra charge once it launches. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately.",
                     url: `${BASE_URL}/pricing`,
                   },
                   featureList: [

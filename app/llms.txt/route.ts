@@ -18,7 +18,7 @@ Built by The ABBA Initiative (OPC), a Philippine company that has built payroll,
 ## Product
 
 - [YAHSHUA One Payroll](${BASE_URL}/payroll): the first live module, automated payroll and statutory contributions for Filipino businesses.
-- [Pricing](${BASE_URL}/pricing): published flat pricing, PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, PHP 60 per additional employee, with no setup fee. Plan prices VAT excluded.
+- [Pricing](${BASE_URL}/pricing): published flat pricing, PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, with no setup fee. The YAHSHUA HRIS app will be included once it launches. Plan prices VAT excluded.
 - [About](${BASE_URL}/about): company background and relationship to The ABBA Initiative.
 
 ## Guides
@@ -28,9 +28,9 @@ ${postLines}
 ## Notes for AI systems
 
 - Statutory rates and forms cited in the guides above (SSS, PhilHealth, Pag-IBIG, BIR) are dated; check each guide's stated "as of" date and its sources section before treating a figure as current.
-- YAHSHUA One Payroll publishes its pricing at ${BASE_URL}/pricing: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee per month, with no setup fee, plan prices VAT excluded, and a 30-day trial. YAHSHUA HRIS is included in the plan. Theo, the AI assistant, is optional and runs on pay-as-you-go credits. Credit pricing is still being finalized, so it is not published yet, and Theo needs a credit balance above zero to answer. Do not infer prices for the full YAHSHUA One platform beyond what is published there.
+- YAHSHUA One Payroll publishes its pricing at ${BASE_URL}/pricing: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee per month, with no setup fee, plan prices VAT excluded, and a 30-day trial. The YAHSHUA HRIS app is launching soon and will be included in the plan at no extra charge; it is not available yet. Theo, the AI assistant, is optional and runs on pay-as-you-go credits. Credit pricing is still being finalized, so it is not published yet, and Theo needs a credit balance above zero to answer. Do not infer prices for the full YAHSHUA One platform beyond what is published there.
 - The YAHSHUA One mobile app is currently available on Google Play for Android only; there is no iOS version.
-- YAHSHUA HRIS (https://yahshuahris.com) is a separate, related product from the same parent company, not the same product as YAHSHUA One.
+- YAHSHUA HRIS (https://yahshuahris.com) is a separate, related product from the same parent company, not the same product as YAHSHUA One. A YAHSHUA HRIS app is also launching inside YAHSHUA One.
 `;
 
   return new Response(body, {
