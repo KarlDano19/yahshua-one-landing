@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const BASE_URL = "https://www.yahshua.one";
 
 const DESCRIPTION =
-  "YAHSHUA One Payroll with YAHSHUA HRIS included: ₱7,000 per month for up to 100 employees, ₱60 per additional employee, and no setup fee. VAT excluded. Book a free demo.";
+  "YAHSHUA One Payroll: ₱7,000 per month for up to 100 employees, ₱60 per additional employee, no setup fee. HRIS app included when it launches. VAT excluded. Book a free demo.";
 
 export const metadata: Metadata = {
   title: "Pricing — YAHSHUA One",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "How much does YAHSHUA One Payroll cost?",
-    a: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
+    a: "₱7,000 per month for up to 100 employees. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
   },
   {
     q: "Does the plan include Theo AI credits?",
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "Which YAHSHUA One modules can I buy today?",
-    a: "YAHSHUA One Payroll is available today, with YAHSHUA HRIS included. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
+    a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
   },
   {
     q: "What happens when I go over 100 employees?",
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "Does YAHSHUA One Payroll come with YAHSHUA HRIS?",
-    a: "Yes. Every plan includes YAHSHUA HRIS at no extra charge: employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management.",
+    a: "It will. The YAHSHUA HRIS app is launching soon, and every plan will include it at no extra charge. It is planned to cover employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management. It is not available yet.",
   },
   {
     q: "Is there a free trial?",
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "What if I only need payroll?",
-    a: "YAHSHUA One Payroll runs as a standalone product, without the broader ERP and accounting modules. YAHSHUA HRIS is included, so you can use as much or as little of it as you need.",
+    a: "YAHSHUA One Payroll runs as a standalone product, without the broader ERP and accounting modules. The YAHSHUA HRIS app will be included when it launches, so you can use as much or as little of it as you need.",
   },
 ];
 

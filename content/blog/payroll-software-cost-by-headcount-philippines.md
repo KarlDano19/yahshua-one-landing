@@ -15,11 +15,11 @@ faq:
   - question: "Is flat-rate payroll pricing cheaper than per-employee pricing?"
     answer: "It depends on headcount. Per-employee pricing is cheaper for very small teams, and a flat rate is cheaper once the per-employee fees add up to the flat fee. On published prices, YAHSHUA One's flat ₱7,000 costs less than PayrollHero's HRIS plus payroll from 18 employees and less than GreatDay HR's ₱77 per employee from 91 employees."
   - question: "What does payroll software cost for 100 employees in the Philippines?"
-    answer: "On published prices, about ₱7,000 per month for YAHSHUA One Payroll (before VAT, HRIS included), about ₱7,700 for GreatDay HR at ₱77 per employee, and about ₱40,788 for PayrollHero's HRIS plus payroll at $6.50 per employee. Add-ons, setup fees and VAT vary by vendor."
+    answer: "On published prices, about ₱7,000 per month for YAHSHUA One Payroll (before VAT; the HRIS app is launching soon, so today this is payroll only), about ₱7,700 for GreatDay HR at ₱77 per employee, and about ₱40,788 for PayrollHero's HRIS plus payroll at $6.50 per employee. Add-ons, setup fees and VAT vary by vendor."
   - question: "What costs are not in the payroll software subscription price?"
     answer: "Setup or implementation fees, add-on modules, AI usage charges, VAT and, for dollar-priced plans, exchange-rate movement. For example, PayrollHero lists leave management as a separate $2.00 per employee per month add-on."
   - question: "How much does YAHSHUA One Payroll cost?"
-    answer: "₱7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus ₱60 per additional employee per month. There is no setup fee and plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately."
+    answer: "₱7,000 per month for up to 100 employees, plus ₱60 per additional employee per month. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. There is no setup fee and plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately."
 sources:
   - "GreatDay HR, official Philippines pricing page, greatdayhr.ph/price (accessed October 2026)"
   - "PayrollHero, official pricing page, payrollhero.com/pricing (accessed October 2026)"
@@ -41,7 +41,7 @@ These are the published list prices we used, all checked in October 2026:
 - **GreatDay HR:** ₱77 per employee per month on its Basic Starter Package, which its pricing page says includes 50 licenses. HRIS and payroll sit in one per-employee price. The page also says prices are changing soon, so confirm the current rate.
 - **PayrollHero:** $3.50 per employee per month for HRIS, timekeeping, attendance and scheduling, plus $3.00 for payroll, so $6.50 for both. Leave management is a separate $2.00. Its global pricing page is in US dollars, and PayrollHero says it has a separate Philippines site for local pricing, so treat the peso figures below as indicative.
 - **Sprout Solutions:** the Payroll Starter is outsourced payroll at ₱15,000 per month for up to 20 employees, plus ₱300 to ₱400 per employee per month above 20, according to Sprout's Payroll Starter page (checked October 23, 2026). Sprout raised this from ₱7,900, and some older Sprout articles still show the old figure. Sprout's own article describes its software payroll as a custom quote based on business size, so there is no published rate for that product.
-- **YAHSHUA One Payroll:** a flat ₱7,000 per month for up to 100 employees, then ₱60 per additional employee, with YAHSHUA HRIS included. Prices exclude VAT, and there is no setup fee.
+- **YAHSHUA One Payroll:** a flat ₱7,000 per month for up to 100 employees, then ₱60 per additional employee. Prices exclude VAT, and there is no setup fee. The YAHSHUA HRIS app is launching soon and will be included at no extra charge, so until it is live this price covers payroll only, while the GreatDay HR and PayrollHero prices include HRIS.
 
 These products are not like for like, and this post compares what you pay, not what you get. PayrollHero is built around attendance first, as our [YAHSHUA One vs. PayrollHero](/blog/yahshua-one-vs-payrollhero) comparison explains, and Sprout's Starter is outsourced payroll rather than software you run yourself. For compliance depth and the other checks that matter, see the [buying guide](/blog/payroll-software-philippines-buying-guide).
 
@@ -64,6 +64,7 @@ How to read the table:
 - PayrollHero's $6.50 is converted at ₱62.75 per US dollar, the Bangko Sentral ng Pilipinas rate of October 2, 2026, rounded. The peso figure moves with the exchange rate, and it leaves out the $2.00 leave management add-on.
 - Sprout's Payroll Starter is ₱15,000 for up to 20 employees plus ₱300 to ₱400 for each employee above 20. The 50, 100 and 150 figures are computed from that formula, so they are shown as ranges. It is outsourced payroll, not software you run yourself, so it is not a like-for-like comparison.
 - YAHSHUA One's figures are before VAT. GreatDay's and PayrollHero's pages do not say whether their prices include VAT.
+- YAHSHUA One's figures cover payroll today. The HRIS app is launching soon at no extra charge, whereas GreatDay's and PayrollHero's figures already include HRIS, so the comparison tilts toward YAHSHUA One until the app is live.
 
 ## Where Flat-Rate Payroll Pricing Beats Per-Employee Pricing
 
@@ -123,10 +124,10 @@ Published list prices run from about ₱77 per employee per month (GreatDay HR's
 It depends on headcount. Per-employee pricing is cheaper for very small teams, and a flat rate is cheaper once the per-employee fees add up to the flat fee. On published prices, YAHSHUA One's flat ₱7,000 costs less than PayrollHero's HRIS plus payroll from 18 employees and less than GreatDay HR's ₱77 per employee from 91 employees.
 
 **What does payroll software cost for 100 employees in the Philippines?**
-On published prices, about ₱7,000 per month for YAHSHUA One Payroll (before VAT, HRIS included), about ₱7,700 for GreatDay HR at ₱77 per employee, and about ₱40,788 for PayrollHero's HRIS plus payroll at $6.50 per employee. Add-ons, setup fees and VAT vary by vendor.
+On published prices, about ₱7,000 per month for YAHSHUA One Payroll (before VAT; the HRIS app is launching soon, so today this is payroll only), about ₱7,700 for GreatDay HR at ₱77 per employee, and about ₱40,788 for PayrollHero's HRIS plus payroll at $6.50 per employee. Add-ons, setup fees and VAT vary by vendor.
 
 **What costs are not in the payroll software subscription price?**
 Setup or implementation fees, add-on modules, AI usage charges, VAT and, for dollar-priced plans, exchange-rate movement. For example, PayrollHero lists leave management as a separate $2.00 per employee per month add-on.
 
 **How much does YAHSHUA One Payroll cost?**
-₱7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus ₱60 per additional employee per month. There is no setup fee and plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately.
+₱7,000 per month for up to 100 employees, plus ₱60 per additional employee per month. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. There is no setup fee and plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately.
