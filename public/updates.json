@@ -1,4 +1,15 @@
 [{
+    "date": "2026-10-23",
+    "badge": "Compliance Note",
+    "title": "CALABARZON Wage Order IVA-23 Takes Effect October 26",
+    "description": "New CALABARZON minimum wage rates start on October 26, 2026. Here is what changes and what to check in payroll before then.",
+    "body": [
+      "What changed: The Regional Tripartite Wages and Productivity Board IV-A issued Wage Order No. IVA-23, published on October 10, 2026 and effective October 26, 2026. Daily minimum wages in CALABARZON rise by ₱25 to ₱45 depending on the class of the city or municipality and the sector, and retail and service establishments with not more than 10 workers get a ₱42 daily increase. The previous daily range was ₱508 to ₱600 under Wage Order No. IVA-22. A separate order also raises the minimum monthly wage of kasambahay in the region from ₱6,750 to ₱7,500.",
+      "Where to find it: Minimum wage rules are part of YAHSHUA One's admin setup, where administrators can define location-based minimum wage rules. Check the exact rate for each of your work locations in the published wage order, then update those rules before the first payroll that covers October 26 or later.",
+      "Why it helps: A higher daily minimum affects more than the daily rate. Overtime, night differential, holiday pay and 13th month pay are all computed from it. Updating early gives your team time to review which employees are affected before the first payroll under the new rates.",
+      "Who benefits / next step: Employers with work locations in Cavite, Laguna, Batangas, Rizal and Quezon, and anyone who employs kasambahay in the region. Read the full wage order for your location's exact rate on the National Wages and Productivity Commission site (nwpc.dole.gov.ph), and verify against the official order before changing payroll settings."
+    ]
+  },{
     "date": "2026-09-22",
     "badge": "Progress Update",
     "title": "Settings Navigation Follows Workflows",
