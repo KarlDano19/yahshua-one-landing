@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "YAHSHUA One — AI-Powered Payroll, BIR Compliance & HR for Filipino Businesses";
+export const alt = "YAHSHUA One: AI-Powered Payroll and BIR Files for Filipino Businesses";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,6 +57,8 @@ export default async function Image() {
         {/* Headline */}
         <div
           style={{
+            display: "flex",
+            flexDirection: "column",
             fontSize: 72,
             fontWeight: 400,
             color: "#ffffff",
@@ -66,21 +68,19 @@ export default async function Image() {
             maxWidth: 820,
           }}
         >
-          Payroll. BIR Compliance.
-          <br />
-          <span style={{ color: "#28B0E8" }}>HR. Accounting.</span>
-          <br />
-          All automated.
+          <div>Payroll. BIR Files.</div>
+          <div style={{ color: "#28B0E8" }}>Contributions. Payslips.</div>
+          <div>All automated.</div>
         </div>
 
         {/* Sub */}
         <div style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", maxWidth: 680, lineHeight: 1.5, marginBottom: 48 }}>
-          The AI backoffice built for Filipino SMBs — SSS, PhilHealth, Pag-IBIG, BIR deadlines, payslips, leave management, and more.
+          The AI backoffice built for Filipino SMBs. SSS, PhilHealth, Pag-IBIG, BIR forms, payslips, and an Android clock-in app.
         </div>
 
         {/* Feature pills */}
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          {["Automated Payroll", "BIR Filing", "SSS · PhilHealth · Pag-IBIG", "HR Onboarding", "Real-time Accounting"].map((f) => (
+          {["Automated Payroll", "BIR Forms", "SSS · PhilHealth · Pag-IBIG", "Payslips", "Android Clock-in"].map((f) => (
             <div
               key={f}
               style={{
