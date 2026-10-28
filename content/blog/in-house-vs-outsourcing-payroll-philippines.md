@@ -8,7 +8,7 @@ author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
 coverImage: "/Blog/In-House%20Payroll.png"
 ctaHeading: "Keep payroll in-house without the manual burden."
-ctaBody: "Book a 30-minute call and see what running payroll with real AI support actually looks like, no third party holding your employee data."
+ctaBody: "Book a 30-minute call and see what running payroll with real AI support actually looks like."
 faq:
   - question: "Is outsourcing payroll cheaper than hiring an in-house payroll officer in the Philippines?"
     answer: "It depends on headcount. Sprout Solutions' published Payroll Starter plan is ₱15,000 a month for up to 20 employees plus ₱300 to ₱400 per extra employee, against roughly ₱33,000 to ₱43,000 a month for an in-house payroll officer. On those two figures, the outsourced plan costs less until about 65 to 80 employees against the low end of that salary, or about 90 to 113 against the high end, before counting software and the filing work outsourcing leaves with you."
@@ -75,7 +75,7 @@ This doesn't make outsourcing a bad idea, a good provider is specifically better
 
 ## The Middle Ground Most Philippine SMBs Actually Land On
 
-Most businesses outgrow pure outsourcing before they're ready to hire a dedicated payroll specialist, and the gap between those two stages is exactly what software-driven in-house payroll is built to close. YAHSHUA One's AI assistant, Theo, reads the company's actual configured payroll data and can flag a miscomputed entry or generate a payroll formula in plain language, which lowers how much specialized payroll expertise a business needs to keep in-house without handing employee data to an external processor at all.
+Most businesses outgrow pure outsourcing before they're ready to hire a dedicated payroll specialist, and the gap between those two stages is exactly what software-driven in-house payroll is built to close. YAHSHUA One's AI assistant, Theo, reads the company's actual configured payroll data, can explain why an employee's net pay changed, and can generate a payroll formula in plain language, which lowers how much specialized payroll expertise a business needs to keep in-house, without handing the payroll function itself to an outside provider.
 
 **Table: In-house vs. outsourced, where it actually matters**
 

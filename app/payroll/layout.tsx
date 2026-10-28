@@ -162,7 +162,7 @@ const payrollSchema = {
           name: "Can Theo change my payroll?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation.",
+            text: "No. Theo answers questions in chat and does not change your data. In the formula editor it only suggests formula text, and you decide whether to save it.",
           },
         },
         {

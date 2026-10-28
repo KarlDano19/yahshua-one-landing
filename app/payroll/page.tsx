@@ -144,7 +144,7 @@ function MarqueeStrip() {
     "SSS auto-compute", "₱1,125.00 employee share", "PhilHealth ₱1,250.00",
     "Pag-IBIG ₱200.00", "BIR 1601-C ready", "TRAIN Law withholding",
     "13th month per DOLE", "Night diff & overtime", "De minimis cap tracked",
-    "₱14,705.62 net pay", "0 computation errors", "Theo AI answers compliance",
+    "₱14,705.62 net pay", "BIR 2316 certificates", "Theo AI answers compliance",
   ];
   return (
     <div className="marquee-wrapper" aria-hidden="true">
@@ -168,11 +168,11 @@ const SHOWCASE = [
     num: "01", dark: true,
     label: "Theo AI",
     title: "Ask anything. Theo reads your actual company data.",
-    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, your overtime multiplier, or how a specific employee's net was computed. Theo can also take action for you: drafting formulas, flagging anomalies, or pulling specific reports, all within your account permissions.",
+    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, why an employee's net pay changed, or what is pending in your leave queue. Theo answers in chat and does not change your data. In the formula editor it suggests formula text, and you decide whether to save it.",
     bullets: [
       "Reads your real payroll data, not generic answers",
       "Answers BIR, SSS, PhilHealth, Pag-IBIG questions",
-      "Acts on your behalf within your permission level",
+      "Answers within your permission level",
       "Full conversation history per topic",
     ],
     clip: "/clip-theo.mp4", img: "/ss-theo.jpg",
@@ -281,8 +281,8 @@ const THEO_DATA_RULES = [
     text: "Every lookup is limited to your company, and a conversation belongs to the user who started it.",
   },
   {
-    label: "No changes without your yes.",
-    text: "A change needs a role that's allowed to make it, plus your explicit confirmation.",
+    label: "Answers only, no changes.",
+    text: "In chat, Theo answers questions and does not change your data. In the formula editor it only suggests text, and you decide whether to save it.",
   },
   {
     label: "Switched on deliberately.",
@@ -605,25 +605,25 @@ export default function PayrollPage() {
             <div className="stat-item" style={{ padding: "40px 28px" }}>
               <Reveal delay={0}>
                 <div style={{ fontSize: "clamp(38px, 4.8vw, 60px)", letterSpacing: "-0.04em", fontWeight: 700, lineHeight: 1, marginBottom: 10 }}>
-                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>0 errors</em>
+                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>3</em>
                 </div>
-                <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>Payroll computation accuracy across all employees</div>
+                <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>BIR forms generated from your payroll: 1601-C, 1604-C and 2316</div>
               </Reveal>
             </div>
             <div className="stat-item" style={{ padding: "40px 28px" }}>
               <Reveal delay={40}>
                 <div style={{ fontSize: "clamp(38px, 4.8vw, 60px)", letterSpacing: "-0.04em", fontWeight: 700, lineHeight: 1, marginBottom: 10 }}>
-                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>{"< 5 min"}</em>
+                  <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>3</em>
                 </div>
-                <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>Average time to run full payroll for a 50-person team</div>
+                <div style={{ color: "var(--muted)", fontSize: 13, lineHeight: 1.5 }}>Government remittance files: SSS, PhilHealth and Pag-IBIG</div>
               </Reveal>
             </div>
-            <AnimatedStat from={0} to={99.97}
-              format={(v) => (v >= 99.9 ? v.toFixed(2) : Math.round(v).toString()) + "%"}
-              delay={80} lbl="BIR filing accuracy on 1601-C, 2550M, quarterly returns" />
-            <AnimatedStat from={4800} to={0}
-              format={(v) => "₱ " + (Math.round(v) >= 1000 ? Math.round(v).toLocaleString("en-US") : Math.round(v).toString())}
-              delay={120} lbl="Penalty exposure when deadlines are managed by YAHSHUA" />
+            <AnimatedStat from={0} to={30}
+              format={(v) => Math.round(v).toString() + " days"}
+              delay={80} lbl="Free trial to run your first payroll cycle" />
+            <AnimatedStat from={0} to={0}
+              format={() => "₱0"}
+              delay={120} lbl="Setup fee" />
           </div>
         </div>
       </section>
@@ -864,7 +864,7 @@ export default function PayrollPage() {
                   {[
                     "Contribution tables update automatically when government rates change",
                     "Withholding tax computed per TRAIN Law and Revenue Regulations",
-                    "13th month auto-computed per DOLE formula, filed on time",
+                    "13th month auto-computed per the DOLE formula from your basic pay",
                     "1601-C reports generated monthly, ready for eBIRForms upload",
                   ].map((item) => (
                     <li key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "oklch(0.78 0.01 250)" }}>
@@ -1057,11 +1057,11 @@ export default function PayrollPage() {
                 </ul>
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
-              a="Y1P includes an AI copilot accessible from within the app. It helps you understand payroll computations, surface discrepancies, and answer questions about your payroll data in plain language — without needing to dig through reports manually. It works on top of your actual company data, not generic templates." />
+              a="Y1P includes Theo, an AI assistant you can ask from within the app. It helps you understand payroll computations, such as why an employee's net pay changed, and answers questions about your payroll data in plain language, without digging through reports manually. It works on top of your actual company data, not generic templates." />
             <FaqItem delay={360} q="Does Theo read my actual payroll data?"
               a="Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds." />
             <FaqItem delay={400} q="Can Theo change my payroll?"
-              a="Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation." />
+              a="No. Theo answers questions in chat and does not change your data. In the formula editor it only suggests formula text, and you decide whether to save it." />
             <FaqItem delay={440} q="Who can see what Theo shows?"
               a="Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden." />
             <FaqItem delay={440} q="How much does YAHSHUA One Payroll cost?"
@@ -1071,7 +1071,7 @@ export default function PayrollPage() {
             <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"
               a="No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device." />
             <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
-              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and all statutory compliance reports. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
+              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and the BIR, SSS, PhilHealth, and Pag-IBIG files that payroll produces. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
             <FaqItem delay={400} q="What pay frequencies does Y1P support?"
               a="Y1P supports Monthly, Semi-Monthly, Weekly, and Bi-Weekly pay frequencies. These are configurable per pay group, so different employee groups can have different pay schedules within the same company." />
             <FaqItem delay={440} q="What premium pay types are built in?"

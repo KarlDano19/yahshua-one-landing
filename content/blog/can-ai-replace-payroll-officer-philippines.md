@@ -7,7 +7,7 @@ author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
 coverImage: "/Blog/Can%20AI%20Replace%20a%20Payroll%20Officer.png"
 ctaHeading: "See where Theo stops and your team starts."
-ctaBody: "Book a 30-minute demo, ask Theo about your own payroll setup, and see what it takes for it to change anything."
+ctaBody: "Book a 30-minute demo, ask Theo about your own payroll setup, and see how it answers from your records."
 faq:
   - question: "Can AI replace a payroll officer in the Philippines?"
     answer: "It can replace much of the task work, such as lookups, formula drafting and report building, but not the accountability. A person still has to approve the pay run, answer to BIR, SSS, PhilHealth and Pag-IBIG, and explain pay to employees. Whether a business needs a dedicated officer depends on headcount and how complex its pay rules are."
@@ -18,7 +18,7 @@ faq:
   - question: "Do Philippine privacy rules require a human in the loop for payroll AI?"
     answer: "NPC Advisory No. 2024-04, issued on December 19, 2024, tells personal information controllers to provide for meaningful human intervention by competent people with authority when AI systems make automated decisions that pose a significant risk to people's rights and freedoms. Whether a particular payroll task meets that threshold is a question for your own counsel."
   - question: "Can YAHSHUA One's Theo change payroll data on its own?"
-    answer: "No. A change needs a role that is allowed to make it plus the user's explicit confirmation, and every lookup checks the same permission as the matching screen in the app."
+    answer: "No. In chat, Theo answers questions from your own records and does not change data. In the formula editor it only suggests text, and a person decides whether to save it. Every lookup checks the same permission as the matching screen in the app."
 sources:
   - "National Privacy Commission, NPC Advisory No. 2024-04, \"Guidelines on the Application of the Data Privacy Act of 2012 to Artificial Intelligence Systems Processing Personal Data,\" December 19, 2024, privacy.gov.ph (accessed October 2026)"
   - "Robert Half, \"How AI is changing payroll jobs and how to adapt your payroll career,\" roberthalf.com (accessed October 2026)"
@@ -48,7 +48,7 @@ In practice, that looks like this in YAHSHUA One Payroll, where Theo works from 
 - A summary of your last five payroll runs
 - How many leave requests are still pending
 - An employee's current rate, department and schedule
-- A payroll formula drafted in plain language for someone who does not know formula syntax
+- A payroll formula suggested in plain language for someone who does not know formula syntax, which they review and save themselves
 - A custom report generated from your own company data
 
 Every item on that list reads, explains or drafts. None of it releases anyone's pay.
@@ -74,7 +74,7 @@ Sort every payroll task by how much damage a wrong answer does. Read-only lookup
 | Explaining why net pay changed | Hand over, spot-check | Compare the explanation to the payslip the first few times |
 | Drafting a payroll formula in plain language | Review | Test it on an employee whose correct pay you already know before it goes live |
 | Generating a custom report | Review | Check the period and filters before you rely on the numbers |
-| Changing an employee's rate or other payroll data | Person in the loop | Needs a role that is allowed to make the change, plus explicit confirmation |
+| Changing an employee's rate or other payroll data | Keep human | A person makes the change in the app, because Theo chat cannot change data |
 | Approving the pay run and releasing pay | Keep human | Money leaves the business and cannot be quietly taken back |
 | Filing and remitting to BIR, SSS, PhilHealth and Pag-IBIG | Keep human | The accounts are the employer's, and so is the exposure |
 | Interpreting an unclear rule or circular | Keep human | Judgment and, when the stakes are high, your accountant or counsel |
@@ -92,13 +92,13 @@ The same advisory also tells controllers not to engage in what it calls AI washi
 
 ## How YAHSHUA One's Theo Draws the Line
 
-Theo can read and explain your payroll data and, when you allow it, change it, but only inside your permissions and only after an explicit yes. It is built to assist the person running payroll, not to stand in for the person who approves it.
+Theo can read and explain your payroll data inside your permissions, and in chat it does not change anything. It is built to assist the person running payroll, not to stand in for the person who approves it.
 
 Four rules shape how Theo behaves:
 
 - **Same permissions as the app.** Each lookup checks the same permission as the matching screen. If your role does not have it, the lookup is refused and Theo says so.
 - **One company at a time.** Every lookup is limited to your company, and a conversation belongs to the user who started it.
-- **No changes without your yes.** A change needs a role that is allowed to make it, plus your explicit confirmation.
+- **Answers only, no changes.** In chat, Theo answers questions and does not change your data. In the formula editor it only suggests text, and you decide whether to save it.
 - **Switched on deliberately.** Theo is enabled per company, and only for the roles on its allowed list.
 
 The permission rule also shapes the answers. Ask Theo why an employee's net pay changed and it walks through the change line by line, while a user without access to calculation details gets a shorter answer with the formulas hidden. You can see the full list of questions Theo answers in the Ask Theo section of the [YAHSHUA One Payroll](/payroll) page.
@@ -137,4 +137,4 @@ Approving the pay run, filing and remitting to the agencies, interpreting a rule
 NPC Advisory No. 2024-04, issued on December 19, 2024, tells personal information controllers to provide for meaningful human intervention by competent people with authority when AI systems make automated decisions that pose a significant risk to people's rights and freedoms. Whether a particular payroll task meets that threshold is a question for your own counsel.
 
 **Can YAHSHUA One's Theo change payroll data on its own?**
-No. A change needs a role that is allowed to make it plus the user's explicit confirmation, and every lookup checks the same permission as the matching screen in the app.
+No. In chat, Theo answers questions from your own records and does not change data. In the formula editor it only suggests text, and a person decides whether to save it. Every lookup checks the same permission as the matching screen in the app.

@@ -25,28 +25,23 @@ export const metadata: Metadata = {
     template: "%s | YAHSHUA One",
   },
   description:
-    "YAHSHUA One is an AI-powered business management system for Filipino SMBs. Automate payroll generation, BIR compliance, SSS/PhilHealth/Pag-IBIG filings, HR onboarding & offboarding, and accounting — all in one platform.",
+    "YAHSHUA One Payroll computes SSS, PhilHealth, Pag-IBIG and withholding tax, generates payslips and BIR files, and adds an Android clock-in app.",
   keywords: [
     "automated payroll Philippines",
     "payroll system Philippines",
     "BIR compliance software Philippines",
     "BIR filing system Philippines",
     "HR system Philippines",
-    "HR onboarding offboarding Philippines",
     "SSS PhilHealth Pag-IBIG automatic computation",
-    "accounting software Philippines SMB",
     "business management system Philippines",
     "AI payroll Philippines",
     "Filipino business software",
     "HR software Philippines",
     "leave management system Philippines",
-    "compliance tracking Philippines",
-    "automated accounting Philippines",
     "payslip generator Philippines",
     "employee management system Philippines",
     "small business software Philippines",
     "government contribution calculator Philippines",
-    "BIR deadline tracker",
   ],
   authors: [{ name: "ABBA Initiative", url: BASE_URL }],
   creator: "ABBA Initiative",
@@ -62,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "YAHSHUA One",
     title: "YAHSHUA One — Automated Payroll, BIR Compliance & HR for Filipino Businesses",
     description:
-      "Stop doing payroll manually. YAHSHUA One automates your payroll, BIR filings, SSS/PhilHealth/Pag-IBIG, HR onboarding, and accounting — built specifically for Filipino businesses.",
+      "Stop doing payroll manually. YAHSHUA One computes your payroll and generates payslips and BIR, SSS, PhilHealth and Pag-IBIG files, built specifically for Filipino businesses.",
     images: [
       {
         url: "/opengraph-image",
@@ -76,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "YAHSHUA One — Automated Payroll & BIR Compliance for Filipino SMBs",
     description:
-      "Automated payroll, BIR compliance, HR onboarding & offboarding, and accounting — all in one AI-powered platform built for Filipino businesses.",
+      "Automated payroll, BIR files, SSS, PhilHealth and Pag-IBIG contributions, and payslips, built for Filipino businesses.",
     images: ["/opengraph-image"],
   },
   robots: {
@@ -117,7 +112,7 @@ export default function RootLayout({
                   name: "YAHSHUA One",
                   alternateName: ["YAHSHUA 1", "Yahshua One"],
                   description:
-                    "An AI-powered business management platform for Filipino SMBs that automates payroll, BIR tax compliance, SSS/PhilHealth/Pag-IBIG government contributions, HR onboarding and offboarding, leave management, and accounting.",
+                    "An AI-powered back-office platform for Filipino SMBs, starting with payroll: salary computation, SSS, PhilHealth and Pag-IBIG contributions, withholding tax, payslips, BIR and government files, leave and attendance tracking, and an Android clock-in app.",
                   url: BASE_URL,
                   applicationCategory: "BusinessApplication",
                   operatingSystem: "Web",
@@ -129,17 +124,16 @@ export default function RootLayout({
                   },
                   featureList: [
                     "Automated payroll generation",
-                    "BIR compliance and tax filing",
                     "SSS contribution computation",
                     "PhilHealth contribution computation",
                     "Pag-IBIG contribution computation",
-                    "HR onboarding and offboarding",
-                    "Leave and overtime management",
-                    "Employee self-service portal",
-                    "Real-time accounting and bookkeeping",
-                    "Profit and loss reporting",
-                    "Compliance deadline tracking",
-                    "Payslip generation and distribution",
+                    "BIR forms: 1601-C, 1604-C with alphalists and 2316",
+                    "2307 withholding summary per contractor (PDF, Excel)",
+                    "SSS, PhilHealth and Pag-IBIG remittance files",
+                    "Leave requests and approvals",
+                    "Attendance and time tracking",
+                    "Android clock-in app with facial recognition and geo-fencing",
+                    "Payslip generation",
                   ],
                   audience: {
                     "@type": "Audience",
@@ -181,7 +175,7 @@ export default function RootLayout({
                       name: "Does it handle BIR compliance and tax filings?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Yes. YAHSHUA One tracks all BIR deadlines including 1601-C, 2550M, and quarterly returns. It generates BIR-ready reports and alerts you weeks before every filing deadline so you never incur penalties.",
+                        text: "Partly. YAHSHUA One Payroll generates the BIR files your payroll produces: 1601-C (PDF, Excel and the BIR eSubmission file), 1604-C with alphalists, and 2316, plus a 2307 summary for each contractor in PDF and Excel (a summary layout, not the official BIR form). It also produces SSS, PhilHealth and Pag-IBIG remittance files. You download them and upload them to the government portals yourself. It does not track deadlines, send alerts or file for you, and it does not cover VAT or income tax returns.",
                       },
                     },
                     {
@@ -189,7 +183,7 @@ export default function RootLayout({
                       name: "Can YAHSHUA One handle HR onboarding and offboarding?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Yes. YAHSHUA One manages the full employee lifecycle — from digital onboarding and contract management to leave requests, overtime, and offboarding. Employees get a self-service portal to access their own records.",
+                        text: "Partly. YAHSHUA One Payroll keeps employee records and handles leave requests, attendance and time tracking: employees clock in and file requests from the Android app, and managers approve them. A fuller YAHSHUA HRIS app is launching soon.",
                       },
                     },
                     {
@@ -205,7 +199,7 @@ export default function RootLayout({
                       name: "How is YAHSHUA One different from other payroll or HR systems?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "YAHSHUA One combines payroll, accounting, compliance, and HR into one AI-powered platform — instead of four separate tools. It's built from the ground up for Filipino SMBs, which means Philippine-specific rules are baked in, not bolted on.",
+                        text: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One is being built to bring them together in one AI-powered platform, starting with payroll, which is available today. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
                       },
                     },
                   ],

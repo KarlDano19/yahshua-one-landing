@@ -396,14 +396,14 @@ export default function Home() {
             <Reveal direction="right">
               <div style={{ border: "1px solid var(--line)", borderRadius: 16, overflow: "hidden", background: "var(--bg)", boxShadow: "var(--shadow)" }}>
                 <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: 13, fontWeight: 600 }}>BIR Filing Calendar</span>
-                  <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)" }}>Q2 · 2026</span>
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>BIR files from payroll</span>
+                  <span style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, color: "var(--soft)" }}>Payroll → Reports</span>
                 </div>
                 {[
-                  { form: "1601-C", label: "Withholding Tax on Compensation", due: "Jul 10", status: "filed",    ref: "ref 99-22-148" },
-                  { form: "2550M",  label: "Monthly VAT Declaration",          due: "Jul 20", status: "draft",    ref: "Draft ready" },
-                  { form: "1701Q",  label: "Quarterly Income Tax Return",      due: "Aug 15", status: "upcoming", ref: "AI drafting Q2 data" },
-                  { form: "1604-C", label: "Annual Withholding Summary",        due: "Jan 31", status: "upcoming", ref: "Next cycle" },
+                  { form: "1601-C", label: "Withholding Tax on Compensation", ref: "PDF · Excel · eSubmission file" },
+                  { form: "1604-C", label: "Annual Withholding Summary",       ref: "PDF · Excel · CSV · alphalist file" },
+                  { form: "2316",   label: "Certificate of Compensation",      ref: "PDF · Excel · CSV" },
+                  { form: "2307",   label: "Creditable Tax Summary",           ref: "PDF · Excel · per contractor" },
                 ].map((row) => (
                   <div key={row.form} style={{ display: "flex", alignItems: "center", gap: 14, padding: "12px 20px", borderBottom: "1px solid var(--line-2)", fontSize: 13 }}>
                     <span style={{
@@ -414,20 +414,12 @@ export default function Home() {
                       <div style={{ fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{row.label}</div>
                       <div style={{ fontSize: 11, color: "var(--soft)", marginTop: 2 }}>{row.ref}</div>
                     </div>
-                    <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <div style={{ fontSize: 11, color: "var(--muted)", fontFamily: "var(--font-geist-mono, monospace)" }}>{row.due}</div>
-                      <span style={{
-                        fontSize: 10, padding: "2px 8px", borderRadius: 999, marginTop: 3, display: "inline-block",
-                        fontFamily: "var(--font-geist-mono, monospace)",
-                        background: row.status === "filed" ? "var(--accent-50)" : row.status === "draft" ? "oklch(0.95 0.04 75)" : "var(--bg-tint)",
-                        color: row.status === "filed" ? "var(--accent-2)" : row.status === "draft" ? "#8A5A2A" : "var(--soft)",
-                      }}>{row.status}</span>
-                    </div>
+                    <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 999, flexShrink: 0, fontFamily: "var(--font-geist-mono, monospace)", background: "var(--accent-50)", color: "var(--accent-2)" }}>download</span>
                   </div>
                 ))}
                 <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", background: "var(--surface)", display: "flex", alignItems: "center", gap: 8 }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="var(--accent-2)" strokeWidth="1.3"/><path d="M7 4V7L9 9" stroke="var(--accent-2)" strokeWidth="1.3" strokeLinecap="round"/></svg>
-                  Next deadline in <strong style={{ color: "var(--ink-2)" }}>10 days</strong>. Draft already prepared.
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V9M4 6.5L7 9.5L10 6.5M2.5 12H11.5" stroke="var(--accent-2)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Download the file, then upload it to the BIR portal yourself.
                 </div>
               </div>
             </Reveal>
@@ -435,16 +427,16 @@ export default function Home() {
             <Reveal>
               <div>
                 <div style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
-                  04 · Tax & Compliance
+                  04 · BIR & government files
                 </div>
                 <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.08, margin: "0 0 16px" }}>
-                  BIR-ready forms. Quarterly filings drafted, reviewed, submitted.
+                  BIR and government files, generated from your payroll.
                 </h2>
                 <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.6, margin: "0 0 28px" }}>
-                  Every BIR deadline tracked, every return drafted from your actual books. You review and sign. YAHSHUA One handles the rest.
+                  1601-C, 1604-C with alphalists and 2316 for the BIR, a 2307 summary per contractor, plus SSS, PhilHealth and Pag-IBIG remittance files, all generated from your payroll. You download them and upload them to the government portals yourself.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexWrap: "wrap", gap: 8 }}>
-                  {["VAT", "1701Q", "1601-C", "SSS", "PhilHealth", "Pag-IBIG"].map((tag) => (
+                  {["1601-C", "1604-C", "2316", "2307 summary", "SSS", "PhilHealth", "Pag-IBIG"].map((tag) => (
                     <li key={tag} style={{ fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-tint)", color: "var(--ink-2)", border: "1px solid var(--line-2)" }}>{tag}</li>
                   ))}
                 </ul>
@@ -473,16 +465,16 @@ export default function Home() {
                   Intelligence
                 </div>
                 <h2 style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-0.03em", fontWeight: 500, lineHeight: 1.05, margin: "0 0 18px" }}>
-                  An AI that&apos;s <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>read your books.</em> Not just the internet.
+                  An AI that&apos;s <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>read your payroll.</em> Not just the internet.
                 </h2>
                 <p style={{ color: "oklch(0.85 0.01 250)", fontSize: 17, lineHeight: 1.55, margin: "0 0 28px", maxWidth: 480 }}>
-                  Every transaction, employee record, invoice, and tax form lives in one schema. The assistant queries it directly, so the answer it gives is the answer you&apos;d get by spending a day in spreadsheets.
+                  Every employee record, payroll run, and payslip lives in one place. Theo looks it up directly, so its answer comes from your own records, not from a guess.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
-                    { title: "Grounded in your ledger.", body: "No hallucinations. Every figure is traceable to a journal entry." },
-                    { title: "Acts, not just answers.", body: "Approve a payroll run, file a return, or send an invoice. In chat." },
-                    { title: "Your data stays yours.", body: "Encrypted in transit and at rest. Never used to train models." },
+                    { title: "Grounded in your records.", body: "Theo looks up answers in your own payroll records instead of guessing." },
+                    { title: "Ask in plain language.", body: "Ask Theo about your payroll, employees, payslips and settings, in chat." },
+                    { title: "Your data is protected.", body: "Sensitive data like bank details and government IDs is encrypted, and all connections use HTTPS." },
                   ].map((item) => (
                     <li key={item.title} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: 14.5, color: "oklch(0.88 0.01 250)" }}>
                       <span style={{ width: 22, height: 22, borderRadius: 6, background: "oklch(0.25 0.02 250)", color: "var(--accent-3)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
@@ -831,11 +823,11 @@ export default function Home() {
               },
               {
                 q: "Does it handle BIR compliance and tax filings?",
-                a: "Yes. YAHSHUA One tracks all BIR deadlines including 1601-C, 2550M, and quarterly returns. It generates BIR-ready reports and alerts you weeks before every filing deadline so you never incur penalties again.",
+                a: "Partly. YAHSHUA One Payroll generates the BIR files your payroll produces: 1601-C (PDF, Excel and the BIR eSubmission file), 1604-C with alphalists, and 2316, plus a 2307 summary for each contractor in PDF and Excel (a summary layout, not the official BIR form). It also produces SSS, PhilHealth and Pag-IBIG remittance files. You download them and upload them to the government portals yourself. It does not track deadlines, send alerts or file for you, and it does not cover VAT or income tax returns.",
               },
               {
                 q: "Can YAHSHUA One handle HR onboarding and offboarding?",
-                a: "Yes. YAHSHUA One manages the full employee lifecycle: digital onboarding, contract management, leave requests, overtime approvals, and offboarding. Employees get a self-service portal to view their payslips, leave balances, and records anytime.",
+                a: "Partly. YAHSHUA One Payroll keeps employee records and handles leave requests, attendance and time tracking: employees clock in and file requests from the Android app, and managers approve them. A fuller YAHSHUA HRIS app is launching soon.",
               },
               {
                 q: "Is YAHSHUA One built specifically for Filipino businesses?",
@@ -843,7 +835,7 @@ export default function Home() {
               },
               {
                 q: "How is it different from other payroll or HR systems in the Philippines?",
-                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One combines all of them in one AI-powered platform. It's also built specifically for Filipino SMBs, not adapted from a foreign product.",
+                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One is being built to bring them together in one AI-powered platform, starting with payroll, which is available today. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
               },
               {
                 q: "Who is YAHSHUA One designed for?",
