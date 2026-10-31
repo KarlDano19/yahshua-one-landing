@@ -168,11 +168,11 @@ const SHOWCASE = [
     num: "01", dark: true,
     label: "Theo AI",
     title: "Ask anything. Theo reads your actual company data.",
-    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, why an employee's net pay changed, or what is pending in your leave queue. Theo answers in chat and does not change your data. In the formula editor it suggests formula text, and you decide whether to save it.",
+    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, why an employee's net pay changed, or what is pending in your leave queue. Theo can also take action for you, such as drafting formulas or pulling specific reports, all within your account permissions.",
     bullets: [
       "Reads your real payroll data, not generic answers",
       "Answers BIR, SSS, PhilHealth, Pag-IBIG questions",
-      "Answers within your permission level",
+      "Acts on your behalf within your permission level",
       "Full conversation history per topic",
     ],
     clip: "/clip-theo.mp4", img: "/ss-theo.jpg",
@@ -281,8 +281,8 @@ const THEO_DATA_RULES = [
     text: "Every lookup is limited to your company, and a conversation belongs to the user who started it.",
   },
   {
-    label: "Answers only, no changes.",
-    text: "In chat, Theo answers questions and does not change your data. In the formula editor it only suggests text, and you decide whether to save it.",
+    label: "No changes without your yes.",
+    text: "A change needs a role that's allowed to make it, plus your explicit confirmation.",
   },
   {
     label: "Switched on deliberately.",
@@ -1061,7 +1061,7 @@ export default function PayrollPage() {
             <FaqItem delay={360} q="Does Theo read my actual payroll data?"
               a="Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds." />
             <FaqItem delay={400} q="Can Theo change my payroll?"
-              a="No. Theo answers questions in chat and does not change your data. In the formula editor it only suggests formula text, and you decide whether to save it." />
+              a="Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation." />
             <FaqItem delay={440} q="Who can see what Theo shows?"
               a="Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden." />
             <FaqItem delay={440} q="How much does YAHSHUA One Payroll cost?"

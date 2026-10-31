@@ -36,7 +36,7 @@ Its own product pages are organized around this: selfie clock-in, schedules, att
 
 ## What YAHSHUA One Is Actually Built For
 
-YAHSHUA One is built to bring payroll, HR, and accounting together for Filipino SMBs, starting with payroll, which is available today, with an AI assistant, Theo, that reads the company's actual configured data to answer questions within each user's permissions.
+YAHSHUA One is built to bring payroll, HR, and accounting together for Filipino SMBs, starting with payroll, which is available today, with an AI assistant, Theo, that reads the company's actual configured data to answer questions and take permission-aware actions.
 
 The starting point is different: instead of attendance verification for a distributed shift workforce, YAHSHUA One is built around getting payroll computation, statutory contributions, and BIR compliance right, with HR and accounting planned to run through the same system instead of three separate tools. Theo can answer a specific question about your own configured setup using your real numbers, not a general knowledge base, and suggest payroll formulas in plain language for users unfamiliar with formula syntax.
 

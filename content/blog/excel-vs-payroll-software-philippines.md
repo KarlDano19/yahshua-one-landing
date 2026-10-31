@@ -82,7 +82,7 @@ The practical differences show up in exactly the places spreadsheets break: rate
 
 YAHSHUA One replaces the spreadsheet's manual rate-tracking with statutory updates applied automatically, and replaces its single-author risk with Theo, an AI assistant that reads the company's actual configured payroll data instead of a formula chain only one person understands.
 
-Theo can answer a specific question about your own numbers, such as why an employee's net pay changed, and suggest payroll formulas in plain language for anyone who'd rather not touch a formula bar at all. It is permission-aware, so it only answers from what that user is allowed to see.
+Theo can answer a specific question about your own numbers, such as why an employee's net pay changed, and suggest payroll formulas in plain language for anyone who'd rather not touch a formula bar at all. It is permission-aware, so it only acts within what that user is allowed to see or change.
 
 ## Related reading
 

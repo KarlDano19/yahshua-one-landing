@@ -18,7 +18,7 @@ faq:
   - question: "What questions should I ask a payroll vendor to test their AI claim?"
     answer: "Ask it something specific about your own setup during the demo, not a general compliance question. A generic answer, or one that needs a human to step in, tells you the AI is not actually reading your data."
   - question: "Does YAHSHUA One's AI read our actual payroll data?"
-    answer: "Yes. Theo reads the company's actual configured payroll data directly, including pay components, employees, and policies. It is also permission-aware: it follows the same access controls as the rest of the platform, and it can suggest payroll formulas in plain language for users unfamiliar with formula syntax."
+    answer: "Yes. Theo reads the company's actual configured payroll data directly, including pay components, employees, and policies. It is also permission-aware, so a user with timesheet-only access cannot ask Theo to change a salary, and it can generate payroll formulas in plain language for users unfamiliar with formula syntax."
 sources:
   - "US Securities and Exchange Commission, cease-and-desist order against Presto Automation, January 2025 (first public company charged with AI washing)"
   - "Morph, \"AI Washing: A B2B Buyer's Guide to Spotting Fake AI Claims\", morphllm.com (accessed September 2026)"
@@ -27,11 +27,11 @@ sources:
   - "QNE Cloud, N3 AI Cloud Accounting comparison table listing Juan Magic as receipt-processing AI, qne.cloud/ph (accessed September 2026)"
 ---
 
-AI-native means the AI reads your company's actual configured payroll data and answers from it within your permissions. A bolted-on chatbot answers from a generic knowledge base layered on top of the same system. Most "AI" in Philippine payroll software today is the second kind, and the label alone won't tell you which one you're buying.
+AI-native means the AI reads your company's actual configured payroll data and can act on it within your permissions. A bolted-on chatbot answers from a generic knowledge base layered on top of the same system. Most "AI" in Philippine payroll software today is the second kind, and the label alone won't tell you which one you're buying.
 
 ## What "AI-Native" Actually Means in Payroll Software
 
-AI-native means the AI is part of the core architecture, not an add-on. It reads your specific pay components, employees, and policies directly, and what it can see follows the same permissions as the rest of the platform.
+AI-native means the AI is part of the core architecture, not an add-on. It reads your specific pay components, employees, and policies directly, and any action it takes respects the same permissions as the rest of the platform.
 
 A bolted-on chatbot, by contrast, usually sits on top of an existing system and answers from a general knowledge base or FAQ set. It can be genuinely useful for things like "how many vacation days do I have left," but it is not reasoning over your company's actual configured setup. Both are real software. The difference is what they are grounded in.
 
@@ -53,7 +53,7 @@ Several Philippine payroll and HR platforms already ship real AI features. What 
 | Juan Magic | JuanTax (Juan) | Receipt-processing AI, reads and categorizes receipts for accounting entries |
 | Qbot / QuickScan | QNE | Chat-based assistant for accounting and payroll queries within QNE's platform |
 | CHIA | Ramco | Virtual assistant for payroll-related queries across Ramco's HCM suite |
-| Theo | YAHSHUA One | Reads the company's actual configured payroll data directly; permission-aware answers; suggests payroll formulas in plain language |
+| Theo | YAHSHUA One | Reads the company's actual configured payroll data directly; permission-aware actions; generates payroll formulas in plain language |
 
 Every one of these is a real, documented feature, not a fabricated claim. What separates them is scope: most are conversational assistants answering from a knowledge base or handling a specific task like receipt scanning. Theo is built to read your specific configuration and reason over your real numbers, which is a different kind of tool solving a different kind of question.
 
@@ -88,4 +88,4 @@ Common enough to draw regulators. The US SEC issued its first AI-washing cease-a
 Ask it something specific about your own setup during the demo, not a general compliance question. A generic answer, or one that needs a human to step in, tells you the AI is not actually reading your data.
 
 **Does YAHSHUA One's AI read our actual payroll data?**
-Yes. Theo reads the company's actual configured payroll data directly, including pay components, employees, and policies. It is also permission-aware: it follows the same access controls as the rest of the platform, and it can suggest payroll formulas in plain language for users unfamiliar with formula syntax.
+Yes. Theo reads the company's actual configured payroll data directly, including pay components, employees, and policies. It is also permission-aware, so a user with timesheet-only access cannot ask Theo to change a salary, and it can generate payroll formulas in plain language for users unfamiliar with formula syntax.
