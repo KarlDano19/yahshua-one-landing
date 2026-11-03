@@ -42,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    // Test: only this compliance note is listed. Check Search Console impressions after two weeks.
+    {
+      url: `${BASE_URL}/updates/2026-10-23-calabarzon-wage-order-iva-23-takes-effect-october-26`,
+      lastModified: new Date("2026-10-23"),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
     {
       url: `${BASE_URL}/blog`,
       lastModified: new Date(),

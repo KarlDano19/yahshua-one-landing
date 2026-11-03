@@ -175,12 +175,12 @@ export default function AboutPage() {
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <p style={eyebrow}>What we do</p>
-            <h2 style={sectionH2}>Everything back-office, in <em style={accentWord}>one system.</em></h2>
+            <h2 style={sectionH2}>Back-office work, in <em style={accentWord}>one system.</em></h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: "0 0 12px" }}>
-              From day-to-day operations to year-end filings, YAHSHUA One keeps every transaction, employee record, and tax form in one schema: inventory and sales orders, payroll and statutory contributions, real-time accounting, and BIR-ready compliance reporting.
+              YAHSHUA One is built to keep employee records, payroll, and statutory reports in one system. It starts with payroll, available today: salary computation, payslips, and the BIR, SSS, PhilHealth, and Pag-IBIG files your payroll produces. Accounting and tax modules are planned.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
-              An AI assistant reads your actual data directly, so its answers come from your books, not the internet.
+              Theo, an AI assistant, looks up answers in your own payroll records, not the internet.
             </p>
           </Reveal>
         </div>

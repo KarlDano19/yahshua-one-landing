@@ -48,7 +48,7 @@ In practice, that looks like this in YAHSHUA One Payroll, where Theo works from 
 - A summary of your last five payroll runs
 - How many leave requests are still pending
 - An employee's current rate, department and schedule
-- A payroll formula drafted in plain language for someone who does not know formula syntax
+- A payroll formula suggested in plain language for someone who does not know formula syntax, which they review and save themselves
 - A custom report generated from your own company data
 
 Every item on that list reads, explains or drafts. None of it releases anyone's pay.
