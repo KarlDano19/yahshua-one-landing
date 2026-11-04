@@ -47,7 +47,7 @@ Outsourcing a payroll provider typically prices as a monthly base fee plus a per
 
 The dollar figures above are general outsourcing-market numbers, not Philippine ones. The Philippine price we could verify is Sprout Solutions' Payroll Starter plan: outsourced payroll at ₱15,000 per month for up to 20 employees, plus ₱300 to ₱400 per employee per month above 20, according to Sprout's Payroll Starter page (checked October 2026). Other providers we checked, including AanyaHR and Emerhub, quote after you share your requirements or headcount.
 
-Next to the payroll officer's salary, Sprout's plan comes to ₱24,000 to ₱27,000 at 50 employees and ₱39,000 to ₱47,000 at 100. It reaches the low end of the salary range (₱33,000) at roughly 65 to 80 employees, and the high end (₱43,000) at roughly 90 to 113. Treat that as a rough guide, not a verdict. It leaves out the software an in-house officer still needs, the employer contributions on that salary, and the filing work Sprout's Starter leaves with you. We run the same formula at four headcounts in [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines).
+Next to the payroll officer's salary, Sprout's plan comes to ₱24,000 to ₱27,000 at 50 employees and ₱39,000 to ₱47,000 at 100. It reaches the low end of the salary range (₱33,000) at roughly 65 to 80 employees, and the high end (₱43,000) at roughly 90 to 113. Treat that as a rough guide, not a verdict. It leaves out the software an in-house officer still needs, the employer contributions on that salary, and the filing work Sprout's Starter leaves with you. We run the same formula at four headcounts in [What Payroll Software Costs a Philippine Company at 10 to 500 Employees](/blog/payroll-software-cost-by-headcount-philippines).
 
 ## Who Keeps the Compliance Liability (This Part Surprises People)
 
@@ -91,7 +91,7 @@ Most businesses outgrow pure outsourcing before they're ready to hire a dedicate
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
-- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), the software side of the cost comparison
+- [What Payroll Software Costs a Philippine Company at 10 to 500 Employees](/blog/payroll-software-cost-by-headcount-philippines), the software side of the cost comparison
 - [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines)
 - [Can AI Replace a Payroll Officer in the Philippines?](/blog/can-ai-replace-payroll-officer-philippines), what to hand to AI and what to keep human
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)

@@ -318,7 +318,7 @@ const GUIDES = [
   {
     href: "/blog/payroll-software-cost-by-headcount-philippines",
     label: "Pricing",
-    title: "What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees",
+    title: "What Payroll Software Costs a Philippine Company at 10 to 500 Employees",
   },
   {
     href: "/blog/yahshua-one-vs-payrollhero",
