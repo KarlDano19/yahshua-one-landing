@@ -1,7 +1,8 @@
 ---
 title: "Payroll Software in the Philippines: What Actually Matters Before You Switch"
+seoTitle: "How to Choose Payroll Software in the Philippines: 5 Checks"
 date: "2026-09-17"
-description: "A buying guide to payroll software in the Philippines: real published pricing, compliance depth, data privacy, and how to tell an AI feature from AI marketing."
+description: "Which payroll provider should you use in the Philippines? Five checks: compliance depth, data privacy, real cost, migration support, and whether the AI is real."
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "7 min read"
