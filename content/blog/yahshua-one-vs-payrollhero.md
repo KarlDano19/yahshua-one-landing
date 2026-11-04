@@ -69,6 +69,7 @@ If your bottleneck is payroll accuracy, statutory compliance, or the manual work
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines)
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines)
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)
+- [Multi-Branch Payroll in the Philippines: 7 Controls for Owners With 5 or More Locations](/blog/multi-branch-payroll-philippines), the controls to test when you run many sites
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 
 ## Frequently Asked Questions
