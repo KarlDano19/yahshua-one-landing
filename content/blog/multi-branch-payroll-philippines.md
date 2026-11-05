@@ -6,6 +6,7 @@ description: "Seven controls for multi-branch payroll in the Philippines, from r
 category: "Payroll Operations"
 author: "YAHSHUA One Editorial Team"
 readTime: "8 min read"
+coverImage: "/Blog/Multi-Branch%20Payroll.png"
 ctaHeading: "Run the seven tests on your own branches."
 ctaBody: "Book a free 30-minute demo and bring one branch transfer, one local holiday and one late attendance file."
 faq:
