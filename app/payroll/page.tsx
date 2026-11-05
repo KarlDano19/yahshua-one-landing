@@ -1052,7 +1052,7 @@ export default function PayrollPage() {
                   <li>Automated allowance and deduction rules — triggered by employee status changes</li>
                   <li>Back pay and final pay modules</li>
                   <li>Deduction priority management</li>
-                  <li>Full audit logs — every rate, formula, and income setup change is tracked</li>
+                  <li>Audit log of changes to rates, formulas, and income and deduction setup, with before and after values shown on screen</li>
                   <li>Integrated accounting — payroll entries post directly to GL accounts</li>
                 </ul>
               </>} />
@@ -1099,7 +1099,7 @@ export default function PayrollPage() {
                 Yes. All four are handled automatically:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
                   <li>SSS, PhilHealth, Pag-IBIG — computed based on configurable statutory tables, with contribution reports included</li>
-                  <li>BIR withholding tax — computed per BIR tax tables, with BIR-specific reports (including 1604-C support) and full audit trails</li>
+                  <li>BIR withholding tax — computed per BIR tax tables, with BIR-specific reports (including 1604-C support)</li>
                 </ul>
                 <p style={{ margin: "8px 0 0" }}>Government-mandated table updates are applied as compliance updates throughout the transition period.</p>
               </>} />
