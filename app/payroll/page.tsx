@@ -1071,7 +1071,7 @@ export default function PayrollPage() {
             <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"
               a="No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device." />
             <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
-              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and the BIR, SSS, PhilHealth, and Pag-IBIG files that payroll produces. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
+              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with configurable premium pay rates, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and the BIR, SSS, PhilHealth, and Pag-IBIG files that payroll produces. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are set up through the three-tier configuration system." />
             <FaqItem delay={400} q="What pay frequencies does Y1P support?"
               a="Y1P supports Monthly, Semi-Monthly, Weekly, and Bi-Weekly pay frequencies. These are configurable per pay group, so different employee groups can have different pay schedules within the same company." />
             <FaqItem delay={440} q="What premium pay types are built in?"
