@@ -318,7 +318,7 @@ const GUIDES = [
   {
     href: "/blog/payroll-software-cost-by-headcount-philippines",
     label: "Pricing",
-    title: "What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees",
+    title: "What Payroll Software Costs a Philippine Company at 10 to 500 Employees",
   },
   {
     href: "/blog/yahshua-one-vs-payrollhero",
@@ -845,7 +845,7 @@ export default function PayrollPage() {
                   <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>auto-computed.</em>
                 </h2>
                 <p style={{ color: "oklch(0.65 0.01 250)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px", maxWidth: 440 }}>
-                  YAHSHUA One is built around Philippine government agencies from the start. Rates update automatically. No manual table lookups, no calculation errors.
+                  YAHSHUA One is built around Philippine government agencies from the start. Our team publishes the updated contribution and tax tables, and your payroll follows the newest one by default. No manual table lookups.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
                   {[
@@ -862,7 +862,7 @@ export default function PayrollPage() {
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
                   {[
-                    "Contribution tables update automatically when government rates change",
+                    "New contribution tables are published by our team, and your payroll uses the newest one by default",
                     "Withholding tax computed per TRAIN Law and Revenue Regulations",
                     "13th month auto-computed per the DOLE formula from your basic pay",
                     "1601-C reports generated monthly, ready for eBIRForms upload",
@@ -1026,7 +1026,7 @@ export default function PayrollPage() {
             <FaqItem delay={160} q="Does it generate BIR Form 2316 (Certificate of Compensation)?"
               a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal." />
             <FaqItem delay={200} q="Can YAHSHUA handle the 13th month pay computation?"
-              a="Yes. 13th month pay is computed automatically per DOLE guidelines: your total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE." />
+              a="Yes. 13th month pay is computed per DOLE guidelines: your total basic pay for the year divided by 12. The 13th Month Pay report shows the accrual per employee and exports to Excel, and the amounts carry into each employee's BIR 2316 and the 1604-C." />
             <FaqItem delay={240} q="What are the differences between YPO and Y1P?"
               a={<>
                 Y1P is a ground-up rebuild of the payroll platform. Key differences include:
@@ -1034,7 +1034,7 @@ export default function PayrollPage() {
                   <li>Modern, faster tech stack with improved performance and scalability</li>
                   <li>Three-tier payroll configuration (company → pay group → individual employee) so rules can be tailored at any level without affecting others</li>
                   <li>Built-in employee self-service portal for leaves, overtime, payslips, and more</li>
-                  <li>Integrated accounting module with direct GL posting</li>
+                  <li>Accounting journal entries for each posted payroll run, using your own account mapping</li>
                   <li>AI-assisted payroll copilot for faster issue resolution</li>
                   <li>Facial recognition attendance with geo-fencing</li>
                   <li>Mobile approvals for managers</li>
@@ -1052,8 +1052,8 @@ export default function PayrollPage() {
                   <li>Automated allowance and deduction rules — triggered by employee status changes</li>
                   <li>Back pay and final pay modules</li>
                   <li>Deduction priority management</li>
-                  <li>Full audit logs — every rate, formula, and income setup change is tracked</li>
-                  <li>Integrated accounting — payroll entries post directly to GL accounts</li>
+                  <li>Audit log of changes to rates, formulas, and income and deduction setup, with before and after values shown on screen</li>
+                  <li>Accounting journal for each posted run, built from your own account mapping, with summary and detailed reports and Excel export</li>
                 </ul>
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
@@ -1071,7 +1071,7 @@ export default function PayrollPage() {
             <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"
               a="No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device." />
             <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
-              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and the BIR, SSS, PhilHealth, and Pag-IBIG files that payroll produces. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
+              a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with configurable premium pay rates, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and the BIR, SSS, PhilHealth, and Pag-IBIG files that payroll produces. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are set up through the three-tier configuration system." />
             <FaqItem delay={400} q="What pay frequencies does Y1P support?"
               a="Y1P supports Monthly, Semi-Monthly, Weekly, and Bi-Weekly pay frequencies. These are configurable per pay group, so different employee groups can have different pay schedules within the same company." />
             <FaqItem delay={440} q="What premium pay types are built in?"
@@ -1099,7 +1099,7 @@ export default function PayrollPage() {
                 Yes. All four are handled automatically:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
                   <li>SSS, PhilHealth, Pag-IBIG — computed based on configurable statutory tables, with contribution reports included</li>
-                  <li>BIR withholding tax — computed per BIR tax tables, with BIR-specific reports (including 1604-C support) and full audit trails</li>
+                  <li>BIR withholding tax — computed per BIR tax tables, with BIR-specific reports (including 1604-C support)</li>
                 </ul>
                 <p style={{ margin: "8px 0 0" }}>Government-mandated table updates are applied as compliance updates throughout the transition period.</p>
               </>} />
@@ -1168,7 +1168,7 @@ export default function PayrollPage() {
                 </a>
               </div>
               <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 32, flexWrap: "wrap" }}>
-                {["SSS compliant", "BIR-ready", "DOLE-aligned", "PhilHealth"].map((badge) => (
+                {["SSS compliant", "BIR-ready", "PhilHealth", "Pag-IBIG"].map((badge) => (
                   <div key={badge} style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 12.5, color: "oklch(0.48 0.01 250)" }}>
                     <Check size={12} color="var(--accent)" />{badge}
                   </div>

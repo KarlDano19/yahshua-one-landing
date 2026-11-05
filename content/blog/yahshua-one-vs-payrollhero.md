@@ -64,11 +64,12 @@ If your bottleneck is payroll accuracy, statutory compliance, or the manual work
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
-- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), where each vendor's price crosses over
+- [What Payroll Software Costs a Philippine Company at 10 to 500 Employees](/blog/payroll-software-cost-by-headcount-philippines), where each vendor's price crosses over
 - [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines)
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines)
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines)
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)
+- [Multi-Branch Payroll in the Philippines: 7 Controls for Owners With 5 or More Locations](/blog/multi-branch-payroll-philippines), the controls to test when you run many sites
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 
 ## Frequently Asked Questions
