@@ -845,7 +845,7 @@ export default function PayrollPage() {
                   <em style={{ fontStyle: "normal", color: "var(--accent-3)" }}>auto-computed.</em>
                 </h2>
                 <p style={{ color: "oklch(0.65 0.01 250)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px", maxWidth: 440 }}>
-                  YAHSHUA One is built around Philippine government agencies from the start. Rates update automatically. No manual table lookups, no calculation errors.
+                  YAHSHUA One is built around Philippine government agencies from the start. Our team publishes the updated contribution and tax tables, and your payroll follows the newest one by default. No manual table lookups.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
                   {[
@@ -862,7 +862,7 @@ export default function PayrollPage() {
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
                   {[
-                    "Contribution tables update automatically when government rates change",
+                    "New contribution tables are published by our team, and your payroll uses the newest one by default",
                     "Withholding tax computed per TRAIN Law and Revenue Regulations",
                     "13th month auto-computed per the DOLE formula from your basic pay",
                     "1601-C reports generated monthly, ready for eBIRForms upload",
@@ -1026,7 +1026,7 @@ export default function PayrollPage() {
             <FaqItem delay={160} q="Does it generate BIR Form 2316 (Certificate of Compensation)?"
               a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal." />
             <FaqItem delay={200} q="Can YAHSHUA handle the 13th month pay computation?"
-              a="Yes. 13th month pay is computed automatically per DOLE guidelines: your total basic pay for the year divided by 12. The Payroll module generates the disbursement and the required Establishment Report to DOLE." />
+              a="Yes. 13th month pay is computed per DOLE guidelines: your total basic pay for the year divided by 12. The 13th Month Pay report shows the accrual per employee and exports to Excel, and the amounts carry into each employee's BIR 2316 and the 1604-C." />
             <FaqItem delay={240} q="What are the differences between YPO and Y1P?"
               a={<>
                 Y1P is a ground-up rebuild of the payroll platform. Key differences include:
@@ -1034,7 +1034,7 @@ export default function PayrollPage() {
                   <li>Modern, faster tech stack with improved performance and scalability</li>
                   <li>Three-tier payroll configuration (company → pay group → individual employee) so rules can be tailored at any level without affecting others</li>
                   <li>Built-in employee self-service portal for leaves, overtime, payslips, and more</li>
-                  <li>Integrated accounting module with direct GL posting</li>
+                  <li>Accounting journal entries for each posted payroll run, using your own account mapping</li>
                   <li>AI-assisted payroll copilot for faster issue resolution</li>
                   <li>Facial recognition attendance with geo-fencing</li>
                   <li>Mobile approvals for managers</li>
@@ -1053,7 +1053,7 @@ export default function PayrollPage() {
                   <li>Back pay and final pay modules</li>
                   <li>Deduction priority management</li>
                   <li>Audit log of changes to rates, formulas, and income and deduction setup, with before and after values shown on screen</li>
-                  <li>Integrated accounting — payroll entries post directly to GL accounts</li>
+                  <li>Accounting journal for each posted run, built from your own account mapping, with summary and detailed reports and Excel export</li>
                 </ul>
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
@@ -1168,7 +1168,7 @@ export default function PayrollPage() {
                 </a>
               </div>
               <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 32, flexWrap: "wrap" }}>
-                {["SSS compliant", "BIR-ready", "DOLE-aligned", "PhilHealth"].map((badge) => (
+                {["SSS compliant", "BIR-ready", "PhilHealth", "Pag-IBIG"].map((badge) => (
                   <div key={badge} style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 12.5, color: "oklch(0.48 0.01 250)" }}>
                     <Check size={12} color="var(--accent)" />{badge}
                   </div>
