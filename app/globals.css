@@ -528,6 +528,12 @@ button { font: inherit; cursor: pointer; }
   .grid-badges { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* The /payroll header has more links than the other pages, so it switches to the menu button earlier. */
+@media (max-width: 1150px) {
+  .nav-wide .nav-links, .nav-wide .nav-cta { display: none; }
+  .nav-wide .nav-burger { display: flex; }
+}
+
 /* ── Mobile (< 768px) ── */
 @media (max-width: 767px) {
   .nav-links { display: none; }

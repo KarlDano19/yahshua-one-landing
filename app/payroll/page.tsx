@@ -446,7 +446,7 @@ export default function PayrollPage() {
     <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh" }}>
 
       {/* ── NAV ── */}
-      <div style={{
+      <div className="nav-wide" style={{
         position: "sticky", top: 0, zIndex: 50,
         backdropFilter: "blur(14px)",
         background: "color-mix(in oklab, var(--bg) 78%, transparent)",
@@ -466,6 +466,7 @@ export default function PayrollPage() {
               {[
                 { label: "Features",       href: "#features"   },
                 { label: "Compliance",     href: "#compliance" },
+                { label: "Pricing",        href: "/pricing"    },
                 { label: "FAQ",            href: "#faq"        },
                 { label: "Support",        href: "/support"    },
                 { label: "← All modules", href: "/#modules"   },
@@ -533,6 +534,7 @@ export default function PayrollPage() {
             {[
               { label: "Features",       href: "#features"   },
               { label: "Compliance",     href: "#compliance" },
+              { label: "Pricing",        href: "/pricing"    },
               { label: "FAQ",            href: "#faq"        },
               { label: "Support",        href: "/support"    },
               { label: "← All modules", href: "/#modules"   },
@@ -583,6 +585,10 @@ export default function PayrollPage() {
                     <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Book a Free Demo <Arrow /></button>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
                   </div>
+                  <p style={{ fontSize: 14, lineHeight: 1.55, color: "oklch(0.68 0.01 250)", maxWidth: 500, margin: "18px 0 0" }}>
+                    ₱7,000 a month for up to 100 employees, before VAT. No setup fee, 30-day trial.{" "}
+                    <a href="/pricing" style={{ color: "var(--accent-3)", textDecoration: "underline", textUnderlineOffset: 2 }}>See full pricing</a>
+                  </p>
                 </HeroIn>
               </div>
 
