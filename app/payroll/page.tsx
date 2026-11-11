@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 /* ── Intersection observer ── */
 function useInView<T extends Element = HTMLDivElement>(threshold = 0.12) {
@@ -393,6 +394,23 @@ export default function PayrollPage() {
   const [appsOpen, setAppsOpen] = useState(false);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
 
+  // Demo box: count how it is opened, and how often it is closed without a choice.
+  const demoChoiceMade = useRef(false);
+  const demoWasOpen = useRef(false);
+  const openDemo = (ctaLocation: string) => {
+    trackEvent("demo_modal_open", { cta_location: ctaLocation });
+    setCtaOpen(true);
+  };
+  useEffect(() => {
+    if (ctaOpen) {
+      demoWasOpen.current = true;
+      demoChoiceMade.current = false;
+    } else if (demoWasOpen.current) {
+      demoWasOpen.current = false;
+      if (!demoChoiceMade.current) trackEvent("demo_modal_dismiss");
+    }
+  }, [ctaOpen]);
+
   useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 8);
     document.addEventListener("scroll", onScroll, { passive: true });
@@ -521,7 +539,7 @@ export default function PayrollPage() {
             </nav>
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Book a Demo <Arrow /></button>
+              <button onClick={() => openDemo("header")} style={{ ...btnPrimary, ...btnSm }}>Book a Demo <Arrow /></button>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
               {mobileNavOpen
@@ -544,7 +562,7 @@ export default function PayrollPage() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Book a Free Demo <Arrow /></button>
+              <button onClick={() => openDemo("mobile menu")} style={{ ...btnPrimary, ...btnSm }}>Book a Free Demo <Arrow /></button>
             </div>
           </div>
         </div>
@@ -582,7 +600,7 @@ export default function PayrollPage() {
                 </HeroIn>
                 <HeroIn delay={180}>
                   <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                    <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Book a Free Demo <Arrow /></button>
+                    <button onClick={() => openDemo("hero")} style={btnHeroPrimary}>Book a Free Demo <Arrow /></button>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
                   </div>
                   <p style={{ fontSize: 14, lineHeight: 1.55, color: "oklch(0.68 0.01 250)", maxWidth: 500, margin: "18px 0 0" }}>
@@ -728,7 +746,7 @@ export default function PayrollPage() {
                           </li>
                         ))}
                       </ul>
-                      <button onClick={() => setCtaOpen(true)} style={d ? btnDarkCta : btnPrimary}>Book a Free Demo <Arrow /></button>
+                      <button onClick={() => openDemo(`feature ${feat.label}`)} style={d ? btnDarkCta : btnPrimary}>Book a Free Demo <Arrow /></button>
                     </div>
                   </Reveal>
 
@@ -1050,9 +1068,12 @@ export default function PayrollPage() {
       <section id="faq" style={{ padding: "80px 0", borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
-            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 40px" }}>
+            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", fontWeight: 500, margin: "0 0 14px" }}>
               Payroll questions, answered.
             </h2>
+            <p style={{ margin: "0 0 36px", fontSize: 14, lineHeight: 1.6, color: "var(--muted)", maxWidth: 620 }}>
+              Two short names appear in the answers below. Y1P is YAHSHUA One Payroll, the product on this page. YPO is YAHSHUA Payroll Online, our earlier payroll product.
+            </p>
           </Reveal>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <FaqItem delay={0} q="Does YAHSHUA One automatically compute SSS, PhilHealth, and Pag-IBIG contributions?"
@@ -1067,9 +1088,9 @@ export default function PayrollPage() {
               a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal." />
             <FaqItem delay={200} q="Can YAHSHUA handle the 13th month pay computation?"
               a="Yes. 13th month pay is computed per DOLE guidelines: your total basic pay for the year divided by 12. The 13th Month Pay report shows the accrual per employee and exports to Excel, and the amounts carry into each employee's BIR 2316 and the 1604-C." />
-            <FaqItem delay={240} q="What are the differences between YPO and Y1P?"
+            <FaqItem delay={240} q="What are the differences between YAHSHUA Payroll Online (YPO) and YAHSHUA One Payroll (Y1P)?"
               a={<>
-                Y1P is a ground-up rebuild of the payroll platform. Key differences include:
+                YPO is YAHSHUA Payroll Online, our earlier payroll product. Y1P is YAHSHUA One Payroll, the product on this page, and it is a ground-up rebuild of the payroll platform. Key differences include:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
                   <li>Modern, faster tech stack with improved performance and scalability</li>
                   <li>Three-tier payroll configuration (company → pay group → individual employee) so rules can be tailored at any level without affecting others</li>
@@ -1080,7 +1101,7 @@ export default function PayrollPage() {
                   <li>Mobile approvals for managers</li>
                 </ul>
               </>} />
-            <FaqItem delay={280} q="What new features does Y1P offer?"
+            <FaqItem delay={280} q="What new features does YAHSHUA One Payroll (Y1P) offer?"
               a={<>
                 Y1P includes features not available in YPO:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
@@ -1110,9 +1131,9 @@ export default function PayrollPage() {
               a="Yes. The YAHSHUA One mobile app is currently available on Google Play for Android only. Employees clock in and out with facial recognition or their system ID, with geo-fencing for location validation, and file requests such as leave. Managers can approve requests from any device, and everything syncs to the payroll web app." />
             <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"
               a="No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device." />
-            <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
+            <FaqItem delay={360} q="Will YAHSHUA One Payroll support our current payroll processes?"
               a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with configurable premium pay rates, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and the BIR, SSS, PhilHealth, and Pag-IBIG files that payroll produces. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are set up through the three-tier configuration system." />
-            <FaqItem delay={400} q="What pay frequencies does Y1P support?"
+            <FaqItem delay={400} q="What pay frequencies does YAHSHUA One Payroll support?"
               a="Y1P supports Monthly, Semi-Monthly, Weekly, and Bi-Weekly pay frequencies. These are configurable per pay group, so different employee groups can have different pay schedules within the same company." />
             <FaqItem delay={440} q="What premium pay types are built in?"
               a={<>
@@ -1134,7 +1155,7 @@ export default function PayrollPage() {
                 </ul>
                 <p style={{ margin: "8px 0 0" }}>Custom formulas can also be created for company-specific needs.</p>
               </>} />
-            <FaqItem delay={480} q="Does Y1P handle SSS, PhilHealth, Pag-IBIG, and BIR?"
+            <FaqItem delay={480} q="Does YAHSHUA One Payroll handle SSS, PhilHealth, Pag-IBIG, and BIR?"
               a={<>
                 Yes. All four are handled automatically:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
@@ -1143,7 +1164,7 @@ export default function PayrollPage() {
                 </ul>
                 <p style={{ margin: "8px 0 0" }}>Government-mandated table updates are applied as compliance updates throughout the transition period.</p>
               </>} />
-            <FaqItem delay={520} q="What reports are available in Y1P?"
+            <FaqItem delay={520} q="What reports are available in YAHSHUA One Payroll?"
               a={<>
                 Y1P includes the following report types:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
@@ -1160,13 +1181,13 @@ export default function PayrollPage() {
                 </ul>
                 <p style={{ margin: "8px 0 0" }}>YPO-specific custom reports will be reviewed during migration planning to confirm availability or a Y1P equivalent.</p>
               </>} />
-            <FaqItem delay={560} q="Can Y1P handle our current company structure?"
+            <FaqItem delay={560} q="Can YAHSHUA One Payroll handle our current company structure?"
               a="Yes. Y1P supports multi-company setups, multiple pay groups per company, and per-employee configuration overrides. Complex organizational structures — departments, sections, cost centers, and different employee classifications — are all supported." />
-            <FaqItem delay={600} q="Is Y1P faster than YPO?"
+            <FaqItem delay={600} q="Is YAHSHUA One Payroll faster than YAHSHUA Payroll Online (YPO)?"
               a="Yes. Y1P is built on a modern, performance-optimized stack. The payroll computation engine is designed for batch efficiency — all configuration is loaded upfront so that processing large employee rosters does not create bottlenecks during a payroll run." />
-            <FaqItem delay={640} q="Can we request a Y1P demo?"
+            <FaqItem delay={640} q="Can we request a YAHSHUA One Payroll demo?"
               a="Yes. Demos can be scheduled upon request. Please reach out to your account manager or the YAHSHUA implementation team to set one up." />
-            <FaqItem delay={680} q="Can we compare YPO vs. Y1P features?"
+            <FaqItem delay={680} q="Can we compare YAHSHUA Payroll Online (YPO) and YAHSHUA One Payroll (Y1P) features?"
               a="Yes. A feature comparison matrix is available and can be shared upon request. Your account manager can walk you through it during a pre-migration consultation." />
             <FaqItem delay={720} q="Will historical payroll data be migrated?"
               a="Yes. Historical and active employee and payroll data will be migrated as part of the transition. The exact scope (how far back, which records) will be confirmed during migration planning. Data is validated by both the client and the implementation team before go-live." />
@@ -1174,7 +1195,7 @@ export default function PayrollPage() {
               a="Data is validated before and after migration to ensure accuracy and integrity. Parallel testing is conducted before go-live. If discrepancies are found, corrections can be made — even after go-live." />
             <FaqItem delay={800} q="Will we do testing before go-live?"
               a="Yes. Parallel testing is a required step in the migration process. Both the client team and the YAHSHUA implementation team validate results before the system goes live." />
-            <FaqItem delay={840} q="How will Y1P feature requests be evaluated?"
+            <FaqItem delay={840} q="How will YAHSHUA One Payroll feature requests be evaluated?"
               a="Feature requests for Y1P are reviewed based on: business need, client value, alignment with the product roadmap, technical feasibility, and priority relative to ongoing development. Requests can be submitted through your account manager." />
           </div>
           <p style={{ marginTop: 32, fontSize: 14, color: "var(--muted)" }}>
@@ -1200,7 +1221,7 @@ export default function PayrollPage() {
                 See YAHSHUA One Payroll in action. Book a free 30-minute demo with our team.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                <button onClick={() => setCtaOpen(true)} style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
+                <button onClick={() => openDemo("closing section")} style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
                   Book a Free Demo <Arrow />
                 </button>
                 <a href="/" style={{ ...btnBase, background: "transparent", color: "#fff", borderColor: "oklch(0.35 0.02 250)" }}>
@@ -1351,7 +1372,7 @@ export default function PayrollPage() {
               <a
                 href="https://calendly.com/clientrelations-abba/presentation?utm_source=website&utm_medium=web&utm_campaign=yahshuaone"
                 target="_blank" rel="noopener noreferrer"
-                onClick={() => setCtaOpen(false)}
+                onClick={() => { demoChoiceMade.current = true; setCtaOpen(false); }}
                 style={{
                   display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
                   borderRadius: 12, background: "var(--ink)", border: "1px solid var(--ink)",
@@ -1364,7 +1385,7 @@ export default function PayrollPage() {
 
               <a
                 href="/support"
-                onClick={() => setCtaOpen(false)}
+                onClick={() => { demoChoiceMade.current = true; trackEvent("existing_client_click"); setCtaOpen(false); }}
                 style={{
                   display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
                   borderRadius: 12, background: "var(--surface)", border: "1px solid var(--line)",
