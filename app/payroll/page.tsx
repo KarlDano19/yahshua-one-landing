@@ -22,7 +22,7 @@ function useInView<T extends Element = HTMLDivElement>(threshold = 0.12) {
 
 /* ── Count-up animation ── */
 function useCountUp(from: number, to: number, duration: number, active: boolean): number {
-  const [val, setVal] = useState(from);
+  const [val, setVal] = useState(to);
   const rafRef = useRef<number>(0);
   useEffect(() => {
     if (!active) return;
