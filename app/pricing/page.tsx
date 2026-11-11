@@ -409,6 +409,12 @@ export default function PricingPage() {
                 <div style={{ textAlign: "center", color: "var(--muted)", fontSize: 13, marginTop: 12 }}>
                   The trial is 30 days.
                 </div>
+                <div style={{ textAlign: "center", color: "var(--muted)", fontSize: 13, marginTop: 8 }}>
+                  Comparing prices?{" "}
+                  <a href="/blog/payroll-software-cost-by-headcount-philippines" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>
+                    See what payroll software costs at 10 to 500 employees.
+                  </a>
+                </div>
               </div>
             </Reveal>
 

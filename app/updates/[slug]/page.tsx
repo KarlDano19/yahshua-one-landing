@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import updatesData from "../../../public/updates.json";
@@ -8,7 +9,11 @@ interface Update {
   title: string;
   description: string;
   body?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
 }
+
+const BASE_URL = "https://www.yahshua.one";
 
 const updates: Update[] = updatesData as Update[];
 
@@ -25,6 +30,35 @@ function updateSlug(update: Update) {
 
 export async function generateStaticParams() {
   return updates.map((u) => ({ slug: updateSlug(u) }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const update = updates.find((u) => updateSlug(u) === slug);
+  if (!update?.seoTitle) return {};
+  const description = update.seoDescription ?? update.description;
+  const url = `${BASE_URL}/updates/${slug}`;
+  return {
+    title: { absolute: update.seoTitle },
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      locale: "en_PH",
+      url,
+      siteName: "YAHSHUA One",
+      title: update.seoTitle,
+      description,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: update.seoTitle }],
+      publishedTime: update.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: update.seoTitle,
+      description,
+      images: ["/opengraph-image"],
+    },
+  };
 }
 
 function formatDate(dateStr: string) {
