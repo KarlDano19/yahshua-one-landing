@@ -62,6 +62,56 @@ function Reveal({ children, delay = 0, className = "", direction = "up" }: {
   );
 }
 
+/* ── Hero entrance: CSS-only, so it shows before JavaScript loads ── */
+function HeroIn({ children, delay = 0, from = "up" }: { children: React.ReactNode; delay?: number; from?: "up" | "left" }) {
+  return (
+    <div className={`hero-in${from === "left" ? " hero-in-left" : ""}`} style={{ animationDelay: `${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
+
+/* ── Looping product videos ──
+   They ship with preload="none" and no autoplay, so nothing downloads until the page asks.
+   Each video plays only while it is on screen. The hero video also waits for the page to finish
+   loading, so it does not compete with fonts and scripts. Reduced-motion, data-saver and 2G
+   visitors get the poster image only. */
+function mayAutoplay(): boolean {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+  if (conn?.saveData) return false;
+  if (conn?.effectiveType === "slow-2g" || conn?.effectiveType === "2g") return false;
+  return true;
+}
+
+function LoopVideo({ src, poster, label, whenVisible = false }: { src: string; poster: string; label?: string; whenVisible?: boolean }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !mayAutoplay()) return;
+    let onScreen = false;
+    let ready = whenVisible;
+    const sync = () => { if (ready && onScreen) el.play().catch(() => {}); else el.pause(); };
+    const obs = new IntersectionObserver(
+      ([entry]) => { onScreen = entry.isIntersecting; sync(); },
+      { rootMargin: "200px" }
+    );
+    obs.observe(el);
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const start = () => { timer = setTimeout(() => { ready = true; sync(); }, 300); };
+    if (!whenVisible) {
+      if (document.readyState === "complete") start();
+      else window.addEventListener("load", start, { once: true });
+    }
+    return () => { obs.disconnect(); window.removeEventListener("load", start); if (timer) clearTimeout(timer); };
+  }, [whenVisible]);
+  return (
+    <video ref={ref} muted loop playsInline preload="none" poster={poster} aria-label={label} style={{ width: "100%", display: "block" }}>
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
+
 /* ── Icons ── */
 function Dot({ light = false }: { light?: boolean }) {
   return (
@@ -511,7 +561,7 @@ export default function PayrollPage() {
 
               {/* Left copy */}
               <div>
-                <Reveal delay={60}>
+                <HeroIn delay={60}>
                   <h1 style={{
                     margin: "0 0 22px",
                     fontSize: "clamp(46px, 6.5vw, 84px)",
@@ -522,22 +572,22 @@ export default function PayrollPage() {
                     Payroll that{" "}
                     <em style={{ fontStyle: "normal", color: "var(--accent-3)", fontWeight: 800 }}>knows your company.</em>
                   </h1>
-                </Reveal>
-                <Reveal delay={120}>
+                </HeroIn>
+                <HeroIn delay={120}>
                   <p style={{ fontSize: 18, lineHeight: 1.65, color: "oklch(0.68 0.01 250)", maxWidth: 500, margin: "0 0 32px" }}>
                     Set up once, run every cutoff without thinking about it. SSS, PhilHealth, Pag-IBIG, withholding tax, 13th month: all computed automatically. Payslips ready before you ask. And when a question comes up, Theo reads your actual data and gives you a precise answer.
                   </p>
-                </Reveal>
-                <Reveal delay={180}>
+                </HeroIn>
+                <HeroIn delay={180}>
                   <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                     <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Book a Free Demo <Arrow /></button>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
                   </div>
-                </Reveal>
+                </HeroIn>
               </div>
 
               {/* Right: video */}
-              <Reveal direction="left" delay={80}>
+              <HeroIn from="left" delay={80}>
                 <div style={{
                   borderRadius: 18, overflow: "hidden",
                   boxShadow: "0 40px 100px rgba(0,0,0,0.55)",
@@ -554,13 +604,7 @@ export default function PayrollPage() {
                     </div>
                   </div>
                   <div style={{ position: "relative" }}>
-                    <video
-                      autoPlay muted loop playsInline
-                      poster="/ss-employees.jpg"
-                      style={{ width: "100%", display: "block" }}
-                    >
-                      <source src="/payroll-preview.mp4" type="video/mp4" />
-                    </video>
+                    <LoopVideo src="/payroll-preview.mp4" poster="/ss-employees.jpg" />
                     <button
                       onClick={() => setVideoOpen(true)}
                       aria-label="Watch the full walkthrough"
@@ -591,7 +635,7 @@ export default function PayrollPage() {
                     </button>
                   </div>
                 </div>
-              </Reveal>
+              </HeroIn>
 
             </div>
           </div>
@@ -684,17 +728,7 @@ export default function PayrollPage() {
 
                   {/* Feature clip */}
                   <Reveal delay={0} direction="img" className="showcase-img">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      poster={feat.img}
-                      aria-label={feat.alt}
-                      style={{ width: "100%", display: "block" }}
-                    >
-                      <source src={feat.clip} type="video/mp4" />
-                    </video>
+                    <LoopVideo src={feat.clip} poster={feat.img} label={feat.alt} whenVisible />
                   </Reveal>
 
                 </div>

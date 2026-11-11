@@ -124,6 +124,13 @@ button { font: inherit; cursor: pointer; }
 }
 .reveal-clip.visible { opacity: 1; clip-path: inset(0 0 0% 0); }
 
+/* Hero entrance. Runs from CSS alone, so the hero text and button are visible
+   before JavaScript has loaded, unlike the .reveal classes above. */
+@keyframes hero-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes hero-in-left { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+.hero-in { animation: hero-in-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in-left { animation-name: hero-in-left; animation-duration: 0.5s; }
+
 /* ── Skeleton loading ── */
 .skeleton {
   background: rgba(20,22,26,0.06);
@@ -324,6 +331,7 @@ button { font: inherit; cursor: pointer; }
     filter: none !important;
     transition: none !important;
   }
+  .hero-in { animation: none !important; }
   .cursor-blink { animation: none !important; }
   .payslip-float { animation: none !important; }
   .marquee-track { animation: none !important; }
