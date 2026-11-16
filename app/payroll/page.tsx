@@ -1097,7 +1097,7 @@ export default function PayrollPage() {
             <FaqItem delay={238} q="Does YAHSHUA One Payroll post to accounting automatically?"
               a="Not yet. Each posted run produces an accounting journal built from your own account mapping, with reports and Excel export, and you import it into your accounting system, including YAHSHUA One Numbers. Automatic posting from Payroll into Numbers is not built yet." />
             <FaqItem delay={240} q="Does YAHSHUA One Payroll work with ChatGPT?"
-              a="Yes. YAHSHUA One Payroll has a ChatGPT connection with 55 actions." />
+              a="Yes. You can connect ChatGPT, Claude or Gemini to your payroll. A company admin turns it on, it follows each user's role, and any change needs the user's confirmation. You add it yourself as a custom connector, so it is not an official app listing in ChatGPT." />
             <FaqItem delay={240} q="What are the differences between YAHSHUA Payroll Online (YPO) and YAHSHUA One Payroll (Y1P)?"
               a={<>
                 YPO is YAHSHUA Payroll Online, our earlier payroll product. Y1P is YAHSHUA One Payroll, the product on this page, and it is a ground-up rebuild of the payroll platform. Key differences include:
