@@ -83,19 +83,38 @@ const HRIS_INCLUDES = [
   "Performance management",
 ];
 
+type ModuleStatus = "live" | "early" | "soon";
+
 interface PricingModule {
   id: string;
   name: string;
   sub: string;
-  live: boolean;
+  status: ModuleStatus;
   text?: string;
 }
 
+const STATUS_LABEL: Record<ModuleStatus, string> = {
+  live: "Available now",
+  early: "Early access",
+  soon: "Coming soon",
+};
+
 const MODULES: PricingModule[] = [
-  { id: "payroll", name: "Payroll", sub: "HRIS app launching soon", live: true },
-  { id: "accounting", name: "Accounting", sub: "Books and reports", live: false, text: "Real-time bookkeeping and profit and loss reports." },
-  { id: "tax", name: "Tax and compliance", sub: "BIR filings", live: false, text: "BIR deadlines tracked and returns drafted from your books." },
-  { id: "erp", name: "ERP", sub: "Inventory, sales, purchasing", live: false, text: "Inventory, sales orders, purchasing, and vendors on one ledger." },
+  { id: "payroll", name: "Payroll", sub: "HRIS app launching soon", status: "live" },
+  {
+    id: "numbers",
+    name: "Numbers",
+    sub: "Accounting, sales, purchases, stock",
+    status: "early",
+    text: "Ledger and journals with an approval flow, sales from quote to collection, purchases with three-way matching, bank reconciliation, fixed assets, and inventory with batches and expiry dates. Philippine withholding tax, the 2307 register and the seven books of accounts are included.",
+  },
+  {
+    id: "tax",
+    name: "Tax and compliance",
+    sub: "BIR returns",
+    status: "soon",
+    text: "Withholding tax codes and the 2307 register are already in Numbers. Preparing BIR returns such as 2550M/Q, 1601-EQ and 1604-E is not built yet.",
+  },
 ];
 
 export default function PricingPage() {
@@ -158,7 +177,7 @@ export default function PricingPage() {
     },
     {
       q: "Which YAHSHUA One modules can I buy today?",
-      a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. Accounting, Tax and compliance, and ERP are coming soon and are not priced yet.",
+      a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. YAHSHUA One Numbers, our accounting module, is in early access and available by request through a demo; it is not priced yet. Tax and compliance, which would prepare BIR returns, is coming soon and is not priced yet.",
     },
     {
       q: "What happens when I go over 100 employees?",
@@ -190,7 +209,7 @@ export default function PricingPage() {
     },
     {
       q: "What if I only need payroll?",
-      a: "YAHSHUA One Payroll runs as a standalone product, without the broader ERP and accounting modules. The YAHSHUA HRIS app will be included when it launches, so you can use as much or as little of it as you need.",
+      a: "YAHSHUA One Payroll runs as a standalone product, without Numbers or the other modules. The YAHSHUA HRIS app will be included when it launches, so you can use as much or as little of it as you need.",
     },
   ];
 
@@ -283,7 +302,7 @@ export default function PricingPage() {
               <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>module.</em>
             </h1>
             <p style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.65, maxWidth: 520, margin: "0 auto" }}>
-              Payroll is available today. More modules are on the way.
+              Payroll is available today. Numbers, our accounting module, is in early access.
             </p>
           </Reveal>
         </div>
@@ -313,10 +332,10 @@ export default function PricingPage() {
                     <span style={{ display: "block", fontSize: 13, color: "var(--muted)", marginBottom: 12 }}>{m.sub}</span>
                     <span style={{
                       display: "inline-block", fontSize: 12, padding: "2px 10px", borderRadius: 999,
-                      background: m.live ? "var(--accent-50)" : "var(--bg-tint)",
-                      color: m.live ? "var(--accent-2)" : "var(--muted)",
+                      background: m.status === "soon" ? "var(--bg-tint)" : "var(--accent-50)",
+                      color: m.status === "soon" ? "var(--muted)" : "var(--accent-2)",
                     }}>
-                      {m.live ? "Available now" : "Coming soon"}
+                      {STATUS_LABEL[m.status]}
                     </span>
                   </button>
                 </Reveal>
@@ -326,7 +345,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {activeModule.live ? (
+      {activeModule.status === "live" ? (
       <>
       {/* ── PLAN ── */}
       <section id="plan" className="section-pad" style={{ borderBottom: "1px solid var(--line)", scrollMarginTop: 80 }}>
@@ -512,12 +531,20 @@ export default function PricingPage() {
             <div style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius-xl)", padding: 32 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 12 }}>
                 <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: 0 }}>{activeModule.name}</h2>
-                <span style={{ fontSize: 12, padding: "2px 10px", borderRadius: 999, background: "var(--bg-tint)", color: "var(--muted)" }}>
-                  Coming soon
+                <span style={{
+                  fontSize: 12, padding: "2px 10px", borderRadius: 999,
+                  background: activeModule.status === "soon" ? "var(--bg-tint)" : "var(--accent-50)",
+                  color: activeModule.status === "soon" ? "var(--muted)" : "var(--accent-2)",
+                }}>
+                  {STATUS_LABEL[activeModule.status]}
                 </span>
               </div>
               <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, margin: "0 0 8px" }}>{activeModule.text}</p>
-              <p style={{ fontSize: 16, lineHeight: 1.6, margin: "0 0 24px" }}>Pricing for this module is not published yet.</p>
+              <p style={{ fontSize: 16, lineHeight: 1.6, margin: "0 0 24px" }}>
+                {activeModule.status === "early"
+                  ? "Early access is by request: book a demo and we will walk you through it. Pricing for this module is not published yet."
+                  : "Pricing for this module is not published yet."}
+              </p>
               <a href={`${CALENDLY}&utm_content=${activeModule.id}`} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
                 Ask about {activeModule.name} <Arrow />
               </a>
