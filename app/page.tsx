@@ -594,7 +594,7 @@ export default function Home() {
                 ))}
                 <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <span>4 SKUs · 2 below reorder point</span>
-                  <span style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", borderRadius: 6, fontFamily: "inherit" }}>Auto-reorder →</span>
+                  <span style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", borderRadius: 6, fontFamily: "inherit" }}>Reorder list →</span>
                 </div>
               </div>
             </Reveal>
