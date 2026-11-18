@@ -1,7 +1,7 @@
 ---
 title: "Can AI Replace a Payroll Officer in the Philippines? What to Hand Over and What to Keep Human"
 date: "2026-10-07"
-description: "AI can answer payroll questions, draft formulas and explain a net pay change. It should not approve the pay run. Here is where the line sits."
+description: "AI can answer payroll questions, draft formulas and explain a payslip line by line. It should not approve the pay run. Here is where the line sits."
 category: "AI & Compliance"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
@@ -12,7 +12,7 @@ faq:
   - question: "Can AI replace a payroll officer in the Philippines?"
     answer: "It can replace much of the task work, such as lookups, formula drafting and report building, but not the accountability. A person still has to approve the pay run, answer to BIR, SSS, PhilHealth and Pag-IBIG, and explain pay to employees. Whether a business needs a dedicated officer depends on headcount and how complex its pay rules are."
   - question: "What payroll tasks is AI good at?"
-    answer: "Answering questions about existing payroll data, explaining why a net pay changed, summarizing recent pay runs, drafting formulas in plain language and generating reports from company data. Each output should still be checked by someone who knows the setup."
+    answer: "Answering questions about existing payroll data, explaining how a net pay was computed, summarizing recent pay runs, drafting formulas in plain language and generating reports from company data. Each output should still be checked by someone who knows the setup."
   - question: "What payroll tasks should always stay with a person?"
     answer: "Approving the pay run, filing and remitting to the agencies, interpreting a rule when the law or a circular is unclear, and telling an employee their pay was wrong. These are where accountability sits, and the employer answers for them whichever tool did the computing."
   - question: "Do Philippine privacy rules require a human in the loop for payroll AI?"
@@ -28,7 +28,7 @@ sources:
   - "YAHSHUA One, Ask Theo section of the Payroll product page, yahshua.one/payroll (accessed October 2026)"
 ---
 
-No, not the job itself, but a large share of the tasks inside it. AI can answer questions about your payroll data, draft formulas and explain why a net pay changed. It should not approve a pay run or carry your compliance, because the employer answers to BIR, SSS, PhilHealth and Pag-IBIG either way.
+No, not the job itself, but a large share of the tasks inside it. AI can answer questions about your payroll data, draft formulas and explain how a net pay was computed. It should not approve a pay run or carry your compliance, because the employer answers to BIR, SSS, PhilHealth and Pag-IBIG either way.
 
 ## Can AI Replace a Payroll Officer in the Philippines?
 
@@ -44,7 +44,7 @@ Robert Half's guidance for payroll professionals describes the same pattern. AI 
 
 In practice, that looks like this in YAHSHUA One Payroll, where Theo works from your own company's data:
 
-- Why did an employee's net pay change this cutoff, explained line by line
+- How an employee's net pay was computed this cutoff, explained line by line
 - A summary of your last five payroll runs
 - How many leave requests are still pending
 - An employee's current rate, department and schedule
@@ -71,7 +71,7 @@ Sort every payroll task by how much damage a wrong answer does. Read-only lookup
 |---|---|---|
 | Looking up a rate, schedule or pending leave count | Hand over | Read-only, and easy to cross-check against the screen |
 | Summarizing recent payroll runs | Hand over | Read-only summary of runs that already exist |
-| Explaining why net pay changed | Hand over, spot-check | Compare the explanation to the payslip the first few times |
+| Explaining how net pay was computed | Hand over, spot-check | Compare the explanation to the payslip the first few times |
 | Drafting a payroll formula in plain language | Review | Test it on an employee whose correct pay you already know before it goes live |
 | Generating a custom report | Review | Check the period and filters before you rely on the numbers |
 | Changing an employee's rate or other payroll data | Person in the loop | Needs a role that is allowed to make the change, plus explicit confirmation |
@@ -101,7 +101,7 @@ Four rules shape how Theo behaves:
 - **No changes without your yes.** A change needs a role that is allowed to make it, plus your explicit confirmation.
 - **Switched on deliberately.** Theo is enabled per company, and only for the roles on its allowed list.
 
-The permission rule also shapes the answers. Ask Theo why an employee's net pay changed and it walks through the change line by line, while a user without access to calculation details gets a shorter answer with the formulas hidden. You can see the full list of questions Theo answers in the Ask Theo section of the [YAHSHUA One Payroll](/payroll) page.
+The permission rule also shapes the answers. Ask Theo how an employee's net pay was computed and it walks through the payslip line by line, while a user without access to calculation details gets a shorter answer with the formulas hidden. You can see the full list of questions Theo answers in the Ask Theo section of the [YAHSHUA One Payroll](/payroll) page.
 
 ## Questions to Ask Any Payroll Vendor About AI Control
 
@@ -112,7 +112,7 @@ Ask what the AI can change, what it needs before it changes anything, and whethe
 - Can it show how it reached an answer line by line, or does it only give a total?
 - What does it do when it lacks permission or lacks the data: refuse, or guess?
 
-Run these on your own setup during the demo, the same way you would test whether the AI reads your data at all.
+Run these on your own setup during the demo, the same way you would test whether the AI reads your data at all. For a scored, eight-question version, see our [AI Payroll Buyer's Checklist](/blog/ai-payroll-buyers-checklist-philippines).
 
 ## Related reading
 
@@ -128,7 +128,7 @@ Run these on your own setup during the demo, the same way you would test whether
 It can replace much of the task work, such as lookups, formula drafting and report building, but not the accountability. A person still has to approve the pay run, answer to BIR, SSS, PhilHealth and Pag-IBIG, and explain pay to employees. Whether a business needs a dedicated officer depends on headcount and how complex its pay rules are.
 
 **What payroll tasks is AI good at?**
-Answering questions about existing payroll data, explaining why a net pay changed, summarizing recent pay runs, drafting formulas in plain language and generating reports from company data. Each output should still be checked by someone who knows the setup.
+Answering questions about existing payroll data, explaining how a net pay was computed, summarizing recent pay runs, drafting formulas in plain language and generating reports from company data. Each output should still be checked by someone who knows the setup.
 
 **What payroll tasks should always stay with a person?**
 Approving the pay run, filing and remitting to the agencies, interpreting a rule when the law or a circular is unclear, and telling an employee their pay was wrong. These are where accountability sits, and the employer answers for them whichever tool did the computing.

@@ -177,7 +177,7 @@ export default function AboutPage() {
             <p style={eyebrow}>What we do</p>
             <h2 style={sectionH2}>Back-office work, in <em style={accentWord}>one system.</em></h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: "0 0 12px" }}>
-              YAHSHUA One is built to keep employee records, payroll, and statutory reports in one system. It starts with payroll, available today: salary computation, payslips, and the BIR, SSS, PhilHealth, and Pag-IBIG files your payroll produces. Accounting and tax modules are planned.
+              YAHSHUA One is built to keep employee records, payroll, and statutory reports in one system. It starts with payroll, available today: salary computation, payslips, and the BIR, SSS, PhilHealth, and Pag-IBIG files your payroll produces. YAHSHUA One Numbers, the accounting app, is in early access. Preparing BIR returns is planned.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--muted)", margin: 0 }}>
               Theo, an AI assistant, looks up answers in your own payroll records, not the internet.

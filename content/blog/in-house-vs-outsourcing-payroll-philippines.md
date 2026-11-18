@@ -75,7 +75,7 @@ This doesn't make outsourcing a bad idea, a good provider is specifically better
 
 ## The Middle Ground Most Philippine SMBs Actually Land On
 
-Most businesses outgrow pure outsourcing before they're ready to hire a dedicated payroll specialist, and the gap between those two stages is exactly what software-driven in-house payroll is built to close. YAHSHUA One's AI assistant, Theo, reads the company's actual configured payroll data, can explain why an employee's net pay changed, and can generate a payroll formula in plain language, which lowers how much specialized payroll expertise a business needs to keep in-house, without handing the payroll function itself to an outside provider.
+Most businesses outgrow pure outsourcing before they're ready to hire a dedicated payroll specialist, and the gap between those two stages is exactly what software-driven in-house payroll is built to close. YAHSHUA One's AI assistant, Theo, reads the company's actual configured payroll data, can explain how an employee's net pay was computed, and can generate a payroll formula in plain language, which lowers how much specialized payroll expertise a business needs to keep in-house, without handing the payroll function itself to an outside provider.
 
 **Table: In-house vs. outsourced, where it actually matters**
 

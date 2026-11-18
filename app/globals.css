@@ -503,9 +503,11 @@ button { font: inherit; cursor: pointer; }
 .section-pad-lg { padding: 96px 0; }
 
 /* ── Pricing module selector ── */
-.module-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 @media (max-width: 900px) {
   .module-grid { grid-template-columns: repeat(2, 1fr); }
+  /* three cards: let the last one use the full row instead of leaving a gap */
+  .module-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 
 /* ── CTA card (responsive padding) ── */

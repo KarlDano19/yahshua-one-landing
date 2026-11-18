@@ -219,7 +219,7 @@ const SHOWCASE = [
     num: "01", dark: true,
     label: "Theo AI",
     title: "Ask anything. Theo reads your actual company data.",
-    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, why an employee's net pay changed, or what is pending in your leave queue. Theo can also take action for you, such as drafting formulas or pulling specific reports, all within your account permissions.",
+    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, how an employee's net pay was computed, or what is pending in your leave queue. Theo can also take action for you, such as drafting formulas or pulling specific reports, all within your account permissions.",
     bullets: [
       "Reads your real payroll data, not generic answers",
       "Answers BIR, SSS, PhilHealth, Pag-IBIG questions",
@@ -297,8 +297,8 @@ const SHOWCASE = [
 ══════════════════════════════════════════════════════════ */
 const THEO_QUESTIONS = [
   {
-    q: "Why is Maria's net pay lower this cutoff?",
-    a: "Theo traces her entry line by line and shows what changed. If your role can't view calculation details, you get a shorter answer with the formulas hidden.",
+    q: "How was Maria's net pay computed this cutoff?",
+    a: "Theo breaks her payslip down line by line and shows how each amount was reached. If your role can't view calculation details, you get a shorter answer with the formulas hidden.",
   },
   {
     q: "What's the attendance coverage for this run?",
@@ -772,7 +772,7 @@ export default function PayrollPage() {
                 fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px",
                 textWrap: "balance" as React.CSSProperties["textWrap"],
               }}>
-                Why did net pay change?{" "}
+                How was this net pay computed?{" "}
                 <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Ask Theo.</em>
               </h2>
               <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>
@@ -1088,6 +1088,16 @@ export default function PayrollPage() {
               a="Yes. YAHSHUA generates BIR Form 2316 for each employee at year-end, based on the full-year payroll data. Employees can download it from their self-service portal." />
             <FaqItem delay={200} q="Can YAHSHUA handle the 13th month pay computation?"
               a="Yes. 13th month pay is computed per DOLE guidelines: your total basic pay for the year divided by 12. The 13th Month Pay report shows the accrual per employee and exports to Excel, and the amounts carry into each employee's BIR 2316 and the 1604-C." />
+            <FaqItem delay={220} q="Which kinds of payroll run can I do?"
+              a="Regular runs, 13th, 14th and 15th month runs, last pay (final settlement) and bonus runs. A run can cover a pay group, a department or chosen employees." />
+            <FaqItem delay={230} q="What happens to a payroll after it is closed?"
+              a="A closed payroll is frozen and shows the same numbers years later. Before that, each run goes through generate, submit, approve, post and lock, and the system records who did each step and when. Runs can be reopened, recalculated or corrected line by line." />
+            <FaqItem delay={235} q="Can I use ZKTeco biometric devices with YAHSHUA One Payroll?"
+              a="Yes. ZKTeco biometric devices send clock-ins straight to the cloud, with nothing to install on site. Clock-ins are sorted into regular hours, overtime and night differential. Kiosk tablets with face recognition and allowed clock-in locations are another option." />
+            <FaqItem delay={238} q="Does YAHSHUA One Payroll post to accounting automatically?"
+              a="Not yet. Each posted run produces an accounting journal built from your own account mapping, with reports and Excel export, and you import it into your accounting system, including YAHSHUA One Numbers. Automatic posting from Payroll into Numbers is not built yet." />
+            <FaqItem delay={240} q="Does YAHSHUA One Payroll work with ChatGPT?"
+              a="Yes. You can connect ChatGPT, Claude or Gemini to your payroll. A company admin turns it on, it follows each user's role, and any change needs the user's confirmation. You add it yourself as a custom connector, so it is not an official app listing in ChatGPT." />
             <FaqItem delay={240} q="What are the differences between YAHSHUA Payroll Online (YPO) and YAHSHUA One Payroll (Y1P)?"
               a={<>
                 YPO is YAHSHUA Payroll Online, our earlier payroll product. Y1P is YAHSHUA One Payroll, the product on this page, and it is a ground-up rebuild of the payroll platform. Key differences include:
@@ -1118,7 +1128,7 @@ export default function PayrollPage() {
                 </ul>
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
-              a="Y1P includes Theo, an AI assistant you can ask from within the app. It helps you understand payroll computations, such as why an employee's net pay changed, and answers questions about your payroll data in plain language, without digging through reports manually. It works on top of your actual company data, not generic templates." />
+              a="Y1P includes Theo, an AI assistant you can ask from within the app. It helps you understand payroll computations, such as how an employee's net pay was computed, and answers questions about your payroll data in plain language, without digging through reports manually. It works on top of your actual company data, not generic templates." />
             <FaqItem delay={360} q="Does Theo read my actual payroll data?"
               a="Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds." />
             <FaqItem delay={400} q="Can Theo change my payroll?"
@@ -1160,9 +1170,10 @@ export default function PayrollPage() {
                 Yes. All four are handled automatically:
                 <ul style={{ margin: "10px 0 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 5 }}>
                   <li>SSS, PhilHealth, Pag-IBIG — computed based on configurable statutory tables, with contribution reports included</li>
-                  <li>BIR withholding tax — computed per BIR tax tables, with BIR-specific reports (including 1604-C support)</li>
+                  <li>BIR withholding tax — computed per BIR tax tables, with BIR 1601-C, 1604-C with alphalist, 2316 and a 2307 summary, plus annual tax calculation and year-to-date tax</li>
+                  <li>Remittance reports and contribution-shortfall warnings are included</li>
                 </ul>
-                <p style={{ margin: "8px 0 0" }}>Government-mandated table updates are applied as compliance updates throughout the transition period.</p>
+                <p style={{ margin: "8px 0 0" }}>SSS, PhilHealth and Pag-IBIG tables are kept up to date centrally. Each company chooses whether to follow new tables automatically or stay on a version.</p>
               </>} />
             <FaqItem delay={520} q="What reports are available in YAHSHUA One Payroll?"
               a={<>
@@ -1179,6 +1190,7 @@ export default function PayrollPage() {
                   <li>Activity Reports</li>
                   <li>Accounting/GL Reports</li>
                 </ul>
+                <p style={{ margin: "8px 0 0" }}>In all, about 40 reports, plus an AI-assisted report builder, bank payout files and branded payslip PDFs.</p>
                 <p style={{ margin: "8px 0 0" }}>YPO-specific custom reports will be reviewed during migration planning to confirm availability or a Y1P equivalent.</p>
               </>} />
             <FaqItem delay={560} q="Can YAHSHUA One Payroll handle our current company structure?"

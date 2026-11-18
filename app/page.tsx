@@ -594,7 +594,7 @@ export default function Home() {
                 ))}
                 <div style={{ padding: "12px 20px", fontSize: 12, color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <span>4 SKUs · 2 below reorder point</span>
-                  <span style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", borderRadius: 6, fontFamily: "inherit" }}>Auto-reorder →</span>
+                  <span style={{ fontSize: 12, padding: "5px 12px", background: "var(--ink)", color: "#fff", borderRadius: 6, fontFamily: "inherit" }}>Reorder list →</span>
                 </div>
               </div>
             </Reveal>
@@ -835,7 +835,7 @@ export default function Home() {
               },
               {
                 q: "How is it different from other payroll or HR systems in the Philippines?",
-                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One is being built to bring them together in one AI-powered platform, starting with payroll, which is available today. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
+                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access, and the YAHSHUA HRIS app is launching soon. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
               },
               {
                 q: "Who is YAHSHUA One designed for?",
