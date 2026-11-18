@@ -61,7 +61,7 @@ Every one of these is a real, documented feature, not a fabricated claim. What s
 
 Ask the AI something specific about your own setup during the demo, not a general compliance question it could answer from public information.
 
-Try something like "does our current meal allowance count against our de minimis cap" or "what happens to this employee's 13th month pay if they resign next month." A system that is actually grounded in your data will answer using your real numbers. A system that is not will give you a textbook answer, redirect you to a human, or ask you to look it up yourself. That gap, not the marketing page, is the real answer.
+Try something like "does our current meal allowance count against our de minimis cap" or "what happens to this employee's 13th month pay if they resign next month." A system that is actually grounded in your data will answer using your real numbers. A system that is not will give you a textbook answer, redirect you to a human, or ask you to look it up yourself. That gap, not the marketing page, is the real answer. For the full eight-question version, scored 0 to 2, see our [AI Payroll Buyer's Checklist](/blog/ai-payroll-buyers-checklist-philippines).
 
 ## Related reading
 

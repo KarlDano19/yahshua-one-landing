@@ -112,7 +112,7 @@ Ask what the AI can change, what it needs before it changes anything, and whethe
 - Can it show how it reached an answer line by line, or does it only give a total?
 - What does it do when it lacks permission or lacks the data: refuse, or guess?
 
-Run these on your own setup during the demo, the same way you would test whether the AI reads your data at all.
+Run these on your own setup during the demo, the same way you would test whether the AI reads your data at all. For a scored, eight-question version, see our [AI Payroll Buyer's Checklist](/blog/ai-payroll-buyers-checklist-philippines).
 
 ## Related reading
 
