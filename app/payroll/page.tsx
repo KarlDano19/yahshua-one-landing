@@ -219,7 +219,7 @@ const SHOWCASE = [
     num: "01", dark: true,
     label: "Theo AI",
     title: "Ask anything. Theo reads your actual company data.",
-    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, why an employee's net pay changed, or what is pending in your leave queue. Theo can also take action for you, such as drafting formulas or pulling specific reports, all within your account permissions.",
+    body: "Theo is your payroll AI. It knows your configuration, your employees, your policies, and your compliance setup. Ask about your de minimis cap, how an employee's net pay was computed, or what is pending in your leave queue. Theo can also take action for you, such as drafting formulas or pulling specific reports, all within your account permissions.",
     bullets: [
       "Reads your real payroll data, not generic answers",
       "Answers BIR, SSS, PhilHealth, Pag-IBIG questions",
@@ -297,8 +297,8 @@ const SHOWCASE = [
 ══════════════════════════════════════════════════════════ */
 const THEO_QUESTIONS = [
   {
-    q: "Why is Maria's net pay lower this cutoff?",
-    a: "Theo traces her entry line by line and shows what changed. If your role can't view calculation details, you get a shorter answer with the formulas hidden.",
+    q: "How was Maria's net pay computed this cutoff?",
+    a: "Theo breaks her payslip down line by line and shows how each amount was reached. If your role can't view calculation details, you get a shorter answer with the formulas hidden.",
   },
   {
     q: "What's the attendance coverage for this run?",
@@ -772,7 +772,7 @@ export default function PayrollPage() {
                 fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px",
                 textWrap: "balance" as React.CSSProperties["textWrap"],
               }}>
-                Why did net pay change?{" "}
+                How was this net pay computed?{" "}
                 <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Ask Theo.</em>
               </h2>
               <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>
@@ -1128,7 +1128,7 @@ export default function PayrollPage() {
                 </ul>
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
-              a="Y1P includes Theo, an AI assistant you can ask from within the app. It helps you understand payroll computations, such as why an employee's net pay changed, and answers questions about your payroll data in plain language, without digging through reports manually. It works on top of your actual company data, not generic templates." />
+              a="Y1P includes Theo, an AI assistant you can ask from within the app. It helps you understand payroll computations, such as how an employee's net pay was computed, and answers questions about your payroll data in plain language, without digging through reports manually. It works on top of your actual company data, not generic templates." />
             <FaqItem delay={360} q="Does Theo read my actual payroll data?"
               a="Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds." />
             <FaqItem delay={400} q="Can Theo change my payroll?"

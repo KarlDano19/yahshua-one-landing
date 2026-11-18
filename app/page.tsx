@@ -835,7 +835,7 @@ export default function Home() {
               },
               {
                 q: "How is it different from other payroll or HR systems in the Philippines?",
-                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access by request, and the YAHSHUA HRIS app is launching soon. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
+                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access, and the YAHSHUA HRIS app is launching soon. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
               },
               {
                 q: "Who is YAHSHUA One designed for?",

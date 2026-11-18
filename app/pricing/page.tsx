@@ -113,7 +113,7 @@ const MODULES: PricingModule[] = [
     name: "Tax and compliance",
     sub: "BIR returns",
     status: "soon",
-    text: "Withholding tax codes and the 2307 register are already in Numbers. Preparing BIR returns such as 2550M/Q, 1601-EQ and 1604-E is not built yet.",
+    text: "Withholding tax codes and the 2307 register are already in Numbers, and you can track the withholding tax owed each month and record your remittances. Preparing BIR returns such as 2550M/Q, 1601-EQ and 1604-E is not built yet.",
   },
 ];
 
@@ -177,7 +177,7 @@ export default function PricingPage() {
     },
     {
       q: "Which YAHSHUA One modules can I buy today?",
-      a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. YAHSHUA One Numbers, our accounting module, is in early access and available by request through a demo; it is not priced yet. Tax and compliance, which would prepare BIR returns, is coming soon and is not priced yet.",
+      a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. YAHSHUA One Numbers, our accounting module, is in early access and is not priced yet; book a demo and we will walk you through it. Tax and compliance, which would prepare BIR returns, is coming soon and is not priced yet.",
     },
     {
       q: "What happens when I go over 100 employees?",
@@ -542,7 +542,7 @@ export default function PricingPage() {
               <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, margin: "0 0 8px" }}>{activeModule.text}</p>
               <p style={{ fontSize: 16, lineHeight: 1.6, margin: "0 0 24px" }}>
                 {activeModule.status === "early"
-                  ? "Early access is by request: book a demo and we will walk you through it. Pricing for this module is not published yet."
+                  ? "Numbers is in early access: book a demo and we will walk you through it. Pricing for this module is not published yet."
                   : "Pricing for this module is not published yet."}
               </p>
               <a href={`${CALENDLY}&utm_content=${activeModule.id}`} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
