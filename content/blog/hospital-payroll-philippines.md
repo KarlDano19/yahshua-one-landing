@@ -6,6 +6,7 @@ description: "Seven controls for hospital payroll in the Philippines, from the A
 category: "Payroll Operations"
 author: "YAHSHUA One Editorial Team"
 readTime: "8 min read"
+coverImage: "/Blog/Hospital%20Payroll.png"
 ctaHeading: "Talk through your ward setup before you choose a system."
 ctaBody: "Book a free 30-minute demo and describe how your wards roster, pay and approve. We will tell you plainly what YAHSHUA One Payroll covers and what it does not."
 faq:

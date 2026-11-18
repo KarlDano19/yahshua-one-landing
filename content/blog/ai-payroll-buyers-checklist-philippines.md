@@ -6,6 +6,7 @@ description: "Eight questions to score any AI payroll vendor from 0 to 2 on your
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "8 min read"
+coverImage: "/Blog/AI%20Payroll%20Buyers%20Checklist.png"
 ctaHeading: "Ask us the eight questions."
 ctaBody: "Book a free 30-minute demo and bring the checklist. We will tell you plainly which questions we can show today and which we are still documenting."
 faq:
