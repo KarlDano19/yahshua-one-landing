@@ -6,8 +6,8 @@ description: "Seven controls for hospital payroll in the Philippines, from the A
 category: "Payroll Operations"
 author: "YAHSHUA One Editorial Team"
 readTime: "8 min read"
-ctaHeading: "Bring your hardest ward. Run the seven tests on us."
-ctaBody: "Book a free demo and bring one month of a rotating night roster with the names removed. We will tell you up front which tests we do not pass in full."
+ctaHeading: "Talk through your ward setup before you choose a system."
+ctaBody: "Book a free 30-minute demo and describe how your wards roster, pay and approve. We will tell you plainly what YAHSHUA One Payroll covers and what it does not."
 faq:
   - question: "Do nurses get night differential in the Philippines?"
     answer: "Yes, if they are covered. Night shift differential is an additional 10% of the regular wage for each hour worked from 10:00 p.m. to 6:00 a.m. (Labor Code Art. 86). It does not apply to government employees, kasambahay, retail and service establishments regularly employing not more than five workers, qualifying managerial employees or field personnel. Nurses and other clinical staff of private hospitals are not on that list."
@@ -132,7 +132,7 @@ Print this table and ask your payroll lead to show each answer on your own data,
 
 Bring one real ward, not a demo account: a month of a rotating night roster with one swap, one sixth-day shift and one regular holiday on a rest day. A system passes when its results match your written premium table and its approvals show who did what.
 
-Ask every vendor the same, including us. We would rather tell you up front which tests we do not pass in full than have you find out after go-live. For a longer list of tests to run in any demo, see our [payroll software demo checklist](/blog/payroll-software-demo-checklist-philippines).
+Ask every vendor the same, and get the answers in writing before you sign. For a longer list of tests to run in any demo, see our [payroll software demo checklist](/blog/payroll-software-demo-checklist-philippines).
 
 ## Related reading
 
