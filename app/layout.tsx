@@ -119,7 +119,7 @@ export default function RootLayout({
                   offers: {
                     "@type": "Offer",
                     priceCurrency: "PHP",
-                    description: "YAHSHUA One Payroll: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, with no setup fee. The YAHSHUA HRIS app is included at no extra charge once it launches. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately.",
+                    description: "YAHSHUA One Payroll: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, with no setup fee. YAHSHUA HRIS is included at no extra charge. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, priced separately.",
                     url: `${BASE_URL}/pricing`,
                   },
                   featureList: [
@@ -183,7 +183,7 @@ export default function RootLayout({
                       name: "Can YAHSHUA One handle HR onboarding and offboarding?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Partly. YAHSHUA One Payroll keeps employee records and handles leave requests, attendance and time tracking: employees clock in and file requests from the Android app, and managers approve them. A fuller YAHSHUA HRIS app is launching soon.",
+                        text: "Partly. YAHSHUA One Payroll keeps employee records and handles leave requests, attendance and time tracking: employees clock in and file requests from the Android app, and managers approve them. A fuller HR toolset, YAHSHUA HRIS, is included at no extra charge. Today it runs as a separate web app, and it is moving inside YAHSHUA One.",
                       },
                     },
                     {
@@ -199,7 +199,7 @@ export default function RootLayout({
                       name: "How is YAHSHUA One different from other payroll or HR systems?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access, and the YAHSHUA HRIS app is launching soon. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
+                        text: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access, and YAHSHUA HRIS is included, running as a separate web app until it moves inside YAHSHUA One. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
                       },
                     },
                   ],

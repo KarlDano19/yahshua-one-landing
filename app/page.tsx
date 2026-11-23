@@ -827,7 +827,7 @@ export default function Home() {
               },
               {
                 q: "Can YAHSHUA One handle HR onboarding and offboarding?",
-                a: "Partly. YAHSHUA One Payroll keeps employee records and handles leave requests, attendance and time tracking: employees clock in and file requests from the Android app, and managers approve them. A fuller YAHSHUA HRIS app is launching soon.",
+                a: "Partly. YAHSHUA One Payroll keeps employee records and handles leave requests, attendance and time tracking: employees clock in and file requests from the Android app, and managers approve them. A fuller HR toolset, YAHSHUA HRIS, is included at no extra charge. Today it runs as a separate web app, and it is moving inside YAHSHUA One.",
               },
               {
                 q: "Is YAHSHUA One built specifically for Filipino businesses?",
@@ -835,7 +835,7 @@ export default function Home() {
               },
               {
                 q: "How is it different from other payroll or HR systems in the Philippines?",
-                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access, and the YAHSHUA HRIS app is launching soon. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
+                a: "Most systems only cover one area: payroll, HR, or accounting. YAHSHUA One brings them together in one AI-powered platform. Payroll is available today, YAHSHUA One Numbers (accounting) is in early access, and YAHSHUA HRIS is included, running as a separate web app until it moves inside YAHSHUA One. It is built specifically for Filipino SMBs, not adapted from a foreign product.",
               },
               {
                 q: "Who is YAHSHUA One designed for?",

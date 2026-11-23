@@ -100,7 +100,7 @@ const STATUS_LABEL: Record<ModuleStatus, string> = {
 };
 
 const MODULES: PricingModule[] = [
-  { id: "payroll", name: "Payroll", sub: "HRIS app launching soon", status: "live" },
+  { id: "payroll", name: "Payroll", sub: "HRIS included", status: "live" },
   {
     id: "numbers",
     name: "Numbers",
@@ -165,7 +165,7 @@ export default function PricingPage() {
   const faqs = [
     {
       q: "How much does YAHSHUA One Payroll cost?",
-      a: "₱7,000 per month for up to 100 employees. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
+      a: "₱7,000 per month for up to 100 employees. Above 100 employees it is ₱60 per additional employee per month. There is no setup fee. YAHSHUA HRIS is included at no extra charge. Plan prices exclude VAT. Theo AI is optional and uses pay-as-you-go credits, which are priced separately and still being finalized.",
     },
     {
       q: "Does the plan include Theo AI credits?",
@@ -177,7 +177,7 @@ export default function PricingPage() {
     },
     {
       q: "Which YAHSHUA One modules can I buy today?",
-      a: "YAHSHUA One Payroll is available today. The YAHSHUA HRIS app is launching soon and will be included at no extra charge. YAHSHUA One Numbers, our accounting module, is in early access and is not priced yet; book a demo and we will walk you through it. Tax and compliance, which would prepare BIR returns, is coming soon and is not priced yet.",
+      a: "YAHSHUA One Payroll is available today, and YAHSHUA HRIS is included at no extra charge. YAHSHUA One Numbers, our accounting module, is in early access and is not priced yet; book a demo and we will walk you through it. Tax and compliance, which would prepare BIR returns, is coming soon and is not priced yet.",
     },
     {
       q: "What happens when I go over 100 employees?",
@@ -189,7 +189,7 @@ export default function PricingPage() {
     },
     {
       q: "Does YAHSHUA One Payroll come with YAHSHUA HRIS?",
-      a: "It will. The YAHSHUA HRIS app is launching soon, and every plan will include it at no extra charge. It is planned to cover employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management. It is not available yet.",
+      a: "Yes. YAHSHUA HRIS is included at no extra charge. Today it runs as a separate web app that works in a mobile browser, and it is moving inside YAHSHUA One. It covers employee management and 201 files, job posting and recruitment, leave, attendance and time tracking, DOLE compliance reports, and performance management.",
     },
     {
       q: "Is there a free trial?",
@@ -209,7 +209,7 @@ export default function PricingPage() {
     },
     {
       q: "What if I only need payroll?",
-      a: "YAHSHUA One Payroll runs as a standalone product, without Numbers or the other modules. The YAHSHUA HRIS app will be included when it launches, so you can use as much or as little of it as you need.",
+      a: "YAHSHUA One Payroll runs as a standalone product, without Numbers or the other modules. YAHSHUA HRIS is included, so you can use as much or as little of it as you need.",
     },
   ];
 
@@ -362,7 +362,7 @@ export default function PricingPage() {
                     fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, padding: "3px 10px",
                     borderRadius: 999, background: "var(--accent-50)", color: "var(--accent-2)",
                   }}>
-                    HRIS app launching soon
+                    HRIS included
                   </span>
                 </div>
 
@@ -453,8 +453,11 @@ export default function PricingPage() {
                 </div>
                 <div>
                   <h2 style={{ fontSize: 20, fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 14px" }}>
-                    YAHSHUA HRIS app, launching soon
+                    YAHSHUA HRIS, included
                   </h2>
+                  <p style={{ margin: "0 0 14px", fontSize: 14.5, lineHeight: 1.6, color: "var(--muted)" }}>
+                    A separate web app today that works in a mobile browser. It is moving inside YAHSHUA One.
+                  </p>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                     {HRIS_INCLUDES.map((item) => (
                       <li key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 15, color: "var(--ink-2)", lineHeight: 1.5 }}>
