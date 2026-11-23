@@ -134,6 +134,7 @@ We list this so you can test it, not to claim all seven. See [pricing](/pricing)
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying guide these controls fit into
 - [YAHSHUA One vs. PayrollHero: Which One Actually Fits Your Business](/blog/yahshua-one-vs-payrollhero), attendance-first payroll for multi-branch teams
+- [Hospital Payroll in the Philippines: 7 Controls](/blog/hospital-payroll-philippines), the same approach for 24-hour rosters and agency-supplied staff
 - [What Payroll Software Costs a Philippine Company at 10 to 500 Employees](/blog/payroll-software-cost-by-headcount-philippines), the cost side of adding branches
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 

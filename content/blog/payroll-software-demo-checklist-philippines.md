@@ -158,6 +158,7 @@ It does compare two payroll runs, which helps with test 3. Run all eight tests o
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying guide these tests fit into
 - [Multi-Branch Payroll in the Philippines: 7 Controls for Owners With 5 or More Locations](/blog/multi-branch-payroll-philippines), ten-minute tests for companies with several sites
+- [AI Payroll Buyer's Checklist for Philippine Companies: 8 Questions, Scored 0 to 2](/blog/ai-payroll-buyers-checklist-philippines), the AI questions to score on top of these eight tests
 - [Can AI Replace a Payroll Officer in the Philippines?](/blog/can-ai-replace-payroll-officer-philippines), what to hand over and what to keep human
 - [Excel vs. Payroll Software in the Philippines](/blog/excel-vs-payroll-software-philippines), when a spreadsheet stops being enough
 - [YAHSHUA One Payroll](/payroll), the product to run the eight tests on

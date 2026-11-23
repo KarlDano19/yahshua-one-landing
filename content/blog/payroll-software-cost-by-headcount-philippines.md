@@ -5,13 +5,13 @@ date: "2026-10-07"
 description: "GreatDay HR at ₱77 per employee, PayrollHero at about ₱408, YAHSHUA One from ₱7,000 for 100 employees: published prices compared from 10 to 500 employees."
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
-readTime: "7 min read"
+readTime: "8 min read"
 coverImage: "/Blog/What%20Payroll%20Software%20Costs%20a%20Philippine%20SMB.png"
 ctaHeading: "Run the math on your own headcount."
 ctaBody: "Book a 30-minute demo and we will price your exact headcount, add-ons and VAT, so you can compare it with any quote you already have."
 faq:
   - question: "How much does payroll software cost per employee in the Philippines?"
-    answer: "Published list prices run from about ₱77 per employee per month (GreatDay HR's starter package, which includes 50 licenses) to about ₱408 per employee per month (PayrollHero's HRIS plus payroll, converted from $6.50 at ₱62.75 per dollar). A flat-rate plan such as YAHSHUA One Payroll's ₱7,000 per month for up to 100 employees works out to ₱70 per employee at 100 employees and ₱62 at 500."
+    answer: "Published list prices run from about ₱77 per employee per month (GreatDay HR's starter package, which includes 50 licenses) to about ₱408 per employee per month (PayrollHero's HRIS plus payroll, converted from $6.50 at ₱62.75 per dollar). Omni HR's published dollar prices for its Core HR plan plus payroll software work out to about ₱314 to ₱439. A flat-rate plan such as YAHSHUA One Payroll's ₱7,000 per month for up to 100 employees works out to ₱70 per employee at 100 employees and ₱62 at 500."
   - question: "Is flat-rate payroll pricing cheaper than per-employee pricing?"
     answer: "It depends on headcount. Per-employee pricing is cheaper for very small teams, and a flat rate is cheaper once the per-employee fees add up to the flat fee. On published prices, YAHSHUA One's flat ₱7,000 costs less than PayrollHero's HRIS plus payroll from 18 employees and less than GreatDay HR's ₱77 per employee from 91 employees."
   - question: "What does payroll software cost for 100 or 500 employees in the Philippines?"
@@ -27,6 +27,8 @@ sources:
   - "Sprout Solutions, \"5 Best Simple Payroll Software for Small Businesses in the Philippines (2026),\" sprout.ph/articles/best-simple-payroll-software-for-small-business (accessed October 2026)"
   - "Sprout Solutions, Payroll Starter page, discover.sprout.ph/payroll-starter (accessed October 23, 2026 and November 4, 2026)"
   - "Bangko Sentral ng Pilipinas, Reference Exchange Rate Bulletin, October 2, 2026: ₱62.7480 per US dollar (weighted average), as reproduced by taxcalculator.com.ph/exchange-rates (accessed October 2026)"
+  - "Bangko Sentral ng Pilipinas, Reference Exchange Rate Bulletin, November 20, 2026: ₱63.6960 per US dollar (weighted average), as reproduced by taxcalculator.com.ph/exchange-rates (accessed November 2026)"
+  - "Omni HR, official pricing page, omnihr.co/pricing (fetched November 23, 2026)"
   - "YAHSHUA One, official pricing page, yahshua.one/pricing (accessed November 2026)"
 ---
 
@@ -36,18 +38,19 @@ Per-employee pricing is cheapest for very small teams, and a flat rate wins as h
 
 Philippine payroll pricing comes in three shapes: a flat monthly rate, a per-employee rate, and a base fee for outsourced payroll. They cross over at different headcounts, so the cheapest option at 10 employees is rarely the cheapest at 100.
 
-These are the published list prices we used, checked in October and again on November 4, 2026:
+These are the published list prices we used, checked in October and again on November 4, 2026 (Omni HR on November 23, 2026):
 
 - **GreatDay HR:** ₱77 per employee per month on its Basic Starter Package, which its pricing page says includes 50 licenses. HRIS and payroll sit in one per-employee price. The page lists one package, with no headcount cap or volume tier, and names GreatDay Pro and SunFish HR for larger companies without prices. It also says prices are changing soon, so confirm the current rate.
 - **PayrollHero:** $3.50 per employee per month for HRIS, timekeeping, attendance and scheduling, plus $3.00 for payroll, so $6.50 for both. Leave management is a separate $2.00. Its global pricing page is in US dollars, and PayrollHero says it has a separate Philippines site for local pricing, so treat the peso figures below as indicative.
 - **Sprout Solutions:** the Payroll Starter is outsourced payroll at ₱15,000 per month for up to 20 employees, plus ₱300 to ₱400 per employee per month above 20, according to Sprout's Payroll Starter page (checked October 23 and again November 4, 2026). Sprout raised this from ₱7,900, and some older Sprout articles still show the old figure. Sprout's own article describes its software payroll as a custom quote based on business size, so there is no published rate for that product.
+- **Omni HR:** a Singapore-based platform for companies across Asia that publishes dollar prices. Its Core HR plan is from $3 per employee per month, its Growth plan is $7, and payroll software is from $2 to $4 per employee per month on top, so Core plus payroll is $5 to $7, or about ₱314 to ₱439 at ₱62.75. Omni says its dollar prices are a guide, that quotes depend on headcount and the countries you run payroll in, and that contracts are annual, so confirm the Philippine payroll price with them. It covers many countries, so it is not like for like.
 - **YAHSHUA One Payroll:** a flat ₱7,000 per month for up to 100 employees, then ₱60 per additional employee. Prices exclude VAT, and there is no setup fee. The YAHSHUA HRIS app is launching soon and will be included at no extra charge, so until it is live this price covers payroll only, while the GreatDay HR and PayrollHero prices include HRIS.
 
 These products are not like for like, and this post compares what you pay, not what you get. PayrollHero is built around attendance first, as our [YAHSHUA One vs. PayrollHero](/blog/yahshua-one-vs-payrollhero) comparison explains, and Sprout's Starter is outsourced payroll rather than software you run yourself. If you are weighing outsourcing against hiring a payroll officer, see [In-House Payroll vs. Outsourcing](/blog/in-house-vs-outsourcing-payroll-philippines). For compliance depth and the other checks that matter, see the [buying guide](/blog/payroll-software-philippines-buying-guide).
 
 ## The Math from 10 to 500 Employees
 
-At 10 employees, both per-employee plans cost less than YAHSHUA One's ₱7,000. At 50, only GreatDay HR does. From 100 employees YAHSHUA One is the cheapest of the published prices compared here, and at 500 it is ₱31,000 against ₱38,500 for GreatDay HR and about ₱203,938 for PayrollHero.
+At 10 employees, every per-employee plan costs less than YAHSHUA One's ₱7,000. At 50, only GreatDay HR does. From 100 employees YAHSHUA One is the cheapest of the published prices compared here, and at 500 it is ₱31,000 against ₱38,500 for GreatDay HR and about ₱203,938 for PayrollHero.
 
 **Table: Monthly subscription cost by headcount, published list prices, checked November 2026**
 
@@ -66,10 +69,25 @@ How to read the table:
 - GreatDay's page says the starter package includes 50 licenses. We read that as a floor, as in our buying guide, so 10 employees are priced at 50 licenses. If GreatDay lets you buy fewer, the 10-employee figure would be lower, so confirm it with them.
 - GreatDay's page lists no volume tier or headcount cap, so the 200, 300 and 500 figures are ₱77 times headcount. That is list price times headcount, not a quote. The page points larger companies to GreatDay Pro and SunFish HR without prices, so a company of 300 or 500 should expect a different offer.
 - PayrollHero's $6.50 is converted at ₱62.75 per US dollar, the Bangko Sentral ng Pilipinas rate of October 2, 2026, rounded. We kept that rate for every row so the rows stay comparable. The peso figure moves with the exchange rate, it leaves out the $2.00 leave management add-on, and the global page lists no volume discount.
+- The peso has weakened since then: the Bangko Sentral ng Pilipinas reference rate was about ₱63.70 on November 20, 2026, so the dollar-priced plans (PayrollHero and Omni HR) cost about 1.5% more in pesos today than shown.
 - Sprout's Payroll Starter is ₱15,000 for up to 20 employees plus ₱300 to ₱400 for each employee above 20. The 50, 100 and 150 figures are computed from that formula, so they are shown as ranges. Sprout does not publish a headcount cap, but it positions the Starter for startups and small businesses and quotes its software payroll by company size, so we show no published price from 200 employees. It is outsourced payroll, not software you run yourself, so it is not a like-for-like comparison.
 - YAHSHUA One's price above 100 employees is ₱7,000 plus ₱60 for each additional employee, so 500 employees is ₱7,000 plus 400 times ₱60, or ₱31,000.
 - YAHSHUA One's figures are before VAT. GreatDay's and PayrollHero's pages do not say whether their prices include VAT.
 - YAHSHUA One's figures cover payroll today. The HRIS app is launching soon at no extra charge, whereas GreatDay's and PayrollHero's figures already include HRIS, so the comparison tilts toward YAHSHUA One until the app is live.
+
+Omni HR is shown separately because it prices in dollars per plan and covers many countries.
+
+**Table: Omni HR monthly cost by headcount, Core plan plus payroll software, dollar prices converted at ₱62.75 (indicative, checked November 23, 2026)**
+
+| Employees | Omni HR (US$) | Omni HR (₱) | YAHSHUA One Payroll |
+|---|---|---|---|
+| 10 | $50 to $70 | ₱3,138 to ₱4,393 | ₱7,000 |
+| 50 | $250 to $350 | ₱15,688 to ₱21,963 | ₱7,000 |
+| 100 | $500 to $700 | ₱31,375 to ₱43,925 | ₱7,000 |
+| 200 | $1,000 to $1,400 | ₱62,750 to ₱87,850 | ₱13,000 |
+| 500 | $2,500 to $3,500 | ₱156,875 to ₱219,625 | ₱31,000 |
+
+These figures multiply Omni's published per-employee prices by headcount, with no volume discount published. They leave out HR modules beyond Core (+$1 each, Performance +$2), recruitment and other add-ons. Omni says Growth ($7) costs the same or less once you need four or more modules. Omni does not state VAT treatment.
 
 ## Where Flat-Rate Payroll Pricing Beats Per-Employee Pricing
 
@@ -77,6 +95,7 @@ A flat rate costs less than a per-employee rate once headcount passes the flat f
 
 - **Against PayrollHero:** ₱7,000 divided by about ₱408 per employee is 17.2, so the flat rate is cheaper from 18 employees. At 17 employees PayrollHero is ₱6,934, and at 18 it is ₱7,342.
 - **Against GreatDay HR:** ₱7,000 divided by ₱77 is 90.9, so the flat rate is cheaper from 91 employees. At 90 employees GreatDay is ₱6,930, and at 91 it is ₱7,007.
+- **Against Omni HR (Core plus payroll):** ₱7,000 divided by ₱439 is 15.9 and divided by ₱314 is 22.3, so the flat rate is cheaper from about 16 to 23 employees, depending on where Omni's payroll price falls in its $2 to $4 range. This is a rough guide, because Omni's quote depends on headcount and country.
 - **Past 100 employees:** each extra YAHSHUA One employee adds ₱60, against ₱77 at GreatDay and about ₱408 at PayrollHero, so the gap widens. At 500 employees YAHSHUA One is ₱7,500 a month below GreatDay's list price and about ₱172,938 below PayrollHero's.
 
 **Table: Effective cost per employee per month by headcount, checked November 2026**
@@ -126,7 +145,7 @@ For YAHSHUA One Payroll you can run step 3 on the [pricing page](/pricing), whic
 ## Frequently Asked Questions
 
 **How much does payroll software cost per employee in the Philippines?**
-Published list prices run from about ₱77 per employee per month (GreatDay HR's starter package, which includes 50 licenses) to about ₱408 per employee per month (PayrollHero's HRIS plus payroll, converted from $6.50 at ₱62.75 per dollar). A flat-rate plan such as YAHSHUA One Payroll's ₱7,000 per month for up to 100 employees works out to ₱70 per employee at 100 employees and ₱62 at 500.
+Published list prices run from about ₱77 per employee per month (GreatDay HR's starter package, which includes 50 licenses) to about ₱408 per employee per month (PayrollHero's HRIS plus payroll, converted from $6.50 at ₱62.75 per dollar). Omni HR's published dollar prices for its Core HR plan plus payroll software work out to about ₱314 to ₱439. A flat-rate plan such as YAHSHUA One Payroll's ₱7,000 per month for up to 100 employees works out to ₱70 per employee at 100 employees and ₱62 at 500.
 
 **Is flat-rate payroll pricing cheaper than per-employee pricing?**
 It depends on headcount. Per-employee pricing is cheaper for very small teams, and a flat rate is cheaper once the per-employee fees add up to the flat fee. On published prices, YAHSHUA One's flat ₱7,000 costs less than PayrollHero's HRIS plus payroll from 18 employees and less than GreatDay HR's ₱77 per employee from 91 employees.
