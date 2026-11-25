@@ -90,6 +90,7 @@ export default function Home() {
   const heroVideoElRef = useRef<HTMLVideoElement>(null);
   const y1pVideoRef = useRef<HTMLDivElement>(null);
   const y1pVideoElRef = useRef<HTMLVideoElement>(null);
+  const logRef = useRef<HTMLElement>(null);
 
   function enterFullscreen(container: HTMLDivElement | null, video: HTMLVideoElement | null) {
     if (!container || !video) return;
@@ -106,8 +107,33 @@ export default function Home() {
     document.addEventListener("fullscreenchange", onExit);
   }
 
+  // The updates feed (about 86 KB) is only needed by the Build Log near the bottom, so fetch it when that section is close.
   useEffect(() => {
-    fetch("/updates.json").then((r) => r.json()).then(setUpdates).catch(() => setUpdates([]));
+    const el = logRef.current;
+    if (!el) return;
+    let started = false;
+    const load = () => {
+      if (started) return;
+      started = true;
+      fetch("/updates.json").then((r) => r.json()).then(setUpdates).catch(() => setUpdates([]));
+    };
+    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { load(); io.disconnect(); } }, { rootMargin: "800px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // The payslip clip loops only while it is on screen, and downloads only when it first gets close, instead of loading on page load.
+  useEffect(() => {
+    const el = y1pVideoElRef.current;
+    if (!el) return;
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || conn?.saveData || conn?.effectiveType === "slow-2g" || conn?.effectiveType === "2g") return;
+    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) el.play().catch(() => {}); else el.pause(); }, { rootMargin: "100px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 8);
     document.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -286,7 +312,7 @@ export default function Home() {
               {/* Video */}
               <video
                 ref={heroVideoElRef}
-                controls playsInline preload="metadata" poster="/one-hero-poster.jpg"
+                controls playsInline preload="metadata" poster="/one-hero-poster.webp"
                 style={{ width: "100%", display: "block", borderRadius: 16 }}
               >
                 <source src="/y1-intro.mp4" type="video/mp4" />
@@ -684,7 +710,7 @@ export default function Home() {
                 </div>
                 <video
                   ref={y1pVideoElRef}
-                  autoPlay muted loop playsInline
+                  muted loop playsInline preload="none"
                   poster="/ss-payslip.jpg"
                   style={{ width: "100%", display: "block" }}
                 >
@@ -740,7 +766,7 @@ export default function Home() {
       </section>
 
       {/* ── BUILD LOG ── */}
-      <section className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
+      <section ref={logRef} className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 28px" }}>
           <Reveal>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-geist-mono, monospace)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>

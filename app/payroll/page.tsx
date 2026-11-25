@@ -85,8 +85,25 @@ function mayAutoplay(): boolean {
   return true;
 }
 
+const CALENDLY_URL = "https://calendly.com/clientrelations-abba/presentation?utm_source=website&utm_medium=web&utm_campaign=yahshuaone";
+
+// Poster shapes, so a feature clip below the fold can reserve its space without downloading its poster up front.
+const POSTER_RATIO: Record<string, string> = { "/ss-theo.jpg": "1200 / 712" };
+const DEFAULT_POSTER_RATIO = "1200 / 805";
+
 function LoopVideo({ src, poster, label, whenVisible = false }: { src: string; poster: string; label?: string; whenVisible?: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const holder = useRef<HTMLDivElement>(null);
+  // Clips below the fold only mount (and fetch their poster) when they are within 600px of the screen.
+  const [near, setNear] = useState(!whenVisible);
+  useEffect(() => {
+    if (near) return;
+    const el = holder.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setNear(true); io.disconnect(); } }, { rootMargin: "600px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [near]);
   useEffect(() => {
     const el = ref.current;
     if (!el || !mayAutoplay()) return;
@@ -105,7 +122,10 @@ function LoopVideo({ src, poster, label, whenVisible = false }: { src: string; p
       else window.addEventListener("load", start, { once: true });
     }
     return () => { obs.disconnect(); window.removeEventListener("load", start); if (timer) clearTimeout(timer); };
-  }, [whenVisible]);
+  }, [whenVisible, near]);
+  if (!near) {
+    return <div ref={holder} aria-hidden style={{ width: "100%", aspectRatio: POSTER_RATIO[poster] ?? DEFAULT_POSTER_RATIO }} />;
+  }
   return (
     <video ref={ref} muted loop playsInline preload="none" poster={poster} aria-label={label} style={{ width: "100%", display: "block" }}>
       <source src={src} type="video/mp4" />
@@ -397,8 +417,10 @@ export default function PayrollPage() {
   // Demo box: count how it is opened, and how often it is closed without a choice.
   const demoChoiceMade = useRef(false);
   const demoWasOpen = useRef(false);
+  const [demoSource, setDemoSource] = useState("direct");
   const openDemo = (ctaLocation: string) => {
     trackEvent("demo_modal_open", { cta_location: ctaLocation });
+    setDemoSource(ctaLocation);
     setCtaOpen(true);
   };
   useEffect(() => {
@@ -410,6 +432,52 @@ export default function PayrollPage() {
       if (!demoChoiceMade.current) trackEvent("demo_modal_dismiss");
     }
   }, [ctaOpen]);
+
+  // Mobile sticky demo bar (a test). Half of mobile visitors get a bar that opens the demo box ("gate"),
+  // half get a bar that goes straight to the booking page ("direct"). Events: sticky_gate_shown,
+  // sticky_direct_shown, demo_modal_open with cta_location "sticky mobile", sticky_direct_click,
+  // sticky_direct_existing. Read the result by comparing clicks per bar shown in each arm.
+  const [isMobile, setIsMobile] = useState(false);
+  // The arm is picked once per browser. It only changes what the bar looks like, which renders after a scroll on the
+  // client, so the server and first client render are identical.
+  const [stickyVariant] = useState<"gate" | "direct">(() => {
+    if (typeof window === "undefined") return "gate";
+    try {
+      const saved = window.localStorage.getItem("y1_sticky_v");
+      if (saved === "gate" || saved === "direct") return saved;
+      const v = Math.random() < 0.5 ? "direct" : "gate";
+      window.localStorage.setItem("y1_sticky_v", v);
+      return v;
+    } catch {
+      return "gate"; // private mode: no test arm, same as today
+    }
+  });
+  const [pastHero, setPastHero] = useState(false);
+  const [nearEnd, setNearEnd] = useState(false);
+  const stickyShownSent = useRef(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  useEffect(() => {
+    const onScroll = () => {
+      setPastHero(window.scrollY > 560);
+      setNearEnd(window.scrollY + window.innerHeight > document.documentElement.scrollHeight - 160);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const showSticky = isMobile && pastHero && !nearEnd && !ctaOpen && !mobileNavOpen && !videoOpen;
+  useEffect(() => {
+    if (showSticky && !stickyShownSent.current) {
+      stickyShownSent.current = true;
+      trackEvent(`sticky_${stickyVariant}_shown`);
+    }
+  }, [showSticky, stickyVariant]);
 
   useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 8);
@@ -1338,6 +1406,44 @@ export default function PayrollPage() {
         </div>
       )}
 
+      {/* ── STICKY DEMO BAR (mobile only, a test) ── */}
+      {showSticky && (
+        <div
+          role="region" aria-label="Book a demo"
+          style={{
+            position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 120,
+            padding: "10px 16px calc(10px + env(safe-area-inset-bottom, 0px))",
+            background: "rgba(250,250,247,0.94)", backdropFilter: "blur(10px)",
+            borderTop: "1px solid var(--line)",
+            display: "flex", flexDirection: "column", alignItems: "stretch", gap: 6,
+          }}
+        >
+          {stickyVariant === "gate" ? (
+            <button onClick={() => openDemo("sticky mobile")} style={{ ...btnPrimary, justifyContent: "center", width: "100%" }}>
+              Book a Free Demo <Arrow />
+            </button>
+          ) : (
+            <>
+              <a
+                href={`${CALENDLY_URL}&utm_content=sticky_direct`}
+                target="_blank" rel="noopener noreferrer"
+                onClick={() => trackEvent("sticky_direct_click")}
+                style={{ ...btnPrimary, justifyContent: "center", width: "100%" }}
+              >
+                Book a Free Demo <Arrow />
+              </a>
+              <a
+                href="/support"
+                onClick={() => trackEvent("sticky_direct_existing")}
+                style={{ textAlign: "center", fontSize: 12.5, color: "var(--muted)", textDecoration: "underline", textUnderlineOffset: 2, padding: "5px 0" }}
+              >
+                Existing client? Get support
+              </a>
+            </>
+          )}
+        </div>
+      )}
+
       {/* ── GET STARTED MODAL ── */}
       {ctaOpen && (
         <div
@@ -1382,7 +1488,7 @@ export default function PayrollPage() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <a
-                href="https://calendly.com/clientrelations-abba/presentation?utm_source=website&utm_medium=web&utm_campaign=yahshuaone"
+                href={`${CALENDLY_URL}&utm_content=${encodeURIComponent(demoSource)}`}
                 target="_blank" rel="noopener noreferrer"
                 onClick={() => { demoChoiceMade.current = true; setCtaOpen(false); }}
                 style={{
