@@ -6,7 +6,7 @@ description: "PayrollHero is attendance-first at about $6.50 per employee with p
 category: "Comparisons"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
-coverImage: "/Blog/Y1%20VS%20PAYROLLHERO.png"
+coverImage: "/Blog/Y1%20VS%20PAYROLLHERO.jpg"
 ctaHeading: "See if YAHSHUA One actually fits your setup."
 ctaBody: "Book a free 30-minute demo and get a straight answer, not a sales pitch disguised as one."
 faq:

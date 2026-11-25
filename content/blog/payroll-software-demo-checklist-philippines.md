@@ -6,7 +6,7 @@ description: "Eight live tests for any payroll software demo in the Philippines,
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "8 min read"
-coverImage: "/Blog/Payroll%20Software.png"
+coverImage: "/Blog/Payroll%20Software.jpg"
 ctaHeading: "Bring your own cutoff. Run the eight tests on us."
 ctaBody: "Book a free demo and bring your last cutoff's payroll register with the names removed. We'll tell you up front which two tests we don't pass in full."
 faq:

@@ -6,7 +6,7 @@ description: "You don't re-register with SSS, PhilHealth or Pag-IBIG. What must 
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
-coverImage: "/Blog/How%20to%20Switch%20Payroll%20Providers.png"
+coverImage: "/Blog/How%20to%20Switch%20Payroll%20Providers.jpg"
 ctaHeading: "Switching doesn't have to be risky."
 ctaBody: "YAHSHUA One's team migrates your year-to-date payroll data, SSS, PhilHealth, and Pag-IBIG history included, so your first payroll on the new system starts from the right numbers."
 faq:

@@ -6,7 +6,7 @@ description: "Which payroll provider should you use in the Philippines? Five che
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "7 min read"
-coverImage: "/Blog/Payroll%20Software%20in%20the%20Philippines.png"
+coverImage: "/Blog/Payroll%20Software%20in%20the%20Philippines.jpg"
 featured: true
 faq:
   - question: "How much does payroll software cost in the Philippines?"

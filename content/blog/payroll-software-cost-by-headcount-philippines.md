@@ -6,7 +6,7 @@ description: "GreatDay HR at ₱77 per employee, PayrollHero at about ₱408, YA
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "7 min read"
-coverImage: "/Blog/What%20Payroll%20Software%20Costs%20a%20Philippine%20SMB.png"
+coverImage: "/Blog/What%20Payroll%20Software%20Costs%20a%20Philippine%20SMB.jpg"
 ctaHeading: "Run the math on your own headcount."
 ctaBody: "Book a 30-minute demo and we will price your exact headcount, add-ons and VAT, so you can compare it with any quote you already have."
 faq:

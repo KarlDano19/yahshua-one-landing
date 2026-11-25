@@ -6,7 +6,7 @@ description: "Sprout's outsourced payroll is ₱15,000 a month for 20 employees.
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
-coverImage: "/Blog/In-House%20Payroll.png"
+coverImage: "/Blog/In-House%20Payroll.jpg"
 ctaHeading: "Keep payroll in-house without the manual burden."
 ctaBody: "Book a 30-minute call and see what running payroll with real AI support actually looks like."
 faq:
